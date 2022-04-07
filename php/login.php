@@ -6,17 +6,20 @@
 
 $file = fopen("../db/db.csv","r") or die("Unable to open file!");
 $row = 1;
+
+echo $_POST['username'];
+echo $_POST['pass'];
+
 while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
 	
 	$num = count($data);
 
-	echo "<p> $num fields in line $row: <br /></p>/n";
-	
+	echo "<p> $num fields in line $row: <br /></p>";
 	$row++;
-	for ($c = 0; $c < $num; $c++){
-		echo $data[$c] . "<br />\n"
+	
+	if ($data[0] == $_POST['username'] && $data[1] == $_POST['pass']){
+		echo "<p>found user!</p>"
 	}
 }
-
 fclose($file);
 ?>
