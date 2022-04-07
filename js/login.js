@@ -10,6 +10,7 @@ function sendLoginRequest(){
         syncRequest.open("POST", url, true);
 
         syncRequest.addEventListener("load", function(){
+                window.alert("here");
                 if (this.responseText == 'success')
                         alert ('successfully logged in.');
                 else
