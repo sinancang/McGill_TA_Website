@@ -44,28 +44,31 @@ input[type=text], input[type=password] {
     <input type="password" placeholder="Repeat Password"id="pass2" name="pass" required><br>
 
     <div id="warning" style="  color: #ca1818; font-size: 15px;"> </div><br>
-    <button type="submit" class="register">Register</button>
+    <button type="submit" class="register" onclick="sendRegisterRequest()">Register</button>
 
+    <script src="../js/register.js"> 
+    </script>
+    
+    <script>
+        let pass1 = document.querySelector("#pass1");
+        let pass2 = document.querySelector("#pass2");
+        let warning = document.querySelector("#warning");
+    
+        function checkMatch(){
+            if(pass1.value==pass2.value){
+                warning.innerText = "";
+            }
+            else{
+                warning.innerText = "Paswords don't match";
+            }
+        }
+    
+        pass1.addEventListener("keyup", () => {
+            if(pass2.value.lenght != 0) checkMatch();
+        })
+        pass2.addEventListener("keyup", checkMatch);
+    
+    </script>    
     
 </html>
 
-<script>
-    let pass1 = document.querySelector("#pass1");
-    let pass2 = document.querySelector("#pass2");
-    let warning = document.querySelector("#warning");
-
-    function checkMatch(){
-        if(pass1.value==pass2.value){
-            warning.innerText = "";
-        }
-        else{
-            warning.innerText = "Paswords don't match";
-        }
-    }
-
-    pass1.addEventListener("keyup", () => {
-        if(pass2.value.lenght != 0) checkMatch();
-    })
-    pass2.addEventListener("keyup", checkMatch);
-
-</script>
