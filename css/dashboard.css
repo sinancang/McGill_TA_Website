@@ -19,7 +19,7 @@ body {
     background-color: #CF6D6D;
     color: white;
     z-index: 1;
-    box-shadow: 0px 0px 7px 5px rgb(199, 199, 199);
+    /*box-shadow: 0px 0px 7px 5px rgb(199, 199, 199);*/
 }
 
 .dashboard-header-icon {
@@ -41,7 +41,18 @@ body {
     position: fixed;
     top: 55px;
     width: 100%;
-    height: 92%;
+    height: 100%;
+}
+
+.nav-bars-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    box-shadow: 0px 0px 7px 3px rgb(198, 198, 198);
+    z-index: 1;
 }
 
 .dashboard-content-side-nav-bar {
@@ -49,22 +60,38 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 20px;
     height: 100%;
-    width: 20%;
+    width: 0%;
     background-color: #F6F6F6;
     color: rgb(103, 103, 103);
     font-size: 20px;
+    overflow: visible;
+    transition: width 0.3s ease-out;
+    white-space: nowrap;
 }
+
+.dashboard-content-side-nav-bar.open {
+    width: 100%;
+    border-right: 1px solid rgb(196, 196, 196);
+}
+
+.dashboard-content-side-nav-bar.first-nav-bar {
+    border-right: 1px solid rgb(196, 196, 196);
+}
+
+
 
 .nav-bar-btn-container {
     display: flex;
+    flex-wrap: nowrap;
+    overflow-wrap: normal;
+    overflow: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     cursor: pointer;
     width: 100%;
-    height: 7%;
+    height: 50px;
     margin-top: 10px;
 }
 
@@ -76,12 +103,42 @@ body {
 }
 
 .nav-bar-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-bar-btn-wrapper.second-nav-bar {
+    flex-direction: column;
+}
+
+.nav-bar-btn-wrapper.back-btn {
+    justify-content: flex-start;
+}
+
+.nav-bar-btn {
+    overflow-wrap: normal;
     margin-left: 40px;
 }
 
+.nav-bar-btn.back {
+    text-align: left;
+}
+
+.right-arrow-svg {
+    margin-right: 40px;
+    transform: scale(2);
+}
+
+
+#back-arrow {
+    transform: scale(2) rotate(180deg);
+    margin-left: 40px;
+}
 
 .nav-bar-btn-subtitle {
     font-size: 16px;
+    margin-left: 40px;
     color: rgb(148, 148, 148);
 }
 
