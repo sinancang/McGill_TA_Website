@@ -18,7 +18,7 @@ while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
 	$row++;
 	
 	if ($data[0] == $_POST['username'] && $data[1] == $_POST['pass']){
-		echo "<p>found user!</p>"
+		echo "<p>found user!</p>";
 	}
 }
 fclose($file);

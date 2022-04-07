@@ -8,12 +8,15 @@ function sendLoginRequest(){
         var url = "login.php";
         syncRequest.open("POST", url, true);
 
-        syncRequest.addEventListener("load", function(){
-                if (this.responseText == 'success')
+        syncRequest.onreadystatechange = function(){
+                if (this.responseText == 'success') {
+                        console.log(syncRequest.response);
                         alert ('successfully logged in.');
-                else
+                }
+                else {
                         alert ('failed to log in.');
-        }, false)
+                }
+        }
 
         var fd = new FormData;
         fd.append ('user', document.getElementById("user").value);
