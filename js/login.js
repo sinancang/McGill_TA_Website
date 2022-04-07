@@ -2,7 +2,7 @@ function sendLoginRequest(){
 
 	var username = document.getElementById('user').value;
         var password = document.getElementById('pass').value;
-        var encrypted_password = CryptoJS.AES.encrypt(password, 5);
+        //var encrypted_password = CryptoJS.AES.encrypt(password, 5);
 
         // make Ajax call to login.php with username & encrypted password
         syncRequest = new XMLHttpRequest();
