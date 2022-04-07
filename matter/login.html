@@ -1,11 +1,51 @@
+<style>
+    button {
+  background-color: #ca1818;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+</style>
+
 <html>
-	<script src="../js/login.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous">
+
+    </script>
+    
+    <script src="../js/login.js"> 
 	</script>
-	<body>
-		<form>
-			Username <input id="user" type="text" name="username"><br/>
-			Password <input id="pass" type="password" name="pass"><br/>
-			<button type="button" onclick="sendLoginRequest()">Login</button>
-		</form>
-	</body>
+
+    <body>
+        <p style="font-size: 30px;">Login</p>   
+        <label for="username" style="font-size: 20px;"><b>Username</b> </label> 
+        <input type="text" name="username" id="user" placeholder="Enter Username" required><br></br>
+        <label for="password" style="font-size: 20px;"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password"id="pass" name="pass" required><br></br>
+        <button type="button" onclick="sendLoginRequest()"  >
+            Login
+        </button>
+        <div class = "register" style="text-align: right;">
+            Don't have an account?<br>
+            <a href="#">Register</a>
+        </div>
+
+
+    </body>
 </html>
