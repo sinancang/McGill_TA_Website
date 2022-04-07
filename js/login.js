@@ -1,4 +1,6 @@
 function sendLoginRequest(){ 
+
+        window.alert("hi");
 	var username = document.getElementById('user').value;
         var password = document.getElementById('pass').value;
         var encrypted_password = CryptoJS.AES.encrypt(password, 5);
