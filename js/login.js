@@ -14,7 +14,7 @@ function sendLoginRequest(){
                         alert ('successfully logged in.');
                 else
                         alert ('failed to log in.');
-        }, false)
+        }, false);
 
         var fd = new FormData;
         fd.append ('user', document.getElementById("user").value);
