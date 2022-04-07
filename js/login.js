@@ -19,6 +19,4 @@ function sendLoginRequest(){
         fd.append ('user', document.getElementById("user").value);
         fd.append ('pass', document.getElementById("pass").value);
         syncRequest.send (fd);
-
-
 }
