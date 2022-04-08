@@ -13,7 +13,7 @@
             echo 'fail';
         }
     }
-    else if ($_GET['view'] == 'import-manually-users') {
+    else if ($_GET['view'] == 'add-manually-users') {
         if (check_logged_in($_GET['user']) === 1) {
             
             include("../matter/add_users_manually.php");    
