@@ -55,6 +55,11 @@ body {
     color: white;
 }
 
+#sign-up {
+    color: white;
+    text-decoration: none;
+}
+
 .sign-up:hover {
     background-color: #ce5b5b;
     border: 2px solid #f7afaf;
