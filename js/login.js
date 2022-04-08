@@ -12,7 +12,7 @@ function sendLoginRequest(){
         syncRequest.addEventListener("load", function(){
 		console.log(this.status);
                 if (this.status === 200) {
-                        window.location.href = `https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/php/dashboard.php?user=${this.responseText}`;
+                        window.location.href = `https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/routes/dashboard.php?user=${this.responseText}`;
                 }
                 else {
                         alert('failed to log in.');

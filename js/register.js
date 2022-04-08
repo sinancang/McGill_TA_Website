@@ -27,7 +27,7 @@ function sendRegisterRequest(){
     var password = document.getElementById('pass1').value;
     
     syncRequest = new XMLHttpRequest();
-    var url = "../register.php";
+    var url = "../routes/register.php";
     syncRequest.open("POST", url, true);
 
     syncRequest.addEventListener("load", function(){

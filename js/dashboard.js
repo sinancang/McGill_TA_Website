@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     $('#main-dashboard').on('click', function() {
         let user = document.getElementById('username').innerText;
         let syncRequest = new XMLHttpRequest();
-        var url = `../php/dashboard.php?user=${user}&view=main`;
+        var url = `../routes/dashboard.php?user=${user}&view=main`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function getSecondaryMenuItems(menuName) {
     
         let syncRequest = new XMLHttpRequest();
-        var url = `../php/dashboard.php?role=${menuName}`;
+        var url = `../routes/dashboard.php?role=${menuName}`;
         syncRequest.open("POST", url, true);
     
         syncRequest.addEventListener("load", function(){
@@ -96,7 +96,7 @@ function fillSecondaryMenu(menuName) {
         $('#manage-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
-            var url = `../php/dashboard.php?user=${user}&view=manage-users`;
+            var url = `../routes/dashboard.php?user=${user}&view=manage-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
@@ -110,7 +110,7 @@ function fillSecondaryMenu(menuName) {
         $('#import-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
-            var url = `../php/dashboard.php?user=${user}&view=import-users`;
+            var url = `../routes/dashboard.php?user=${user}&view=import-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
@@ -124,7 +124,7 @@ function fillSecondaryMenu(menuName) {
         $('#add-manually-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
-            var url = `../php/dashboard.php?user=${user}&view=add-manually-users`;
+            var url = `../routes/dashboard.php?user=${user}&view=add-manually-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
