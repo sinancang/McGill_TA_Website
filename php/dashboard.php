@@ -14,7 +14,7 @@
 
         // display dashboard header
         include("../matter/dashboard_header.php");
-        include("../matter/content.php");
+        include("../matter/dashboard_content.php");
         
         
         // generate dynamic dashboard content
