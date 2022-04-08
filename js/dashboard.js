@@ -50,7 +50,7 @@ function getSecondaryMenuItems(menuName) {
 }
 
 function fillSecondaryMenu(menuName) {
-    if (menuName == 'admin') {
+    if (menuName == 'sys-ops') {
         document.getElementById('second-nav-bar-options-container').innerHTML = 
         `
         <div id="manage-users" class="nav-bar-btn-container">
