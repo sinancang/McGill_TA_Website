@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 window.addEventListener('DOMContentLoaded', (event) => {
 
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
@@ -31,29 +29,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $('.dashboard-content-side-nav-bar.first-nav-bar').addClass('open');
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
     })
-
-
-    // sys-ops ajax content generating events
-    $('#manage-users').on('click', function() {
-        syncRequest = new XMLHttpRequest();
-        var url = `../dashboard.php?view=manage-users`;
-        syncRequest.open("POST", url, true);
-    
-        syncRequest.addEventListener("load", function(){
-            
-            if (this.status === 200) fillSecondaryMenu();
-            else alert('Invalid user role.');
-    
-        }, false);
-    
-        syncRequest.send();
-    });
-
 });
 
 
 function getSecondaryMenuItems(menuName) {
- 
+    
         syncRequest = new XMLHttpRequest();
         var url = `../dashboard.php?role=${menuName}`;
         syncRequest.open("POST", url, true);
@@ -65,12 +45,12 @@ function getSecondaryMenuItems(menuName) {
     
         }, false);
     
-        syncRequest.send();
+        syncRequest.send ();
     
 }
 
 function fillSecondaryMenu(menuName) {
-    if (menuName == 'sys-ops') {
+    if (menuName == 'admin') {
         document.getElementById('second-nav-bar-options-container').innerHTML = 
         `
         <div id="manage-users" class="nav-bar-btn-container">
