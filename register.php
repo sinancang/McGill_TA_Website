@@ -1,5 +1,5 @@
 <?php
-$file = fopen("../db/db.csv","a+") or die("Unable to open file!!!");
+$file = fopen("db/db.csv","a+") or die("Unable to open file!!!");
 $row = 1;
 
 while (($data = fgetcsv($file, 1000, ",")) !== FALSE){

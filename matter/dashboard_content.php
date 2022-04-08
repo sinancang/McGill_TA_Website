@@ -13,22 +13,29 @@
 
                     <div class="separating-line"></div>
 
-                    <div class="nav-bar-btn-container first-nav-bar">
+                    <div id="admin" class="nav-bar-btn-container first-nav-bar">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Administration</div>
                             <img class="right-arrow-svg" src="../images/right-arrow.svg">
                         </div>
                     </div>
 
-                    <div class="nav-bar-btn-container  first-nav-bar">
+                    <div id="manage" class="nav-bar-btn-container  first-nav-bar">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Manage TAs</div>
                             <img class="right-arrow-svg" src="../images/right-arrow.svg">
                         </div>
                     </div>
-                    <div class="nav-bar-btn-container  first-nav-bar">
+                    <div id="rate" class="nav-bar-btn-container  first-nav-bar">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Rate a TA</div>
+                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                        </div>
+                    </div>
+
+                    <div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
+                        <div class="nav-bar-btn-wrapper">
+                            <div class="nav-bar-btn">System Ops</div>
                             <img class="right-arrow-svg" src="../images/right-arrow.svg">
                         </div>
                     </div>
