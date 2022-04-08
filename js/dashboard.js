@@ -2,26 +2,13 @@
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
+    // set event listeners for primary nav bar options
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
 
         $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
         $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
 
-        // set event listeners for primary nav bar options
-        if ($(this).attr('id') == 'main-dashboard') {
-            let user = document.getElementById('username').innerText;
-            let syncRequest = new XMLHttpRequest();
-            var url = `../php/dashboard.php?user=${user}&view=main`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
-                else alert('Invalid user role.');
-        
-            }, false);
-        
-            syncRequest.send();
-        }
-        else if ($(this).attr('id') == 'admin') {
+        if ($(this).attr('id') == 'admin') {
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
@@ -33,7 +20,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
         else if ($(this).attr('id') == 'sys-ops') {
             fillSecondaryMenu('sys-ops');
         }
-    })
+    });
+
+
+    $('#main-dashbaoard').on('click', function() {
+        let user = document.getElementById('username').innerText;
+        let syncRequest = new XMLHttpRequest();
+        var url = `../php/dashboard.php?user=${user}&view=main`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+            else alert('Invalid user role.');
+    
+        }, false);
+    
+        syncRequest.send();
+
+    });
+
     
     // event for back btn in secondary menu
     // takes user back to primary menu
@@ -101,7 +105,7 @@ function fillSecondaryMenu(menuName) {
             }, false);
         
             syncRequest.send();
-        })
+        });
 
         $('#import-users').on('click', function() {
             let user = document.getElementById('username').innerText;
@@ -115,7 +119,7 @@ function fillSecondaryMenu(menuName) {
             }, false);
         
             syncRequest.send();
-        })
+        });
 
         $('#add-manually-users').on('click', function() {
             let user = document.getElementById('username').innerText;
@@ -129,7 +133,7 @@ function fillSecondaryMenu(menuName) {
             }, false);
         
             syncRequest.send();
-        })
+        });
     }
 }
 

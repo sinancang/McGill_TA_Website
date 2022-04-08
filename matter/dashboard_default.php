@@ -21,9 +21,9 @@
         <div class="dashboard-content">
 
             <div class="nav-bars-container">
-
-                <div id="main-dashboard" class="dashboard-content-side-nav-bar first-nav-bar open">
-                    <div class="nav-bar-btn-container first-nav-bar">
+                
+                <div class="dashboard-content-side-nav-bar first-nav-bar open">
+                    <div id="main-dashboard" class="nav-bar-btn-container">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Main Dashboard</div>
                         </div>
