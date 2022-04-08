@@ -37,6 +37,7 @@ body {
 
 .sign-in {
     text-decoration: underline;
+    color: white;
 }
 
 .sign-up {
@@ -51,6 +52,7 @@ body {
     vertical-align: middle;
     font-weight: bolder;
     transition: 0.5s;
+    color: white;
 }
 
 .sign-up:hover {
