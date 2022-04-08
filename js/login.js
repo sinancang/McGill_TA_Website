@@ -10,10 +10,15 @@ function sendLoginRequest(){
         syncRequest.open("POST", url, true);
 
         syncRequest.addEventListener("load", function(){
-                if (this.responseText == 'success')
-                        alert ('successfully logged in.');
-                else
+		console.log(this.status);
+                if (this.status === 200) {
+                        let user = 'david';
+                        window.location.href = `../php/dashboard.php?user=${user}`;
+                }
+                else {
                         alert ('failed to log in.');
+                }
+                        
         }, false);
 
         var fd = new FormData;
