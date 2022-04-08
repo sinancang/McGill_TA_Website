@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     $('#manage-users').on('click', function() {
+        let user = document.getElementById('username').innerText;
         syncRequest = new XMLHttpRequest();
         var url = `../dashboard.php?user=${user}&view=manage-users`;
         syncRequest.open("GET", url, true);  
