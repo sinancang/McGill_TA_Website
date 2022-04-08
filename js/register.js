@@ -10,7 +10,6 @@ function sendRegisterRequest(){
     syncRequest.open("POST", url, true);
 
     syncRequest.addEventListener("load", function(){
-	window.alert(this.responseText);
 	if (this.responseText == 'success')
                 alert ('successfully registered.');
         else
