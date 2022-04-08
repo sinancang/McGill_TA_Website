@@ -15,8 +15,10 @@ while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
 	
 	if ($data[0] == $_POST['user'] && $data[1] == $_POST['pass']){
 		echo "success";
+		fclose($file);
+		exit();
 	}
 }
-
+echo "fail";
 fclose($file);
 ?>
