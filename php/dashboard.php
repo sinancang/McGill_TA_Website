@@ -1,9 +1,12 @@
 <?php
 
+    //--- Routing for dashboard requests ---//
+
+    // import utility files
     require 'check_logged_in.php'; // includes function to ensure user is logged in
 
 
-
+    // sys-ops: manage users
     if ($_GET['view'] == 'manage-users') {
         if (check_logged_in($_GET['user']) === 1) {
             
@@ -13,6 +16,17 @@
             echo 'fail';
         }
     }
+    // sys-ops: import users (csv file)
+    else if ($_GET['view'] == 'import-users') {
+        if (check_logged_in($_GET['user']) === 1) {
+            
+            include("../matter/add_users_manually.php");    
+        }
+        else {
+            echo 'fail';
+        }
+    }
+    // sys-ops: add users manually
     else if ($_GET['view'] == 'add-manually-users') {
         if (check_logged_in($_GET['user']) === 1) {
             

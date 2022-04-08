@@ -87,6 +87,20 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         })
 
+        $('#import-users').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../php/dashboard.php?user=${user}&view=import-users`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                else alert('Invalid user role.');
+        
+            }, false);
+        
+            syncRequest.send();
+        })
+
         $('#add-manually-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
