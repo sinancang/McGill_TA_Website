@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
 
-    $('#main-dashbaoard').on('click', function() {
+    $('#main-dashboard').on('click', function() {
         let user = document.getElementById('username').innerText;
         let syncRequest = new XMLHttpRequest();
         var url = `../php/dashboard.php?user=${user}&view=main`;
