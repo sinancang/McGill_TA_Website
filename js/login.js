@@ -12,7 +12,7 @@ function sendLoginRequest(){
         syncRequest.addEventListener("load", function(){
 		console.log(this.status);
                 if (this.status === 200) {
-                        let user = 'david';
+                        let user = 'davidssss';
                         window.location.href = `../php/dashboard.php?user=${user}`;
                 }
                 else {
