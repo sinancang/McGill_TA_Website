@@ -1,4 +1,7 @@
 <?php
+
+//--- Routing for register requests ---//
+
 $file = fopen("../db/db.csv","a+") or die("Unable to open file!!!");
 $row = 1;
 

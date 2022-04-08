@@ -1,8 +1,6 @@
 <?php
-// receives username and encrypted password
-// checks the database if it finds matching user
-// $username = $_POST['username']
-// $password = $_POST['pass']
+
+//--- Routing for login requests ---//
 
 $file = fopen("../db/db.csv","r") or die("Unable to open file!");
 $row = 1;

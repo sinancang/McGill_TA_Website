@@ -7,9 +7,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
         $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
 
-        // make ajax call to show secondary menu
-        // secondary menu depends on which optino was selected in primary menu
-        if ($(this).attr('id') == 'admin') {
+        // set event listeners for primary nav bar options
+        if ($(this).attr('id') == 'main-dashboard') {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../php/dashboard.php?user=${user}&view=main`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                else alert('Invalid user role.');
+        
+            }, false);
+        
+            syncRequest.send();
+        }
+        else if ($(this).attr('id') == 'admin') {
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
@@ -51,6 +63,9 @@ function getSecondaryMenuItems(menuName) {
     
 }
 
+
+
+// display correct content in secondary menu in side-nav-bar
 function fillSecondaryMenu(menuName) {
     if (menuName == 'sys-ops') {
         document.getElementById('second-nav-bar-options-container').innerHTML = 
@@ -73,6 +88,7 @@ function fillSecondaryMenu(menuName) {
         `;
 
 
+        // add event listeners that are specific to sys-ops menu
         $('#manage-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
