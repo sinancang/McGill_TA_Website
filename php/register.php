@@ -15,7 +15,7 @@ while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
 	}
 }
 // no other user has same username
-$userData = $_POST['user'] . "," . $_POST['pass'];
+$userData = $_POST['user'] . "," . $_POST['pass'] . "\n";
 if(fwrite($file, $userData)){
 	echo "success";
 }
