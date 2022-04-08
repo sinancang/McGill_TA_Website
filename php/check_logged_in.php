@@ -12,7 +12,6 @@
             while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
                 $num = count($data);
 
-                echo $data[0];
                 if ($data[0] == $username) {
                     return 1;
                 }

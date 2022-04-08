@@ -5,10 +5,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // ajax call to get main dashboard content
 
+    /*
     syncRequest = new XMLHttpRequest();
     var url = "../php/dashboard_home.php";
-    syncRequest.open("POST", url, true);
-
+    syncRequest.open("GET", url, true);
+        
     syncRequest.addEventListener("load", function(){
     console.log(this.status);
             if (this.status === 200) {
@@ -24,6 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fd.append ('user', document.getElementById("user").value);
     fd.append ('pass', document.getElementById("pass").value);
     syncRequest.send (fd);
+    */
 
 
 
