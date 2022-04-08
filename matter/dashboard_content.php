@@ -60,7 +60,9 @@
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
-                <div id="main-dashboard-greeting">Hi, <div id="username"><?php echo $username ?></div>!</div>
+                <div id="main-dashboard-greeting">Hi, 
+                    <div id="username" style="display: inline;"><?php echo $username ?></div>
+                    !</div>
 
 
                 <div class="main-dashboard-recent-activity-container">
