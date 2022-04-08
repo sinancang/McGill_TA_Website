@@ -58,7 +58,7 @@
                 
             </div>
 
-            <div class="dashboard-content-dynamic-content">
+            <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
                 <div id="main-dashboard-greeting">Hi, <?php echo $username ?>!</div>
 

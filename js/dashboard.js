@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var url = `../dashboard.php?view=manage-users`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) fillSecondaryMenu();
+            if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
             else alert('Invalid user role.');
     
         }, false);
@@ -85,6 +85,11 @@ function fillSecondaryMenu(menuName) {
         </div>
         `
     }
+}
+
+
+function fillMainDashboardContent(html) {
+    $('#dashboard-dynamic-content')[0].innerHTML = html;
 }
 
 
