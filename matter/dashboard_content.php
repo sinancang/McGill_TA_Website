@@ -51,24 +51,8 @@
                             </div>
                         </div>
 
-                        <div class="nav-bar-btn-container">
-                            <div class="nav-bar-btn-wrapper  second-nav-bar">
-                                <div class="nav-bar-btn">COMP 521</div>
-                                <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
-                            </div>
-                        </div>
-                        <div class="nav-bar-btn-container">
-                            <div class="nav-bar-btn-wrapper  second-nav-bar">
-                                <div class="nav-bar-btn">COMP 521</div>
-                                <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
-                            </div>
-                        </div>
-                        <div class="nav-bar-btn-container">
-                            <div class="nav-bar-btn-wrapper  second-nav-bar">
-                                <div class="nav-bar-btn">COMP 521</div>
-                                <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
-                            </div>
-                        </div>
+                        <div id="second-nav-bar-options-container"></div>
+
                     </div>
                 
                 

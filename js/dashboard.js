@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
@@ -11,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // make ajax call to show secondary menu
         // secondary menu depends on which optino was selected in primary menu
         if ($(this).attr('id') == 'admin') {
-            getSecondaryMenuItems('admin');
+            fillSecondaryMenu('admin');
         }
         else if ($(this).attr('id') == 'manage') {
             getSecondaryMenuItems('manage');
@@ -34,29 +35,54 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 function getSecondaryMenuItems(menuName) {
-    var username = document.getElementById('user').value;
-    var password = document.getElementById('pass').value;
-    //var encrypted_password = CryptoJS.AES.encrypt(password, 5);
 
-    // make Ajax call to login.php with username & encrypted password
-    syncRequest = new XMLHttpRequest();
-    var url = "../php/login.php";
-    syncRequest.open("POST", url, true);
 
-    syncRequest.addEventListener("load", function(){
-    console.log(this.status);
-            if (this.status === 200) {
-                    window.location.href = `../php/dashboard.php?user=${this.responseText}`;
-            }
-            else {
-                    alert('failed to log in.');
-            }
-                    
-    }, false);
-
-    var fd = new FormData;
-    fd.append ('user', document.getElementById("user").value);
-    fd.append ('pass', document.getElementById("pass").value);
-    syncRequest.send (fd);
+    
+        syncRequest = new XMLHttpRequest();
+        var url = `../dashboard.php?role=${menuName}`;
+        syncRequest.open("POST", url, true);
+    
+        syncRequest.addEventListener("load", function(){
+            
+            if (this.status === 200) fillSecondaryMenu();
+            else alert('Invalid user role.');
+    
+        }, false);
+    
+        syncRequest.send ();
+    
 }
+
+function fillSecondaryMenu(menuName) {
+    if (menuName == 'admin') {
+        document.getElementById('second-nav-bar-options-container').innerHTML = 
+        `
+        <div class="nav-bar-btn-container">
+            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                <div class="nav-bar-btn">Manage Users</div>
+            </div>
+        </div>
+        <div class="nav-bar-btn-container">
+            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                <div class="nav-bar-btn">Import</div>
+            </div>
+        </div>
+        <div class="nav-bar-btn-container">
+            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                <div class="nav-bar-btn">Add Manually</div>
+            </div>
+        </div>
+        `
+    }
+}
+
+
+/*
+<div class="nav-bar-btn-container">
+    <div class="nav-bar-btn-wrapper  second-nav-bar">
+        <div class="nav-bar-btn">COMP 521</div>
+        <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
+    </div>
+</div>
+*/
 
