@@ -226,4 +226,12 @@ body {
     font-size: 14px;
 }
 
+#second-nav-bar-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
 

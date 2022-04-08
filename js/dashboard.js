@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // make ajax call to show secondary menu
         // secondary menu depends on which optino was selected in primary menu
         if ($(this).attr('id') == 'admin') {
-            fillSecondaryMenu('admin');
+            getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
             getSecondaryMenuItems('manage');
@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             getSecondaryMenuItems('rate');
         }
         else if ($(this).attr('id') == 'sys-ops') {
-            getSecondaryMenuItems('sys-ops');
+            fillSecondaryMenu('sys-ops');
         }
     })
     
@@ -31,13 +31,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $('.dashboard-content-side-nav-bar.first-nav-bar').addClass('open');
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
     })
+
+
+    // sys-ops ajax content generating events
+    $('#manage-users').on('click', function() {
+        syncRequest = new XMLHttpRequest();
+        var url = `../dashboard.php?view=manage-users`;
+        syncRequest.open("POST", url, true);
+    
+        syncRequest.addEventListener("load", function(){
+            
+            if (this.status === 200) fillSecondaryMenu();
+            else alert('Invalid user role.');
+    
+        }, false);
+    
+        syncRequest.send();
+    });
+
 });
 
 
 function getSecondaryMenuItems(menuName) {
-
-
-    
+ 
         syncRequest = new XMLHttpRequest();
         var url = `../dashboard.php?role=${menuName}`;
         syncRequest.open("POST", url, true);
@@ -49,25 +65,25 @@ function getSecondaryMenuItems(menuName) {
     
         }, false);
     
-        syncRequest.send ();
+        syncRequest.send();
     
 }
 
 function fillSecondaryMenu(menuName) {
-    if (menuName == 'admin') {
+    if (menuName == 'sys-ops') {
         document.getElementById('second-nav-bar-options-container').innerHTML = 
         `
-        <div class="nav-bar-btn-container">
+        <div id="manage-users" class="nav-bar-btn-container">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
                 <div class="nav-bar-btn">Manage Users</div>
             </div>
         </div>
-        <div class="nav-bar-btn-container">
+        <div id="import-users" class="nav-bar-btn-container">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
                 <div class="nav-bar-btn">Import</div>
             </div>
         </div>
-        <div class="nav-bar-btn-container">
+        <div id="add-manually-users" class="nav-bar-btn-container">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
                 <div class="nav-bar-btn">Add Manually</div>
             </div>
@@ -85,4 +101,5 @@ function fillSecondaryMenu(menuName) {
     </div>
 </div>
 */
+
 

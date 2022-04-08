@@ -12,7 +12,7 @@ function sendLoginRequest(){
         syncRequest.addEventListener("load", function(){
 		console.log(this.status);
                 if (this.status === 200) {
-                        window.location.href = `../php/dashboard.php?user=${this.responseText}`;
+                        window.location.href = `https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/php/dashboard.php?user=${this.responseText}`;
                 }
                 else {
                         alert('failed to log in.');
@@ -21,7 +21,7 @@ function sendLoginRequest(){
         }, false);
 
         var fd = new FormData;
-        fd.append ('user', document.getElementById("user").value);
-        fd.append ('pass', document.getElementById("pass").value);
-        syncRequest.send (fd);
+        fd.append('user', document.getElementById("user").value);
+        fd.append('pass', document.getElementById("pass").value);
+        syncRequest.send(fd);
 }
