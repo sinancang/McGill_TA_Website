@@ -9,6 +9,9 @@
             // display dashboard header
             include("../matter/manage_users.php");    
         }
+        else {
+            echo 'fail';
+        }
     }
     else {
         // before displaying dashboard, check if user is logged in
