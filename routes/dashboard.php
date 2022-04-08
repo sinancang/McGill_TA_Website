@@ -6,18 +6,13 @@
     require '../utils/check_logged_in.php'; // includes function to ensure user is logged in
 
     // check if user is logged in. if not, redirect to login page
+    // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
     if (check_logged_in($_GET['user']) === 1) {
 
 
         // sys-ops: manage users
         if ($_GET['view'] == 'manage-users') {
-            if (check_logged_in($_GET['user']) === 1) {
-                
-                include("../matter/manage_users.php");    
-            }
-            else {
-                echo 'fail';
-            }
+            include("../matter/manage_users.php");    
         }
         // sys-ops: import users (csv file)
         else if ($_GET['view'] == 'import-users') {              
