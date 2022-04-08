@@ -107,6 +107,7 @@ body {
 
 .nav-bar-btn-wrapper.second-nav-bar {
     flex-direction: column;
+    background-color: #e3e3e3;
 }
 
 .nav-bar-btn-wrapper.back-btn {
@@ -231,6 +232,14 @@ body {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+}
+
+
+#hidden-username {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
 }
 
 
