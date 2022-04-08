@@ -31,21 +31,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
 
-    $('#manage-users').on('click', function() {
-        console.log('hi');
-        let user = document.getElementById('username').innerText;
-        syncRequest = new XMLHttpRequest();
-        var url = `../php/dashboard.php?user=${user}&view=manage-users`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
-            else alert('Invalid user role.');
-    
-        }, false);
-    
-        syncRequest.send();
-    })
-
 });
 
 
@@ -86,6 +71,22 @@ function fillSecondaryMenu(menuName) {
             </div>
         </div>
         `
+
+
+        $('#manage-users').on('click', function() {
+            console.log('hi');
+            let user = document.getElementById('username').innerText;
+            syncRequest = new XMLHttpRequest();
+            var url = `../php/dashboard.php?user=${user}&view=manage-users`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                else alert('Invalid user role.');
+        
+            }, false);
+        
+            syncRequest.send();
+        })
     }
 }
 
