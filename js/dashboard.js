@@ -2,6 +2,32 @@
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
+
+    // ajax call to get main dashboard content
+
+    syncRequest = new XMLHttpRequest();
+    var url = "../php/dashboard_home.php";
+    syncRequest.open("POST", url, true);
+
+    syncRequest.addEventListener("load", function(){
+    console.log(this.status);
+            if (this.status === 200) {
+                    console.log(this.response);
+            }
+            else {
+                    alert ('failed to log in.');
+            }
+                    
+    }, false);
+
+    var fd = new FormData;
+    fd.append ('user', document.getElementById("user").value);
+    fd.append ('pass', document.getElementById("pass").value);
+    syncRequest.send (fd);
+
+
+
+
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
         console.log('hi');
         $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');

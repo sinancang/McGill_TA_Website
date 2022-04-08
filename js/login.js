@@ -12,8 +12,7 @@ function sendLoginRequest(){
         syncRequest.addEventListener("load", function(){
 		console.log(this.status);
                 if (this.status === 200) {
-                        let user = 'davidssss';
-                        window.location.href = `../php/dashboard.php?user=${user}`;
+                        window.location.href = `../php/dashboard.php?user=${this.responseText}`;
                 }
                 else {
                         alert ('failed to log in.');
