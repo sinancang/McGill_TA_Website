@@ -147,8 +147,69 @@ body {
 }
 
 
+/* ajax content */
+
 .dashboard-content-dynamic-content {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 80%;
     background-color: white;
+    padding: 40px;
 }
+
+#main-dashboard-greeting {
+    font-size: 30px;
+    color: #5b5a5a;
+}
+
+.main-dashboard-recent-activity-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 70%;
+    margin-top: 60px;
+}
+
+.recent-activity-title {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #d24a4b;
+}
+
+.recent-activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    border: 1px solid rgb(211 75 75);
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px;
+    overflow: scroll;
+    box-shadow: 0px 0px 20px 7px #ececec;
+}
+
+.recent-activity-entry {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: #f3f3f3;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.recent-activity-entry-action {
+    color: rgb(63, 38, 38);
+}
+
+.recent-activity-entry-date {
+    color: rgb(159, 159, 159);
+    font-size: 14px;
+}
+
+
