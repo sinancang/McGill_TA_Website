@@ -7,49 +7,39 @@
         <link rel="stylesheet" href="../css/register.css">
     </head>
   <body>
-    <p style="font-size: 30px;"> Register </p>
-    <label for="name" style="font-size: 15px;"><b>Name</b> </label> <br>
-    <input type="text" name="name" id="name" placeholder="Enter first and last name" required><br></br>
-    
-    <label for="email" style="font-size: 15px;"><b>Email</b> </label> <br> 
-    <input type="text" name="email" id="email" placeholder="Enter email" required><br></br>
 
-    <label for="studentid" style="font-size: 15px;"><b>Student ID</b> </label>  <br>
-    <input type="text" name="studentid" id="studentid" placeholder="Enter student ID" required><br></br>
+    <div class="form-container">
 
-    <label for="username" style="font-size: 15px;"><b>Username</b> </label>  <br>
-    <input type="text" name="username" id="user" placeholder="Enter Username" required><br></br>
-    
-    <label for="password" style="font-size: 15px;"><b>Password</b></label> <br>
-    <input type="password" placeholder="Enter Password"id="pass1" name="pass" required><br></br>
+      <div class="sign-up-form">
 
-    <label for="repeat_password" style="font-size: 15px;"><b>Repeat Password</b></label> <br>
-    <input type="password" placeholder="Repeat Password"id="pass2" name="pass" required><br>
+        <p style="font-size: 30px;"> Register </p>
+        <label for="name" style="font-size: 15px;"><b>Name</b> </label> <br>
+        <input type="text" name="name" id="name" placeholder="Enter first and last name" required><br></br>
+        
+        <label for="email" style="font-size: 15px;"><b>Email</b> </label> <br> 
+        <input type="text" name="email" id="email" placeholder="Enter email" required><br></br>
 
-    <div id="warning" style="  color: #ca1818; font-size: 15px;"> </div><br>
-    <button type="submit" class="register" onclick="sendRegisterRequest()">Register</button>
+        <label for="studentid" style="font-size: 15px;"><b>Student ID</b> </label>  <br>
+        <input type="text" name="studentid" id="studentid" placeholder="Enter student ID" required><br></br>
+
+        <label for="username" style="font-size: 15px;"><b>Username</b> </label>  <br>
+        <input type="text" name="username" id="user" placeholder="Enter Username" required><br></br>
+        
+        <label for="password" style="font-size: 15px;"><b>Password</b></label> <br>
+        <input type="password" placeholder="Enter Password"id="pass1" name="pass" required><br></br>
+
+        <label for="repeat_password" style="font-size: 15px;"><b>Repeat Password</b></label> <br>
+        <input type="password" placeholder="Repeat Password"id="pass2" name="pass" required><br>
+
+        <div id="warning" style="  color: #ca1818; font-size: 15px;"> </div><br>
+        <button type="submit" class="register" onclick="sendRegisterRequest()">Sign Up</button>
+
+      </div>
+    </div>
 
     <script src="../js/register.js"> 
-    </script>
-    
-    <script>
-        let pass1 = document.querySelector("#pass1");
-        let pass2 = document.querySelector("#pass2");
-        let warning = document.querySelector("#warning");
-    
-        function checkMatch(){
-            if(pass1.value==pass2.value){
-                warning.innerText = "";
-            }
-            else{
-                warning.innerText = "Paswords don't match";
-            }
-        }
-    
-        pass1.addEventListener("keyup", () => {
-            if(pass2.value.lenght != 0) checkMatch();
-        })
-        pass2.addEventListener("keyup", checkMatch);
+
+
     
     </script>    
   </body>

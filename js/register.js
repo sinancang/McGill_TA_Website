@@ -1,4 +1,25 @@
 
+let pass1 = document.querySelector("#pass1");
+let pass2 = document.querySelector("#pass2");
+let warning = document.querySelector("#warning");
+
+function checkMatch(){
+        if(pass1.value==pass2.value){
+        warning.innerText = "";
+        }
+        else{
+        warning.innerText = "Paswords don't match";
+        }
+}
+
+pass1.addEventListener("keyup", () => {
+        if(pass2.value.lenght != 0) checkMatch();
+})
+pass2.addEventListener("keyup", checkMatch);
+
+
+
+// ajax login request
 function sendRegisterRequest(){
     var username = document.getElementById('user').value;
     var email = document.getElementById('email').value;
