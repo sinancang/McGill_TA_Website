@@ -29,6 +29,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $('.dashboard-content-side-nav-bar.first-nav-bar').addClass('open');
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
     })
+
+
+    $('#manage-users').on('click', function() {
+        syncRequest = new XMLHttpRequest();
+        var url = `../dashboard.php?view=manage-users`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status === 200) fillSecondaryMenu();
+            else alert('Invalid user role.');
+    
+        }, false);
+    
+        syncRequest.send();
+    })
+
 });
 
 
@@ -45,7 +60,7 @@ function getSecondaryMenuItems(menuName) {
     
         }, false);
     
-        syncRequest.send ();
+        syncRequest.send();
     
 }
 
