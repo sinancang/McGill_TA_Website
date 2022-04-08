@@ -32,9 +32,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     $('#manage-users').on('click', function() {
+        console.log('hi');
         let user = document.getElementById('username').innerText;
         syncRequest = new XMLHttpRequest();
-        var url = `../dashboard.php?user=${user}&view=manage-users`;
+        var url = `../php/dashboard.php?user=${user}&view=manage-users`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
@@ -51,7 +52,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function getSecondaryMenuItems(menuName) {
     
         syncRequest = new XMLHttpRequest();
-        var url = `../dashboard.php?role=${menuName}`;
+        var url = `../php/dashboard.php?role=${menuName}`;
         syncRequest.open("POST", url, true);
     
         syncRequest.addEventListener("load", function(){
