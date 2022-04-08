@@ -13,10 +13,12 @@
 
 
         // display dashboard header
-        include("../matter/dashboard_header.html");
+        include("../matter/dashboard_header.php");
+        include("../matter/content.php");
         
         
         // generate dynamic dashboard content
+        /*
         $file = fopen("../matter/dashboard_content.html", "r");
 
         while(!feof($file)) {
@@ -30,6 +32,7 @@
             echo $line;
         }
         fclose($file);
+        */
     
     }
     // if login check failed, redirect to login page

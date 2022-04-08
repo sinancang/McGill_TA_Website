@@ -15,7 +15,7 @@ function sendLoginRequest(){
                         window.location.href = `../php/dashboard.php?user=${this.responseText}`;
                 }
                 else {
-                        alert ('failed to log in.');
+                        alert('failed to log in.');
                 }
                         
         }, false);
