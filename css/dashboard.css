@@ -76,6 +76,10 @@ body {
     width: 100%;
 }
 
+.dashboard-content-side-nav-bar.second-nav-bar {
+    background-color: #e5e3e3;
+}
+
 
 
 .nav-bar-btn-container {
@@ -107,7 +111,6 @@ body {
 
 .nav-bar-btn-wrapper.second-nav-bar {
     flex-direction: column;
-    background-color: #e3e3e3;
 }
 
 .nav-bar-btn-wrapper.back-btn {
