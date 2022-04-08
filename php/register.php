@@ -14,6 +14,11 @@ while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
 		exit();
 	}
 }
-
+// no other user has same username
 fclose($file);
+
+$file2 = fopen("../db/db.csv", "a")or die("Unable to open file!");
+$userData = $_POST['user'] . $_POST['pass'];
+fwrite($file2, $userData);
+fclose($file2);
 ?>
