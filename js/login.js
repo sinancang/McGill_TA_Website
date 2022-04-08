@@ -6,7 +6,7 @@ function sendLoginRequest(){
 
         // make Ajax call to login.php with username & encrypted password
         syncRequest = new XMLHttpRequest();
-        var url = "../login.php";
+        var url = "../php/login.php";
         syncRequest.open("POST", url, true);
 
         syncRequest.addEventListener("load", function(){

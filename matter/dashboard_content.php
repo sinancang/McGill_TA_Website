@@ -13,29 +13,22 @@
 
                     <div class="separating-line"></div>
 
-                    <div id="admin" class="nav-bar-btn-container first-nav-bar">
+                    <div class="nav-bar-btn-container first-nav-bar">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Administration</div>
                             <img class="right-arrow-svg" src="../images/right-arrow.svg">
                         </div>
                     </div>
 
-                    <div id="manage" class="nav-bar-btn-container  first-nav-bar">
+                    <div class="nav-bar-btn-container  first-nav-bar">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Manage TAs</div>
                             <img class="right-arrow-svg" src="../images/right-arrow.svg">
                         </div>
                     </div>
-                    <div id="rate" class="nav-bar-btn-container  first-nav-bar">
+                    <div class="nav-bar-btn-container  first-nav-bar">
                         <div class="nav-bar-btn-wrapper">
                             <div class="nav-bar-btn">Rate a TA</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
-
-                    <div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">System Ops</div>
                             <img class="right-arrow-svg" src="../images/right-arrow.svg">
                         </div>
                     </div>
@@ -51,8 +44,24 @@
                             </div>
                         </div>
 
-                        <div class="second-nav-bar-options-container"></div>
-
+                        <div class="nav-bar-btn-container">
+                            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                                <div class="nav-bar-btn">COMP 521</div>
+                                <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
+                            </div>
+                        </div>
+                        <div class="nav-bar-btn-container">
+                            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                                <div class="nav-bar-btn">COMP 521</div>
+                                <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
+                            </div>
+                        </div>
+                        <div class="nav-bar-btn-container">
+                            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                                <div class="nav-bar-btn">COMP 521</div>
+                                <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
+                            </div>
+                        </div>
                     </div>
                 
                 
