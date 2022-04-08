@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function getSecondaryMenuItems(menuName) {
     
-        syncRequest = new XMLHttpRequest();
+        let syncRequest = new XMLHttpRequest();
         var url = `../php/dashboard.php?role=${menuName}`;
         syncRequest.open("POST", url, true);
     
@@ -76,7 +76,7 @@ function fillSecondaryMenu(menuName) {
         $('#manage-users').on('click', function() {
             console.log('hi');
             let user = document.getElementById('username').innerText;
-            syncRequest = new XMLHttpRequest();
+            let syncRequest = new XMLHttpRequest();
             var url = `../php/dashboard.php?user=${user}&view=manage-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
