@@ -1,6 +1,6 @@
 
 function sendRegisterRequest(){
-    var username = document.getElementById('name').value;
+    var username = document.getElementById('user').value;
     var email = document.getElementById('email').value;
     var studentid = document.getElementById('studentid').value;
     var password = document.getElementById('pass1').value;
@@ -10,10 +10,11 @@ function sendRegisterRequest(){
     syncRequest.open("POST", url, true);
 
     syncRequest.addEventListener("load", function(){
-        if (this.responseText == 'success')
-                alert ('successfully logged in.');
+	window.alert(this.responseText);
+	if (this.responseText == 'success')
+                alert ('successfully registered.');
         else
-                alert ('failed to log in.');
+                alert ('failed to register.');
         }, false);
 
         var fd = new FormData;
@@ -22,5 +23,4 @@ function sendRegisterRequest(){
         fd.append('email', email);
         fd.append('studentid', studentid);
         syncRequest.send (fd);
-
 }
