@@ -70,7 +70,7 @@ function fillSecondaryMenu(menuName) {
                 <div class="nav-bar-btn">Add Manually</div>
             </div>
         </div>
-        `
+        `;
 
 
         $('#manage-users').on('click', function() {
