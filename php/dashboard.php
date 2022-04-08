@@ -3,7 +3,6 @@
     require 'check_logged_in.php';
 
 
-    $username = $_GET['user'];
 
 
 	
