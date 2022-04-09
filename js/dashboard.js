@@ -164,7 +164,7 @@ function submitAddManuallyForm() {
 
     syncRequest.addEventListener("load", function(){
             if (this.status === 200) {
-                console.log('added successfully');
+                console.log(syncRequest.responseText);
             }
             else {
                 console.log('failed to add prof.');
