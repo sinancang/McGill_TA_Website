@@ -46,6 +46,10 @@ button {
 }
 
 
+.form-server-response-container {
+    border: 1px solid rgb(210, 210, 210);
+}
+
 
 #add-btn:hover {
     background-color: #d77171;

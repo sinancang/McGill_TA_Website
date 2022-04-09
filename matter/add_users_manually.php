@@ -12,6 +12,10 @@
             <input type="text" name="course-code" id="course-code" required>
         </div>
 
+        <div id="form-server-response-container">
+
+        </div>
+
         <button id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
 
     </div>

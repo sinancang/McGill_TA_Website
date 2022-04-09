@@ -32,6 +32,8 @@
 
         fputcsv($file, $line);
         fclose($file);
+
+        echo "Successfully added course {$course_code} for professor {$prof}.";
     }
 
 

@@ -164,10 +164,13 @@ function submitAddManuallyForm() {
 
     syncRequest.addEventListener("load", function(){
             if (this.status === 200) {
-                console.log(syncRequest.responseText);
+                // clear form values and display server response
+                document.getElementById("new-prof").value = '';
+                document.getElementById("course-code").value = '';
+                document.getElementById("form-server-response-container").innerText = syncRequest.responseText;
             }
             else {
-                console.log('failed to add prof.');
+                document.getElementById("form-server-response-container").innerText = "Server Error. Failed to add record.";
             }
                     
     }, false);
