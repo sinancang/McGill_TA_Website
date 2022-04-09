@@ -5,12 +5,7 @@
         <title>McGill TA Management</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/dashboard.css">
-
-        <?php 
-            if($_GET['view'] == "add-manually-users") {
-                echo "<link rel='stylesheet' href='../css/manual_input.css'>";
-            }
-        ?>
+        <link real="stylesheet" href="../manual_input.css">
     </head>
 
     <body>

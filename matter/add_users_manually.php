@@ -17,9 +17,3 @@
     </div>
 
 </div>
-
-<?php 
-    if($_GET['view'] == "add-manually-users") {
-        echo "<link rel='stylesheet' href='../css/manual_input.css'>";
-    }
-?>
