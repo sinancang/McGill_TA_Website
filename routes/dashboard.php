@@ -40,7 +40,7 @@
         }
         // default view. used for loading dashboard first time
         else if ($_GET['view'] == 'default') {         
-            include("../matter/default_view.php");    
+            include("../matter/dashboard_default.php");    
         }
         else {
             echo "Page Not Found";
