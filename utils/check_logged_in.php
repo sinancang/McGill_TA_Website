@@ -8,21 +8,26 @@
     // 0 otherwise
     function check_logged_in(string $username) {
 
-        if (($file = fopen("../db/users.csv", "r")) !== FALSE) {
-            while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
-                $num = count($data);
-
-                if ($data[0] == $username) {
+        $filename = "../db/user_data.json";
+        $data = file_get_contents($filename);
+        //echo $data;
+        $users = json_decode($data, true);
+        
+        
+        if (isset($users[$username])) {
+            return 1;
+            /*
+            $user_data = json_decode($users[$username], true);
+            if (isset($user_data["registered"]) && $user_data["registered"] == true) {
+                //if ($user_data["password"] == $_POST['pass']) {
                     return 1;
-                }
-
+                //}
             }
+            */
+        };
 
-            fclose($file);
-        }
 
         return 0;
-
     }
 
 ?>

@@ -2,21 +2,21 @@
 
 //--- Routing for login requests ---//
 
-$file = fopen("../db/users.csv","r") or die("Unable to open file!");
-$row = 1;
+$filename = "../db/user_data.json";
+$data = file_get_contents($filename);
+$user_data = json_decode($data, true);
 
-while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
-	
-	$num = count($data);
 
-	$row++;
-	
-	if ($data[0] == $_POST['user'] && $data[1] == $_POST['pass']){
-		echo $_POST['user'];
-		fclose($file);
-		exit();
+if (isset($user_data[$_POST['user']])) {
+
+	if (isset($user_data[$_POST['user']]["registered"]) && $user_data[$_POST['user']]["registered"] == true) {
+		if ($user_data[$_POST['user']]["password"] == $_POST['pass']) {
+			echo $_POST['user'];
+			exit();
+		}
 	}
-}
+};
+
 echo "fail";
-fclose($file);
+
 ?>

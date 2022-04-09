@@ -2,7 +2,7 @@
 
 //--- Routing for register requests ---//
 
-$file = fopen("../db/users.csv","a+") or die("Unable to open file!!!");
+$file = fopen("../db/users.csv", "a+") or die("Unable to open file!!!");
 $row = 1;
 
 while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
