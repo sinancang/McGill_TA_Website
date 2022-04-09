@@ -46,8 +46,20 @@ button {
 }
 
 
-.form-server-response-container {
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#form-server-response-container {
+    padding: 5px;   
     border: 1px solid rgb(210, 210, 210);
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out 0s forwards;
 }
 
 
