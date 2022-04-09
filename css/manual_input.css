@@ -56,8 +56,10 @@ button {
 }
 
 #form-server-response-container {
+    display: inline;
     padding: 5px;   
     border: 1px solid rgb(210, 210, 210);
+    border-radius: 3px;
     opacity: 0;
     animation: fadeIn 0.3s ease-in-out 0s forwards;
 }
