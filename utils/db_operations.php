@@ -11,7 +11,7 @@
     function add_verified_prof(string $prof, string $course_code) {
 
 
-        $file = fopen("../db/verfied_profs.csv","r") or die("Unable to open file!");
+        $file = fopen("../db/verified_profs.csv","r") or die("Unable to open file!");
         $row = 1;
 
         while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
@@ -27,7 +27,7 @@
             }
         }
 
-        $file = fopen("../db/verfied_profs.csv","w");
+        $file = fopen("../db/verified_profs.csv","w");
         $line = "{$prof},{$course_code}";
 
         fputcsv($file, $line);

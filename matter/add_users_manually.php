@@ -1,6 +1,6 @@
 <div class="add-users-manually-form-container">
 
-    <form action="../php/dashboard.php" method="post">
+    <form action="../routes/dashboard.php" method="post">
 
         <div class="form-input-container">
             <label for="new-prof">Professor Name </label>
