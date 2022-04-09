@@ -1,15 +1,15 @@
 <div class="add-users-manually-form-container">
 
-    <form action="../routes/dashboard.php" method="post">
+    <form onsubmit="submitAddManuallyForm()" method="POST">
 
         <div class="form-input-container">
-            <label for="new-prof">Professor Name </label>
-            <input type="text" name="new-prof" id="name" required>
+            <label for="new-prof">Professor name</label>
+            <input type="text" name="new-prof" id="new-prof" required>
         </div>
 
         <div class="form-input-container">
             <label for="course-code">Course code</label>
-            <input type="text" name="course-code" required>
+            <input type="text" name="course-code" id="course-code" required>
         </div>
 
         <div class="form-example">

@@ -152,6 +152,30 @@ function fillMainDashboardContent(html) {
 }
 
 
+function submitAddManuallyForm() {
+    // make Ajax call to dashboard.php with prof name & course code
+    syncRequest = new XMLHttpRequest();
+    var url = "../routes/dashboard.php";
+    syncRequest.open("POST", url, true);
+
+    syncRequest.addEventListener("load", function(){
+            console.log(this.status);
+            if (this.status === 200) {
+                    
+            }
+            else {
+                    alert('failed to add prof.');
+            }
+                    
+    }, false);
+
+    var fd = new FormData;
+    fd.append('user', document.getElementById("course-code").value);
+    fd.append('pass', document.getElementById("new-prof").value);
+    syncRequest.send(fd);
+}
+
+
 /*
 <div class="nav-bar-btn-container">
     <div class="nav-bar-btn-wrapper  second-nav-bar">

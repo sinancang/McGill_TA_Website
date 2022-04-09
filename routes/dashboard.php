@@ -6,10 +6,10 @@
     require '../utils/check_logged_in.php'; // includes function to ensure user is logged in
     require '../utils/db_operations.php'; // includes functions for db manipulation
 
+
     // check if user is logged in. if not, redirect to login page
     // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
     if (check_logged_in($_GET['user']) === 1) {
-
 
         // sys-ops: manage users
         if ($_GET['view'] == 'manage-users') {
@@ -25,10 +25,13 @@
         }
         // sys-ops: post new prof and course
         // do sanity check for adding new prof
-        else if ($_POST['new-prof'] !== "" && $_POST['course-code'] !== "") {
+        
+        else if ($_POST['new-prof'] != "" && $_POST['course-code'] != "") {
             // echo 1 if successful, 0 otherwise
-            echo add_verified_prof($_POST['new-prof'], $_POST['course-code']);
+            echo 'ran post';
+            //echo add_verified_prof($_POST['new-prof'], $_POST['course-code']);
         }
+        
         // main dashboard
         else if ($_GET['view'] == 'main') {         
             include("../matter/main_dashboard.php");    
