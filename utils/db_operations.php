@@ -3,35 +3,23 @@
     /* 
     function used by sys-ops.
     Adds prof to list of pre-verified profs.
-    NOTE: This allows a prof to sign up with the system BUT does NOT sign up the prof!
-
-    If prof, course combo already exists, does nothing.
-    Otherwise, appends prof, course to csv file
+    NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
     */
     function add_verified_prof(string $prof, string $course_code) {
 
+        $filename = "../db/user_data.json";
+        $data = file_get_contents($filename);
+        $user_data = json_decode($data, true);
 
-        $file = fopen("../db/verified_profs.csv","r") or die("Unable to open file first!");
-        $row = 1;
-
-        while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
-	
-            $num = count($data);
-
-            $row++;
-            
-            if ($data[0] == $prof && $data[1] == $course_code){
-                echo 'Failed to add record. Record already exists.';
-                fclose($file);
-                exit;
-            }
+        // RIGHT ONLY CHECK IF USER EXISTS. WHAT IF USER EXISTS BUT NOT WITH THIS COURSE?
+        // NEED TO ACCOUNT FOR THAT SCENARIO!!
+        if (isset($user_data[$prof])) {
+            echo "Cannot add record. Record already Exists.";
+            return;
         }
+        $user_data[$prof] = array('registered'=>false, 'courses' => array('course name'=>$course_code));
+        file_put_contents($filename, json_encode($user_data));
 
-        $file = fopen("../db/verified_profs.csv","a") or die("Unable to open file!");
-        $line = array($prof, $course_code);
-
-        fputcsv($file, $line);
-        fclose($file);
 
         echo "Successfully added new record!";
     }
