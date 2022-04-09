@@ -168,6 +168,7 @@ function submitAddManuallyForm() {
                 document.getElementById("new-prof").value = '';
                 document.getElementById("course-code").value = '';
                 document.getElementById("form-server-response-container").innerText = syncRequest.responseText;
+                document.getElementById("form-server-response-container").style.animation = 'fadeIn 0.3s ease-in-out 0s forwards';
             }
             else {
                 document.getElementById("form-server-response-container").innerText = "Server Error. Failed to add record.";
