@@ -5,14 +5,14 @@ function sendLoginRequest(){
         //var encrypted_password = CryptoJS.AES.encrypt(password, 5);
 
         // make Ajax call to login.php with username & encrypted password
-        syncRequest = new XMLHttpRequest();
+        let syncRequest = new XMLHttpRequest();
         var url = "../routes/login.php";
         syncRequest.open("POST", url, true);
 
         syncRequest.addEventListener("load", function(){
 		console.log(this.status);
                 if (this.status === 200) {
-                        window.location.href = `https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/routes/dashboard.php?user=${this.responseText}`;
+                        window.location.href = `https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/routes/dashboard.php?user=${this.responseText}&view=main`;
                 }
                 else {
                         alert('failed to log in.');

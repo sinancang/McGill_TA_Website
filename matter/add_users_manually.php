@@ -1,6 +1,6 @@
 <div class="add-users-manually-form-container">
 
-    <form onsubmit="submitAddManuallyForm()" method="POST">
+    <div>
 
         <div class="form-input-container">
             <label for="new-prof">Professor name</label>
@@ -12,10 +12,10 @@
             <input type="text" name="course-code" id="course-code" required>
         </div>
 
-        <div class="form-example">
-            <input type="submit" value="Add">
-        </div>
+        <button id="add-btn" type="button" onclick="submitAddManuallyForm()">
+              Add
+          </button>
 
-    </form>
+</div>
 
 </div>

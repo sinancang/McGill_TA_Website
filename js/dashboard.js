@@ -154,25 +154,27 @@ function fillMainDashboardContent(html) {
 
 function submitAddManuallyForm() {
     // make Ajax call to dashboard.php with prof name & course code
-    syncRequest = new XMLHttpRequest();
-    var url = "../routes/dashboard.php";
+    let syncRequest = new XMLHttpRequest();
+    let user = document.getElementById('username').innerText;
+    let prof = document.getElementById("new-prof").value;
+    let courseCode = document.getElementById("course-code").value;  
+    var url = `../routes/dashboard.php?user=${user}&new-prof=${prof}&course-code=${courseCode}`;
     syncRequest.open("POST", url, true);
+    syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
 
     syncRequest.addEventListener("load", function(){
             console.log(this.status);
             if (this.status === 200) {
-                    
+                console.log(syncRequest.responseText); 
             }
             else {
-                    alert('failed to add prof.');
+                console.log(syncRequest.responseText);
+                alert('failed to add prof.');
             }
                     
     }, false);
 
-    var fd = new FormData;
-    fd.append('user', document.getElementById("course-code").value);
-    fd.append('pass', document.getElementById("new-prof").value);
-    syncRequest.send(fd);
+    syncRequest.send();
 }
 
 
