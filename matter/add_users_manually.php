@@ -1,13 +1,13 @@
 <div class="add-users-manually-form-container">
 
-    <form action="" method="post" class="form-example">
+    <form action="../php/dashboard.php" method="post">
 
-        <div class="form-example">
-            <label for="name">Professor Name </label>
-            <input type="text" name="name" id="name" required>
+        <div class="form-input-container">
+            <label for="new-prof">Professor Name </label>
+            <input type="text" name="new-prof" id="name" required>
         </div>
 
-        <div class="form-example">
+        <div class="form-input-container">
             <label for="course-code">Course code</label>
             <input type="text" name="course-code" required>
         </div>

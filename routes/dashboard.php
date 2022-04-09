@@ -4,6 +4,7 @@
 
     // import utility files
     require '../utils/check_logged_in.php'; // includes function to ensure user is logged in
+    require '../utils/db_operations.php'; // includes functions for db manipulation
 
     // check if user is logged in. if not, redirect to login page
     // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
@@ -21,6 +22,12 @@
         // sys-ops: add users manually
         else if ($_GET['view'] == 'add-manually-users') {         
             include("../matter/add_users_manually.php");    
+        }
+        // sys-ops: post new prof and course
+        // do sanity check for adding new prof
+        else if ($_POST['new-prof'] !== "" && $_POST['course-code'] !== "") {
+            // echo 1 if successful, 0 otherwise
+            echo add_verified_prof($_POST['new-prof'], $_POST['course-code']);
         }
         // main dashboard
         else if ($_GET['view'] == 'main') {         

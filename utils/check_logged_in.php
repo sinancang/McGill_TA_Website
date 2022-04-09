@@ -8,7 +8,7 @@
     // 0 otherwise
     function check_logged_in(string $username) {
 
-        if (($file = fopen("../db/db.csv", "r")) !== FALSE) {
+        if (($file = fopen("../db/users.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
                 $num = count($data);
 
