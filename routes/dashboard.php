@@ -28,8 +28,7 @@
         
         else if ($_POST['new-prof'] != "" && $_POST['course-code'] != "") {
             // echo 1 if successful, 0 otherwise
-            echo 'ran post';
-            //echo add_verified_prof($_POST['new-prof'], $_POST['course-code']);
+            echo add_verified_prof($_POST['new-prof'], $_POST['course-code']);
         }
         
         // main dashboard
