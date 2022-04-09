@@ -163,13 +163,11 @@ function submitAddManuallyForm() {
     syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
 
     syncRequest.addEventListener("load", function(){
-            console.log(this.status);
             if (this.status === 200) {
-                console.log(syncRequest.responseText); 
+                console.log('added successfully');
             }
             else {
-                console.log(syncRequest.responseText);
-                alert('failed to add prof.');
+                console.log('failed to add prof.');
             }
                     
     }, false);

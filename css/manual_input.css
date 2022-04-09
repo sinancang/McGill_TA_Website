@@ -1,3 +1,54 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: #d75050;
+    border: 2px solid #d75050;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+
 .form-input-container {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+.form-wrapper {
+    width: 50%;
+    border: 1px solid rgb(189, 189, 189);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(244, 244, 244); 
+}
+
+
+
+#add-btn:hover {
+    background-color: #d77171;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(216, 216, 216);
+    box-sizing: border-box;
+    border-radius: 4px;
 }

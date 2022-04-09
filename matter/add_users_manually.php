@@ -1,6 +1,6 @@
 <div class="add-users-manually-form-container">
 
-    <div>
+    <div class="form-wrapper">
 
         <div class="form-input-container">
             <label for="new-prof">Professor name</label>
@@ -16,6 +16,6 @@
               Add
           </button>
 
-</div>
+    </div>
 
 </div>
