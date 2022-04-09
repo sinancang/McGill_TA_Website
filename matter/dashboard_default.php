@@ -4,8 +4,8 @@
     <head>
         <title>McGill TA Management</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/dashboard.css">
         <link rel="stylesheet" href="../css/manual_input.css">
+        <link rel="stylesheet" href="../css/dashboard.css">   
     </head>
 
     <body>
