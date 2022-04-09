@@ -36,7 +36,11 @@
         }      
         // main dashboard
         else if ($_GET['view'] == 'main') {         
-            include("../matter/dashboard_default.php");    
+            include("../matter/main_dashboard.php");    
+        }
+        // default view. used for loading dashboard first time
+        else if ($_GET['view'] == 'default') {         
+            include("../matter/default_view.php");    
         }
         else {
             echo "Page Not Found";
