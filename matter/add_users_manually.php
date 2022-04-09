@@ -1,4 +1,4 @@
-<div class="add-users-manually-form-container">
+<div class="form-container">
 
     <div class="form-wrapper">
 
@@ -14,7 +14,7 @@
 
 
 
-        <button id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
+        <button class="submit-btn" id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
 
     </div>
 

@@ -151,10 +151,12 @@ body {
 .dashboard-content-dynamic-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 80%;
     background-color: white;
     padding: 40px;
+    overflow: scroll;
 }
 
 #main-dashboard-greeting {
