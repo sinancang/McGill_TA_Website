@@ -1,4 +1,3 @@
-
 let pass1 = document.querySelector("#pass1");
 let pass2 = document.querySelector("#pass2");
 let warning = document.querySelector("#warning");
@@ -31,14 +30,14 @@ function sendRegisterRequest(){
     encryptRequest.open("GET", url1, true);
     
     encryptRequest.addEventListener("load", function(){
-    	registerUser(username, this.responseText);
+    	registerUser(username, email, this.responseText);
     }, false);
     var fd1 = new FormData;
     fd1.append('pass', password);
     encryptRequest.send(fd1);
 }
 
-function registerUser(user, encrypted_password){
+function registerUser(user, mail, encrypted_password){
     syncRequest = new XMLHttpRequest();
     var url = "../routes/register.php";
     syncRequest.open("POST", url, true);
@@ -52,7 +51,7 @@ function registerUser(user, encrypted_password){
 
     var fd = new FormData;
     fd.append ('user', user);
+    fd.append('mail', mail);
     fd.append ('pass', encrypted_password);
-    syncRequest.send (fd);
-	
+    syncRequest.send (fd);	
 }

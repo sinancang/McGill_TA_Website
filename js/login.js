@@ -1,13 +1,16 @@
 function sendLoginRequest(){ 
-
-	var username = document.getElementById('user').value;
+	/*
         var password = document.getElementById('pass').value;
-        //var encrypted_password = CryptoJS.AES.encrypt(password, 5);
+	let encryptRequest = new XMLHttpRequest();
+	var url1 = "../utils/encrypt.php";
+	encryptRequest.open("GET", url1, false);
+	encryptRequest.addEventListener("load",
+	*/
 
         // make Ajax call to login.php with username & encrypted password
         let syncRequest = new XMLHttpRequest();
         var url = "../routes/login.php";
-        syncRequest.open("POST", url, true);
+        syncRequest.open("POST", url, false);
 
         syncRequest.addEventListener("load", function(){
 		console.log(this.status);
