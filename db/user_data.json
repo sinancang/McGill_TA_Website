@@ -1,0 +1,48 @@
+{
+    "joseph vybihal": {
+        "registered": true,
+        "password": " comp307 final project",
+        "courses": [{
+            "course name": "Comp 307",
+            "role": "student",
+            "term": "FALL 2021"
+        }]
+     },
+    "David Peterman": {
+        "registered": true,
+        "password": "password",
+        "courses": [{
+            "course name": "Comp 307",
+            "role": "TA",
+            "term": "FALL 2021"
+        }]
+    },
+    "username": {
+        "registered": true,
+        "password": "password",
+        "courses": [{
+            "course name": "Comp 322",
+            "role": "student",
+            "term": "WINTER 2021"
+        }]
+     },
+    "sinancang": {
+        "registered": true,
+        "password": "comp307",
+        "courses": [{
+            "course name": "Comp 307",
+            "role": "prof",
+            "term": "FALL 2021"
+        }]
+    },
+    "a": {
+        "registered": true,
+        "password": "a",
+        "courses": [{
+            "course name": "Comp 521",
+            "role": "TA",
+            "term": "FALL 2022"
+        }]
+    }
+}
+
