@@ -12,10 +12,14 @@
             <input type="text" name="course-code" id="course-code" required>
         </div>
 
-        <button id="add-btn" type="button" onclick="submitAddManuallyForm()">
-              Add
-          </button>
+        <button id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
 
     </div>
 
 </div>
+
+<?php 
+    if($_GET['view'] == "add-manually-users") {
+        echo "<link rel='stylesheet' href='../css/manual_input.css'>";
+    }
+?>

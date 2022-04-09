@@ -16,8 +16,6 @@
     // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
     if (check_logged_in($_GET['user']) === 1 || check_logged_in($_POST['user']) === 1) {
 
-
-
         // sys-ops: manage users
         if ($_GET['view'] == 'manage-users') {
             include("../matter/manage_users.php");    
