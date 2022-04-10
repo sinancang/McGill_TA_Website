@@ -1,11 +1,11 @@
 {
     "David Peterman": [
         {
-            "action": "Deleted user",
+            "action": "Removed Professor John Doe from class COMP307",
             "date": "April 22nd at 3:49pm"
         },
         {
-            "action": "Added user",
+            "action": "Added TA Mary Jane to class COMP521",
             "date": "April 23rd at 8:21am"
         }
     ]
