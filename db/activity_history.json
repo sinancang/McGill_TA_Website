@@ -7,6 +7,48 @@
         {
             "action": "Added TA Mary Jane to class COMP521",
             "date": "April 23rd at 8:21am"
+        },
+        {
+            "action": "On this day David did something amazing",
+            "date": "April 22nd at 3:49pm"
+        },
+        {
+            "action": "Added TA Davy Jones to class COMP521",
+            "date": "April 23rd at 8:22am"
+        },
+        {
+            "action": "Removed Professor Boris Tregubov from class for poor behaviour",
+            "date": "May 22nd at 5:49pm"
+        },
+        {
+            "action": "Added TA Bubbly Joe to class COMP521",
+            "date": "September 4th at 11:37am"
+        }
+    ],
+    "joseph vybihal": [
+        {
+            "action": "Removed Professor John Doe from class COMP307",
+            "date": "April 22nd at 3:49pm"
+        },
+        {
+            "action": "Added TA Mary Jane to class COMP521",
+            "date": "April 23rd at 8:21am"
+        },
+        {
+            "action": "On this day David did something amazing",
+            "date": "April 22nd at 3:49pm"
+        },
+        {
+            "action": "Added TA Davy Jones to class COMP521",
+            "date": "April 23rd at 8:22am"
+        },
+        {
+            "action": "Removed Professor Boris Tregubov from class for poor behaviour",
+            "date": "May 22nd at 5:49pm"
+        },
+        {
+            "action": "Added TA Bubbly Joe to class COMP521",
+            "date": "September 4th at 11:37am"
         }
     ]
 }
