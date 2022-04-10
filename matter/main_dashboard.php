@@ -20,6 +20,7 @@
                 echo "<div class='recent-activity-entry-action'>{$action}</div>";
                 echo "<div class='recent-activity-entry-date'>{$date}</div>";
                 echo "</div>";
+                $i++;
             }
         
         ?>

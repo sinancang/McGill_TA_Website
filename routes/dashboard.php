@@ -39,8 +39,7 @@
             include("../matter/main_dashboard.php");    
         }
         // default view. used for loading dashboard first time
-        else if ($_GET['view'] == 'default') {     
-            echo 'we got here';    
+        else if ($_GET['view'] == 'default') {       
             include("../matter/dashboard_default.php");    
         }
         else {
