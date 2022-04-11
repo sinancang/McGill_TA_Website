@@ -1,3 +1,9 @@
+// TO DO: add a register procedure method which:
+// checks validity of mail
+// checks if passwords match
+// checks if password is valid
+// etc...
+
 let pass1 = document.querySelector("#pass1");
 let pass2 = document.querySelector("#pass2");
 let warning = document.querySelector("#warning");
@@ -16,7 +22,23 @@ pass1.addEventListener("keyup", () => {
 })
 pass2.addEventListener("keyup", checkMatch);
 
-
+// calls php function to validate email
+function checkValidMail(mail){
+	// might want to define username, pass, email etc globally
+	// since it's used so much
+	var email = document.getElementById('email').value;
+	validateMailRequest = new XMLHttpRequest();
+	var url = "../utils/validateMail.php?mail=${email}";
+	validateMailRequest.open("GET", url, true);
+	validateMailRequest.addEventListener("load", function(){
+		if (this.responseText == 'success'){
+			alert("Mail successfully validated!");
+		} else{
+			alert("Mail could not be validated...");
+		}
+	}, false);
+	validateMailRequest.send();
+}
 
 // ajax register request
 function sendRegisterRequest(){
