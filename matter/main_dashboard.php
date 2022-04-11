@@ -13,8 +13,8 @@
             $history_data = json_decode($data, true);
 
             // loop through avtivity history for this user and display in main dashboard
-            $i = 0;
-            while (isset($history_data[$_GET['user']][$i])) {
+            $i = count($history_data[$_GET['user']]);
+            while ($i >= 0) {
 
                 $action = $history_data[$_GET['user']][$i]['action'];
                 $date = $history_data[$_GET['user']][$i]['date'];

@@ -157,7 +157,7 @@ function submitAddManuallyForm() {
     let syncRequest = new XMLHttpRequest();
     let user = document.getElementById('username').innerText;
     let prof = document.getElementById("new-prof").value;
-    let courseCode = document.getElementById("course-code").value;  
+    let courseCode = document.getElementById("course-code").value;
     var url = `../routes/dashboard.php?user=${user}&new-prof=${prof}&course-code=${courseCode}`;
     syncRequest.open("POST", url, true);
     syncRequest.setRequestHeader("Content-Type", "multipart/form-data");

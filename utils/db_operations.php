@@ -1,10 +1,5 @@
 <?php 
 
-
-    class User {
-
-    }
-
     /* 
     function used by sys-ops.
     Adds prof to list of pre-verified profs.
@@ -16,10 +11,6 @@
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
-        // RIGHT ONLY CHECK IF USER EXISTS. WHAT IF USER EXISTS BUT NOT WITH THIS COURSE?
-        // NEED TO ACCOUNT FOR THAT SCENARIO!!
-        $profExists = false;
-        $alreadyExists = false;
         if (isset($user_data[$prof])) {
             $i = 0;
             while (isset($user_data[$prof]['courses'][$i])) {
@@ -39,11 +30,31 @@
         }
 
         echo "Successfully added new record!";
+        $date = date('F j Y, \a\t g:ia');
+        echo $_POST['user'];
+        echo $_GET['user'];
+        add_record_to_activity_history($_POST['user'], "Added {$prof} as Professor to {$course_code}", $date);
     }
 
 
-    function add_record_to_activity_history(string $action, string $date) {
 
+    function add_record_to_activity_history(string $username, string $action, string $date) {
+
+        echo $username;
+
+        $filename = "../db/activity_history.json";
+        $data = file_get_contents($filename);
+        $user_data = json_decode($data, true);
+
+        if (isset($user_data[$username])) {
+            $new_entry = array('action' => $action, 'date' => $date);
+            array_push($user_data[$username], $new_entry);
+            file_put_contents($filename, json_encode($user_data));
+        }
+        else {
+            $user_data[$username][] = array('action' => $action, 'date' => $date);
+            file_put_contents($filename, json_encode($user_data));
+        }
     }
 
 ?>
