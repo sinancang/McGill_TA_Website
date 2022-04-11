@@ -3,7 +3,7 @@ McGill TA Website for COMP 307 Final Project
 A website for McGill students to rate and review TA's and for TA's and Profs to view TA analytics, relevant course information and post their schedule (office hours, etcetera).
 
 
-/------------------------------------------------------------------------------------------------------------------------------------/
+/---------------------------------------------------------------------------------------------------/
 
 Folder Structure:
 routes: contains php files that determine what html/php response to send when requests are made.
