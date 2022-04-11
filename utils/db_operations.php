@@ -1,5 +1,10 @@
 <?php 
 
+
+    class User {
+
+    }
+
     /* 
     function used by sys-ops.
     Adds prof to list of pre-verified profs.
@@ -13,21 +18,32 @@
 
         // RIGHT ONLY CHECK IF USER EXISTS. WHAT IF USER EXISTS BUT NOT WITH THIS COURSE?
         // NEED TO ACCOUNT FOR THAT SCENARIO!!
+        $profExists = false;
+        $alreadyExists = false;
         if (isset($user_data[$prof])) {
-            echo "Cannot add record. Record already Exists.";
-            return;
+            $i = 0;
+            while (isset($user_data[$prof]['courses'][$i])) {
+                
+                if ($user_data[$prof]['courses'][$i]['course name'] == $course_code) {
+                    echo "Cannot add record. Record already Exists.";
+                    return;
+                }
+                $i++;
+            }
+            $user_data[$prof]['courses'][]['course name'] = $course_code;
+            file_put_contents($filename, json_encode($user_data));
         }
-        $user_data[$prof] = array('registered'=>false, 'courses' => array('course name'=>$course_code));
-        file_put_contents($filename, json_encode($user_data));
-
+        else {
+            $user_data[$prof] = array('registered'=>false, 'courses' => array('course name'=>$course_code));
+            file_put_contents($filename, json_encode($user_data));
+        }
 
         echo "Successfully added new record!";
     }
 
 
+    function add_record_to_activity_history(string $action, string $date) {
 
-
-
-
+    }
 
 ?>
