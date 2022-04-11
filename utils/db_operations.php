@@ -31,16 +31,12 @@
 
         echo "Successfully added new record!";
         $date = date('F j Y, \a\t g:ia');
-        echo $_POST['user'];
-        echo $_GET['user'];
         add_record_to_activity_history($_POST['user'], "Added {$prof} as Professor to {$course_code}", $date);
     }
 
 
 
     function add_record_to_activity_history(string $username, string $action, string $date) {
-
-        echo $username;
 
         $filename = "../db/activity_history.json";
         $data = file_get_contents($filename);
