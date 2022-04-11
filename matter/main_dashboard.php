@@ -13,7 +13,7 @@
             $history_data = json_decode($data, true);
 
             // loop through avtivity history for this user and display in main dashboard
-            $i = count($history_data[$_GET['user']]);
+            $i = count($history_data[$_GET['user']]) - 1;
             // if no activity history
             if ($i == 0) {
                 echo "<div class='recent-activity-entry'>";
