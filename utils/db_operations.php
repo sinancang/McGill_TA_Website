@@ -71,6 +71,7 @@
         if (isset($user_data[$email])) {
 
             $user_data[$email]['password'] = $password;
+            $user_data[$email]['registered'] = true;
             file_put_contents($filename, json_encode($user_data));
         }
         else {
