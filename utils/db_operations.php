@@ -3,7 +3,7 @@
     /* 
         Function used by sys-ops.
         Adds prof to list of pre-verified profs.
-        
+
         NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
     */
     function add_verified_prof(string $prof, string $course_code) {
@@ -60,4 +60,26 @@
         }
     }
 
-?>
+
+    // New user registration
+    function register_new_user(string $email, string $password) {
+
+        $filename = "../db/user_data.json";
+        $data = file_get_contents($filename);
+        $user_data = json_decode($data, true);
+
+        if (isset($user_data[$email])) {
+
+            $user_data[$email]['password'] = $password;
+            file_put_contents($filename, json_encode($user_data));
+        }
+        else {
+            echo "Failed to register!";
+            return;
+        }
+
+        echo "Successfully added new record!";
+
+    }
+
+?>  

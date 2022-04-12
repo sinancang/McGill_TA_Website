@@ -11,10 +11,10 @@ function sendLoginRequest(){
 	}, false);
 	var fd = new FormData;
 	fd.append('pass', password);
-        fd.append('user', username);
 	encryptRequest.send(fd);
-
 }
+
+
 function logUserIn(username, encrypted_password){
         // make Ajax call to login.php with username & encrypted password
         let syncRequest = new XMLHttpRequest();
