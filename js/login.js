@@ -11,6 +11,7 @@ function sendLoginRequest(){
 	}, false);
 	var fd = new FormData;
 	fd.append('pass', password);
+        fd.append('user', username);
 	encryptRequest.send(fd);
 
 }
