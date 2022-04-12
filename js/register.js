@@ -8,15 +8,16 @@ function registerProcedure(){
 	var pass1 = document.getElementById('pass1').value;
 	var pass2 = document.getElementById('pass2').value;
 	
-	if (pass1 == pass2){
+	if (pass1 != pass2){
 		window.alert("Please make sure the passwords match!");
 		return;
 	}
-
+	/*
 	if(!checkValidMail(email)){
 		window.alert("Please input a valid e-mail!");
 		return;
 	}
+	*/
 
 	encryptPassword(email, pass1);
 }
