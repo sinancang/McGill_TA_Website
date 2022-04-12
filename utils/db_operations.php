@@ -1,9 +1,10 @@
 <?php 
 
     /* 
-    function used by sys-ops.
-    Adds prof to list of pre-verified profs.
-    NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
+        Function used by sys-ops.
+        Adds prof to list of pre-verified profs.
+        
+        NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
     */
     function add_verified_prof(string $prof, string $course_code) {
 
@@ -35,7 +36,13 @@
     }
 
 
+    /* 
+        Adds entry to activity history of specific user
 
+        username: email or username of user who performed the activity
+        action: action (as a string) that user performed
+        date: date and time when action was performed
+    */
     function add_record_to_activity_history(string $username, string $action, string $date) {
 
         $filename = "../db/activity_history.json";

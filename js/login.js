@@ -1,6 +1,8 @@
 function sendLoginRequest(){ 
 	
         var password = document.getElementById('pass').value;
+        var username = document.getElementById('user').value;
+
 	let encryptRequest = new XMLHttpRequest();
 	var url1 = "../utils/encrypt.php";
 	encryptRequest.open("GET", url1, false);
