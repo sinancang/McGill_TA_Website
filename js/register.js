@@ -26,7 +26,7 @@ function checkValidMail(mail){
         // since it's used so much
         var email = document.getElementById('email').value;
         validateMailRequest = new XMLHttpRequest();
-        var url = "../utils/validateMail.php?mail=${email}";
+        var url = `../utils/validateMail.php?mail=${email}`;
         validateMailRequest.open("GET", url, true);
         validateMailRequest.addEventListener("load", function(){
                 if (this.status == 200){
