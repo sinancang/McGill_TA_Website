@@ -4,39 +4,38 @@
 // checks if password is valid
 // etc...
 function registerProcedure(){
-	var email = document.getElementById('email').value;
-	var pass1 = document.getElementById('pass1').value;
-	var pass2 = document.getElementById('pass2').value;
-	
-	if (pass1 != pass2){
-		window.alert("Please make sure the passwords match!");
-		return;
-	}
-	/*
-	if(!checkValidMail(email)){
-		window.alert("Please input a valid e-mail!");
-		return;
-	}
-	*/
+        var email = document.getElementById('email').value;
+        var pass1 = document.getElementById('pass1').value;
+        var pass2 = document.getElementById('pass2').value;
+        
+        if (pass1 == pass2){
+                window.alert("Please make sure the passwords match!");
+                return;
+        }
 
-	encryptPassword(email, pass1);
+        if(!checkValidMail(email)){
+                window.alert("Please input a valid e-mail!");
+                return;
+        }
+
+        encryptPassword(email, pass1);
 }
 
 function checkValidMail(mail){
-	// might want to define username, pass, email etc globally
-	// since it's used so much
-	var email = document.getElementById('email').value;
-	validateMailRequest = new XMLHttpRequest();
-	var url = "../utils/validateMail.php?mail=${email}";
-	validateMailRequest.open("GET", url, true);
-	validateMailRequest.addEventListener("load", function(){
-		if (this.responseText == 'success'){
-			return true;
-		} else{
-			return false;
-		}
-	}, false);
-	validateMailRequest.send();
+        // might want to define username, pass, email etc globally
+        // since it's used so much
+        var email = document.getElementById('email').value;
+        validateMailRequest = new XMLHttpRequest();
+        var url = "../utils/validateMail.php?mail=${email}";
+        validateMailRequest.open("GET", url, true);
+        validateMailRequest.addEventListener("load", function(){
+                if (this.responseText == 'success'){
+                        return true;
+                } else{
+                        return false;
+                }
+        }, false);
+        validateMailRequest.send();
 }
 
 // ajax encryption request
@@ -47,7 +46,7 @@ function encryptPassword(email, password){
     encryptRequest.open("GET", url, true);
     
     encryptRequest.addEventListener("load", function(){
-    	registerUser(email, this.responseText);
+        registerUser(email, this.responseText);
     }, false);
     var fd = new FormData;
     fd.append('pass', password);
@@ -70,5 +69,6 @@ function registerUser(email, encrypted_password){
     var fd = new FormData;
     fd.append('email', email);
     fd.append ('pass', encrypted_password);
-    syncRequest.send (fd);	
+    syncRequest.send (fd);      
 }
+
