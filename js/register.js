@@ -3,26 +3,24 @@
 // checks if passwords match
 // checks if password is valid
 // etc...
+function registerProcedure(){
+	var email = document.getElementById('email').value;
+	var pass1 = document.getElementById('pass1').value;
+	var pass2 = document.getElementById('pass2').value;
+	
+	if (pass1 == pass2){
+		window.alert("Please make sure the passwords match!");
+		return;
+	}
 
-let pass1 = document.querySelector("#pass1");
-let pass2 = document.querySelector("#pass2");
-let warning = document.querySelector("#warning");
+	if(!checkValidMail(email)){
+		window.alert("Please input a valid e-mail!");
+		return;
+	}
 
-function checkMatch(){
-        if(pass1.value==pass2.value){
-        warning.innerText = "";
-        }
-        else{
-        warning.innerText = "Paswords don't match";
-        }
+	encryptPassword(email, pass1);
 }
 
-pass1.addEventListener("keyup", () => {
-        if(pass2.value.lenght != 0) checkMatch();
-})
-pass2.addEventListener("keyup", checkMatch);
-
-// calls php function to validate email
 function checkValidMail(mail){
 	// might want to define username, pass, email etc globally
 	// since it's used so much
@@ -32,48 +30,44 @@ function checkValidMail(mail){
 	validateMailRequest.open("GET", url, true);
 	validateMailRequest.addEventListener("load", function(){
 		if (this.responseText == 'success'){
-			alert("Mail successfully validated!");
+			return true;
 		} else{
-			alert("Mail could not be validated...");
+			return false;
 		}
 	}, false);
 	validateMailRequest.send();
 }
 
-// ajax register request
-function sendRegisterRequest(){
-    var username = document.getElementById('user').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('pass1').value;
-    
-    // encrypt request
+// ajax encryption request
+// followed by a call to register request
+function encryptPassword(email, password){
     encryptRequest = new XMLHttpRequest();
-    var url1 = "../utils/encrypt.php";
-    encryptRequest.open("GET", url1, true);
+    var url = "../utils/encrypt.php";
+    encryptRequest.open("GET", url, true);
     
     encryptRequest.addEventListener("load", function(){
-    	registerUser(username, email, this.responseText);
+    	registerUser(email, this.responseText);
     }, false);
-    var fd1 = new FormData;
-    fd1.append('pass', password);
-    encryptRequest.send(fd1);
+    var fd = new FormData;
+    fd.append('pass', password);
+    encryptRequest.send(fd);
 }
 
-function registerUser(user, mail, encrypted_password){
+// sends register request
+function registerUser(email, encrypted_password){
     syncRequest = new XMLHttpRequest();
     var url = "../routes/register.php";
     syncRequest.open("POST", url, true);
 
     syncRequest.addEventListener("load", function(){
         if (this.responseText == 'success')
-                alert ('successfully registered.');
+                alert ('Successfully registered.');
         else
-                alert ('failed to register.');
+                alert ('Failed to register.');
         }, false);
 
     var fd = new FormData;
-    fd.append ('user', user);
-    fd.append('mail', mail);
+    fd.append('email', email);
     fd.append ('pass', encrypted_password);
     syncRequest.send (fd);	
 }
