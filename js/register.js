@@ -13,7 +13,7 @@ function registerProcedure(){
                 return;
         }
 
-        if(!checkValidMail(email)){
+        if(checkValidMail(email) != false){
                 console.log(this.responseText);
                 return;
         }
