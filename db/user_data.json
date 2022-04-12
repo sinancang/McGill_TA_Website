@@ -43,6 +43,10 @@
             "role": "TA",
             "term": "FALL 2022"
         }]
+    },
+    "david.peterman@mail.mcgill.ca": {
+        "registered": false,
+        "password": ""
     }
 }
 
