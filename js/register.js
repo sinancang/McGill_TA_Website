@@ -8,13 +8,13 @@ function registerProcedure(){
         var pass1 = document.getElementById('pass1').value;
         var pass2 = document.getElementById('pass2').value;
         
-        if (pass1 == pass2){
-                window.alert("Please make sure the passwords match!");
+        if (pass1 !== pass2){
+                console.log(this.responseText);
                 return;
         }
 
         if(!checkValidMail(email)){
-                window.alert("Please input a valid e-mail!");
+                console.log(this.responseText);
                 return;
         }
 
@@ -29,7 +29,7 @@ function checkValidMail(mail){
         var url = "../utils/validateMail.php?mail=${email}";
         validateMailRequest.open("GET", url, true);
         validateMailRequest.addEventListener("load", function(){
-                if (this.responseText == 'success'){
+                if (this.status == 200){
                         return true;
                 } else{
                         return false;
@@ -60,8 +60,8 @@ function registerUser(email, encrypted_password){
     syncRequest.open("POST", url, true);
 
     syncRequest.addEventListener("load", function(){
-        if (this.responseText == 'success')
-                alert ('Successfully registered.');
+        if (this.status == 200)
+                console.log(this.responseText);
         else
                 alert ('Failed to register.');
         }, false);
