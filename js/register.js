@@ -50,7 +50,6 @@ function encryptPassword(email, password){
     encryptRequest.open("POST", url, true);
    
     encryptRequest.addEventListener("load", function(){
-	    window.alert(this.responseText);
 	    registerUser(email, this.responseText);
     }, false);
     var fd = new FormData;
