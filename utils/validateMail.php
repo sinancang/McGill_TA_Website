@@ -6,6 +6,7 @@
 echo 'we got here 1';
 
 $mail = $_GET['mail'];
+echo $mail;
 if (filter_var($mail, FILTER_VALIDATE_EMAIL) != false){
 	echo 'we got here 2';
 	echo "success";
