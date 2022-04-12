@@ -9,14 +9,17 @@ function registerProcedure(){
         var pass2 = document.getElementById('pass2').value;
         
         if (pass1 !== pass2){
-                console.log(this.responseText);
+                window.alert("allo1");
                 return;
         }
 
+	/*
+
         if(!checkValidMail(email)){
-                console.log(this.responseText);
-                return;
+                window.alert("allo");
+		return;
         }
+	*/
 
         encryptPassword(email, pass1);
 }
@@ -45,9 +48,10 @@ function encryptPassword(email, password){
     encryptRequest = new XMLHttpRequest();
     var url = "../utils/encrypt.php";
     encryptRequest.open("POST", url, true);
-    
+   
     encryptRequest.addEventListener("load", function(){
-        registerUser(email, this.responseText);
+	    window.alert(this.responseText);
+	    registerUser(email, this.responseText);
     }, false);
     var fd = new FormData;
     fd.append('pass', password);
