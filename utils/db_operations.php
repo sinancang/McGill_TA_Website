@@ -76,10 +76,11 @@
         }
         else {
             echo "Failed to register!";
-            return;
+            return 0;
         }
 
         echo "Successfully added new record!";
+        return 1;
 
     }
 

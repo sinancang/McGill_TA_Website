@@ -1,4 +1,4 @@
-<div id="main-dashboard-greeting">Hi, <?php echo $_GET['user'] ?>!</div>
+<div id="main-dashboard-greeting">Hi, <?php echo $_GET['email'] ?>!</div>
 
 
 <div class="main-dashboard-recent-activity-container">

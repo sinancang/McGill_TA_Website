@@ -44,7 +44,7 @@ function checkValidMail(mail){
 function encryptPassword(email, password){
     encryptRequest = new XMLHttpRequest();
     var url = "../utils/encrypt.php";
-    encryptRequest.open("GET", url, true);
+    encryptRequest.open("POST", url, true);
     
     encryptRequest.addEventListener("load", function(){
         registerUser(email, this.responseText);

@@ -4,6 +4,6 @@
 
         require "../utils/db_operations.php";
 
-        register_new_user($_POST['email'], $_POST['pass']);
+        if (register_new_user($_POST['email'], $_POST['pass']) == 1);
 
 ?>
