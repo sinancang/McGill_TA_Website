@@ -13,7 +13,7 @@ function registerProcedure(){
                 return;
         }
 
-        if(checkValidMail(email) != false){
+        if(!checkValidMail(email)){
                 console.log(this.responseText);
                 return;
         }
@@ -30,6 +30,7 @@ function checkValidMail(mail){
         validateMailRequest.open("GET", url, true);
         validateMailRequest.addEventListener("load", function(){
                 if (this.status == 200){
+                        console.log(this.responseText);
                         return true;
                 } else{
                         return false;
