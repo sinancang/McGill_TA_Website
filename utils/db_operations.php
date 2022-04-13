@@ -38,6 +38,11 @@
     }
 
 
+    // Adds email of prof to list of profs in user_by_type
+    function add_to_list_of_profs(string $email) {
+
+    }
+
 
 
 

@@ -198,6 +198,7 @@ body {
 
 .ajax-content-container {
     width: 80%;
+    height: 100%;
     opacity: 0;
     animation: settleVertical 2s ease-in-out 0s forwards
 }
