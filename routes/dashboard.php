@@ -11,7 +11,11 @@
     $_POST['user'] = $_GET['user'];
     $_POST['new-prof'] = $_GET['new-prof'];
     $_POST['course-code'] = $_GET['course-code'];
-    $_POST['action'] = $_GET['action'];
+    //$_POST['action'] = $_GET['action'];
+
+    echo 'here';
+    echo $_POST['action'];
+    echo $_GET['action'];
 
     // check if user is logged in. if not, redirect to login page
     // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
@@ -20,9 +24,11 @@
         exit();
     }
 
+    echo 'here';
+
     // sys-ops: manage users
     if ($_GET['view'] == 'manage-users') {
-        include("../matter/manage_users.php");    
+        include("../matter/manage_users.php");
     }
     // sys-ops: import users (csv file)
     else if ($_GET['view'] == 'import-users') {              
@@ -33,13 +39,13 @@
         include("../matter/add_users_manually.php");    
     }
     // sys-ops: post new prof or admin 
-    else if ($_POST['action'] == "manual-upload") {
-
-        add_verified_prof(  
-            $_POST['new-prof'], 
-            $_POST['course-code'], 
-            $_POST['course-name'],
-            $_POST['term']
+    else if ($_GET['action'] == "manual-upload") {
+        echo 'we get to action';
+        add_verified_prof( 
+            $_GET['new-prof'], 
+            $_GET['course-code'], 
+            $_GET['course-name'],
+            $_GET['term']
         );
         
     }      

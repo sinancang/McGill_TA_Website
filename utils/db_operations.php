@@ -8,6 +8,7 @@
     */
     function add_verified_prof(string $prof, string $course_code, string $course_name, string $term) {
 
+        echo 'we get to verified prof';
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
@@ -22,10 +23,9 @@
                 }
                 $i++;
             }
-            $user_data[$prof]['courses'][]['course code'] = $course_code;
-            $user_data[$prof]['courses'][]['course name'] = $course_name;
-            $user_data[$prof]['courses'][]['term'] = $term;
-            $user_data[$prof]['courses'][]['role'] = 'prof';
+            $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>prof);
+            $user_data[$prof]['courses'][] = $new_entry;
+
             file_put_contents($filename, json_encode($user_data));
         }
         else {
@@ -35,7 +35,7 @@
 
         echo "Successfully added new record!";
         $date = date('F j Y, \a\t g:ia');
-        add_record_to_activity_history($_POST['user'], "Added {$prof} as Professor to {$course_code}", $date);
+        add_record_to_activity_history($_GET['user'], "Added {$prof} as Professor to {$course_code}", $date);
     }
 
 

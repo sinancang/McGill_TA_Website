@@ -160,6 +160,7 @@ function fillMainDashboardContent(html) {
 function submitAddManuallyForm() {
     // make Ajax call to dashboard.php with prof name & course code
     let syncRequest = new XMLHttpRequest();
+    syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
 
     let user = document.getElementById('username').innerText;
     
@@ -171,7 +172,7 @@ function submitAddManuallyForm() {
 
     var url = `../routes/dashboard.php?action=manual-upload&user=${user}&new-prof=${prof}&course-code=${courseCode}&course-name=${courseName}&term=${term}`;
     syncRequest.open("POST", url, true);
-    syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
+    
 
     syncRequest.addEventListener("load", function(){
             if (this.status === 200) {
