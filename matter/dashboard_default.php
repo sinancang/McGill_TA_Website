@@ -125,9 +125,11 @@
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
-            
-                <!-- include default dashboard view -->
-                <?php include("main_dashboard.php"); ?>
+
+                <div class="dashboard-dynamic-content-main">
+                    <!-- include default dashboard view -->
+                    <?php include("main_dashboard.php"); ?>
+                </div>
 
 
                 <?php 

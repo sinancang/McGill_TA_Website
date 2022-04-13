@@ -1,4 +1,4 @@
-<div class="dashboard-dynamic-content-main ajax-content-container">
+<div class="ajax-content-container">
         
     <div id="main-dashboard-greeting">Hi, <?php echo $_GET['user'] ?>!</div>
 
