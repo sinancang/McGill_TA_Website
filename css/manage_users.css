@@ -1,0 +1,15 @@
+.user-type-select {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.manage-users-container {
+    padding-bottom: 20px;
+    padding-left: 0px;
+    width: 100%;
+    border-bottom: 2px solid #b0b0b0;
+}
