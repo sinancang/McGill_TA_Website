@@ -1,7 +1,12 @@
 function sendLoginRequest(){ 
+
+
 	
         var password = document.getElementById('pass').value;
         var username = document.getElementById('user').value;
+
+        logUserIn(username, password);
+        /*
 
 	let encryptRequest = new XMLHttpRequest();
 	var url1 = "../utils/encrypt.php";
@@ -12,10 +17,15 @@ function sendLoginRequest(){
 	var fd = new FormData;
 	fd.append('pass', password);
 	encryptRequest.send(fd);
+        */
 }
 
 
 function logUserIn(username, encrypted_password){
+        console.log(username);
+        window.location.href = `https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/routes/dashboard.php?user=${username}&view=default`;
+        /*
+        console.log('trying to login');
         // make Ajax call to login.php with username & encrypted password
         let syncRequest = new XMLHttpRequest();
         var url = "../routes/login.php";
@@ -37,4 +47,5 @@ function logUserIn(username, encrypted_password){
         fd.append('user', username);
         fd.append('pass', encrypted_password);
         syncRequest.send(fd);	
+        */
 }

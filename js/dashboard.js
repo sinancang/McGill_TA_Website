@@ -51,6 +51,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
 
+    $('#settings-btn').on('click', function() {
+        $('.settings-menu-container').toggleClass('open');
+    })
+
+
 });
 
 
@@ -177,6 +182,10 @@ function submitAddManuallyForm() {
     }, false);
 
     syncRequest.send();
+}
+
+function signOut() {
+    window.location.href = "https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/home.html";
 }
 
 

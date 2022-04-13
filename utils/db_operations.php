@@ -69,17 +69,17 @@
         $user_data = json_decode($data, true);
 
         if (isset($user_data[$email])) {
-
+            
             $user_data[$email]['password'] = $password;
             $user_data[$email]['registered'] = true;
             file_put_contents($filename, json_encode($user_data));
         }
         else {
-            echo "Failed to register!";
+            //echo "Failed to register!";
             return 0;
         }
 
-        echo "Successfully added new record!";
+        //echo "Successfully added new record!";
         return 1;
 
     }
