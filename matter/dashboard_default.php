@@ -12,8 +12,8 @@
 
         <!-- Landing Page Header -->
         <div class="dashboard-header">
-            <img class="dashboard-header-icon" src="images/mcgill-logo-svg.svg">
-            <img id="settings-btn" class="dashboard-header-icon" id="settings-btn" src="images/person.svg">
+            <img class="dashboard-header-icon" src="../images/mcgill-logo-svg.svg">
+            <img id="settings-btn" class="dashboard-header-icon" id="settings-btn" src="../images/person.svg">
             <nav class="settings-menu-container">
               <div class="settings-btn">Reset Password</div>
               <div class="separating-line"></div>
