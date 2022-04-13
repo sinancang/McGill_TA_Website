@@ -125,46 +125,45 @@
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
-            <div class="dashboard-dynamic-content-main">
+            
                 <!-- include default dashboard view -->
                 <?php include("main_dashboard.php"); ?>
-            </div>
 
 
-            <?php 
+                <?php 
 
-                $filename = "../db/user_by_role.json";
-                $data = file_get_contents($filename);
-                $data = json_decode($data, true);
-                $username = $_GET['user'];
+                    $filename = "../db/user_by_role.json";
+                    $data = file_get_contents($filename);
+                    $data = json_decode($data, true);
+                    $username = $_GET['user'];
 
-                $isSysOps = false;
-                $isAdmin = false;
-                $isProf = false;
-                $isTA = false;
+                    $isSysOps = false;
+                    $isAdmin = false;
+                    $isProf = false;
+                    $isTA = false;
 
-                for ($i=0; $i<count($data["sys-ops"]); $i++) {
-                    if ($data["sys-ops"][$i] == $username) $isSysOps = true;
-                }
-                for ($i=0; $i<count($data["admin"]); $i++) {
-                    if ($data["admin"][$i] == $username) $isAdmin = true;
-                }
-                for ($i=0; $i<count($data["prof"]); $i++) {
-                    if ($data["prof"][$i] == $username) $isProf = true;
-                }
-                for ($i=0; $i<count($data["ta"]); $i++) {
-                    if ($data["ta"][$i] == $username) $isTA = true;
-                }
+                    for ($i=0; $i<count($data["sys-ops"]); $i++) {
+                        if ($data["sys-ops"][$i] == $username) $isSysOps = true;
+                    }
+                    for ($i=0; $i<count($data["admin"]); $i++) {
+                        if ($data["admin"][$i] == $username) $isAdmin = true;
+                    }
+                    for ($i=0; $i<count($data["prof"]); $i++) {
+                        if ($data["prof"][$i] == $username) $isProf = true;
+                    }
+                    for ($i=0; $i<count($data["ta"]); $i++) {
+                        if ($data["ta"][$i] == $username) $isTA = true;
+                    }
 
-                if ($isSysOps || $isAdmin) {
-                    echo '<div class="dashboard-content-quick-action-bar">';
-                    echo '<div class="user-type-based-actions">';
-                    if ($isSysOps) echo '<button class="user-type-based-btn sys-ops-btn">IMPORT PROFESSORS AND COURSES</button>';
-                    echo '<button class=" user-type-based-btn sys-ops-btn">IMPORT TA COHORT</button>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            ?>
+                    if ($isSysOps || $isAdmin) {
+                        echo '<div class="dashboard-content-quick-action-bar">';
+                        echo '<div class="user-type-based-actions">';
+                        if ($isSysOps) echo '<button class="user-type-based-btn sys-ops-btn">IMPORT PROFESSORS AND COURSES</button>';
+                        echo '<button class=" user-type-based-btn sys-ops-btn">IMPORT TA COHORT</button>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                ?>
 
 
             </div>

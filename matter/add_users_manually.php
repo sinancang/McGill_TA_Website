@@ -1,4 +1,4 @@
-<div class="form-container">
+<div class="form-container ajax-content-container">
 
     <p style="font-size: 30px;">Manual Input</p>
 
