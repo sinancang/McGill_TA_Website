@@ -6,7 +6,7 @@
 
         NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
     */
-    function add_verified_prof(string $prof, string $course_code) {
+    function add_verified_prof(string $prof, string $course_code, string $course_name, string $term) {
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
@@ -16,13 +16,16 @@
             $i = 0;
             while (isset($user_data[$prof]['courses'][$i])) {
                 
-                if ($user_data[$prof]['courses'][$i]['course name'] == $course_code) {
+                if ($user_data[$prof]['courses'][$i]['course code'] == $course_code) {
                     echo "Cannot add record. Record already Exists.";
                     return;
                 }
                 $i++;
             }
-            $user_data[$prof]['courses'][]['course name'] = $course_code;
+            $user_data[$prof]['courses'][]['course code'] = $course_code;
+            $user_data[$prof]['courses'][]['course name'] = $course_name;
+            $user_data[$prof]['courses'][]['term'] = $term;
+            $user_data[$prof]['courses'][]['role'] = 'prof';
             file_put_contents($filename, json_encode($user_data));
         }
         else {
@@ -34,6 +37,9 @@
         $date = date('F j Y, \a\t g:ia');
         add_record_to_activity_history($_POST['user'], "Added {$prof} as Professor to {$course_code}", $date);
     }
+
+
+
 
 
     /* 
@@ -69,7 +75,7 @@
         $user_data = json_decode($data, true);
 
         if (isset($user_data[$email])) {
-            
+
             $user_data[$email]['password'] = $password;
             $user_data[$email]['registered'] = true;
             file_put_contents($filename, json_encode($user_data));

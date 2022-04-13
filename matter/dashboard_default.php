@@ -39,32 +39,71 @@
 
                     <div class="separating-line"></div>
 
-                    <div id="admin" class="nav-bar-btn-container first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Administration</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
 
-                    <div id="manage" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Manage TAs</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
-                    <div id="rate" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Rate a TA</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
+                    <?php 
+                        $user_type = 
 
-                    <div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">System Ops</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
+                        $filename = "../db/user_by_role.json";
+                        $data = file_get_contents($filename);
+                        $data = json_decode($data, true);
+                        $username = $_GET['user'];
+
+                        $isSysOps = false;
+                        $isAdmin = false;
+                        $isProf = false;
+                        $isTA = false;
+
+                        for ($i=0; $i<count($data["sys-ops"]); $i++) {
+                            if ($data["sys-ops"][$i] == $username) $isSysOps = true;
+                        }
+                        for ($i=0; $i<count($data["admin"]); $i++) {
+                            if ($data["admin"][$i] == $username) $isAdmin = true;
+                        }
+                        for ($i=0; $i<count($data["prof"]); $i++) {
+                            if ($data["prof"][$i] == $username) $isProf = true;
+                        }
+                        for ($i=0; $i<count($data["ta"]); $i++) {
+                            if ($data["ta"][$i] == $username) $isTA = true;
+                        }
+
+                        if ($isSysOps || $isAdmin) {
+                            echo 
+                            '<div id="admin" class="nav-bar-btn-container first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Administration</div>
+                                    <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                                </div>
+                            </div>';
+                        }
+                        
+                        if ($isSysOps || $isAdmin || $isProf || $isTA) {
+                            echo
+                            '<div id="manage" class="nav-bar-btn-container  first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Manage TAs</div>
+                                    <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                                </div>
+                            </div>';
+                        }
+                        
+                        echo
+                        '<div id="rate" class="nav-bar-btn-container  first-nav-bar">
+                            <div class="nav-bar-btn-wrapper">
+                                <div class="nav-bar-btn">Rate a TA</div>
+                                <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                            </div>
+                        </div>';
+
+                        if ($isSysOps) {
+                            echo
+                            '<div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">System Ops</div>
+                                    <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                                </div>
+                            </div>';
+                        }
+                    ?>
 
                 </div>
 

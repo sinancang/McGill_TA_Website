@@ -160,10 +160,16 @@ function fillMainDashboardContent(html) {
 function submitAddManuallyForm() {
     // make Ajax call to dashboard.php with prof name & course code
     let syncRequest = new XMLHttpRequest();
+
     let user = document.getElementById('username').innerText;
-    let prof = document.getElementById("new-prof").value;
+    
+    let courseName = document.getElementById("course-name").value;
     let courseCode = document.getElementById("course-code").value;
-    var url = `../routes/dashboard.php?user=${user}&new-prof=${prof}&course-code=${courseCode}`;
+    let term = document.getElementById("term").value;
+    let prof = document.getElementById("new-prof").value;
+    
+
+    var url = `../routes/dashboard.php?action=manual-upload&user=${user}&new-prof=${prof}&course-code=${courseCode}&course-name=${courseName}&term=${term}`;
     syncRequest.open("POST", url, true);
     syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
 
@@ -172,6 +178,8 @@ function submitAddManuallyForm() {
                 // clear form values and display server response
                 document.getElementById("new-prof").value = '';
                 document.getElementById("course-code").value = '';
+                document.getElementById("course-name").value = '';
+                document.getElementById("term").value = '';
                 document.getElementById("form-server-response-container").innerText = syncRequest.responseText;
                 document.getElementById("form-server-response-container").style.animation = 'fadeIn 0.3s ease-in-out 0s forwards';
             }

@@ -1,2 +1,3 @@
 .DS_Store
-db/*
+db/user_data.json
+db/activity_history.json
