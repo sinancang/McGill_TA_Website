@@ -212,8 +212,6 @@ function fillSecondaryMenu(menuName) {
 
 
 function fillMainDashboardContent(html) {
-    $('.dashboard-dynamic-content-main')[0].style.animation = '';
-    $('.dashboard-dynamic-content-main')[0].style.animation = 'settleVertical 2s ease-in-out 0s forwards';
     $('.dashboard-dynamic-content-main')[0].innerHTML = html;
 }
 
