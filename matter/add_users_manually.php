@@ -29,7 +29,6 @@
 
     </div>
 
-    <div id="form-server-response-container">
-    </div>
+    <div id="form-server-response-container"></div>
 
 </div>

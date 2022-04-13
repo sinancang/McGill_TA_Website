@@ -182,7 +182,7 @@ function submitAddManuallyForm() {
                 document.getElementById("course-code").value = '';
                 document.getElementById("course-name").value = '';
                 document.getElementById("term").value = '';
-                document.getElementById("form-server-response-container").innerText = syncRequest.responseText;
+                document.getElementById("form-server-response-container").innerHTML = syncRequest.responseText;
                 document.getElementById("form-server-response-container").style.animation = 'fadeIn 0.3s ease-in-out 0s forwards';
             }
             else {
