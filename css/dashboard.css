@@ -196,6 +196,11 @@ body {
     
 }
 
+.ajax-content-container {
+    opacity: 0;
+    animation: settleVertical 2s ease-in-out 0s forwards
+}
+
 .dashboard-dynamic-content-main {
     width: 80%;
     display: flex;
@@ -204,8 +209,6 @@ body {
     justify-content: flex-start;
     padding-top: 40px;
     overflow: scroll;
-    opacity: 0;
-    animation: settleVertical 2s ease-in-out 0s forwards
 }
 
 #main-dashboard-greeting {
