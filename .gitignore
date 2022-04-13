@@ -1,3 +1,4 @@
 .DS_Store
 db/user_data.json
 db/activity_history.json
+db

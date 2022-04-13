@@ -1,9 +1,51 @@
 <div id="main-dashboard-greeting">Hi, <?php echo $_GET['user'] ?>!</div>
 
 
+<?php 
+
+
+
+?>
+
+
 <div class="main-dashboard-recent-activity-container">
 
     <div class="recent-activity-title">RECENT ACTIVITY</div>
+
+    <div class="user-type-based-actions">
+        <?php 
+                $filename = "../db/user_by_role.json";
+                $data = file_get_contents($filename);
+                $data = json_decode($data, true);
+                $username = $_GET['user'];
+
+                $isSysOps = false;
+                $isAdmin = false;
+                $isProf = false;
+                $isTA = false;
+
+                for ($i=0; $i<count($data["sys-ops"]); $i++) {
+                    if ($data["sys-ops"][$i] == $username) $isSysOps = true;
+                }
+                for ($i=0; $i<count($data["admin"]); $i++) {
+                    if ($data["admin"][$i] == $username) $isAdmin = true;
+                }
+                for ($i=0; $i<count($data["prof"]); $i++) {
+                    if ($data["prof"][$i] == $username) $isProf = true;
+                }
+                for ($i=0; $i<count($data["ta"]); $i++) {
+                    if ($data["ta"][$i] == $username) $isTA = true;
+                }
+
+                if ($isSysOps) {
+                    echo '<button>IMPORT PROFESSORS AND COURSES</button>';
+                    echo '<button>IMPORT TA COHORT</button>';
+                }
+                if ($isAdmin) {
+                    echo '<button>IMPORT TA COHORT</button>';
+                }
+        ?>
+    </div>
 
     <div class="recent-activity">      
         <?php 
