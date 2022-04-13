@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +13,16 @@
 
         <!-- Landing Page Header -->
         <div class="dashboard-header">
-            <img class="dashboard-header-icon" src="../images/mcgill-logo-svg.svg">
-            <img id="settings-btn" class="dashboard-header-icon" id="settings-btn" src="../images/person.svg">
+            <img class="dashboard-header-icon" src="images/mcgill-logo-svg.svg">
+            <img id="settings-btn" class="dashboard-header-icon" id="settings-btn" src="images/person.svg">
+            
             <nav class="settings-menu-container">
               <div class="settings-btn">Reset Password</div>
               <div class="separating-line"></div>
               <div onclick="signOut()" class="settings-btn">Sign Out</div>
             </nav>
+            
         </div>
-
 
 
         <!-- Landing Page Content -->
@@ -38,33 +40,28 @@
 
                     <div class="separating-line"></div>
 
+
                     <div id="admin" class="nav-bar-btn-container first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Administration</div>
-                            <img class="right-arrow-svg" src="images/right-arrow.svg">
-                        </div>
-                    </div>
-
-                    <div id="manage" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Manage TAs</div>
-                            <img class="right-arrow-svg" src="images/right-arrow.svg">
-                        </div>
-                    </div>
-                    <div id="rate" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Rate a TA</div>
-                            <img class="right-arrow-svg" src="images/right-arrow.svg">
-                        </div>
-                    </div>
-
-                    <div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">System Ops</div>
-                            <img class="right-arrow-svg" src="images/right-arrow.svg">
-                        </div>
-                    </div>
-
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Admin Options</div>
+                                    <img class="right-arrow-svg" src="images/right-arrow.svg">
+                                </div>
+                            </div><div id="manage" class="nav-bar-btn-container  first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Manage TAs</div>
+                                    <img class="right-arrow-svg" src="images/right-arrow.svg">
+                                </div>
+                            </div><div id="rate" class="nav-bar-btn-container  first-nav-bar">
+                            <div class="nav-bar-btn-wrapper">
+                                <div class="nav-bar-btn">Rate a TA</div>
+                                <img class="right-arrow-svg" src="images/right-arrow.svg">
+                            </div>
+                        </div><div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Manage Users</div>
+                                    <img class="right-arrow-svg" src="images/right-arrow.svg">
+                                </div>
+                            </div>
                 </div>
 
                     <div class="dashboard-content-side-nav-bar second-nav-bar">
@@ -85,23 +82,42 @@
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
+              <div class="dashboard-dynamic-content-main">
 
-            <!-- include default dashboard view -->
-            <div id="main-dashboard-greeting">Hi, David Peterman!</div>
+                            <!-- include default dashboard view -->
+                 <div id="main-dashboard-greeting">Hi, David Peterman!</div>
+
+                
 
 
-<div class="main-dashboard-recent-activity-container">
+                <div class="main-dashboard-recent-activity-container">
 
-    <div class="recent-activity-title">RECENT ACTIVITY</div>
+                    <div class="recent-activity-title">RECENT ACTIVITY</div>
 
-    <div class="recent-activity">      
-        <div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added Sinan as Professor to COMP 307</div><div class='recent-activity-entry-date'>April 12 2022, at 2:49pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added prof as Professor to course</div><div class='recent-activity-entry-date'>April 12 2022, at 2:40pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added new prof as Professor to comp 999</div><div class='recent-activity-entry-date'>April 12 2022, at 2:38pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added Big Joe as Professor to new course</div><div class='recent-activity-entry-date'>April 12 2022, at 2:37pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added david.peterman@mail.mcgill.ca as Professor to BIOL 205</div><div class='recent-activity-entry-date'>April 12 2022, at 1:56pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added TA Bubbly Joe to class COMP521</div><div class='recent-activity-entry-date'>September 4th at 11:37am</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Removed Professor Boris Tregubov from class for poor behaviour</div><div class='recent-activity-entry-date'>May 22nd at 5:49pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added TA Davy Jones to class COMP521</div><div class='recent-activity-entry-date'>April 23rd at 8:22am</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>On this day David did something amazing</div><div class='recent-activity-entry-date'>April 22nd at 3:49pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added TA Mary Jane to class COMP521</div><div class='recent-activity-entry-date'>April 23rd at 8:21am</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Removed Professor John Doe from class COMP307</div><div class='recent-activity-entry-date'>April 22nd at 3:49pm</div></div>    </div>
-</div>
 
+                    <div class="recent-activity">      
+                        <div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added David Peterman as Professor to BIOL 205</div><div class='recent-activity-entry-date'>April 13 2022, at 2:30pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added TA Bubbly Joe to class COMP521</div><div class='recent-activity-entry-date'>September 4th at 11:37am</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Removed Professor Boris Tregubov from class for poor behaviour</div><div class='recent-activity-entry-date'>May 22nd at 5:49pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added TA Davy Jones to class COMP521</div><div class='recent-activity-entry-date'>April 23rd at 8:22am</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>On this day David did something amazing</div><div class='recent-activity-entry-date'>April 22nd at 3:49pm</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Added TA Mary Jane to class COMP521</div><div class='recent-activity-entry-date'>April 23rd at 8:21am</div></div><div class='recent-activity-entry'><div class='recent-activity-entry-action'>Removed Professor John Doe from class COMP307</div><div class='recent-activity-entry-date'>April 22nd at 3:49pm</div></div>    </div>
+                </div>
+
+              </div>
+
+
+                <div class="dashboard-content-quick-action-bar">
+                  <div class="user-type-based-actions">
+                    <button class="user-type-based-btn sys-ops-btn">IMPORT PROFESSORS AND COURSES</button>
+                    <button class=" user-type-based-btn sys-ops-btn">IMPORT TA COHORT</button>
+                  </div>
+                </div>
 
             </div>
 
+
+
         </div>
+
+
+
+
         
 
 

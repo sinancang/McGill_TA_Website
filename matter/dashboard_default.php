@@ -125,9 +125,20 @@
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
+            <div class="dashboard-dynamic-content-main">
+                <!-- include default dashboard view -->
+                <?php include("main_dashboard.php"); ?>
+            </div>
 
-            <!-- include default dashboard view -->
-            <?php include("main_dashboard.php"); ?>
+
+            <?php 
+                if ($isSysOps || $isAdmin) {
+                    echo '<div class="dashboard-content-quick-action-bar">';
+                    if ($isSysOps) echo '<button class="user-type-based-btn sys-ops-btn">IMPORT PROFESSORS AND COURSES</button>';
+                    echo '<button class=" user-type-based-btn sys-ops-btn">IMPORT TA COHORT</button>';
+                    echo '</div>';
+                }
+            ?>
 
 
             </div>

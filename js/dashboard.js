@@ -68,7 +68,7 @@ function getSecondaryMenuItems(menuName) {
         syncRequest.addEventListener("load", function(){
             
             if (this.status === 200) fillSecondaryMenu();
-            else alert('Invalid user role.');
+            else console.log('invalid user role');
     
         }, false);
     
@@ -81,6 +81,70 @@ function getSecondaryMenuItems(menuName) {
 // display correct content in secondary menu in side-nav-bar
 function fillSecondaryMenu(menuName) {
     if (menuName == 'sys-ops') {
+        document.getElementById('second-nav-bar-options-container').innerHTML = 
+        `
+        <div id="manage-users" class="nav-bar-btn-container second-nav-bar">
+            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                <div class="nav-bar-btn">Manage Users</div>
+            </div>
+        </div>
+        <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
+            <div class="nav-bar-btn-wrapper  second-nav-bar">
+                <div class="nav-bar-btn">Add Manually</div>
+            </div>
+        </div>
+        `;
+
+        // add event listeners that are specific to sys-ops menu
+
+        $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
+            $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
+            $(this).css({'color': '#7474ff'});
+        });
+
+        $('#manage-users').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=manage-users`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                else alert('Invalid user role.');
+        
+            }, false);
+        
+            syncRequest.send();
+        });
+
+        $('#import-users').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=import-users`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                else alert('Invalid user role.');
+        
+            }, false);
+        
+            syncRequest.send();
+        });
+
+        $('#add-manually-users').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=add-manually-users`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                else alert('Invalid user role.');
+        
+            }, false);
+        
+            syncRequest.send();
+        });
+    }
+    else if (menuName == 'admin') {
         document.getElementById('second-nav-bar-options-container').innerHTML = 
         `
         <div id="manage-users" class="nav-bar-btn-container second-nav-bar">
