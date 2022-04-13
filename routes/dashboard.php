@@ -13,7 +13,6 @@
     $_POST['course-code'] = $_GET['course-code'];
     //$_POST['action'] = $_GET['action'];
 
-    echo 'here';
     echo $_POST['action'];
     echo $_GET['action'];
 
@@ -39,13 +38,13 @@
         include("../matter/add_users_manually.php");    
     }
     // sys-ops: post new prof or admin 
-    else if ($_GET['action'] == "manual-upload") {
+    else if ($_POST['action'] == "manual-upload") {
         echo 'we get to action';
         add_verified_prof( 
-            $_GET['new-prof'], 
-            $_GET['course-code'], 
-            $_GET['course-name'],
-            $_GET['term']
+            $_POST['new-prof'], 
+            $_POST['course-code'], 
+            $_POST['course-name'],
+            $_POST['term']
         );
         
     }      

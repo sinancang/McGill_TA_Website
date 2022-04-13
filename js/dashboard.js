@@ -56,6 +56,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
 
+
 });
 
 
@@ -141,7 +142,9 @@ function fillSecondaryMenu(menuName) {
             var url = `../routes/dashboard.php?user=${user}&view=add-manually-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                if (this.status === 200) {
+                    fillMainDashboardContent(syncRequest.responseText);
+                }
                 else alert('Invalid user role.');
         
             }, false);
@@ -157,41 +160,7 @@ function fillMainDashboardContent(html) {
 }
 
 
-function submitAddManuallyForm() {
-    // make Ajax call to dashboard.php with prof name & course code
-    let syncRequest = new XMLHttpRequest();
-    syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
 
-    let user = document.getElementById('username').innerText;
-    
-    let courseName = document.getElementById("course-name").value;
-    let courseCode = document.getElementById("course-code").value;
-    let term = document.getElementById("term").value;
-    let prof = document.getElementById("new-prof").value;
-    
-
-    var url = `../routes/dashboard.php?action=manual-upload&user=${user}&new-prof=${prof}&course-code=${courseCode}&course-name=${courseName}&term=${term}`;
-    syncRequest.open("POST", url, true);
-    
-
-    syncRequest.addEventListener("load", function(){
-            if (this.status === 200) {
-                // clear form values and display server response
-                document.getElementById("new-prof").value = '';
-                document.getElementById("course-code").value = '';
-                document.getElementById("course-name").value = '';
-                document.getElementById("term").value = '';
-                document.getElementById("form-server-response-container").innerText = syncRequest.responseText;
-                document.getElementById("form-server-response-container").style.animation = 'fadeIn 0.3s ease-in-out 0s forwards';
-            }
-            else {
-                document.getElementById("form-server-response-container").innerText = "Server Error. Failed to add record.";
-            }
-                    
-    }, false);
-
-    syncRequest.send();
-}
 
 function signOut() {
     window.location.href = "https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/home.html";
