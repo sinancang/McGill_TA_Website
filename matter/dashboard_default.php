@@ -70,7 +70,7 @@
                             echo 
                             '<div id="admin" class="nav-bar-btn-container first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Administration</div>
+                                    <div class="nav-bar-btn">Admin Options</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -98,7 +98,7 @@
                             echo
                             '<div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">System Ops</div>
+                                    <div class="nav-bar-btn">Manage Users</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';

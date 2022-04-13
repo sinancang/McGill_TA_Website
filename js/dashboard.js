@@ -88,11 +88,6 @@ function fillSecondaryMenu(menuName) {
                 <div class="nav-bar-btn">Manage Users</div>
             </div>
         </div>
-        <div id="import-users" class="nav-bar-btn-container second-nav-bar">
-            <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Import</div>
-            </div>
-        </div>
         <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
                 <div class="nav-bar-btn">Add Manually</div>
