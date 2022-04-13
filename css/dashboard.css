@@ -225,7 +225,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    height: 70%;
+    height: 500px;
     margin-top: 60px;
     opacity: 0;
     transform: translateY(-10px);
