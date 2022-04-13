@@ -193,7 +193,7 @@ body {
     height: 100%;
     width: 80%;
     background-color: white;
-    overflow: scroll;
+    
 }
 
 .dashboard-dynamic-content-main {
@@ -203,6 +203,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 40px;
+    overflow: scroll;
 }
 
 #main-dashboard-greeting {
