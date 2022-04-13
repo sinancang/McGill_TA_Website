@@ -26,11 +26,11 @@
         }
 
         if ($isSysOps) {
-            echo '<button>IMPORT PROFESSORS AND COURSES</button>';
-            echo '<button>IMPORT TA COHORT</button>';
+            echo '<button class="user-type-based-btn sys-ops-btn">IMPORT PROFESSORS AND COURSES</button>';
+            echo '<button class=" user-type-based-btn sys-ops-btn">IMPORT TA COHORT</button>';
         }
         if ($isAdmin) {
-            echo '<button>IMPORT TA COHORT</button>';
+            echo '<button clas="user-type-based-btn admin-btn">IMPORT TA COHORT</button>';
         }
     ?>
 </div>

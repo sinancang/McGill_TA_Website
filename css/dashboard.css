@@ -207,6 +207,25 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: 10%;
+    width: 80%;
+}
+
+.user-type-based-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d75050;
+    border: 2px solid #d75050;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 30px;
+    font-size: 10px;
+    cursor: pointer;
+    width: 20%;
+    height: 100%;
+    border-radius: 4px;
+    margin-right: 10px;
 }
 
 @keyframes settleVertical {
@@ -225,7 +244,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    height: 500px;
+    height: 400px;
     margin-top: 60px;
     opacity: 0;
     transform: translateY(-10px);
