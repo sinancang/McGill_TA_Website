@@ -11,6 +11,7 @@
     $_POST['user'] = $_GET['user'];
     $_POST['new-prof'] = $_GET['new-prof'];
     $_POST['course-code'] = $_GET['course-code'];
+    $_POST['action'] = $_GET['action'];
 
     // check if user is logged in. if not, redirect to login page
     // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
