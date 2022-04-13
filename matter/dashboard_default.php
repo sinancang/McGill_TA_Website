@@ -5,7 +5,8 @@
         <title>McGill TA Management</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/forms.css">
-        <link rel="stylesheet" href="../css/dashboard.css">   
+        <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="stylesheet" href="../css/manage_users.css">
     </head>
 
     <body>
