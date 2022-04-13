@@ -204,6 +204,8 @@ body {
     justify-content: flex-start;
     padding-top: 40px;
     overflow: scroll;
+    opacity: 0;
+    animation: settleVertical 2s ease-in-out 0s forwards
 }
 
 #main-dashboard-greeting {
@@ -231,9 +233,8 @@ body {
     width: 80%;
     height: 70%;
     margin-top: 60px;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-10px);
-    animation: settleVertical 2s ease-in-out 0s forwards
 }
 
 .recent-activity-title {
