@@ -212,7 +212,7 @@ function fillSecondaryMenu(menuName) {
 
 
 function fillMainDashboardContent(html) {
-    $('#dashboard-dynamic-content')[0].innerHTML = html;
+    $('.dashboard-dynamic-content-main')[0].innerHTML = html;
 }
 
 

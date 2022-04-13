@@ -155,11 +155,13 @@
                 for ($i=0; $i<count($data["ta"]); $i++) {
                     if ($data["ta"][$i] == $username) $isTA = true;
                 }
-                
+
                 if ($isSysOps || $isAdmin) {
                     echo '<div class="dashboard-content-quick-action-bar">';
+                    echo '<div class="user-type-based-actions">';
                     if ($isSysOps) echo '<button class="user-type-based-btn sys-ops-btn">IMPORT PROFESSORS AND COURSES</button>';
                     echo '<button class=" user-type-based-btn sys-ops-btn">IMPORT TA COHORT</button>';
+                    echo '</div>';
                     echo '</div>';
                 }
             ?>
