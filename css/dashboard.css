@@ -204,7 +204,9 @@ body {
 }
 
 .user-type-based-actions {
-    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 @keyframes settleVertical {
