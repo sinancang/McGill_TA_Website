@@ -15,7 +15,7 @@
 
     <div class="user-accounts ta">
 
-        <div class="user-account-type-title">TA USER ACCOUNT</div>
+        <div class="user-account-type-title">TA USER ACCOUNTS</div>
 
         <div class="user-account-entries">
 
@@ -39,7 +39,7 @@
     </div>
     <div class="user-accounts prof">
 
-        <div class="user-account-type-title">PROFESSOR USER ACCOUNT</div>
+        <div class="user-account-type-title">PROFESSOR USER ACCOUNTS</div>
         <div class="user-account-entries">
 
             <?php 

@@ -16,7 +16,6 @@
 
 .user-accounts {
     display: none;
-    max-height: 500px;
 }
 
 .user-accounts.open {
@@ -38,10 +37,15 @@
     border-bottom: 2px solid rgb(87, 87, 87);
 }
 
-.user-account-entry {
+.user-account-entries {
     display: flex;
     flex-direction: column;
     width: 90%;
+    max-height: 100px;
+    overflow: scroll;
+}
+
+.user-account-entry {
     background-color: #f3f3f3;
     margin-top: 10px;
     border-radius: 3px;
