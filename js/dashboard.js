@@ -219,22 +219,22 @@ function signOut() {
 */
 function set_up_manage_users_view() {
     $('#user-type-select').on('change', function() {
-        let value = document.getElementById('user-type-select').value;
+        let values = $('#user-type-select').val();
+        $('.user-accounts').removeClass('open');
 
-        if (value == 'TA') {
-            $('.user-accounts').removeClass('open');
-            $('.user-accounts.ta').addClass('open');
+        for (let i=0; i<values.length; i++) {
+            let value = values[i];
+            if (value == 'TA') {
+                $('.user-accounts.ta').addClass('open');
+            }
+            if (value == 'Professor') {
+                $('.user-accounts.prof').addClass('open');
+            }
+            if (value == 'Administrator') {
+                $('.user-accounts.admin').addClass('open');
+            }
         }
-        if (value == 'Professor') {
-            $('.user-accounts').removeClass('open');
-            $('.user-accounts.prof').addClass('open');
-        }
-        if (value == 'Administrator') {
-            $('.user-accounts').removeClass('open');
-            $('.user-accounts.admin').addClass('open');
-        }
-        
-    })
+    });
 }
 
 
