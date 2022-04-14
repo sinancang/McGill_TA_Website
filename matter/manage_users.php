@@ -1,7 +1,7 @@
 <div class="ajax-content-container">
 
     
-    <div class="manage-users-container">
+    <div class="manage-users-select-container">
         <label for="user-type-select">Select User Type</label>
 
         <select name="user-types" id="user-type-select">
@@ -59,7 +59,13 @@
 
                 <?php 
                     for ($i = 0; $i < count($profs); $i++) {
+                        echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$profs[$i]}</div>";
+                        echo "<div class='user-account-actions-container'>";
+                        echo "<div class='remove-user'>Delete</div>";
+                        echo "<div class='edit-user'>Edit</div>";
+                        echo "</div>";
+                        echo "</div>";
                     }
                 ?>
             </div>
@@ -71,7 +77,13 @@
             <div class="user-account-entries">
                 <?php 
                     for ($i = 0; $i < count($admins); $i++) {
+                        echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$admins[$i]}</div>";
+                        echo "<div class='user-account-actions-container'>";
+                        echo "<div class='remove-user'>Delete</div>";
+                        echo "<div class='edit-user'>Edit</div>";
+                        echo "</div>";
+                        echo "</div>";
                     }
                 ?>
             </div>
@@ -82,7 +94,13 @@
             <div class="user-account-entries">
                 <?php 
                     for ($i = 0; $i < count($students); $i++) {
+                        echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$students[$i]}</div>";
+                        echo "<div class='user-account-actions-container'>";
+                        echo "<div class='remove-user'>Delete</div>";
+                        echo "<div class='edit-user'>Edit</div>";
+                        echo "</div>";
+                        echo "</div>";
                     }
                 ?>
             </div>
