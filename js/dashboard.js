@@ -35,7 +35,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var url = `../routes/dashboard.php?user=${user}&view=main`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+            if (this.status === 200) if (this.status === 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+            }
             else alert('Invalid user role.');
     
         }, false);
