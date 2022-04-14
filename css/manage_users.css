@@ -56,12 +56,19 @@
 .entry-container {
     width: 100%;
     display: flex;
+    flex-direction: row;
+    height: 50px;
     justify-content: space-between;
+    margin-top: 15px;
+    /* padding: 10px; */
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    align-items: center;
 }
 
 .user-account-entry {
-    background-color: #f3f3f3;
-    margin-top: 10px;
+    /* background-color: #f3f3f3; */
+    /* margin-top: 10px; */
     border-radius: 3px;
     padding: 10px;
     font-size: 14px;
@@ -70,13 +77,22 @@
 
 .user-account-actions-container {
     display: flex;
-    width: 13%;
-    background-color: #f3f3f3;
+    /* height: 100%; */
+    width: 10%;
+    /* height: 39px; */
+    /* background-color: #f3f3f3; */
     border-radius: 3px;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between;
 }
 .remove-user {
     width: 40%;
+    font-size: 12px;
+    cursor: pointer;
 }
 .edit-user {
     width: 40%;
+    font-size: 12px;
+    cursor: pointer;
 }
