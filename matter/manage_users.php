@@ -34,17 +34,19 @@
                     $admins = $user_data['admin'];
                     $students = $user_data['student'];
 
-                    echo "<div class='entry-container'>";
+                    
 
                     for ($i = 0; $i < count($TAs); $i++) {
+                        echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
                         echo "<div class='remove-user'>Delete</div>";
                         echo "<div class='edit-user'>Edit</div>";
                         echo "</div>";
+                        echo "</div>";
                     }
 
-                    echo "</div>";
+                    
 
                 ?>
             </div>
