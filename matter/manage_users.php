@@ -1,17 +1,17 @@
 <div class="ajax-content-container">
 
-    <!-- 
+    
     <div class="manage-users-container">
         <label for="user-type-select">Select User Type</label>
 
-        <select name="user-types" id="user-type-select" multiple>
+        <select name="user-types" id="user-type-select">
             <option value="">Please choose an option</option>
             <option value="TA">TA</option>
             <option value="Professor">Professor</option>
             <option value="Administrator">Administrator</option>
         </select>
     </div>
-    -->
+    
 
 
     <div class="all-user-types-container">
@@ -35,6 +35,10 @@
 
                     for ($i = 0; $i < count($TAs); $i++) {
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
+                        echo "<div class='user-account-actions-container'>";
+                        echo "<div class='remove-user'>Delete</div>";
+                        echo "<div class='edit-user'>Edit</div>";
+                        echo "</div>";
                     }
 
                 ?>
