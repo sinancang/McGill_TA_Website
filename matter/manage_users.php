@@ -28,7 +28,7 @@
             $admins = $user_data['admin'];
 
             for ($i = 0; $i < count($TAs); $i++) {
-                echo "<div class='user-acount-entry'>{$TAs[$i]}</div>";
+                echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
             }
 
         ?>
@@ -40,7 +40,7 @@
 
         <?php 
             for ($i = 0; $i < count($profs); $i++) {
-                echo "<div class='user-acount-entry'>{$profs[$i]}</div>";
+                echo "<div class='user-account-entry'>{$profs[$i]}</div>";
             }
         ?>
 
@@ -51,7 +51,7 @@
 
         <?php 
             for ($i = 0; $i < count($admins); $i++) {
-                echo "<div class='user-acount-entry'>{$admins[$i]}</div>";
+                echo "<div class='user-account-entry'>{$admins[$i]}</div>";
             }
         ?>
 
