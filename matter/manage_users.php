@@ -5,10 +5,56 @@
 
         <select name="user-types" id="user-type-select">
             <option value="">Please choose an option</option>
-            <option value="ta">TA</option>
-            <option value="prof">Professor</option>
-            <option value="admin">Administrator</option>
+            <option value="TA">TA</option>
+            <option value="Professor">Professor</option>
+            <option value="Administrator">Administrator</option>
         </select>
+    </div>
+
+
+
+    <div class="user-accounts ta">
+
+        <div>TA User Accounts</div>
+
+        <?php 
+
+            $filename = "../db/user_by_role.json";
+            $data = file_get_contents($filename);
+            $user_data = json_decode($data, true);
+
+            $TAs = $user_data['ta'];
+            $profs = $user_data['prof'];
+            $admins = $user_data['admin'];
+
+            for ($i = 0; $i < count($TAs); $i++) {
+                echo "<div class='user-acount-entry'>{$TAs[$i]}</div>";
+            }
+
+        ?>
+
+    </div>
+    <div class="user-accounts prof">
+
+        <div>Professor User Accounts</div>
+
+        <?php 
+            for ($i = 0; $i < count($profs); $i++) {
+                echo "<div class='user-acount-entry'>{$profs[$i]}</div>";
+            }
+        ?>
+
+    </div>
+    <div class="user-accounts admin">
+
+        <div>Admin User Accounts</div>
+
+        <?php 
+            for ($i = 0; $i < count($admins); $i++) {
+                echo "<div class='user-acount-entry'>{$admins[$i]}</div>";
+            }
+        ?>
+
     </div>
 
 </div>

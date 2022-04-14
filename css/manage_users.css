@@ -13,3 +13,24 @@
     width: 100%;
     border-bottom: 2px solid #b0b0b0;
 }
+
+.user-accounts {
+    display: none;
+}
+
+.user-accounts.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-account-entru {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: #f3f3f3;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 10px;
+}
