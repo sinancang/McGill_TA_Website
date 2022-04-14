@@ -18,7 +18,7 @@
 
         <div class="user-accounts ta">
 
-            <div class="user-account-type-title">TA USER ACCOUNTS</div>
+            <div class="user-account-type-title">TAs</div>
 
             <div class="user-account-entries">
 
@@ -43,7 +43,7 @@
         </div>
         <div class="user-accounts prof">
 
-            <div class="user-account-type-title">PROFESSOR USER ACCOUNTS</div>
+            <div class="user-account-type-title">PROFESSORS</div>
             <div class="user-account-entries">
 
                 <?php 
@@ -56,7 +56,7 @@
         </div>
         <div class="user-accounts admin">
 
-            <div class="user-account-type-title">ADMIN USER ACCOUNTS</div>
+            <div class="user-account-type-title">ADMINS</div>
             <div class="user-account-entries">
                 <?php 
                     for ($i = 0; $i < count($admins); $i++) {
@@ -67,7 +67,7 @@
         </div>
         <div class="user-accounts admin">
 
-            <div class="user-account-type-title">ADMIN USER ACCOUNTS</div>
+            <div class="user-account-type-title">STUDENTS</div>
             <div class="user-account-entries">
                 <?php 
                     for ($i = 0; $i < count($students); $i++) {
