@@ -1,5 +1,6 @@
 <div class="ajax-content-container">
 
+    <!-- 
     <div class="manage-users-container">
         <label for="user-type-select">Select User Type</label>
 
@@ -10,6 +11,7 @@
             <option value="Administrator">Administrator</option>
         </select>
     </div>
+    -->
 
 
 
