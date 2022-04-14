@@ -17,7 +17,15 @@
     ],
     "sys-ops": [
         "david.peterman@mail.mcgill.ca",
-        "David Peterman"
+        "David Peterman",
+        "a"
+    ],
+    "student": [
+        "good student",
+        "bad student",
+        "David",
+        "Sinan",
+        "Alara"
     ]
 
 
