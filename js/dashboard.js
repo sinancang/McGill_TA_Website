@@ -222,15 +222,15 @@ function set_up_manage_users_view() {
         let value = document.getElementById('user-type-select').value;
 
         if (value == 'TA') {
-            $('.user-account').removeClass('open');
+            $('.user-accounts').removeClass('open');
             $('.user-accounts.ta').addClass('open');
         }
-        if (value == 'prof') {
-            $('.user-account').removeClass('open');
+        if (value == 'Professor') {
+            $('.user-accounts').removeClass('open');
             $('.user-accounts.prof').addClass('open');
         }
-        if (value == 'admin') {
-            $('.user-account').removeClass('open');
+        if (value == 'Administrator') {
+            $('.user-accounts').removeClass('open');
             $('.user-accounts.admin').addClass('open');
         }
         
