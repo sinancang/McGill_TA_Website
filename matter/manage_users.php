@@ -9,6 +9,7 @@
             <option value="TA">TA</option>
             <option value="Professor">Professor</option>
             <option value="Administrator">Administrator</option>
+            <option value="Student">Student</option>
         </select>
     </div>
     
@@ -33,6 +34,8 @@
                     $admins = $user_data['admin'];
                     $students = $user_data['student'];
 
+                    echo "<div class='entry-container'>";
+
                     for ($i = 0; $i < count($TAs); $i++) {
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
@@ -40,6 +43,8 @@
                         echo "<div class='edit-user'>Edit</div>";
                         echo "</div>";
                     }
+
+                    echo "</div>";
 
                 ?>
             </div>
@@ -69,7 +74,7 @@
                 ?>
             </div>
         </div>
-        <div class="user-accounts admin">
+        <div class="user-accounts student">
 
             <div class="user-account-type-title">STUDENTS</div>
             <div class="user-account-entries">

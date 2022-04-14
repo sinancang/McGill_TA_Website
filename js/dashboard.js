@@ -221,21 +221,23 @@ function signOut() {
 */
 function set_up_manage_users_view() {
     $('#user-type-select').on('change', function() {
-        let values = $('#user-type-select').val();
+        let value = $('#user-type-select').val();
         $('.user-accounts').removeClass('open');
 
-        for (let i=0; i<values.length; i++) {
-            let value = values[i];
-            if (value == 'TA') {
-                $('.user-accounts.ta').addClass('open');
-            }
-            if (value == 'Professor') {
-                $('.user-accounts.prof').addClass('open');
-            }
-            if (value == 'Administrator') {
-                $('.user-accounts.admin').addClass('open');
-            }
+
+        if (value == 'TA') {
+            $('.user-accounts.ta').addClass('open');
         }
+        if (value == 'Professor') {
+            $('.user-accounts.prof').addClass('open');
+        }
+        if (value == 'Administrator') {
+            $('.user-accounts.admin').addClass('open');
+        }
+        if (value == 'Student') {
+            $('.user-accounts.student').addClass('open');
+        }
+
     });
 }
 
