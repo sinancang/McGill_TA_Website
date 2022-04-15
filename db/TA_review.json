@@ -1,0 +1,10 @@
+{
+    "TA1":{
+        "name" :"RandomTA",
+        "course": "Comp 307",
+        "term" : "FALL 2021",
+        "score": "5",
+        "reviw": "very good"
+
+    }
+}
