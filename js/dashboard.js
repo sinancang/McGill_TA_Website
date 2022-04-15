@@ -1,5 +1,9 @@
 "use strict";
 
+/*
+    Wait for DOM to load and then
+    set up all initial event listeners etc.
+*/
 window.addEventListener('DOMContentLoaded', (event) => {
 
     // set event listeners for primary nav bar options
@@ -25,15 +29,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
 
-
-
     $('#main-dashboard').on('click', function() {
         let user = document.getElementById('username').innerText;
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&view=main`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+            if (this.status === 200) if (this.status === 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+            }
             else alert('Invalid user role.');
     
         }, false);
@@ -51,19 +55,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 
 
+    $('#settings-btn').on('click', function() {
+        $('.settings-menu-container').toggleClass('open');
+    })
+
+
 });
 
 
+/*
+    Ajax request to get the correct options for the secondary menu.
+    This function is only called for secondary menus that have dynamic content.
+    For example if a student selects "Rate TA" options, we load the classes that the student is taking.
+
+    On the other hand, sys-ops secondary menu is always the same, so this function is bypassed.
+*/
 function getSecondaryMenuItems(menuName) {
     
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?role=${menuName}`;
-        syncRequest.open("POST", url, true);
+        syncRequest.open("GET", url, true);
     
         syncRequest.addEventListener("load", function(){
             
             if (this.status === 200) fillSecondaryMenu();
-            else alert('Invalid user role.');
+            else console.log('invalid user role');
     
         }, false);
     
@@ -73,19 +89,21 @@ function getSecondaryMenuItems(menuName) {
 
 
 
-// display correct content in secondary menu in side-nav-bar
+/*
+    This function handles the display of the correct options in the secondary menu
+    in the dashboard.
+    It determines the correct options to display based on the option selected in the primary menu.
+    Also sets necessary event listeners for the secondary menu.
+*/
 function fillSecondaryMenu(menuName) {
+
+    // sys-ops secondary menu
     if (menuName == 'sys-ops') {
         document.getElementById('second-nav-bar-options-container').innerHTML = 
         `
         <div id="manage-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
                 <div class="nav-bar-btn">Manage Users</div>
-            </div>
-        </div>
-        <div id="import-users" class="nav-bar-btn-container second-nav-bar">
-            <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Import</div>
             </div>
         </div>
         <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
@@ -102,13 +120,17 @@ function fillSecondaryMenu(menuName) {
             $(this).css({'color': '#7474ff'});
         });
 
+        // load user management view
         $('#manage-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
             var url = `../routes/dashboard.php?user=${user}&view=manage-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                if (this.status === 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_up_manage_users_view();
+                }
                 else alert('Invalid user role.');
         
             }, false);
@@ -116,27 +138,16 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         });
 
-        $('#import-users').on('click', function() {
-            let user = document.getElementById('username').innerText;
-            let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=import-users`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
-                else alert('Invalid user role.');
-        
-            }, false);
-        
-            syncRequest.send();
-        });
-
+        // load manual upload view
         $('#add-manually-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
             var url = `../routes/dashboard.php?user=${user}&view=add-manually-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) fillMainDashboardContent(syncRequest.responseText);
+                if (this.status === 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                }
                 else alert('Invalid user role.');
         
             }, false);
@@ -144,30 +155,51 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         });
     }
+    // admins secondary menu
+    else if (menuName == 'admin') {
+    }
+    // ta management secondary menu
+    else if (menuName == 'manage-ta') {
+    }
+    // ta rating secondary menu
+    else if (menuName == 'rate-ta') {
+    }
 }
 
 
-function fillMainDashboardContent(html) {
-    $('#dashboard-dynamic-content')[0].innerHTML = html;
-}
 
 
+/* 
+    Function is called from manual upload page.
+    Tries to add a record to the db.
+    The new record specifies a specific prof that is teaching a specific class.
+*/
 function submitAddManuallyForm() {
     // make Ajax call to dashboard.php with prof name & course code
     let syncRequest = new XMLHttpRequest();
+    
+
     let user = document.getElementById('username').innerText;
-    let prof = document.getElementById("new-prof").value;
+    
+    let courseName = document.getElementById("course-name").value;
     let courseCode = document.getElementById("course-code").value;
-    var url = `../routes/dashboard.php?user=${user}&new-prof=${prof}&course-code=${courseCode}`;
+    let term = document.getElementById("term").value;
+    let prof = document.getElementById("new-prof").value;
+    
+
+    var url = `../routes/dashboard.php?action=manual-upload&user=${user}&new-prof=${prof}&course-code=${courseCode}&course-name=${courseName}&term=${term}`;
     syncRequest.open("POST", url, true);
     syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
+    
 
     syncRequest.addEventListener("load", function(){
             if (this.status === 200) {
                 // clear form values and display server response
                 document.getElementById("new-prof").value = '';
                 document.getElementById("course-code").value = '';
-                document.getElementById("form-server-response-container").innerText = syncRequest.responseText;
+                document.getElementById("course-name").value = '';
+                document.getElementById("term").value = '';
+                document.getElementById("form-server-response-container").innerHTML = syncRequest.responseText;
                 document.getElementById("form-server-response-container").style.animation = 'fadeIn 0.3s ease-in-out 0s forwards';
             }
             else {
@@ -179,14 +211,35 @@ function submitAddManuallyForm() {
     syncRequest.send();
 }
 
+function signOut() {
+    window.location.href = "https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/home.html";
+}
+
 
 /*
-<div class="nav-bar-btn-container">
-    <div class="nav-bar-btn-wrapper  second-nav-bar">
-        <div class="nav-bar-btn">COMP 521</div>
-        <div class="nav-bar-btn-subtitle">Modern Computer Games</div>
-    </div>
-</div>
+    Set up event listeners etc. for when user management view is loaded.
 */
+function set_up_manage_users_view() {
+    $('#user-type-select').on('change', function() {
+        let value = $('#user-type-select').val();
+        $('.user-accounts').removeClass('open');
+
+
+        if (value == 'TA') {
+            $('.user-accounts.ta').addClass('open');
+        }
+        if (value == 'Professor') {
+            $('.user-accounts.prof').addClass('open');
+        }
+        if (value == 'Administrator') {
+            $('.user-accounts.admin').addClass('open');
+        }
+        if (value == 'Student') {
+            $('.user-accounts.student').addClass('open');
+        }
+
+    });
+}
+
 
 

@@ -6,7 +6,7 @@
 
         NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
     */
-    function add_verified_prof(string $prof, string $course_code) {
+    function add_verified_prof(string $prof, string $course_code, string $course_name, string $term) {
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
@@ -16,13 +16,15 @@
             $i = 0;
             while (isset($user_data[$prof]['courses'][$i])) {
                 
-                if ($user_data[$prof]['courses'][$i]['course name'] == $course_code) {
+                if ($user_data[$prof]['courses'][$i]['course code'] == $course_code) {
                     echo "Cannot add record. Record already Exists.";
                     return;
                 }
                 $i++;
             }
-            $user_data[$prof]['courses'][]['course name'] = $course_code;
+            $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>prof);
+            $user_data[$prof]['courses'][] = $new_entry;
+
             file_put_contents($filename, json_encode($user_data));
         }
         else {
@@ -32,8 +34,16 @@
 
         echo "Successfully added new record!";
         $date = date('F j Y, \a\t g:ia');
-        add_record_to_activity_history($_POST['user'], "Added {$prof} as Professor to {$course_code}", $date);
+        add_record_to_activity_history($_GET['user'], "Added {$prof} as Professor to {$course_code}", $date);
     }
+
+
+    // Adds email of prof to list of profs in user_by_type
+    function add_to_list_of_profs(string $email) {
+
+    }
+
+
 
 
     /* 
@@ -75,11 +85,11 @@
             file_put_contents($filename, json_encode($user_data));
         }
         else {
-            echo "Failed to register!";
+            //echo "Failed to register!";
             return 0;
         }
 
-        echo "Successfully added new record!";
+        //echo "Successfully added new record!";
         return 1;
 
     }

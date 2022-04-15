@@ -5,15 +5,23 @@
         <title>McGill TA Management</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/forms.css">
-        <link rel="stylesheet" href="../css/dashboard.css">   
+        <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="stylesheet" href="../css/manage_users.css">
     </head>
 
     <body>
 
         <!-- Landing Page Header -->
         <div class="dashboard-header">
-            <img class="dashboard-header-icon" src="../images/icon-simple.svg">
-            <img class="dashboard-header-icon" id="settings-btn" src="../images/settings-icon.svg">
+            <img class="dashboard-header-icon" src="../images/mcgill-logo-svg.svg">
+            <img id="settings-btn" class="dashboard-header-icon" id="settings-btn" src="../images/person.svg">
+            
+            <nav class="settings-menu-container">
+              <div class="settings-btn">Reset Password</div>
+              <div class="separating-line"></div>
+              <div onclick="signOut()" class="settings-btn">Sign Out</div>
+            </nav>
+            
         </div>
 
 
@@ -32,32 +40,71 @@
 
                     <div class="separating-line"></div>
 
-                    <div id="admin" class="nav-bar-btn-container first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Administration</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
 
-                    <div id="manage" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Manage TAs</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
-                    <div id="rate" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Rate a TA</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
+                    <?php 
+                        $user_type = 
 
-                    <div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
-                        <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">System Ops</div>
-                            <img class="right-arrow-svg" src="../images/right-arrow.svg">
-                        </div>
-                    </div>
+                        $filename = "../db/user_by_role.json";
+                        $data = file_get_contents($filename);
+                        $data = json_decode($data, true);
+                        $username = $_GET['user'];
+
+                        $isSysOps = false;
+                        $isAdmin = false;
+                        $isProf = false;
+                        $isTA = false;
+
+                        for ($i=0; $i<count($data["sys-ops"]); $i++) {
+                            if ($data["sys-ops"][$i] == $username) $isSysOps = true;
+                        }
+                        for ($i=0; $i<count($data["admin"]); $i++) {
+                            if ($data["admin"][$i] == $username) $isAdmin = true;
+                        }
+                        for ($i=0; $i<count($data["prof"]); $i++) {
+                            if ($data["prof"][$i] == $username) $isProf = true;
+                        }
+                        for ($i=0; $i<count($data["ta"]); $i++) {
+                            if ($data["ta"][$i] == $username) $isTA = true;
+                        }
+
+                        if ($isSysOps || $isAdmin) {
+                            echo 
+                            '<div id="admin" class="nav-bar-btn-container first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Admin Options</div>
+                                    <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                                </div>
+                            </div>';
+                        }
+                        
+                        if ($isSysOps || $isAdmin || $isProf || $isTA) {
+                            echo
+                            '<div id="manage" class="nav-bar-btn-container  first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Manage TAs</div>
+                                    <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                                </div>
+                            </div>';
+                        }
+                        
+                        echo
+                        '<div id="rate" class="nav-bar-btn-container  first-nav-bar">
+                            <div class="nav-bar-btn-wrapper">
+                                <div class="nav-bar-btn">Rate a TA</div>
+                                <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                            </div>
+                        </div>';
+
+                        if ($isSysOps) {
+                            echo
+                            '<div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
+                                <div class="nav-bar-btn-wrapper">
+                                    <div class="nav-bar-btn">Manage Users</div>
+                                    <img class="right-arrow-svg" src="../images/right-arrow.svg">
+                                </div>
+                            </div>';
+                        }
+                    ?>
 
                 </div>
 
@@ -80,8 +127,46 @@
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
 
 
-            <!-- include default dashboard view -->
-            <?php include("main_dashboard.php"); ?>
+                <div class="dashboard-dynamic-content-main">
+                    <!-- include default dashboard view -->
+                    <?php include("main_dashboard.php"); ?>
+                </div>
+
+
+                <?php 
+
+                    $filename = "../db/user_by_role.json";
+                    $data = file_get_contents($filename);
+                    $data = json_decode($data, true);
+                    $username = $_GET['user'];
+
+                    $isSysOps = false;
+                    $isAdmin = false;
+                    $isProf = false;
+                    $isTA = false;
+
+                    for ($i=0; $i<count($data["sys-ops"]); $i++) {
+                        if ($data["sys-ops"][$i] == $username) $isSysOps = true;
+                    }
+                    for ($i=0; $i<count($data["admin"]); $i++) {
+                        if ($data["admin"][$i] == $username) $isAdmin = true;
+                    }
+                    for ($i=0; $i<count($data["prof"]); $i++) {
+                        if ($data["prof"][$i] == $username) $isProf = true;
+                    }
+                    for ($i=0; $i<count($data["ta"]); $i++) {
+                        if ($data["ta"][$i] == $username) $isTA = true;
+                    }
+
+                    if ($isSysOps || $isAdmin) {
+                        echo '<div class="dashboard-content-quick-action-bar">';
+                        echo '<div class="user-type-based-actions">';
+                        if ($isSysOps) echo '<button class="user-type-based-btn sys-ops-btn">Import Professors and Courses</button>';
+                        echo '<button class=" user-type-based-btn sys-ops-btn">Import TA Cohort</button>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                ?>
 
 
             </div>
