@@ -1,1 +1,68 @@
-{"joseph vybihal":{"email":"example@email.com","registered":true,"password":" comp307 final project","type":"prof","courses":[{"course name":"Comp 307","role":"student","term":"FALL 2021"}]},"David Peterman":{"email":"david.peterman@gmail.com","registered":true,"password":"password","type":"sysop","courses":[{"course name":"Comp 307","role":"TA","term":"FALL 2021"}]},"username":{"email":"example@mail.com","registered":true,"password":"password","type":"student","courses":[{"course name":"Comp 322","role":"student","term":"WINTER 2021"}]},"sinancang":{"email":"sinan.gulan@mail.mcgill.ca","registered":true,"password":"comp307","type":"admin","courses":[{"course name":"Comp 307","role":"prof","term":"FALL 2021"}]},"sinancangulan":{"email":"sinan.gulan@mail.mcgill.ca","registered":true,"password":"a1c73fafab569422cc1259a06d2ff29d7d2944196740d9309fece5b7","type":"student","courses":[]},"test1":{"email":"sinan.gulan@mail.mcgill.ca","registered":true,"password":"a1c73fafab569422cc1259a06d2ff29d7d2944196740d9309fece5b7","type":"student","courses":[]}}
+{
+  "joseph vybihal": {
+    "email": "example@email.com",
+    "registered": true,
+    "password": " comp307 final project",
+    "type": "prof",
+    "courses": [
+      {
+        "course name": "Comp 307",
+        "role": "student",
+        "term": "FALL 2021"
+      }
+    ]
+  },
+  "David Peterman": {
+    "email": "david.peterman@gmail.com",
+    "registered": true,
+    "password": "password",
+    "type": "sysop",
+    "courses": [
+      {
+        "course name": "Comp 307",
+        "role": "TA",
+        "term": "FALL 2021"
+      }
+    ]
+  },
+  "username": {
+    "email": "example@mail.com",
+    "registered": true,
+    "password": "password",
+    "type": "student",
+    "courses": [
+      {
+        "course name": "Comp 322",
+        "role": "student",
+        "term": "WINTER 2021"
+      }
+    ]
+  },
+  "sinancang": {
+    "email": "sinan.gulan@mail.mcgill.ca",
+    "registered": true,
+    "password": "comp307",
+    "type": "admin",
+    "courses": [
+      {
+        "course name": "Comp 307",
+        "role": "prof",
+        "term": "FALL 2021"
+      }
+    ]
+  },
+  "sinancangulan": {
+    "email": "sinan.gulan@mail.mcgill.ca",
+    "registered": true,
+    "password": "a1c73fafab569422cc1259a06d2ff29d7d2944196740d9309fece5b7",
+    "type": "student",
+    "courses": []
+  },
+  "test1": {
+    "email": "sinan.gulan@mail.mcgill.ca",
+    "registered": true,
+    "password": "a1c73fafab569422cc1259a06d2ff29d7d2944196740d9309fece5b7",
+    "type": "student",
+    "courses": []
+  }
+}
