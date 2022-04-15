@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<!--how to decide which user is-->
+<form method="get" name="form" action="../routes/set_office_hours.php"> <!--remove demo!!!-->
+<p><b>Set Office Hours</b></p>
+<p>Choose a Day:</p>
+<select name = "day" > 
+    <option> -- </option>
+    <option> "Monday" </option>
+    <option> "Tuesday" </option>
+    <option> "Wednesday" </option>
+    <option> "Thursday" </option>
+    <option> "Friday" </option>
+    <option> "Saturday" </option>
+    <option> "Sunday" </option>
+</select>
+<br></br>
+<label for="appt">Choose a time for your Office hours:</label>
+<br></br>
+<small>start: </small><br>
+<input type="time" name="start" min="09:00" max="18:00" required><br>
+<small>end: </small><br>
+<input type="time" name="end" min="09:00" max="18:00" required>
+
+<p>Choose a Location:</p>
+<label for="location">Location: </label> <br>
+<input type="text" name="location" placeholder="Enter Location" required><br></br>
+
+
+<p>Add duties: </p>
+<textarea name = "duties" cols="75" name="duties" rows="5"></textarea><br>
+<input type="submit" value = "Set Office Hours"></button>
+</form>
+
+
+</body>
+
+
+</html>
