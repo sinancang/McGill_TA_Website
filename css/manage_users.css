@@ -91,9 +91,17 @@
     width: 40%;
     font-size: 12px;
     cursor: pointer;
+    color: grey;
+}
+.remove-user:hover {
+    color: black;
 }
 .edit-user {
     width: 40%;
     font-size: 12px;
     cursor: pointer;
+    color: grey;
+}
+.edit-user:hover {
+    color: black;
 }
