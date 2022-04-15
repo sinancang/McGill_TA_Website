@@ -94,4 +94,30 @@
 
     }
 
+    function register_new_student(string $username, string $email, string $password) {
+    	$filename = "../db/user_data.json";
+	$data = file_get_contents($filename);
+	$user_data = json_decode($data, true);
+
+	// if username already in use, don't add
+	// TO DO: also check e-mail
+	if (isset($user_data[$username])) {
+		echo "Username already exists!";
+		return 0;
+
+	// else, register user
+	} else {
+		// add user to user_data.json
+		$user_data[$username]['email'] = $email;
+		$user_data[$username]['registered'] = true;
+		$user_data[$username]['password'] = $password;
+		$user_data[$username]['type'] = "student";
+		$user_data[$username]['courses'] = [];
+		file_put_contents($filename, json_encode($user_data));
+		return 1;
+	}
+
+	// TO DO: send confirmation e-mail
+    }
+
 ?>  
