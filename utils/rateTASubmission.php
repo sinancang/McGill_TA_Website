@@ -9,10 +9,6 @@ $score = $_POST['score'];
 $review = $_POST['review'];
 
 
-echo $course;
-echo $term;
-echo $review;
-
 $filename = "../db/TA_review.json";
 
 $data = file_get_contents($filename);
