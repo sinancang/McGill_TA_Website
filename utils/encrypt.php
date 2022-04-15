@@ -1,6 +1,5 @@
 <?php
-    $unencrypted_password = $_POST['pass'];
-    echo $unencrypted_password;
-    $encrypted_password = password_hash($unencrypted_password, PASSWORD_DEFAULT);
-    echo $encrypted_password;
+function encrypt_password(string $unencrypted_password){
+	return hash("sha3-224", $unencrypted_password, false);
+}
 ?>
