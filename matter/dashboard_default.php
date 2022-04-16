@@ -126,31 +126,30 @@
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
                 <!-- hidden add user modal form -->
                 <div class="content-veil">
+
+                    <div id="close-veil-btn">❌</div>
+
                     <div class="form-wrapper add-new-user-form">
                         <div class="form-input-container">
-                            <label for="course-code">Course code</label>
-                            <input type="text" name="course-code" id="course-code" required>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="new-user-name" required>
                         </div>
 
                         <div class="form-input-container">
-                            <label for="course-name">Course Name</label>
-                            <input type="text" name="course-name" id="course-name" required>
-                        </div>
-
-                        <div class="form-input-container">
-                            <label for="term">Term</label>
-                            <input type="text" name="term" id="term" required>
-                        </div>
-
-                        <div class="form-input-container">
-                            <label for="new-prof">Professor name</label>
-                            <input type="text" name="new-prof" id="new-prof" required>
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="new-user-email" required>
                         </div>
 
 
+                        <label for="type">User Type</label>
+                        <select name="type" id="new-user-type">
+                            <option value="admin">Admin</option>
+                            <option value="prof">Professor</option>
+                            <option value="prof">TA</option>
+                            <option value="prof">Student</option>
+                        </select>
 
                         <button class="submit-btn" id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
-
                     </div>
 
                 </div>
