@@ -103,8 +103,6 @@
     */
     function delete_user(string $email) {
 
-        echo $email;
-
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
@@ -112,7 +110,7 @@
         if (isset($user_data[$email])) {
             unset($user_date[$email]);
             echo 'user deleted';
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode(array_values($user_data)));
         }
         else {
             echo 'Server Error. Cannot delete user at this time';
