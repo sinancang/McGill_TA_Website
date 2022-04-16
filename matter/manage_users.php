@@ -37,7 +37,7 @@
 
                         for ($i = 0; $i < count($courses); $i++) {
 
-                            echo "<div>$courses[$i]['course name']</div>";
+                            echo "<div>{$courses[$i]['course name']}</div>";
 
                             /*
                             echo "<div class='entry-container'>";
