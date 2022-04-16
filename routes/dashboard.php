@@ -25,10 +25,6 @@
     if ($_GET['view'] == 'manage-users') {
         include("../matter/manage_users.php");
     }
-    // sys-ops: import users (csv file)
-    else if ($_GET['view'] == 'import-users') {              
-        include("../matter/import_users.php");    
-    }
     // sys-ops: add users manually
     else if ($_GET['view'] == 'add-manually-users') {         
         include("../matter/add_users_manually.php");    
@@ -52,7 +48,12 @@
         include("../matter/dashboard_default.php");    
     }
     else if ($_GET['action'] == 'delete-user') {
-        delete_user($_GET['target']);
+        deactivate_user($_GET['target']);
+        include("../matter/manage_users.php");
+    }
+    else if ($_GET['action'] == 'reactivate-user') {
+        reactivate_user($_GET['target']);
+        include("../matter/manage_users.php");
     }
     else {
         echo "Page Not Found";

@@ -251,21 +251,50 @@ function set_up_manage_users_view() {
 
 
     // add delete event listener
-    $('.remove-user').on('click', function() {
+    $('.user-account-entries').on('click', '.remove-user', function() {
         let user = document.getElementById('username').innerText;
         let user_to_delete = $(this).attr('target');
-        console.log(user_to_delete);
+
+        let selectedOption;
+        if ($('#user-type-select').val() == 'ALL') selectedOption = 'all';
+        if ($('#user-type-select').val() == 'TA') selectedOption = 'ta';
+        if ($('#user-type-select').val() == 'Administrator') selectedOption = 'admin';
+        if ($('#user-type-select').val() == 'Professor') selectedOption = 'prof';
+        if ($('#user-type-select').val() == 'Sys-Op') selectedOption = 'sysop';
+        if ($('#user-type-select').val() == 'deactivated') selectedOption = 'deactivated';
+        
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status === 200) {
-                console.log(this.responseText);
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                (`.user-account.${selectedOption}`).addClass('open');
             }
             else alert('Server Error. Please try again later.');
     
         }, false);
     
+        syncRequest.send();
+    });
+
+    // reactivate button event handler
+    $(".user-account-entries").on("click", '.reactivate-user', function(){
+        let user = document.getElementById('username').innerText;
+        let user_to_reactivate = $(this).attr('target');
+
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=reactivate-user&target=${user_to_reactivate}`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){     
+            
+            if (this.status === 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                ('.user-account.deactivated').addClass('open');
+            }
+            else alert('Server Error. Please try again later.');
+
+        }, false);
         syncRequest.send();
     });
 }

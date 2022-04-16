@@ -38,12 +38,6 @@
     }
 
 
-    // Adds email of prof to list of profs in user_by_type
-    function add_to_list_of_profs(string $email) {
-
-    }
-
-
 
 
     /* 
@@ -101,14 +95,14 @@
         Idea: Instead of removing, we could "deactivate" account?
 
     */
-    function delete_user(string $email) {
+    function deactivate_user(string $user) {
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
-        if (isset($user_data[$email])) {
-            $user_data[$email]["deactivated"] = true;
+        if (isset($user_data[$user])) {
+            $user_data[$user]["deactivated"] = true;
             //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
             echo 'user deactivated';
@@ -116,8 +110,22 @@
         else {
             echo 'Server Error. Cannot deactivate user at this time';
         }
-    
+    }
 
+    function reactivate_user(string $user) {
+        $filename = "../db/user_data.json";
+        $data = file_get_contents($filename);
+        $user_data = json_decode($data, true);
+
+        if (isset($user_data[$user])) {
+            $user_data[$user]["deactivated"] = false;
+            //$user_data = array_values($user_data);
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            echo 'user deactivated';
+        }
+        else {
+            echo 'Server Error. Cannot deactivate user at this time';
+        }
     }
 
 ?>  

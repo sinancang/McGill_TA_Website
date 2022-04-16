@@ -97,7 +97,7 @@
                         if (!$isSysOps) {
                             echo                           
                             "<div class='user-account-actions-container'>
-                                <div class='remove-user' target='{$key}'>Delete</div>
+                                <div class='remove-user' target='{$key}'>Deactivate</div>
                                 <div class='edit-user' target='{$key}'>Edit</div>
                             </div>";
                         }
@@ -123,7 +123,7 @@
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
-                        echo "<div class='remove-user' target='{$TAs[$i]}'>Delete</div>";
+                        echo "<div class='remove-user' target='{$TAs[$i]}'>Deactivate</div>";
                         echo "<div class='edit-user' target='{$TAs[$i]}'>Edit</div>";
                         echo "</div>";
                         echo "</div>";
@@ -143,7 +143,7 @@
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$profs[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
-                        echo "<div class='remove-user' target='{$profs[$i]}'>Delete</div>";
+                        echo "<div class='remove-user' target='{$profs[$i]}'>Deactivate</div>";
                         echo "<div class='edit-user' target='{$profs[$i]}'>Edit</div>";
                         echo "</div>";
                         echo "</div>";
@@ -161,7 +161,7 @@
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$admins[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
-                        echo "<div class='remove-user' target='{$admins[$i]}'>Delete</div>";
+                        echo "<div class='remove-user' target='{$admins[$i]}'>Deactivate</div>";
                         echo "<div class='edit-user' target='{$admins[$i]}'>Edit</div>";
                         echo "</div>";
                         echo "</div>";
@@ -178,7 +178,7 @@
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$students[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
-                        echo "<div class='remove-user' target='{$students[$i]}'>Delete</div>";
+                        echo "<div class='remove-user' target='{$students[$i]}'>Deactivate</div>";
                         echo "<div class='edit-user' target='{$students[$i]}'>Edit</div>";
                         echo "</div>";
                         echo "</div>";
@@ -218,7 +218,7 @@
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$deactivated[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
-                        echo "<div class='remove-user' target='{$deactivated[$i]}'>Reactivate</div>";
+                        echo "<div class='reactivate-user' target='{$deactivated[$i]}'>Reactivate</div>";
                         echo "</div>";
                         echo "</div>";
                     }
