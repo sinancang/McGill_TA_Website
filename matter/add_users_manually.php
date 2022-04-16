@@ -1,7 +1,5 @@
 <div class="form-container ajax-content-container">
 
-    <p style="font-size: 30px;">Manual Input</p>
-
     <div class="form-wrapper">
 
 
