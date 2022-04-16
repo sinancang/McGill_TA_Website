@@ -41,7 +41,10 @@
                         $isAdmin = false;
                         $isSysOps = false;
 
-                        if ($value['type'] == 'sysop') $isSysOps = true;
+                        if ($value['type'] == 'sysop') {
+                            $isSysOps = true;
+                            
+                        }
                                                     
                         echo 
                         "<div class='entry-container'>
@@ -52,18 +55,22 @@
                                     for ($i = 0; $i < count($courses); $i++) {
                                         $role = $courses[$i]['role'];
                                         if ($role == 'TA' && !$isTA) {
+                                            array_push($TAs, $key);
                                             echo "<div class='user-role'>TA</div>";
                                             $isTA = true;
                                         }
                                         if ($role == 'prof' && !$isTA) {
+                                            array_push($profs, $key);
                                             echo "<div class='user-role'>Prof</div>";
                                             $isProf = true;
                                         }
                                         if ($role == 'admin' && !$isTA) {
+                                            array_push($admins, $key);
                                             echo "<div class='user-role'>Admin</div>";
                                             $isAdmin = true;
                                         }
                                         if ($role == 'student' && !$isTA) {
+                                            array_push($students, $key);
                                             echo "<div class='user-role'>Student</div>";
                                             $isStudent = true;
                                         }
