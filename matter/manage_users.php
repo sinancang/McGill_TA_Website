@@ -32,7 +32,11 @@
                     $user_data = json_decode($data, true);
 
 
-                    $TAs; $profs; $admins; $students; $sysOps;
+                    $TAs = array(); 
+                    $profs = array(); 
+                    $admins = array(); 
+                    $students = array(); 
+                    $sysOps = array();
                     
                     foreach($user_data as $key => $value) {
                         $courses = $value['courses'];
