@@ -126,6 +126,9 @@
     cursor: pointer;
     color: grey;
 }
+.reactivate-user:hover {
+    color: black;
+}
 .remove-user:hover {
     color: black;
 }

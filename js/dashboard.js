@@ -290,7 +290,7 @@ function set_up_manage_users_view() {
             
             if (this.status === 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                $('.user-account.deactivated').addClass('open');
+                $('.user-accounts.deactivated').addClass('open');
             }
             else alert('Server Error. Please try again later.');
 
