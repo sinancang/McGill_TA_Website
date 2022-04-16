@@ -123,7 +123,7 @@
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
 
-                        if ($user_data[$TAs[$i]]['type'] != 'sysop') {
+                        if (isset($user_data[$TAs[$i]]['type']) && $user_data[$TAs[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$TAs[$i]}'>Deactivate</div>";
                             echo "<div class='edit-user' target='{$TAs[$i]}'>Edit</div>";
@@ -146,7 +146,7 @@
                     for ($i = 0; $i < count($profs); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$profs[$i]}</div>";
-                        if ($user_data[$TAs[$i]]['type'] != 'sysop') {
+                        if (isset($user_data[$TAs[$i]]['type']) && $user_data[$TAs[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$TAs[$i]}'>Deactivate</div>";
                             echo "<div class='edit-user' target='{$TAs[$i]}'>Edit</div>";
@@ -166,7 +166,7 @@
                     for ($i = 0; $i < count($admins); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$admins[$i]}</div>";
-                        if ($user_data[$TAs[$i]]['type'] != 'sysop') {
+                        if (isset($user_data[$TAs[$i]]['type']) && $user_data[$TAs[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$TAs[$i]}'>Deactivate</div>";
                             echo "<div class='edit-user' target='{$TAs[$i]}'>Edit</div>";
@@ -185,7 +185,7 @@
                     for ($i = 0; $i < count($students); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$students[$i]}</div>";
-                        if ($user_data[$TAs[$i]]['type'] != 'sysop') {
+                        if (isset($user_data[$TAs[$i]]['type']) && $user_data[$TAs[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$TAs[$i]}'>Deactivate</div>";
                             echo "<div class='edit-user' target='{$TAs[$i]}'>Edit</div>";
