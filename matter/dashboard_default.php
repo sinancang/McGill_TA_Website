@@ -125,44 +125,43 @@
             </div>
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
+                <!-- hidden add user modal form -->
+                <div class="hidden-add-new-user-form" style="display: none; position: absolute;width: 600px;height: 450px;margin: auto;background-color: #00000082;z-index: 999;border: 2px solid black;border-radius: 4px;/* text-align: center; */justify-content: space-around;padding: 40px;">
+                    <div class="form-wrapper">
+
+
+                        <div class="form-input-container">
+                            <label for="course-code">Course code</label>
+                            <input type="text" name="course-code" id="course-code" required="">
+                        </div>
+
+                        <div class="form-input-container">
+                            <label for="course-name">Course Name</label>
+                            <input type="text" name="course-name" id="course-name" required="">
+                        </div>
+
+                        <div class="form-input-container">
+                            <label for="term">Term</label>
+                            <input type="text" name="term" id="term" required="">
+                        </div>
+
+                        <div class="form-input-container">
+                            <label for="new-prof">Professor name</label>
+                            <input type="text" name="new-prof" id="new-prof" required="">
+                        </div>
+
+
+
+                        <button class="submit-btn" id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
+
+                    </div>
+
+                
+                
+                </div>
 
 
                 <div class="dashboard-dynamic-content-main">
-
-                    <!-- hidden add user modal form -->
-                    <div class="hidden-add-new-user-form" style="display: none; position: absolute;width: 600px;height: 450px;margin: auto;background-color: #00000082;z-index: 999;border: 2px solid black;border-radius: 4px;/* text-align: center; */justify-content: space-around;padding: 40px;">
-                        <div class="form-wrapper">
-
-
-                            <div class="form-input-container">
-                                <label for="course-code">Course code</label>
-                                <input type="text" name="course-code" id="course-code" required="">
-                            </div>
-
-                            <div class="form-input-container">
-                                <label for="course-name">Course Name</label>
-                                <input type="text" name="course-name" id="course-name" required="">
-                            </div>
-
-                            <div class="form-input-container">
-                                <label for="term">Term</label>
-                                <input type="text" name="term" id="term" required="">
-                            </div>
-
-                            <div class="form-input-container">
-                                <label for="new-prof">Professor name</label>
-                                <input type="text" name="new-prof" id="new-prof" required="">
-                            </div>
-
-
-
-                            <button class="submit-btn" id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
-
-                        </div>
-
-                    
-                    
-                    </div>
                     <!-- include default dashboard view -->
                     <?php include("main_dashboard.php"); ?>
                 </div>
