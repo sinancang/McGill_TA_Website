@@ -119,35 +119,32 @@
 
                         <div id="second-nav-bar-options-container"></div>
 
-                    </div>
-                
+                    </div>       
                 
             </div>
 
             <div id="dashboard-dynamic-content" class="dashboard-content-dynamic-content">
                 <!-- hidden add user modal form -->
-                <div class="hidden-add-new-user-form" style="display: none; position: absolute;width: 600px;height: 450px;margin: auto;background-color: #00000082;z-index: 999;border: 2px solid black;border-radius: 4px;/* text-align: center; */justify-content: space-around;padding: 40px;">
-                    <div class="form-wrapper">
-
-
+                <div class="content-veil">
+                    <div class="form-wrapper add-new-user-form">
                         <div class="form-input-container">
                             <label for="course-code">Course code</label>
-                            <input type="text" name="course-code" id="course-code" required="">
+                            <input type="text" name="course-code" id="course-code" required>
                         </div>
 
                         <div class="form-input-container">
                             <label for="course-name">Course Name</label>
-                            <input type="text" name="course-name" id="course-name" required="">
+                            <input type="text" name="course-name" id="course-name" required>
                         </div>
 
                         <div class="form-input-container">
                             <label for="term">Term</label>
-                            <input type="text" name="term" id="term" required="">
+                            <input type="text" name="term" id="term" required>
                         </div>
 
                         <div class="form-input-container">
                             <label for="new-prof">Professor name</label>
-                            <input type="text" name="new-prof" id="new-prof" required="">
+                            <input type="text" name="new-prof" id="new-prof" required>
                         </div>
 
 
@@ -156,8 +153,6 @@
 
                     </div>
 
-                
-                
                 </div>
 
 

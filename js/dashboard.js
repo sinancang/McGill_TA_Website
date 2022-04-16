@@ -245,7 +245,8 @@ function set_up_manage_users_view() {
 
     // add new user btn event listener
     $('.add-new-user-btn').on('click', function() {
-        $('.hidden-add-new-user-form').css({'display':'flex'});
+        $('.content-veil').css({'display':'flex'});
+        $('.form-wrapper.add-new-user-form').css({'display': 'block'});
     });
 
 
