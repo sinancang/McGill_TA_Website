@@ -224,6 +224,8 @@ function set_up_manage_users_view() {
         let value = $('#user-type-select').val();
         $('.user-accounts').removeClass('open');
 
+        console.log('here');
+
 
         if (value == 'TA') {
             $('.user-accounts.ta').addClass('open');
