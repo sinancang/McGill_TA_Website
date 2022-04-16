@@ -14,7 +14,7 @@
         },
         {
             "course name": "Comp 307",
-            "role": "Prof",
+            "role": "prof",
             "term": "FALL 2021"
         }]
      },
@@ -28,7 +28,7 @@
         },
         {
             "course name": "Comp 307",
-            "role": "Student",
+            "role": "student",
             "term": "FALL 2021"
         }]
     },

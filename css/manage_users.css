@@ -101,6 +101,12 @@
     margin-right: 10px;
 }
 
+.user-role::after {
+    position: absolute;
+    right: 0px;
+    content: ' - ';
+}
+
 .user-account-actions-container {
     display: flex;
     /* height: 100%; */
