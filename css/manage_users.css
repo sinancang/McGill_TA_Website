@@ -68,12 +68,30 @@
 }
 
 .user-account-entry {
-    /* background-color: #f3f3f3; */
-    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     border-radius: 3px;
     padding: 10px;
     font-size: 14px;
     width: 85%;
+}
+
+.user-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+}
+
+.user-courses-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
 }
 
 .user-account-actions-container {

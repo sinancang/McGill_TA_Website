@@ -35,20 +35,25 @@
                     foreach($user_data as $key => $value) {
                         $courses = $value['courses'];
 
-                        for ($i = 0; $i < count($courses); $i++) {
+                                                    
+                        echo 
+                        "<div class='entry-container'>
+                            <div class='user-account-entry'>
+                                <div class='user-name'>{$key}</div>
+                                <div class='user-courses-container'>";
 
-                            echo "<div>{$courses[$i]['course name']}</div>";
-
-                            /*
-                            echo "<div class='entry-container'>";
-                            echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
-                            echo "<div class='user-account-actions-container'>";
-                            echo "<div class='remove-user' target='{$TAs[$i]}'>Delete</div>";
-                            echo "<div class='edit-user' arget='{$TAs[$i]}'>Edit</div>";
-                            echo "</div>";
-                            echo "</div>";
-                            */
-                        }
+                                    for ($i = 0; $i < count($courses); $i++) {
+                                        echo "<div class>{$courses[$i]['course name']}</div>";
+                                    }
+                        echo
+                                "</div>
+                            </div>
+                            <div class='user-account-actions-container'>
+                                <div class='remove-user' target='{$key}'>Delete</div>
+                                <div class='edit-user' target='{$key}'>Edit</div>
+                            </div>
+                        </div>";
+                            
                     }
                     
 
@@ -95,7 +100,7 @@
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
                         echo "<div class='user-account-actions-container'>";
                         echo "<div class='remove-user' target='{$TAs[$i]}'>Delete</div>";
-                        echo "<div class='edit-user' arget='{$TAs[$i]}'>Edit</div>";
+                        echo "<div class='edit-user' target='{$TAs[$i]}'>Edit</div>";
                         echo "</div>";
                         echo "</div>";
                     }
