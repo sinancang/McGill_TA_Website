@@ -22,8 +22,12 @@
                 }
                 $i++;
             }
-            $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>prof);
+            $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
             $user_data[$prof]['courses'][] = $new_entry;
+
+            if ($user_data[$prof]['type'] == 'ta' || $user_data[$prof]['type'] == 'student') {
+                $user_data[$prof]['type'] = 'prof';
+            }
 
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
@@ -35,6 +39,26 @@
         echo "Successfully added new record!";
         $date = date('F j Y, \a\t g:ia');
         add_record_to_activity_history($_GET['user'], "Added {$prof} as Professor to {$course_code}", $date);
+    }
+
+
+    // go through incoming file and add all records
+    function import_profs_and_courses() {
+        
+        if (($handle = fopen("../incoming/prof_and_course_data.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                $term = $data[0];
+                $course_num = $data[1];
+                $course_name = $data[2];
+                $prof_name = $data[3];
+                add_verified_prof($prof_name, $course_num, $course_name, $term);
+            }
+            fclose($handle);
+        }
+        else {
+            echo "Unable to import at this time. Please try again later or contant system operator.";
+        }
+
     }
 
 

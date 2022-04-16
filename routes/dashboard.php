@@ -55,6 +55,9 @@
         reactivate_user($_GET['target']);
         include("../matter/manage_users.php");
     }
+    else if ($_GET['action'] == 'prof-courses-import') {
+        import_profs_and_courses();
+    }
     else {
         echo "Page Not Found";
     }

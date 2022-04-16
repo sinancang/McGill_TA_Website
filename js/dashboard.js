@@ -6,6 +6,26 @@
 */
 window.addEventListener('DOMContentLoaded', (event) => {
 
+
+    // set import profs and courses btn event listener
+    $('.user-type-based-btn.sys-ops-btn').on('click', function() {
+        $(this).text('Importing...');
+        let user = document.getElementById('username').innerText;
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=prof-courses-import`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status === 200) {
+                $(this).text('Import Professors and Courses');
+                //console.log(this.responseText);
+            }
+            else alert('Server Error.');
+    
+        }, false);
+    
+        syncRequest.send();
+    });
+
     // set event listeners for primary nav bar options
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
 
