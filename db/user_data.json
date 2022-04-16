@@ -47,7 +47,7 @@
         "password": "comp307",
         "courses": [{
             "course name": "Comp 307",
-            "role": "prof",
+            "role": "admin",
             "term": "FALL 2021"
         }]
     },
