@@ -1,19 +1,22 @@
 <div class="ajax-content-container">
 
-    
-    <div class="manage-users-select-container">
-        <label for="user-type-select">Select User Type</label>
+    <div class="user-management-top-options">
+        <div class="manage-users-select-container">
+            <label for="user-type-select">Select User Type</label>
 
-        <select name="user-types" id="user-type-select">
-            <option value="">Please choose an option</option>
-            <option value="All">All</option>
-            <option value="TA">TA</option>
-            <option value="Professor">Professor</option>
-            <option value="Administrator">Administrator</option>
-            <option value="Student">Student</option>
-            <option value="Sys-Op">System Operator</option>
-            <option value="deactivated">Deactivated Users</option>
-        </select>
+            <select name="user-types" id="user-type-select">
+                <option value="">Please choose an option</option>
+                <option value="All">All</option>
+                <option value="TA">TA</option>
+                <option value="Professor">Professor</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Student">Student</option>
+                <option value="Sys-Op">System Operator</option>
+                <option value="deactivated">Deactivated Users</option>
+            </select>
+        </div>
+
+        <button class="add-new-user-btn">Add New User</button>
     </div>
     
 

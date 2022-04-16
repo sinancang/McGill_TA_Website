@@ -5,6 +5,20 @@
     justify-content: space-around;
 }
 
+
+.user-management-top-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+
+.add-new-user-btn {
+    width: 15%;
+    height: 60%;
+}
+
 #user-type-select {
     display: block;
     margin-top: 10px;
