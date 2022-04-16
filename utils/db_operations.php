@@ -73,12 +73,13 @@
             $user_data[$username]['password'] = $password;
 	    $user_data[$username]['registered'] = true;
 	    file_put_contents($filename, json_encode($user_data));
-	    echo "Successfully added new record!";
+	    
+	    // succesfully registered
 	    return 1;
 
-        } else {
-            echo "Failed to register!";
-            return 0;
+	} else {
+	    // TA/Prof/Admin hasn't been pre-added 
+            return -1;
         }
     }
 
@@ -90,14 +91,15 @@
 	// check if email is already registered
 	for ($i = 0; $i < $user_data.count(); $i++){
 		if ($user_data[$i]['email'] == $email){
-			echo "Email already in use!";
-			return -1;
+			
+			// email already registered
+			return 0;
 		}
 	}
 
 	// if username already in use, don't add
 	if (isset($user_data[$username])) {
-		echo "Username already exists!";
+		// username already registered
 		return 0;
 
 	// else, register user
@@ -109,6 +111,8 @@
 		$user_data[$username]['type'] = "student";
 		$user_data[$username]['courses'] = [];
 		file_put_contents($filename, json_encode($user_data));
+		
+		// successfully registered user
 		return 1;
 	}
 

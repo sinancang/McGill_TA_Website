@@ -22,8 +22,10 @@ function registerProcedure(){
 	syncRequest.addEventListener("load", function() {
 		if (this.status == 200){
 			console.log('Register success.');
+		} else if (this.status == 409) {
+			console.log('Username or e-mail already in use!');
 		} else {
-			console.log('Failed to register...');
+			console.log('TA/Prof/Admin has not been pre-added. Contact sysops.');
 		}
 	}, false);
 	var fd = new FormData;
