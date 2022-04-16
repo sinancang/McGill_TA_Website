@@ -110,7 +110,7 @@
         if (isset($user_data[$email])) {
             unset($user_date[$email]);
             echo 'user deleted';
-            file_put_contents($filename, json_encode(array_values($user_data)));
+            file_put_contents($filename, json_encode($user_data));
         }
         else {
             echo 'Server Error. Cannot delete user at this time';
