@@ -7,6 +7,12 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
 
+    // add new user btn event listener
+    $('.add-new-user-btn').on('click', function() {
+        $('.hidden-add-new-user-form').css({'display':'block'});
+    })
+
+
     // set import profs and courses btn event listener
     $('.user-type-based-btn.sys-ops-btn').on('click', function() {
         $(this).text('Importing...');
