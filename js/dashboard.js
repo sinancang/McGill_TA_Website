@@ -243,6 +243,9 @@ function set_up_manage_users_view() {
         if (value == 'Sys-Op') {
             $('.user-accounts.sys-op').addClass('open');
         }
+        if (value == 'deactivated') {
+            $('.user-accounts.deactivated').addClass('open');
+        }
 
     });
 

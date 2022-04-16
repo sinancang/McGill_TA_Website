@@ -12,6 +12,7 @@
             <option value="Administrator">Administrator</option>
             <option value="Student">Student</option>
             <option value="Sys-Op">System Operator</option>
+            <option value="deactivated">Deactivated Users</option>
         </select>
     </div>
     
@@ -37,8 +38,15 @@
                     $admins = array(); 
                     $students = array(); 
                     $sysOps = array();
+                    $deactivated = array();
                     
                     foreach($user_data as $key => $value) {
+                        // skip if user has been deactivated (deleted)
+                        if ($value['deactivated'] == true) {
+                            array_push($deactivated, $key);
+                            continue;
+                        }
+
                         $courses = $value['courses'];
                         $isStudent = false;
                         $isTA = false;
@@ -192,6 +200,28 @@
                         echo "<div class='user-account-entry'>{$sysOps[$i]}</div>";
                         echo "</div>";
                     }  
+
+                ?>
+            </div>
+
+        </div>
+
+        <div class="user-accounts deactivated">
+
+            <div class="user-account-type-title">DEACTIVATED USERS</div>
+
+            <div class="user-account-entries">
+
+                <?php 
+
+                    for ($i = 0; $i < count($deactivated); $i++) {
+                        echo "<div class='entry-container'>";
+                        echo "<div class='user-account-entry'>{$deactivated[$i]}</div>";
+                        echo "<div class='user-account-actions-container'>";
+                        echo "<div class='remove-user' target='{$deactivated[$i]}'>Reactivate</div>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
 
                 ?>
             </div>
