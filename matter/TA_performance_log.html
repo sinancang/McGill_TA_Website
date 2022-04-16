@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+</body>
+<form method="get" name="form" action="../utils/generateTA.php">
+<p>TA Performance Log</p>
+<!--prof select a ta from a dropdown so generate dynamic dropdown-->
+<select id = "TA_dropdown" name="TA_dropdown" onclick="termSelected(this.value)">
+    <option value="">Select a TA</option>
+</select>
+<p>Leave a note about the TA:</p>
+<textarea id = "review" cols="75" name="review" rows="5"></textarea><br>
+<input type="submit" value = "submit your review"></button>
+</form>
+
+</html>
+
+<script>
+    //function to generate dropdown menu for TA names from the selected term.
+    function termSelected(data){
+        var ajaxreq = new XMLHttpRequest(); // New request object
+        ajaxreq.open('GET', '../utils/generateTA.php', true);
+        ajaxreq.send();
+        ajaxreq.onreadystatechange = function(){
+            if(ajaxreq.readyState==4 && ajaxreq.status==200){
+                document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
+            }          
+        }
+    } 
+</script>
