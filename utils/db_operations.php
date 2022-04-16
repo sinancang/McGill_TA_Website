@@ -103,7 +103,8 @@
     */
     function delete_user(string $email) {
 
-        $filename = "../db/activity_history.json";
+
+        $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
