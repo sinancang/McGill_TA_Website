@@ -6,6 +6,16 @@
             "course name": "Comp 307",
             "role": "student",
             "term": "FALL 2021"
+        },
+        {
+            "course name": "Comp 307",
+            "role": "TA",
+            "term": "FALL 2021"
+        },
+        {
+            "course name": "Comp 307",
+            "role": "Prof",
+            "term": "FALL 2021"
         }]
      },
     "David Peterman": {
@@ -14,6 +24,11 @@
         "courses": [{
             "course name": "Comp 307",
             "role": "TA",
+            "term": "FALL 2021"
+        },
+        {
+            "course name": "Comp 307",
+            "role": "Student",
             "term": "FALL 2021"
         }]
     },
