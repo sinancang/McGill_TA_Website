@@ -130,7 +130,7 @@
                 <div class="dashboard-dynamic-content-main">
 
                     <!-- hidden add user modal form -->
-                    <div class="hidden-add-new-user-form" style="display: none; position: absolute;width: 600px;height: 450px;margin: auto;background-color: #00000082;z-index: 999;border: 2px solid black;border-radius: 4px;display: flex;/* text-align: center; */justify-content: space-around;padding: 40px;">
+                    <div class="hidden-add-new-user-form" style="display: none; position: absolute;width: 600px;height: 450px;margin: auto;background-color: #00000082;z-index: 999;border: 2px solid black;border-radius: 4px;/* text-align: center; */justify-content: space-around;padding: 40px;">
                         <div class="form-wrapper">
 
 

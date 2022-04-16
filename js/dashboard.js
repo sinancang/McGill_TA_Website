@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // add new user btn event listener
     $('.add-new-user-btn').on('click', function() {
-        $('.hidden-add-new-user-form').css({'display':'block'});
+        $('.hidden-add-new-user-form').css({'display':'flex'});
     })
 
 
