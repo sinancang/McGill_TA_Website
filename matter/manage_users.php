@@ -11,6 +11,7 @@
             <option value="Professor">Professor</option>
             <option value="Administrator">Administrator</option>
             <option value="Student">Student</option>
+            <option value="Sys-Op">System Operator</option>
         </select>
     </div>
     
@@ -121,17 +122,6 @@
 
                 <?php 
 
-                    $filename = "../db/user_by_role.json";
-                    $data = file_get_contents($filename);
-                    $user_data = json_decode($data, true);
-
-                    $TAs = $user_data['ta'];
-                    $profs = $user_data['prof'];
-                    $admins = $user_data['admin'];
-                    $students = $user_data['student'];
-
-                    
-
                     for ($i = 0; $i < count($TAs); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
@@ -141,8 +131,6 @@
                         echo "</div>";
                         echo "</div>";
                     }
-
-                    
 
                 ?>
             </div>
@@ -198,6 +186,24 @@
                         echo "</div>";
                         echo "</div>";
                     }
+                ?>
+            </div>
+
+        </div>
+        <div class="user-accounts sys-op">
+
+            <div class="user-account-type-title">SYSTEM OPERATORS</div>
+
+            <div class="user-account-entries">
+
+                <?php                  
+
+                    for ($i = 0; $i < count($sysOps); $i++) {
+                        echo "<div class='entry-container'>";
+                        echo "<div class='user-account-entry'>{$sysOps[$i]}</div>";
+                        echo "</div>";
+                    }  
+
                 ?>
             </div>
 
