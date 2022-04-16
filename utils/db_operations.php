@@ -107,19 +107,12 @@
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
-        $i = 0;
-        array_filter($user_data, function($email) {
-            echo 'hi ';
-            echo $email;
-            
-            //next($user_data);
-            return true;
-        });
 
         if (isset($user_data[$email])) {
-            unset($user_date[$email]);
-            echo 'user deleted';
+            unset($user_data[$email]);
+            $user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            echo 'user deleted';
         }
         else {
             echo 'Server Error. Cannot delete user at this time';
