@@ -107,7 +107,7 @@
         $data = file_get_contents($filename);
         $user_data = json_decode($data);
 
-        echo $user_data->username;
+        echo $user_data->{"{$email}"};
 
 
         /*
