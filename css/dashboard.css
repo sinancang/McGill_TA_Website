@@ -300,6 +300,7 @@ body {
     height: 60px;
     background-color: #f6f6f6;
     border-top: 2px solid #f0f0f0;
+    z-index: 1000;
 }
 
 .user-type-based-actions {
