@@ -21,6 +21,7 @@
     "David Peterman": {
         "registered": true,
         "password": "password",
+        "type": "sysop",
         "courses": [{
             "course name": "Comp 307",
             "role": "TA",
