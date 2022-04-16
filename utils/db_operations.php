@@ -108,7 +108,7 @@
         $user_data = json_decode($data, true);
 
         array_filter($user_data, function() {
-            echo key($user_data);
+            echo 'hi';
             next($user_data);
             return true;
         });
