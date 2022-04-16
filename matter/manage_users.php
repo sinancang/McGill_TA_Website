@@ -39,7 +39,6 @@
                     $sysOps = array();
                     
                     foreach($user_data as $key => $value) {
-                        echo $key;
                         $courses = $value['courses'];
                         $isStudent = false;
                         $isTA = false;
