@@ -269,7 +269,7 @@ function set_up_manage_users_view() {
         syncRequest.addEventListener("load", function(){           
             if (this.status === 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                (`.user-accounts.${selectedOption}`).addClass('open');
+                $(`.user-accounts.${selectedOption}`).addClass('open');
             }
             else alert('Server Error. Please try again later.');
     
