@@ -109,10 +109,10 @@
         echo $user_data;
         echo "\n";
 
-        foreach ($user_data as $user) {
-            echo $user;
-            echo "\n";
-        }
+        array_filter($user_data, function() {
+            echo key($user_data);
+            return true;
+        });
 
         if (isset($user_data[$email])) {
             unset($user_date[$email]);
