@@ -106,11 +106,10 @@
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
-        echo $user_data;
-        echo "\n";
 
         array_filter($user_data, function() {
             echo key($user_data);
+            next($user_data);
             return true;
         });
 
