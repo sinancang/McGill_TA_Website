@@ -109,7 +109,7 @@
 
         array_filter($user_data, function() {
             echo 'hi';
-            next($user_data);
+            //next($user_data);
             return true;
         });
 
