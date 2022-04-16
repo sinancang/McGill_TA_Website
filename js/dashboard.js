@@ -240,6 +240,9 @@ function set_up_manage_users_view() {
         if (value == 'All') {
             $('.user-accounts.all').addClass('open');
         }
+        if (value == 'Sys-Op') {
+            $('.user-accounts.sys-op').addClass('open');
+        }
 
     });
 
