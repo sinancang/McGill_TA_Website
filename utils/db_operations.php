@@ -108,13 +108,13 @@
         $user_data = json_decode($data, true);
 
         if (isset($user_data[$email])) {
-            $user_data[$email]["deleted"] = true;
+            $user_data[$email]["deactivated"] = true;
             //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
-            echo 'user deleted';
+            echo 'user deactivated';
         }
         else {
-            echo 'Server Error. Cannot delete user at this time';
+            echo 'Server Error. Cannot deactivate user at this time';
         }
     
 
