@@ -244,7 +244,8 @@ function set_up_manage_users_view() {
     // add delete event listener
     $('.remove-user').on('click', function() {
         let user = document.getElementById('username').innerText;
-        let user_to_delete = $(this).closest('.user-account-entry').text();
+        let user_to_delete = $(this).closest('.user-account-entry');
+        console.log(user_to_delete);
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}`;
         syncRequest.open("GET", url, true);  

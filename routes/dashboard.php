@@ -52,6 +52,7 @@
         include("../matter/dashboard_default.php");    
     }
     else if ($_GET['action'] == 'delete-user') {
+        echo $_GET['target'];
         delete_user($_GET['target']);
     }
     else {
