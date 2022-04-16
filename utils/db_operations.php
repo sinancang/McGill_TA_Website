@@ -145,6 +145,7 @@
     }
 
     function reactivate_user(string $user) {
+        echo 'we get here';
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);

@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var url = `../routes/dashboard.php?user=${user}&action=prof-courses-import`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) {
+            if (this.status == 200) {
                 $('.user-type-based-btn.sys-ops-btn').text('Import Professors and Courses');
                 //console.log(this.responseText);
             }
@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var url = `../routes/dashboard.php?user=${user}&view=main`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) if (this.status === 200) {
+            if (this.status == 200) if (this.status === 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
             }
             else alert('Invalid user role.');
@@ -98,7 +98,7 @@ function getSecondaryMenuItems(menuName) {
     
         syncRequest.addEventListener("load", function(){
             
-            if (this.status === 200) fillSecondaryMenu();
+            if (this.status == 200) fillSecondaryMenu();
             else console.log('invalid user role');
     
         }, false);
@@ -147,7 +147,7 @@ function fillSecondaryMenu(menuName) {
             var url = `../routes/dashboard.php?user=${user}&view=manage-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) {
+                if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                     set_up_manage_users_view();
                 }
@@ -165,7 +165,7 @@ function fillSecondaryMenu(menuName) {
             var url = `../routes/dashboard.php?user=${user}&view=add-manually-users`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
-                if (this.status === 200) {
+                if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 }
                 else alert('Invalid user role.');
@@ -284,7 +284,7 @@ function set_up_manage_users_view() {
         var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status === 200) {
+            if (this.status == 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 $(`.user-accounts.${selectedOption}`).addClass('open');
                 set_up_manage_users_view();
@@ -307,7 +307,7 @@ function set_up_manage_users_view() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){     
             
-            if (this.status === 200) {
+            if (this.status == 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 set_up_manage_users_view();
                 $("#user-type-select").val('deactivated').change();
