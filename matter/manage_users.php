@@ -31,28 +31,58 @@
                     $user_data = json_decode($data, true);
 
 
+                    $TAs; $profs; $admins; $students; $sysOps;
                     
                     foreach($user_data as $key => $value) {
                         $courses = $value['courses'];
+                        $isStudent = false;
+                        $isTA = false;
+                        $isProf = false;
+                        $isAdmin = false;
+                        $isSysOps = false;
 
+                        if ($value['type'] == 'sysop') $isSysOps = true;
                                                     
                         echo 
                         "<div class='entry-container'>
                             <div class='user-account-entry'>
                                 <div class='user-name'>{$key}</div>
-                                <div class='user-courses-container'>";
+                                <div class='user-roles-container'>";
 
                                     for ($i = 0; $i < count($courses); $i++) {
-                                        echo "<div class>{$courses[$i]['course name']}</div>";
+                                        $role = $courses[$i]['role'];
+                                        if ($role == 'TA' && !$isTA) {
+                                            echo "<div class='user-role'>TA</div>";
+                                            $isTA = true;
+                                        }
+                                        if ($role == 'prof' && !$isTA) {
+                                            echo "<div class='user-role'>Prof</div>";
+                                            $isProf = true;
+                                        }
+                                        if ($role == 'admin' && !$isTA) {
+                                            echo "<div class='user-role'>Admin</div>";
+                                            $isAdmin = true;
+                                        }
+                                        if ($role == 'student' && !$isTA) {
+                                            echo "<div class='user-role'>Student</div>";
+                                            $isStudent = true;
+                                        }
                                     }
-                        echo
-                                "</div>
-                            </div>
-                            <div class='user-account-actions-container'>
+
+                                    if ($isSysOps) echo "<div class='user-role'>Sys-Op</div>";
+
+                        echo "</div>
+                        </div>";
+
+                        if (!$isSysOps) {
+                            echo                           
+                            "<div class='user-account-actions-container'>
                                 <div class='remove-user' target='{$key}'>Delete</div>
                                 <div class='edit-user' target='{$key}'>Edit</div>
-                            </div>
-                        </div>";
+                            </div>";
+                        }
+
+                        echo "</div>";
                             
                     }
                     

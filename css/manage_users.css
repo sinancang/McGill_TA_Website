@@ -86,12 +86,17 @@
 
 }
 
-.user-courses-container {
+.user-roles-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+}
+
+.user-role {
+    font-size: 13px;
+    color: grey;
 }
 
 .user-account-actions-container {
