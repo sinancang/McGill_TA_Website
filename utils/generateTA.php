@@ -1,6 +1,7 @@
 <?php
 //change name to TAoperations!
 
+
 $val = $_GET['term'];
 
 
@@ -51,9 +52,11 @@ foreach($arr as $key=>$value){
 //how to handle comma seperated values? Problem in formatting!
 $file = fopen("../db/TA_notes.csv", "a+") or die("unable to open file!");
 
-$username="SomeUser1"; //have to fix this!!!!
+$username=$_GET['username']; //not sure if working!
+$course_selected=['course-selected'];
 
-$userData = $username . "," .  $_GET['review'] . "\n";
+
+$userData = $username . "," .  $course_selected . "," . $_GET['review'] . "\n";
 
 if(fwrite($file, $userData)){
 	//echo "success";
