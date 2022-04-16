@@ -72,8 +72,6 @@
         if (isset($user_data[$username]) && !$user_data[$username]['registered']) {
             $user_data[$username]['password'] = $password;
 	    $user_data[$username]['registered'] = true;
-	    $user_data[$username]['email'] = $email;
-	    $user_data[$username]['role'] = $role;
 	    file_put_contents($filename, json_encode($user_data));
 	    echo "Successfully added new record!";
 	    return 1;
