@@ -108,7 +108,7 @@ function fillSecondaryMenu(menuName) {
         </div>
         <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Add Manually</div>
+                <div class="nav-bar-btn">Manual Course Record Upload</div>
             </div>
         </div>
         `;
@@ -238,6 +238,25 @@ function set_up_manage_users_view() {
             $('.user-accounts.student').addClass('open');
         }
 
+    });
+
+
+    // add delete event listener
+    $('.remove-user').on('click', function() {
+        let user = document.getElementById('username').innerText;
+        let user_to_delete = $(this).closest('.user-account-entry').text();
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status === 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+            }
+            else alert('Server Error. Please try again later.');
+    
+        }, false);
+    
+        syncRequest.send();
     });
 }
 

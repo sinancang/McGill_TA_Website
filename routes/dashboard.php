@@ -51,13 +51,11 @@
     else if ($_GET['view'] == 'default') {       
         include("../matter/dashboard_default.php");    
     }
+    else if ($_GET['action'] == 'delete-user') {
+        delete_user($_GET['target']);
+    }
     else {
         echo "Page Not Found";
     }
     
-
-
-
-    
-
 ?>
