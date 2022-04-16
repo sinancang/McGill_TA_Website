@@ -63,6 +63,7 @@
         }
         else {
             echo "Unable to import at this time. Please try again later or contant system operator.";
+            return;
         }
 
     }
@@ -135,6 +136,8 @@
             $user_data[$user]["deactivated"] = true;
             //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            $date = date('F j Y, \a\t g:ia');
+            add_record_to_activity_history($_GET['user'], "Deactivated user {$user}", $date);
         }
         else {
             echo 'Server Error. Cannot deactivate user at this time';
@@ -150,6 +153,7 @@
             $user_data[$user]["deactivated"] = false;
             //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            add_record_to_activity_history($_GET['user'], "Reactivated user {$user}", $date);
         }
         else {
             echo 'Server Error. Cannot deactivate user at this time';
