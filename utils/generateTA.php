@@ -35,7 +35,7 @@ foreach($arr as $key=>$value){
 $file = fopen("../db/TA_notes.csv", "a+") or die("unable to open file!");
 
 $username=$_GET['username']; //not sure if working!
-$course_selected=['course-selected'];
+$course_selected=['course_selected'];
 
 //is review correct? Are commas protected?
 $userData = $username . "," .  $course_selected . "," . "{$_GET['review']}" . "\n";
