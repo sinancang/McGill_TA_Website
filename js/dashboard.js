@@ -108,7 +108,7 @@ function fillSecondaryMenu(menuName) {
         </div>
         <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Manual Course Record Upload</div>
+                <div class="nav-bar-btn">Upload Course Record</div>
             </div>
         </div>
         `;
