@@ -52,6 +52,7 @@
         include("../matter/manage_users.php");
     }
     else if ($_GET['action'] == 'reactivate-user') {
+        echo 'we get to reactivation';
         reactivate_user($_GET['target']);
         include("../matter/manage_users.php");
     }
