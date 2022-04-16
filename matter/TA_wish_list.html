@@ -1,0 +1,47 @@
+<!--Can only be accessed by the instructor-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <form method="get" name="form" action="../utils/generateTA.php">
+        <p>You can choose a TA for the upcoming semester:</p>
+        <p>Choose a TA: </p>
+                <select id = "TA" name ="TA" onclick="TASelected(this.value)"> 
+                    <option> Select a TA </option>
+                </select> <br></br> 
+        <p>For which semester? </p>
+        <select id = "term" name ="term" onclick="termSelected(this.value)"> 
+            <option> Choose a term </option>
+            <option> SUMMER 2022 </option>
+            <option> FALL 2022 </option>
+            <option> SPRING 2023</option>
+        </select> <br></br> 
+    </form>
+
+
+</body>
+
+<script>
+    function TASelected(data){
+        var ajaxreq = new XMLHttpRequest(); // New request object
+        ajaxreq.open('GET', '../utils/generateAllTA.php', true);
+        ajaxreq.send();
+        ajaxreq.onreadystatechange = function(){
+            if(ajaxreq.readyState==4 && ajaxreq.status==200){
+                document.getElementById("TA").innerHTML = ajaxreq.responseText;
+            }          
+        }
+    }
+
+    //not sure if it works for sending username and course!!!
+    function sendusername_course(){
+        var name = document.getElementById('username'); 
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
+        xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+        xhttp.send();
+        
+    }
+    
+</script>
