@@ -7,11 +7,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
 
-    // add new user btn event listener
-    $('.add-new-user-btn').on('click', function() {
-        $('.hidden-add-new-user-form').css({'display':'flex'});
-    })
-
 
     // set import profs and courses btn event listener
     $('.user-type-based-btn.sys-ops-btn').on('click', function() {
@@ -246,6 +241,15 @@ function signOut() {
     Set up event listeners etc. for when user management view is loaded.
 */
 function set_up_manage_users_view() {
+
+
+    // add new user btn event listener
+    $('.add-new-user-btn').on('click', function() {
+        $('.hidden-add-new-user-form').css({'display':'flex'});
+    })
+
+
+    // selectbox
     $('#user-type-select').on('change', function() {
         let value = $('#user-type-select').val();
         $('.user-accounts').removeClass('open');
