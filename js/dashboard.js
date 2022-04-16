@@ -237,6 +237,9 @@ function set_up_manage_users_view() {
         if (value == 'Student') {
             $('.user-accounts.student').addClass('open');
         }
+        if (value == 'All') {
+            $('.user-accounts.all').addClass('open');
+        }
 
     });
 

@@ -6,6 +6,7 @@
 
         <select name="user-types" id="user-type-select">
             <option value="">Please choose an option</option>
+            <option value="All">All</option>
             <option value="TA">TA</option>
             <option value="Professor">Professor</option>
             <option value="Administrator">Administrator</option>
@@ -16,6 +17,59 @@
 
 
     <div class="all-user-types-container">
+
+    <div class="user-accounts all">
+
+            <div class="user-account-type-title">ALL USERS</div>
+
+            <div class="user-account-entries">
+
+                <?php 
+
+                    $filename = "../db/user_data.json";
+                    $data = file_get_contents($filename);
+                    $user_data = json_decode($data, true);
+
+
+                    
+                    foreach($user_data as $key => $value) {
+                        $courses = $value['courses'];
+
+                        for ($i = 0; $i < count($courses); $i++) {
+
+                            echo $courses[$i]['course name'];
+                            
+                            /*
+                            echo "<div class='entry-container'>";
+                            echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
+                            echo "<div class='user-account-actions-container'>";
+                            echo "<div class='remove-user' target='{$TAs[$i]}'>Delete</div>";
+                            echo "<div class='edit-user' arget='{$TAs[$i]}'>Edit</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            */
+                        }
+                    }
+                    
+
+                    
+
+                    for ($i = 0; $i < count($TAs); $i++) {
+                        echo "<div class='entry-container'>";
+                        echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
+                        echo "<div class='user-account-actions-container'>";
+                        echo "<div class='remove-user' target='{$TAs[$i]}'>Delete</div>";
+                        echo "<div class='edit-user' arget='{$TAs[$i]}'>Edit</div>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+
+                    
+
+                ?>
+            </div>
+
+        </div>
 
         <div class="user-accounts ta">
 
