@@ -44,7 +44,7 @@
 
                         if ($value['type'] == 'sysop') {
                             $isSysOps = true;
-
+                            array_push($sysOps, $key);
                         }
                                                     
                         echo 
