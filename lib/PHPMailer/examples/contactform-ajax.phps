@@ -83,7 +83,7 @@ EOT;
 
     if ($isAjax) {
         header('Content-type:application/json;charset=utf-8');
-        echo json_encode($response);
+        echo json_encode($response, JSON_PRETTY_PRINT);
         exit();
     }
 }

@@ -25,11 +25,11 @@
             $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>prof);
             $user_data[$prof]['courses'][] = $new_entry;
 
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
         else {
             $user_data[$prof] = array('registered'=>false, 'courses' => array('course name'=>$course_code));
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
 
         echo "Successfully added new record!";
@@ -62,11 +62,11 @@
         if (isset($user_data[$username])) {
             $new_entry = array('action' => $action, 'date' => $date);
             array_push($user_data[$username], $new_entry);
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
         else {
             $user_data[$username][] = array('action' => $action, 'date' => $date);
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
     }
 
@@ -82,7 +82,7 @@
 
             $user_data[$email]['password'] = $password;
             $user_data[$email]['registered'] = true;
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
         else {
             //echo "Failed to register!";
@@ -106,11 +106,18 @@
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
+        echo $user_data;
+        echo "\n";
+
+        for ($i=0; $i < count($user_data); $i++) {
+            echo $user_data[$i];
+            echo "\n";
+        }
 
         if (isset($user_data[$email])) {
             unset($user_date[$email]);
             echo 'user deleted';
-            file_put_contents($filename, json_encode($user_data));
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
         else {
             echo 'Server Error. Cannot delete user at this time';
