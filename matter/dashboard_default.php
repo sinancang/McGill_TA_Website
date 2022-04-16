@@ -141,13 +141,15 @@
                         </div>
 
 
-                        <label for="type">User Type</label>
-                        <select name="type" id="new-user-type">
-                            <option value="admin">Admin</option>
-                            <option value="prof">Professor</option>
-                            <option value="prof">TA</option>
-                            <option value="prof">Student</option>
-                        </select>
+                        <div class="form-input-container">
+                            <label for="type">User Type</label>
+                            <select name="type" id="new-user-type">
+                                <option value="admin">Admin</option>
+                                <option value="prof">Professor</option>
+                                <option value="prof">TA</option>
+                                <option value="prof">Student</option>
+                            </select>
+                        </div>
 
                         <button class="submit-btn" id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
                     </div>
