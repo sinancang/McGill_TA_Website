@@ -1,12 +1,11 @@
 <?php
 
-$val = $_GET['selectvalue'];
+$val = $_GET['selectvalue']; //not sure about this!
 
 
 $filename = "../db/user_data.json";
 $data = file_get_contents($filename);
 $arr = json_decode($data, true);
-
 
 
 foreach($arr as $key=>$value){
@@ -17,8 +16,6 @@ foreach($arr as $key=>$value){
 			//if in the given term, TA exists:
 			if($value2[$i]["role"] == "TA" && $value2[$i]["term"] == $val){
 				$i = $i + 1;
-				array_push($TANames, $key);
-				echo $key;
 				//creating a dropdown select option
 				echo "<option> $key </option>"; 
 			}
