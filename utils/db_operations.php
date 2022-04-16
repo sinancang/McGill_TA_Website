@@ -110,7 +110,7 @@
 
         if (isset($user_data[$email])) {
             unset($user_data[$email]);
-            $user_data = array_values($user_data);
+            //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
             echo 'user deleted';
         }
