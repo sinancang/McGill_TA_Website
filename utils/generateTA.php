@@ -30,33 +30,15 @@ foreach($arr as $key=>$value){
 	}
 }	
 
-/* //this is for generating all TA's but it makes more sense to first prof to choose course, and then present available TAs. 
-$filename = "../db/user_by_role.json";
-$data = file_get_contents($filename);
-$arr = json_decode($data, true);
-
-foreach($arr as $key=>$value){
-    //looping through each user (key has the username in it!)
-    if($key == "ta"){
-        foreach($value as $key2=>$value2){
-            
-            echo "<option> $value2 </option>"; 
-        }
-       
-    }
-}
-*/
 
 
-
-//how to handle comma seperated values? Problem in formatting!
 $file = fopen("../db/TA_notes.csv", "a+") or die("unable to open file!");
 
 $username=$_GET['username']; //not sure if working!
 $course_selected=['course-selected'];
 
-
-$userData = $username . "," .  $course_selected . "," . $_GET['review'] . "\n";
+//is review correct? Are commas protected?
+$userData = $username . "," .  $course_selected . "," . "{$_GET['review']}" . "\n";
 
 if(fwrite($file, $userData)){
 	//echo "success";
