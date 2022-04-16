@@ -156,7 +156,7 @@
             add_record_to_activity_history($_GET['user'], "Reactivated user {$user}", $date);
         }
         else {
-            echo 'Server Error. Cannot deactivate user at this time';
+            echo 'Server Error. Cannot reactivate user at this time';
         }
     }
 
