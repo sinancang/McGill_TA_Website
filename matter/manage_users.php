@@ -43,7 +43,7 @@
 
                         if ($value['type'] == 'sysop') {
                             $isSysOps = true;
-                            
+
                         }
                                                     
                         echo 
@@ -59,17 +59,17 @@
                                             echo "<div class='user-role'>TA</div>";
                                             $isTA = true;
                                         }
-                                        if ($role == 'prof' && !$isTA) {
+                                        if ($role == 'prof' && !$isProf) {
                                             array_push($profs, $key);
                                             echo "<div class='user-role'>Prof</div>";
                                             $isProf = true;
                                         }
-                                        if ($role == 'admin' && !$isTA) {
+                                        if ($role == 'admin' && !$isAdmin) {
                                             array_push($admins, $key);
                                             echo "<div class='user-role'>Admin</div>";
                                             $isAdmin = true;
                                         }
-                                        if ($role == 'student' && !$isTA) {
+                                        if ($role == 'student' && !$isStudent) {
                                             array_push($students, $key);
                                             echo "<div class='user-role'>Student</div>";
                                             $isStudent = true;
