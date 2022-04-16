@@ -103,6 +103,7 @@
     */
     function delete_user(string $email) {
 
+        echo $email;
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);

@@ -250,7 +250,7 @@ function set_up_manage_users_view() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status === 200) {
-                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                console.log(this.responseText);
             }
             else alert('Server Error. Please try again later.');
     
