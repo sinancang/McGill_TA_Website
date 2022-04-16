@@ -120,6 +120,12 @@
     cursor: pointer;
     color: grey;
 }
+.reactivate-user {
+    width: 40%;
+    font-size: 12px;
+    cursor: pointer;
+    color: grey;
+}
 .remove-user:hover {
     color: black;
 }
