@@ -108,10 +108,10 @@
         $user_data = json_decode($data, true);
 
         $i = 0;
-        array_filter($user_data, function() {
+        array_filter($user_data, function($email) {
             echo 'hi ';
-            echo $i;
-            $i++;
+            echo $email;
+            
             //next($user_data);
             return true;
         });
