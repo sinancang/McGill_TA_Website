@@ -110,6 +110,7 @@
         echo $user_data->username;
 
 
+        /*
         if (isset($user_data[$email])) {
             unset($user_data[$email]);
             //$user_data = array_values($user_data);
@@ -119,6 +120,7 @@
         else {
             echo 'Server Error. Cannot delete user at this time';
         }
+        */
     
 
     }
