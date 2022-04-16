@@ -272,6 +272,7 @@ function set_up_manage_users_view() {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 $(`.user-accounts.${selectedOption}`).addClass('open');
                 set_up_manage_users_view();
+                $("#user-type-select").val(selectedOption).change();
             }
             else alert('Server Error. Please try again later.');
     
@@ -292,8 +293,8 @@ function set_up_manage_users_view() {
             
             if (this.status === 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                $('.user-accounts.deactivated').addClass('open');
                 set_up_manage_users_view();
+                $("#user-type-select").val('deactivated').change();
             }
             else alert('Server Error. Please try again later.');
 
