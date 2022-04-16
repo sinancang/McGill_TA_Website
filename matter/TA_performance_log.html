@@ -20,7 +20,7 @@
 </select>
 <p>Leave a note about the TA:</p>
 <textarea id = "review" cols="75" name="review" rows="5"></textarea><br>
-<input type="submit" value = "submit your review"></button>
+<input type="submit" value = "submit your review" onclick="sendusername_course()"></button>
 </form>
 
 </html>
@@ -37,5 +37,16 @@
                 document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
             }          
         }
-    } 
+    }
+
+    //not sure if it works for sending username and course!!!
+    function sendusername_course(){
+        var name = document.getElementById('username'); 
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
+        xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+        xhttp.send();
+        
+    }
+    
 </script>
