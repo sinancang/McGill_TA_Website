@@ -109,8 +109,8 @@
         echo $user_data;
         echo "\n";
 
-        for ($i=0; $i < count($user_data); $i++) {
-            echo $user_data[$i];
+        foreach ($user_data as $user) {
+            echo $user;
             echo "\n";
         }
 
