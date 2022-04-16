@@ -18,7 +18,7 @@
 
     <div class="all-user-types-container">
 
-    <div class="user-accounts all">
+        <div class="user-accounts all">
 
             <div class="user-account-type-title">ALL USERS</div>
 
@@ -37,8 +37,8 @@
 
                         for ($i = 0; $i < count($courses); $i++) {
 
-                            echo $courses[$i]['course name'];
-                            
+                            echo "<div>$courses[$i]['course name']</div>";
+
                             /*
                             echo "<div class='entry-container'>";
                             echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
