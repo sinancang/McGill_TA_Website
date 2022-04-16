@@ -93,16 +93,12 @@
     align-items: center;
     width: 100%;
     margin-top: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .user-role {
     font-size: 13px;
     color: grey;
     margin-right: 15px;
-    border-right: 1px solid grey;
-    border-left: 1px solid grey;
 }
 
 
