@@ -162,7 +162,7 @@
                         echo '<div class="dashboard-content-quick-action-bar">';
                         echo '<div class="user-type-based-actions">';
                         if ($isSysOps) echo '<button class="user-type-based-btn sys-ops-btn">Import Professors and Courses</button>';
-                        echo '<button class=" user-type-based-btn sys-ops-btn">Import TA Cohort</button>';
+                        echo '<button class=" user-type-based-btn admin-btn">Import TA Cohort</button>';
                         echo '</div>';
                         echo '</div>';
                     }
