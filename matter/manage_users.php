@@ -82,7 +82,7 @@
                                         }
                                     }
 
-                                    if ($isSysOps) echo "<div class='user-role'>Sys-Op</div>";
+                        if ($isSysOps) echo "<div class='user-role'>Sys-Op</div>";
 
                         echo "</div>
                         </div>";
@@ -97,22 +97,7 @@
 
                         echo "</div>";
                             
-                    }
-                    
-
-                    
-
-                    for ($i = 0; $i < count($TAs); $i++) {
-                        echo "<div class='entry-container'>";
-                        echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
-                        echo "<div class='user-account-actions-container'>";
-                        echo "<div class='remove-user' target='{$TAs[$i]}'>Delete</div>";
-                        echo "<div class='edit-user' arget='{$TAs[$i]}'>Edit</div>";
-                        echo "</div>";
-                        echo "</div>";
-                    }
-
-                    
+                    }    
 
                 ?>
             </div>
