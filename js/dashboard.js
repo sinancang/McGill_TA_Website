@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status === 200) {
-                $(this).text('Import Professors and Courses');
+                $('.user-type-based-btn.sys-ops-btn').text('Import Professors and Courses');
                 //console.log(this.responseText);
             }
             else alert('Server Error.');

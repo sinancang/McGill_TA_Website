@@ -25,7 +25,9 @@
             $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
             $user_data[$prof]['courses'][] = $new_entry;
 
-            if ($user_data[$prof]['type'] == 'ta' || $user_data[$prof]['type'] == 'student') {
+            if ($user_data[$prof]['type'] == 'ta' 
+                || $user_data[$prof]['type'] == 'student'
+                || !isset($user_data[$prof]['type'])) {
                 $user_data[$prof]['type'] = 'prof';
             }
 
