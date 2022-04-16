@@ -8,7 +8,7 @@ function registerProcedure(){
 	var email = document.getElementById('email').value;
         var pass1 = document.getElementById('pass1').value;
         var pass2 = document.getElementById('pass2').value;
-	var type = 'student';
+	var type = document.getElementById('type').value;
 
         if (pass1 !== pass2){
                 window.alert("Passwords do not match! Try again.");

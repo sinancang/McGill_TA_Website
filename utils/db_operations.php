@@ -37,15 +37,6 @@
         add_record_to_activity_history($_GET['user'], "Added {$prof} as Professor to {$course_code}", $date);
     }
 
-
-    // Adds email of prof to list of profs in user_by_type
-    function add_to_list_of_profs(string $email) {
-
-    }
-
-
-
-
     /* 
         Adds entry to activity history of specific user
 
@@ -72,26 +63,25 @@
 
 
     // New user registration
-    function register_new_user(string $email, string $password) {
+    function register_new_user(string $username, string $email, string $password, string $role) {
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
-        if (isset($user_data[$email])) {
+        if (isset($user_data[$username]) && !$user_data[$username]['registered']) {
+            $user_data[$username]['password'] = $password;
+	    $user_data[$username]['registered'] = true;
+	    $user_data[$username]['email'] = $email;
+	    $user_data[$username]['role'] = $role;
+	    file_put_contents($filename, json_encode($user_data));
+	    echo "Successfully added new record!";
+	    return 1;
 
-            $user_data[$email]['password'] = $password;
-            $user_data[$email]['registered'] = true;
-            file_put_contents($filename, json_encode($user_data));
-        }
-        else {
-            //echo "Failed to register!";
+        } else {
+            echo "Failed to register!";
             return 0;
         }
-
-        //echo "Successfully added new record!";
-        return 1;
-
     }
 
     function register_new_student(string $username, string $email, string $password) {
@@ -99,8 +89,15 @@
 	$data = file_get_contents($filename);
 	$user_data = json_decode($data, true);
 
+	// check if email is already registered
+	for ($i = 0; $i < $user_data.count(); $i++){
+		if ($user_data[$i]['email'] == $email){
+			echo "Email already in use!";
+			return -1;
+		}
+	}
+
 	// if username already in use, don't add
-	// TO DO: also check e-mail
 	if (isset($user_data[$username])) {
 		echo "Username already exists!";
 		return 0;
