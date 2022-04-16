@@ -36,10 +36,11 @@
 
     //not sure if it works for sending username and course!!!
     function sendusername_course(){
-        var name = document.getElementById('username'); 
+        var username = document.getElementById('username');
+        var course_selected =  document.getElementById('course-selected');
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
-        xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+        xhttp.open("GET", "../utils/generateTA.php?course_selected="+ course_selected, true); //is this name true and can multiple variable be sent?
         xhttp.send();
         
     }
