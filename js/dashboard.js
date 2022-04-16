@@ -256,12 +256,11 @@ function set_up_manage_users_view() {
         let user_to_delete = $(this).attr('target');
 
         let selectedOption;
-        if ($('#user-type-select').val() == 'ALL') selectedOption = 'all';
+        if ($('#user-type-select').val() == 'All') selectedOption = 'all';
         if ($('#user-type-select').val() == 'TA') selectedOption = 'ta';
         if ($('#user-type-select').val() == 'Administrator') selectedOption = 'admin';
         if ($('#user-type-select').val() == 'Professor') selectedOption = 'prof';
         if ($('#user-type-select').val() == 'Sys-Op') selectedOption = 'sysop';
-        if ($('#user-type-select').val() == 'deactivated') selectedOption = 'deactivated';
         
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}`;
