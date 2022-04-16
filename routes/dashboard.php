@@ -59,6 +59,9 @@
     else if ($_GET['action'] == 'prof-courses-import') {
         import_profs_and_courses();
     }
+    else if ($_GET['action'] == 'create-new-user') {
+        
+    }
     else {
         echo "Page Not Found";
     }

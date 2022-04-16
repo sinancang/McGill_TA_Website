@@ -16,7 +16,7 @@
             </select>
         </div>
 
-        <button class="add-new-user-btn">Add New User</button>
+        <button class="add-new-user-btn">Add New Prof/Admin</button>
     </div>
     
 

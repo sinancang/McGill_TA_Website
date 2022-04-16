@@ -128,31 +128,39 @@
                 <div class="content-veil">
 
                     <div id="close-veil-btn">❌</div>
+                    
+                    <?php 
+                        $filename = "../db/user_data.json";
+                        $data = file_get_contents($filename);
+                        $user_data = json_decode($data, true);
+                
+                        if ($user_data[$_GET['user']]['type'] == 'admin') {
+                            echo
+                            '<div class="form-wrapper add-new-user-form">
+                                <div class="form-input-container">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="new-user-name" required>
+                                </div>
 
-                    <div class="form-wrapper add-new-user-form">
-                        <div class="form-input-container">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="new-user-name" required>
-                        </div>
-
-                        <div class="form-input-container">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="new-user-email" required>
-                        </div>
+                                <div class="form-input-container">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" id="new-user-email" required>
+                                </div>
 
 
-                        <div class="form-input-container">
-                            <label for="type">User Type</label>
-                            <select name="type" id="new-user-type">
-                                <option value="admin">Admin</option>
-                                <option value="prof">Professor</option>
-                                <option value="prof">TA</option>
-                                <option value="prof">Student</option>
-                            </select>
-                        </div>
+                                <div class="form-input-container">
+                                    <label for="type">User Type</label>
+                                    <select name="type" id="new-user-type">
+                                        <option value="admin">Admin</option>
+                                        <option value="prof">Professor</option>
+                                    </select>
+                                </div>
 
-                        <button class="submit-btn" id="add-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
-                    </div>
+                                <button class="submit-btn" id="submit-add-new-user-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
+                                <div class="new-user-server-response"></div>
+                            </div>';
+                        }
+                    ?>
 
                 </div>
 
@@ -209,6 +217,7 @@
         <div id="selected-course"></div>
 
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5eab681659f730bdd5daac20" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="../js/manage_users.js"></script>
         <script src="../js/dashboard.js"></script>
 
     </body>

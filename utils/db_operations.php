@@ -161,4 +161,25 @@
         }
     }
 
+
+    function pre_register_user(string $name, string $email, string $type) {
+        $filename = "../db/user_data.json";
+        $data = file_get_contents($filename);
+        $user_data = json_decode($data, true);
+
+        if (isset($user_data[$name])) {
+            echo 'Account already exists.';
+            return;
+        }
+        else {
+            $user_data[$prof]['registered'] = false;
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            echo "Successfully added new user!";
+            $date = date('F j Y, \a\t g:ia');
+            add_record_to_activity_history($_GET['user'], "Added new user {$prof} as {$type}", $date);
+        }
+
+
+    }
+
 ?>  

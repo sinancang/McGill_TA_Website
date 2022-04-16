@@ -254,7 +254,32 @@ function set_up_manage_users_view() {
     $('#close-veil-btn').on('click', function() {
         $('.content-veil').css({'display':'none'});
         $('.form-wrapper.add-new-user-form').css({'display':'none'});
-    })
+    });
+
+    // add new user btn event listener
+    $('#add-new-user-btn').on('click', function() {
+        let user = document.getElementById('username').innerText;
+        let user_to_delete = $(this).attr('target');
+
+        let selectedOption = $('#user-type-select').val();
+
+        
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=create-new-user&target=${user_to_delete}`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                $(`.user-accounts.${selectedOption}`).addClass('open');
+                set_up_manage_users_view();
+                $("#user-type-select").val(selectedOption).change();
+            }
+            else alert('Server Error. Please try again later.');
+    
+        }, false);
+    
+        syncRequest.send();
+    });
 
 
     // selectbox
