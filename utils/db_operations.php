@@ -105,7 +105,6 @@
             $user_data[$user]["deactivated"] = true;
             //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
-            echo 'user deactivated';
         }
         else {
             echo 'Server Error. Cannot deactivate user at this time';
@@ -121,7 +120,6 @@
             $user_data[$user]["deactivated"] = false;
             //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
-            echo 'user deactivated';
         }
         else {
             echo 'Server Error. Cannot deactivate user at this time';
