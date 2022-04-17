@@ -88,22 +88,34 @@
 
                                     for ($i = 0; $i < count($courses); $i++) {
                                         $role = $courses[$i]['role'];
-                                        if ($role == 'TA' && !$isTA) {
+                                        if ($isTA) {
+                                            echo "<div class='user-role'>TA</div>";
+                                        }
+                                        else if ($role == 'TA' && !$isTA) {
                                             array_push($TAs, $key);
                                             echo "<div class='user-role'>TA</div>";
                                             $isTA = true;
                                         }
-                                        if ($role == 'prof' && !$isProf) {
+                                        if ($isProf) {
+                                            echo "<div class='user-role'>Prof</div>";
+                                        }
+                                        else if ($role == 'prof' && !$isProf) {
                                             array_push($profs, $key);
                                             echo "<div class='user-role'>Prof</div>";
                                             $isProf = true;
                                         }
-                                        if ($role == 'admin' && !$isAdmin) {
+                                        if ($isAdmin) {
+                                            echo "<div class='user-role'>Admin</div>";
+                                        }
+                                        else if ($role == 'admin' && !$isAdmin) {
                                             array_push($admins, $key);
                                             echo "<div class='user-role'>Admin</div>";
                                             $isAdmin = true;
                                         }
-                                        if ($role == 'student' && !$isStudent) {
+                                        if ($isStudent) {
+                                            echo "<div class='user-role'>Student</div>";
+                                        }
+                                        else if ($role == 'student' && !$isStudent) {
                                             array_push($students, $key);
                                             echo "<div class='user-role'>Student</div>";
                                             $isStudent = true;
