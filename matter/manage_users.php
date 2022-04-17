@@ -118,8 +118,6 @@
                                         }
                                     }
 
-                        if ($isSysOps) echo "<div class='user-role'>Sys-Op</div>";
-
                         echo "</div>
                         </div>";
 
