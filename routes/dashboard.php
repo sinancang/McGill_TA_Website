@@ -16,7 +16,7 @@
     // check if user is logged in. if not, redirect to login page
     // WE NEED TO PASS THE SESSION TOKEN TO THE LOGIN CHECK INSTEAD!!!!
     
-    if (check_logged_in($_GET['ticket']) !== 1) {
+    if (check_logged_in($_GET['ticket'], $_GET['user']) !== 1) {
         header("Location: https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/login");
         exit();
     }
