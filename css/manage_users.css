@@ -97,12 +97,8 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    height: 50px;
     justify-content: space-between;
     margin-top: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-bottom: 10px;
     border-radius: 4px;
     background-color: #f2f2f2;
     align-items: center;
@@ -114,9 +110,8 @@
     justify-content: center;
     align-items: flex-start;
     border-radius: 3px;
-    padding: 10px;
     font-size: 14px;
-    width: 85%;
+    margin: 15px;
 }
 
 .user-name {
@@ -125,13 +120,11 @@
     align-items: center;
     width: 100%;
     font-size: 16px;
-    margin: 5px;
-    margin-left: 20px;
+    line-height: 20px;
 }
 
 .user-email {
-    margin: 5px;
-    margin-left: 20px;
+    line-height: 20px;
 }
 
 .user-roles-container {
@@ -140,8 +133,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin: 5px;
-    margin-left: 20px;
+    line-height: 20px;
 }
 
 .user-role {
@@ -153,10 +145,7 @@
 
 .user-account-actions-container {
     display: flex;
-    /* height: 100%; */
     width: 15%;
-    /* height: 39px; */
-    /* background-color: #f3f3f3; */
     border-radius: 3px;
     align-items: center;
     align-content: space-around;
