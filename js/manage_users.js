@@ -36,7 +36,7 @@ function set_up_manage_users_view() {
         let user = document.getElementById('username').innerText;
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=add-new-user-form&target=${user_to_edit}`;
+        var url = `../routes/dashboard.php?user=${user}&action=add-new-user-form`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
