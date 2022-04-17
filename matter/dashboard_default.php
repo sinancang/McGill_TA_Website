@@ -159,6 +159,37 @@
                                 <button class="submit-btn" id="submit-add-new-user-btn" type="button">Add</button>
                                 <div class="new-user-server-response"></div>
                             </div>';
+
+                            // edit user code. originally hidden
+                            echo
+                            "<div class='form-wrapper edit-user-info-form'>
+
+
+                                <div class='form-input-container'>
+                                    <label for='name'>Course code</label>
+                                    <input type='text' name='name' id='edit-user-name' required>
+                                </div>
+                        
+                                <div class='form-input-container'>
+                                    <label for='email'>Course Name</label>
+                                    <input type='text' name='email' id='edit-user-email' required>
+                                </div>
+                        
+                                <div class='form-input-container'>
+                                    <label for='term'>Term</label>
+                                    <input type='text' name='term' id='term' required>
+                                </div>
+                        
+                                <div class='form-input-container'>
+                                    <label for='new-prof'>Professor name</label>
+                                    <input type='text' name='new-prof' id='new-prof' required>
+                                </div>
+                
+                
+                
+                                <button class='submit-btn' id='add-btn' type='button' onclick='submitAddManuallyForm()'>Add</button>
+                
+                            </div>";
                         }
                     ?>
 
