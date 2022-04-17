@@ -166,28 +166,27 @@
 
 
                                 <div class='form-input-container'>
-                                    <label for='name'>Course code</label>
+                                    <label for='name'>Name</label>
                                     <input type='text' name='name' id='edit-user-name' required>
                                 </div>
                         
                                 <div class='form-input-container'>
-                                    <label for='email'>Course Name</label>
+                                    <label for='email'>Email</label>
                                     <input type='text' name='email' id='edit-user-email' required>
                                 </div>
                         
                                 <div class='form-input-container'>
-                                    <label for='term'>Term</label>
-                                    <input type='text' name='term' id='term' required>
+                                    <label for='edit-type'>User Type</label>
+                                    <select name='edit-type' id='edit-user-type'>
+                                        <option value='admin'>Admin</option>
+                                        <option value='prof'>Professor</option>
+                                    </select>
                                 </div>
-                        
-                                <div class='form-input-container'>
-                                    <label for='new-prof'>Professor name</label>
-                                    <input type='text' name='new-prof' id='new-prof' required>
-                                </div>
-                
-                
-                
-                                <button class='submit-btn' id='add-btn' type='button' onclick='submitAddManuallyForm()'>Add</button>
+
+
+                                <div class='user-courses-list-container'></div>
+
+                                <button class='submit-btn' id='submit-user-changes' type='button'>Submit Changes</button>
                 
                             </div>";
                         }
