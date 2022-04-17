@@ -1,0 +1,22 @@
+{
+    "Comp 307":{
+      "professor": "joseph vybihal",
+      "TA": [{
+        "name": "Ada Yetis",
+        "term": "Fall 2019",
+        "review": [{ "student": "Alara Ozkutucu", "review": "Good!"}]
+    }]
+    
+    },
+    "Comp 303":{
+      "professor": "jin guo",
+      "TA": [{
+        "name": "Some TA",
+        "term": "Winter 2020",
+        "review": [{ "student": "Alara Ozkutucu", "review": "Good!"}]
+    }]
+    
+    }
+}
+
+

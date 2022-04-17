@@ -137,40 +137,41 @@
 
     function register_new_student(string $username, string $email, string $password) {
     	$filename = "../db/user_data.json";
-	$data = file_get_contents($filename);
-	$user_data = json_decode($data, true);
+	    $data = file_get_contents($filename);
+	    $user_data = json_decode($data, true);
 
-	// check if email is already registered
-	
-	for ($i = 0; $i < $user_data.count(); $i++){
-		if ($user_data[$i]['email'] == $email){			
-			// email already registered
-			return 0;
-		}
-	}
+        // check if email is already registered
+        
+        for ($i = 0; $i < $user_data.count(); $i++){
+            if ($user_data[$i]['email'] == $email){			
+                // email already registered
+                return 0;
+            }
+        }
 
-	// if username already in use, don't add
-	if (isset($user_data[$username])) {
-		// username already registered
-		return 0;
+        // if username already in use, don't add
+        if (isset($user_data[$username])) {
+            // username already registered
+            return 0;
 
-	// else, register user
-	} else {
+        // else, register user
+        } else {
 
-		// add user to user_data.json
-		$user_data[$username]['email'] = $email;
-		$user_data[$username]['registered'] = true;
-		$user_data[$username]['password'] = $password;
-		$user_data[$username]['type'] = "student";
-		$user_data[$username]['courses'] = [];
-		file_put_contents($filename, json_encode($user_data));
-		
-		// successfully registered user
-		return 1;
-	}
+            // add user to user_data.json
+            $user_data[$username]['email'] = $email;
+            $user_data[$username]['registered'] = true;
+            $user_data[$username]['password'] = $password;
+            $user_data[$username]['type'] = "student";
+            $user_data[$username]['courses'] = [];
+            file_put_contents($filename, json_encode($user_data));
+            
+            // successfully registered user
+            return 1;
+        }
+
 
 	// TO DO: send confirmation e-mail
-    }
+}
 
 
     /*
