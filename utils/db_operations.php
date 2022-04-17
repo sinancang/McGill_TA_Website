@@ -174,7 +174,7 @@
         else {
             $user_data[$name]['registered'] = false;
             $user_data[$name]['email'] = $email;
-            $user_data[$name]['tpye'] = $type;
+            $user_data[$name]['type'] = $type;
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
             echo "Successfully added new user!";
             $date = date('F j Y, \a\t g:ia');
