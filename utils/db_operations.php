@@ -107,6 +107,7 @@
 
             $user_data[$email]['password'] = $password;
             $user_data[$email]['registered'] = true;
+            $user_data['courses'] = '[]';
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
         else {
