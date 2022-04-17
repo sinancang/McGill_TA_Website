@@ -8,6 +8,8 @@
     $data2 = file_get_contents($filename2);
     $all_courses = json_decode($data2, true);
 
+    echo 'heeeeeeere';
+
     
     if ($user_data[$_GET['user']]['type'] == 'sysop') {
         for ($i=0; $i<count($all_courses); $i++) {
