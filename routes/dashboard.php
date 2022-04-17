@@ -60,7 +60,7 @@
         import_profs_and_courses();
     }
     else if ($_GET['action'] == 'create-new-user') {
-        
+        pre_register_user($_GET['name'], $_GET['email'], $_GET['type']);
     }
     else {
         echo "Page Not Found";
