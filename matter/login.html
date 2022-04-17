@@ -9,7 +9,6 @@
 
 
     <body>
-
       <div id="login-form-container">
         <div id="login-form">
           <p style="font-size: 30px;">Login</p>   
@@ -17,8 +16,13 @@
           <input type="text" name="username" id="user" placeholder="Enter Username" required><br></br>
           <label for="password" style="font-size: 20px;"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" id="pass" name="pass" required>
-          <a id="forgot-password" href="#">Forgot password?</a>
-          <button id="login-btn" type="button" onclick="sendLoginRequest()"  >
+          
+
+	  <a id="forgot-password" href="#">Forgot password?</a><br></br>
+	  <div id="warning" style="  color: #ca1818; font-size: 15px;"> </div>
+
+	  
+	  <button id="login-btn" type="submit" onclick="loginProcedure()">
               Login
           </button>
           <br>
@@ -27,13 +31,36 @@
               Don't have an account?<br>
               <a href="register.html">Register</a>
           </div>
+          
         </div>
       </div>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous">
-      </script>
-      <script src="../js/login.js"> 
-      </script>
+      <script src="../js/register.js"></script>
 
+      <script>
+	      function loginProcedure(){
+        	      var password = document.getElementById('pass').value;
+        	      var username = document.getElementById('user').value;
+
+        	      syncRequest = new XMLHttpRequest();
+        	      var url = "../routes/login.php";
+        	      syncRequest.open("POST", url, true);
+
+        	      syncRequest.addEventListener("load", function() {
+			      console.log(this.responseText);
+			      if (this.status == 200){
+				      displayWarning("Login success!", true);
+			      } else {
+				      displayWarning("Login failed. Please check your username and/or password and try again.", false);
+			      }
+		      }, false);
+		      var fd = new FormData;
+		      fd.append('username', username);
+		      fd.append('password', password);
+		      syncRequest.send(fd);
+	      }
+
+      
+      </script>
     </body>
 </html>

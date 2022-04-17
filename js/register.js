@@ -76,3 +76,4 @@ function displayWarning(warning, isGreen){
 		document.getElementById("warning").style.color = "#ca1818";
 	}
 }
+
