@@ -150,7 +150,7 @@
 
                                 <div class="form-input-container">
                                     <label for="type">User Type</label>
-                                    <select name="type" id="new-user-type">
+                                    <select name="type" id="new-user-type" class="form-select-input">
                                         <option value="admin">Admin</option>
                                         <option value="prof">Professor</option>
                                     </select>
