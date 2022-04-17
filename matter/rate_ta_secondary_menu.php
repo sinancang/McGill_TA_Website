@@ -1,5 +1,7 @@
 
 <?php 
+
+    echo 'going through courses';
     $filename1 = "../db/user_data.json";
     $data1 = file_get_contents($filename1);
     $user_data = json_decode($data1, true);
