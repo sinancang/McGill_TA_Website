@@ -58,6 +58,9 @@
     else if ($_GET['action'] == 'prof-courses-import') {
         import_profs_and_courses();
     }
+    else if ($_GET['action'] == 'add-new-user-form') {
+        include("../matter/add_new_user_form.php");
+    }
     else if ($_GET['action'] == 'create-new-user') {
         if (pre_register_user($_GET['name'], $_GET['email'], $_GET['type']) == 1) {
             include("../matter/manage_users.php");
@@ -66,7 +69,7 @@
             echo "Account already exists.";
         }
     }
-    else if ($_GET['action'] == 'edit-user') {
+    else if ($_GET['action'] == 'edit-user-form') {
         include("../matter/edit_user_form.php");
     }
     else {

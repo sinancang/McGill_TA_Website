@@ -10,13 +10,12 @@ function set_up_manage_users_view() {
     // edit user btns event listener
     $('.edit-user').on('click', function() {
         $('.content-veil').css({'display':'flex'});
-        $('.form-wrapper.edit-user-info-form').css({'display': 'block'});
 
         let user_to_edit = $(this).attr('target');
         let user = document.getElementById('username').innerText;
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=edit-user&target=${user_to_edit}`;
+        var url = `../routes/dashboard.php?user=${user}&action=edit-user-form&target=${user_to_edit}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
@@ -32,7 +31,22 @@ function set_up_manage_users_view() {
     // add new user btn event listener
     $('.add-new-user-btn').on('click', function() {
         $('.content-veil').css({'display':'flex'});
-        $('.form-wrapper.add-new-user-form').css({'display': 'block'});
+
+        let user_to_edit = $(this).attr('target');
+        let user = document.getElementById('username').innerText;
+
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=add-new-user-form&target=${user_to_edit}`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                $('.content-veil')[0].innerHTML = this.responseText;
+            }
+            else alert('Server Error. Please try again later.');
+    
+        }, false);
+    
+        syncRequest.send();
     });
 
 
