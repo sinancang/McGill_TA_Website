@@ -30,3 +30,11 @@ select {
   cursor: inherit;
   line-height: inherit;
 }
+
+.text-area{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+}
