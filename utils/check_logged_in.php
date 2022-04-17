@@ -9,7 +9,7 @@
  * otherwise, http 404
  *
  */
-function check_logged_in(string $ticket_id){
+function check_logged_in(string $ticket_id, string $permission){
 	$file = fopen("../db/tickets.csv", "r") or die ("Unable to open file!");
 
 	$row = 1;
