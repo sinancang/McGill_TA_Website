@@ -31,7 +31,7 @@
     }
     // sys-ops: post new prof or admin 
     else if ($_GET['action'] == "manual-upload") {
-        add_verified_prof( 
+        add_prof_course_record( 
             $_GET['new-prof'], 
             $_GET['course-code'], 
             $_GET['course-name'],
@@ -60,7 +60,9 @@
         import_profs_and_courses();
     }
     else if ($_GET['action'] == 'create-new-user') {
-        pre_register_user($_GET['name'], $_GET['email'], $_GET['type']);
+        if (pre_register_user($_GET['name'], $_GET['email'], $_GET['type']) == 1) {
+            include("../matter/manage_users.php");
+        }
     }
     else {
         echo "Page Not Found";

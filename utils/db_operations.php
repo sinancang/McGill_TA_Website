@@ -6,7 +6,7 @@
 
         NOTE: This ALLOWS a prof to sign up with the system BUT does NOT ACTUALLY sign up the prof!
     */
-    function add_verified_prof(string $prof, string $course_code, string $course_name, string $term) {
+    function add_prof_course_record(string $prof, string $course_code, string $course_name, string $term) {
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
@@ -144,6 +144,7 @@
         }
     }
 
+    // reactivate user account
     function reactivate_user(string $user) {
         echo 'we get here';
         $filename = "../db/user_data.json";
@@ -152,7 +153,6 @@
 
         if (isset($user_data[$user])) {
             $user_data[$user]["deactivated"] = false;
-            //$user_data = array_values($user_data);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
             add_record_to_activity_history($_GET['user'], "Reactivated user {$user}", $date);
         }
@@ -162,6 +162,7 @@
     }
 
 
+    // preregister a prof or admin
     function pre_register_user(string $name, string $email, string $type) {
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
@@ -169,7 +170,7 @@
 
         if (isset($user_data[$name])) {
             echo 'Account already exists.';
-            return;
+            return 0;
         }
         else {
             $user_data[$name]['registered'] = false;
@@ -177,9 +178,9 @@
             $user_data[$name]['type'] = $type;
             $user_data[$name]['courses'] = '[]';
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
-            echo "Successfully added new user!";
             $date = date('F j Y, \a\t g:ia');
-            add_record_to_activity_history($_GET['user'], "Added new user {$prof} as {$type}", $date);
+            add_record_to_activity_history($_GET['user'], "Added new user {$name} as {$type}", $date);
+            return 1;
         }
 
 

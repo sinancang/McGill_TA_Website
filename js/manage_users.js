@@ -35,7 +35,14 @@ function set_up_manage_users_view() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                $('.new-user-server-response').text(this.responseText);
+                if (this.responseText == 'Account already exists.') {
+                    $('.new-user-server-response').text(this.responseText);
+                }
+                else {
+                    $('.content-veil').css({'display':'none'});
+                    $('.form-wrapper.add-new-user-form').css({'display':'none'});
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                }
             }
             else alert('Server Error. Please try again later.');
     

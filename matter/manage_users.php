@@ -5,7 +5,6 @@
             <label for="user-type-select">Select User Type</label>
 
             <select name="user-types" id="user-type-select">
-                <option value="">Please choose an option</option>
                 <option value="All">All</option>
                 <option value="TA">TA</option>
                 <option value="Professor">Professor</option>
@@ -23,7 +22,7 @@
 
     <div class="all-user-types-container">
 
-        <div class="user-accounts all">
+        <div class="user-accounts all open">
 
             <div class="user-account-type-title">ALL USERS</div>
 
