@@ -155,6 +155,10 @@ body {
     margin-left: 40px;
 }
 
+.nav-bar-btn.sub-title {
+    font-size: 14px;
+}
+
 .nav-bar-btn.back {
     text-align: left;
 }
