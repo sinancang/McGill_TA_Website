@@ -35,7 +35,7 @@ function set_up_manage_users_view() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                if (this.responseText == 'Account already exists.') {
+                if (this.responseText == "\nAccount already exists.") {
                     $('.new-user-server-response').text(this.responseText);
                 }
                 else {
