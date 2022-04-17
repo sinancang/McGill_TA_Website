@@ -32,7 +32,6 @@ function set_up_manage_users_view() {
     $('.add-new-user-btn').on('click', function() {
         $('.content-veil').css({'display':'flex'});
 
-        let user_to_edit = $(this).attr('target');
         let user = document.getElementById('username').innerText;
 
         let syncRequest = new XMLHttpRequest();
@@ -53,7 +52,6 @@ function set_up_manage_users_view() {
     // event listener for close veil btn
     $('.content-veil').on('click', '#close-veil-btn', function() {
         $('.content-veil').css({'display':'none'});
-        $('.form-wrapper.modal').css({'display':'none'});
     });
 
     // add new user btn event listener
