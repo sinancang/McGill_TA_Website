@@ -64,7 +64,7 @@
             include("../matter/manage_users.php");
         }
         else {
-            echo 'Account already exists.';
+            echo "Account already exists.";
         }
     }
     else {
