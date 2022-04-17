@@ -15,7 +15,9 @@
             echo
             "<div class='nav-bar-btn-container second-nav-bar'>
                 <div class='nav-bar-btn-wrapper  second-nav-bar'>
-                        <div class='nav-bar-btn'>{$all_courses[$i]}</div>
+                        <div class='nav-bar-btn'>{$all_courses[$i]['course code']}</div>
+                        <div class='nav-bar-btn'>{$all_courses[$i]['course name']}</div>
+                        <div class='nav-bar-btn'>{$all_courses[$i]['term']}</div>
                     </div>
                 </div>
             </div>";
@@ -28,6 +30,8 @@
                 "<div class='nav-bar-btn-container second-nav-bar'>
                     <div class='nav-bar-btn-wrapper  second-nav-bar'>
                             <div class='nav-bar-btn'>{$user_data[$_GET['user']]['courses'][$i]['course num']}</div>
+                            <div class='nav-bar-btn'>{$user_data[$_GET['user']]['courses'][$i]['course name']}</div>
+                            <div class='nav-bar-btn'>{$user_data[$_GET['user']]['courses'][$i]['term']}</div>
                         </div>
                     </div>
                 </div>";
