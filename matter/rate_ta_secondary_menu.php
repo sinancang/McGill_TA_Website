@@ -13,6 +13,7 @@
     
     if ($user_data[$_GET['user']]['type'] == 'sysop') {
         for ($i=0; $i<count($all_courses); $i++) {
+            echo $all_courses[$i];
             "<div class='nav-bar-btn-container second-nav-bar'>
                 <div class='nav-bar-btn-wrapper  second-nav-bar'>
                         <div class='nav-bar-btn'>{$all_courses[$i]}</div>
