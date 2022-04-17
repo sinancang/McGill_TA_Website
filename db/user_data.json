@@ -3,21 +3,27 @@
         "registered": true,
         "password": " comp307 final project",
         "type": "prof",
-        "courses": [{
-            "course name": "Comp 307",
-            "role": "student",
-            "term": "FALL 2021"
-        },
-        {
-            "course name": "Comp 307",
-            "role": "TA",
-            "term": "FALL 2021"
-        },
-        {
-            "course name": "Comp 307",
-            "role": "prof",
-            "term": "FALL 2021"
-        }]
+        "courses": 
+        [            
+            {
+                "course num": "Comp 307",
+                "course name": "Web Development",
+                "role": "student",
+                "term": "FALL 2021"
+            },
+            {
+                "course num": "Comp 273",
+                "course name": "Assembly Code",
+                "role": "TA",
+                "term": "FALL 2021"
+            },
+            {
+                "course num": "Comp 303",
+                "course name": "Software Design",
+                "role": "prof",
+                "term": "FALL 2021"
+            }
+        ]
      },
     "David Peterman": {
         "registered": true,
@@ -70,4 +76,3 @@
         "type": "prof"
     }
 }
-
