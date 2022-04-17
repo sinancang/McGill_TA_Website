@@ -1,52 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    
-   #button {
-    background-color: #d75050;
-    border: 2px solid #d75050;
-    color: white;
-    padding: 14px 20px;
-    margin-top: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: #d77171;
-}
-.drop {
-	padding: 10px;
-	cursor: pointer;
-	border-radius: 5px;
-}
-select {
-  appearance: none;
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
-}
-
-
-
-</style>
 
     <head>
         <title>McGill TA Management</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../css/TAManagement.css">
     </head>
     <body>
         <p style="font-size: 30px; padding-left: 15%;">Rate A TA:</p>
         <div class="form-container">
-        <div class="sign-up-form" style="width: 70%;;">
+        <div class="sign-up-form" style="width: 70%;">
         <form method="post" name="form" action="../utils/rateTASubmission.php" style="padding-left: 5%;">
         <p style="font-size: 15px;">Select a term:</p>
         <select id = "term" name ="term" onchange="termSelected(this.value)"class="drop"> 
