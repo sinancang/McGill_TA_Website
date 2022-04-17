@@ -63,6 +63,9 @@
         if (pre_register_user($_GET['name'], $_GET['email'], $_GET['type']) == 1) {
             include("../matter/manage_users.php");
         }
+        else {
+            echo 'Account already exists.';
+        }
     }
     else {
         echo "Page Not Found";

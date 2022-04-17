@@ -169,8 +169,7 @@
         $user_data = json_decode($data, true);
 
         if (isset($user_data[$name])) {
-            echo 'Account already exists.';
-            exit();
+            return 0;
         }
         else {
             $user_data[$name]['registered'] = false;
