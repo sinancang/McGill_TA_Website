@@ -207,15 +207,8 @@
 
 .edit-user-course-container {
     width: 40%;
-    border: 1px solid grey;
+    border: 2px solid #d1d1d1;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
-    box-shadow: 0px 0px 7px 3px #e1e0e0;
 }
-
-
-
-
-
-

@@ -53,12 +53,12 @@
 
                     echo
                     "<div class='edit-user-course-container'>
-                        <div class='edit-user-course-num'>{$courses[$i]['course code']}</div>
+                        <div class='edit-user-course-num'>{$courses[$i]['course num']}</div>
                         <div class='edit-user-course-name'>{$courses[$i]['course name']}</div>
                         <div class='edit-user-course-term'>{$courses[$i]['term']}</div>
                     
 
-                        <select name='edit-type' id='edit-user-type' class='edit-user-course-role'>";
+                        <select name='edit-type' id='edit-user-type' class='edit-user-course-role form-select-input'>";
                 
                             if ($courses[$i]['role'] == 'admin') {
                                 echo
