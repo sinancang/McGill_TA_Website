@@ -30,7 +30,8 @@
             $i = 0;
             while (isset($user_data[$prof]['courses'][$i])) {
                 
-                if ($user_data[$prof]['courses'][$i]['course num'] == $course_code) {
+                if ($user_data[$prof]['courses'][$i]['course num'] == $course_code
+                    && $user_data[$prof]['courses'][$i]['term'] == $term) {
                     echo "Cannot add record. Record already Exists.";
                     return;
                 }
