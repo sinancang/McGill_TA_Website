@@ -50,7 +50,7 @@
         include("../matter/rateTA.html");
     }
     else if ($_GET['action'] == 'get-rate-ta-classes') {
-        
+        include("../matter/rate_ta_secondary_menu.php");
     }
     else if ($_GET['action'] == 'delete-user') {
         deactivate_user($_GET['target']);

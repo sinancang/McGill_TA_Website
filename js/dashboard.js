@@ -188,7 +188,7 @@ function fillSecondaryMenu(menuName) {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                document.getElementById('second-nav-bar-options-container').innerHTML = this.responseText;
                 set_up_rate_ta_view();
             }
             else alert('Server error. Please try again later');
