@@ -31,25 +31,4 @@
             </form>
         </div>
     </div>
-
-    <script>
-        //function to generate dropdown menu for TA names from the selected term.
-        function termSelected(data){
-            var ajaxreq = new XMLHttpRequest(); // New request object
-            ajaxreq.open('GET', `../utils/rateTAdropdown.php?selectvalue=${data}`, true); //change this to that of TA_performance_log
-            ajaxreq.send();
-            ajaxreq.onreadystatechange = function(){
-                if(ajaxreq.readyState==4 && ajaxreq.status==200){
-                    document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
-                }          
-            }
-        } 
-
-        function sendCourseRequest(){
-            var course_selected = document.getElementById('selected-course'); 
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", `../utils/generateTA.php?selected-course=${course_selected}`, true); //is this name true and can multiple variable be sent?
-            xhttp.send();
-        }
-    </script>
 </div>       
