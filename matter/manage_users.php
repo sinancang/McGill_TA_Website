@@ -164,7 +164,7 @@
                                 <button class='submit-btn' id='add-btn' type='button' onclick='submitAddManuallyForm()'>Add</button>
                 
                             </div>
-                        </div>"
+                        </div>";
                             
                     }    
 
