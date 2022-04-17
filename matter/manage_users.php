@@ -61,6 +61,24 @@
                             $isSysOps = true;
                             array_push($sysOps, $key);
                         }
+
+                        if ($value['type'] == 'admin') {
+                            $isAdmin = true;
+                            array_push($admins, $key);
+                        }
+
+                        if ($value['type'] == 'prof') {
+                            $isProf = true;
+                            array_push($profs, $key);
+                        }
+                        if ($value['type'] == 'ta') {
+                            $isTA = true;
+                            array_push($TAs, $key);
+                        }
+                        if ($value['type'] == 'student') {
+                            $isStudent = true;
+                            array_push($students, $key);
+                        }
                                                     
                         echo 
                         "<div class='entry-container'>
