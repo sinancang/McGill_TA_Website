@@ -47,7 +47,7 @@
         include("../matter/dashboard_default.php");    
     }
     else if ($_GET['view'] == 'rate-ta') {
-        include("../matter/rateTA.html");
+        include("../matter/rateTA.php");
     }
     else if ($_GET['action'] == 'get-rate-ta-classes') {
         include("../matter/rate_ta_secondary_menu.php");
