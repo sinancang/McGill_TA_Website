@@ -191,6 +191,8 @@
         if (isset($user_data[$user_to_edit])) {
             $user_data[$user_to_edit]['email'] = $email;
             $user_data[$user_to_edit]['type'] = $type;
+
+
             for ($i=0; $i<count($course_data); $i++) {
                 for ($j=0; $j<count($user_data[$user_to_edit]['courses']); $j++) {
                     if ($user_data[$user_to_edit]['courses'][$j] == $course_data[$i][0]) {
@@ -199,6 +201,8 @@
                     }
                 }
             }
+            
+            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
             return 1;
         }
         else {
