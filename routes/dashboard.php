@@ -49,6 +49,9 @@
     else if ($_GET['view'] == 'rate-ta') {
         include("../matter/rateTA.html");
     }
+    else if ($_GET['action'] == 'get-rate-ta-classes') {
+        
+    }
     else if ($_GET['action'] == 'delete-user') {
         deactivate_user($_GET['target']);
         include("../matter/manage_users.php");

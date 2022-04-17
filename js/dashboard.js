@@ -40,20 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             getSecondaryMenuItems('manage');
         }
         else if ($(this).attr('id') == 'rate') {
-            let user = document.getElementById('username').innerText;
-            let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status == 200) {
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_rate_ta_view();
-                }
-                else alert('Server error. Please try again later');
-        
-            }, false);
-        
-            syncRequest.send();
+            getSecondaryMenuItems('rate');
         }
         else if ($(this).attr('id') == 'sys-ops') {
             fillSecondaryMenu('sys-ops');
@@ -195,6 +182,38 @@ function fillSecondaryMenu(menuName) {
     // ta rating secondary menu
     else if (menuName == 'rate') {
 
+        let user = document.getElementById('username').innerText;
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=get-rate-ta-classes`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                set_up_rate_ta_view();
+            }
+            else alert('Server error. Please try again later');
+    
+        }, false);
+    
+        syncRequest.send();
+
+
+        /*
+        let user = document.getElementById('username').innerText;
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                set_up_rate_ta_view();
+            }
+            else alert('Server error. Please try again later');
+    
+        }, false);
+    
+        syncRequest.send();
+        */
 
     }
 }

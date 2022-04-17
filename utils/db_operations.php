@@ -12,6 +12,19 @@
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
+        $coursesFile = "../db/all_courses.json";
+        $contents = file_get_contents($coursesFile);
+        $all_courses = json_decode($contents, true);
+
+
+        $found = false;
+        for ($i=0; $i<count($all_courses); $i++) {
+            if ($all_courses[$i] == $course_code) $found = true;
+        }
+        if (!$found) {
+            $all_courses[] = $course_code;
+        }
+
         if (isset($user_data[$prof])) {
             $i = 0;
             while (isset($user_data[$prof]['courses'][$i])) {
@@ -21,6 +34,7 @@
                     return;
                 }
                 $i++;
+
             }
             $new_entry = array('course num'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
             $user_data[$prof]['courses'][] = $new_entry;
