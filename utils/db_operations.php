@@ -196,12 +196,12 @@
             for ($i=0; $i<count($course_data); $i++) {
                 for ($j=0; $j<count($user_data[$user_to_edit]['courses']); $j++) {
                     if ($user_data[$user_to_edit]['courses'][$j] == $course_data[$i][0]) {
-                        $user_data[$user_to_edit]['courses'][$j]['type'] = $course_data[$i][1];
+                        $user_data[$user_to_edit]['courses'][$j]['role'] = $course_data[$i][1];
                         break;
                     }
                 }
             }
-            
+
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
             return 1;
         }
