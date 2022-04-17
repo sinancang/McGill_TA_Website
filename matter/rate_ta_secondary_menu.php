@@ -23,6 +23,7 @@
         }
     }
     else {
+        echo 'heeeeeeere also';
         for ($i=0; $i<count($user_data['courses']); $i++) {
             echo $user_data['courses'][$i];
             if ($user_data['courses'][$i]['role'] != 'ta') {
