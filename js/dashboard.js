@@ -28,8 +28,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // set event listeners for primary nav bar options
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
 
-        $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
-        $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
 
         $(this).css({'background-color': ''})
 
@@ -40,9 +39,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
             getSecondaryMenuItems('manage');
         }
         else if ($(this).attr('id') == 'rate') {
-            getSecondaryMenuItems('get-rate-ta-classes'); // this will make ajax call
+            $('.nav-bar-btn').on('click', function() {
+                let user = document.getElementById('username').innerText;
+                let course = $(this).text();
+    
+                let syncRequest = new XMLHttpRequest();
+                var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
+                syncRequest.open("GET", url, true);  
+                syncRequest.addEventListener("load", function(){           
+                    if (this.status == 200) {
+                        $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                        set_up_rate_ta_view();
+                    }
+                    else alert('Server error. Please try again later');
+            
+                }, false);
+            
+                syncRequest.send();
+            });
         }
         else if ($(this).attr('id') == 'sys-ops') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
+            $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             fillSecondaryMenu('sys-ops');
         }
     });
@@ -184,24 +202,6 @@ function fillSecondaryMenu(menuName) {
     // ta rating secondary menu
     else if (menuName == 'rate') {
    
-        $('.nav-bar-btn').on('click', function() {
-            let user = document.getElementById('username').innerText;
-            let course = $(this).text();
-
-            let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=rate-ta&class=${course}`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status == 200) {
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_rate_ta_view();
-                }
-                else alert('Server error. Please try again later');
-        
-            }, false);
-        
-            syncRequest.send();
-        });
     }
 }
 
