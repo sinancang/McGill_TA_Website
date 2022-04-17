@@ -20,5 +20,18 @@
             </div>";
         }
     }
+    else {
+        for ($i=0; $i<count($user_data['courses']); $i++) {
+            if ($user_data['courses'][$i]['role'] != 'ta') {
+                echo
+                "<div class='nav-bar-btn-container second-nav-bar'>
+                    <div class='nav-bar-btn-wrapper  second-nav-bar'>
+                            <div class='nav-bar-btn'>{$user_data['courses'][$i]['course num']}</div>
+                        </div>
+                    </div>
+                </div>";
+            }
+        }
+    }
 ?>
 
