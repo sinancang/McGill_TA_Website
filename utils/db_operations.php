@@ -194,7 +194,14 @@
 
 
             for ($i=0; $i<count($course_data); $i++) {
+
                 for ($j=0; $j<count($user_data[$user_to_edit]['courses']); $j++) {
+
+                    echo $course_data[$i][0];
+                    echo "\n";
+                    echo $user_data[$user_to_edit]['courses'][$j]['role'];
+                    echo "\n";
+
                     if ($user_data[$user_to_edit]['courses'][$j] == $course_data[$i][0]) {
                         $user_data[$user_to_edit]['courses'][$j]['role'] = $course_data[$i][1];
                         break;
