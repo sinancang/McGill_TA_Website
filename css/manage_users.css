@@ -125,6 +125,13 @@
     align-items: center;
     width: 100%;
     font-size: 16px;
+    margin: 5px;
+    margin-left: 20px;
+}
+
+.user-email {
+    margin: 5px;
+    margin-left: 20px;
 }
 
 .user-roles-container {
@@ -133,7 +140,8 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin: 5px;
+    margin-left: 20px;
 }
 
 .user-role {
