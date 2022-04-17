@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <head>
+        <title>McGill TA Management</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../css/TAManagement.css">
+    </head>
 <body>
 <!--how to decide which user is-->
+<p style="font-size: 30px; padding-left: 15%;">Rate A TA:</p>
+        <div class="form-container">
+        <div class="sign-up-form" style="width: 70%;">
 <form method="get" name="form" action="../routes/set_office_hours.php"> <!--remove demo!!!-->
 <p><b>Set Office Hours</b></p>
 <p>Choose a Day:</p>
-<select name = "day" > 
+<select name = "day"class="drop" > 
     <option> -- </option>
     <option> "Monday" </option>
     <option> "Tuesday" </option>
@@ -19,21 +27,22 @@
 <br></br>
 <label for="appt">Choose a time for your Office hours:</label>
 <br></br>
-<small>start: </small><br>
-<input type="time" name="start" min="09:00" max="18:00" required><br>
-<small>end: </small><br>
-<input type="time" name="end" min="09:00" max="18:00" required>
+<p >start: </p>
+<input class="drop" type="time" name="start" min="09:00" max="18:00" required><br>
+<p>end: </p>
+<input class="drop" type="time" name="end" min="09:00" max="18:00" required>
 
 <p>Choose a Location:</p>
 <label for="location">Location: </label> <br>
-<input type="text" name="location" placeholder="Enter Location" required><br></br>
+<input class="drop" type="text" name="location" placeholder="Enter Location" required><br></br>
 
 
 <p>Add duties: </p>
-<textarea name = "duties" cols="75" name="duties" rows="5"></textarea><br>
-<input type="submit" value = "Set Office Hours"></button>
+<textarea name = "duties" class="text-area" name="duties" rows="5"></textarea><br>
+<input id="button" style="background-color: #d77171;" type="submit" value = "Set Office Hours"></button>
 </form>
-
+</div>
+</div>
 
 </body>
 
