@@ -9,10 +9,10 @@ function check_logged_in(string $ticket_id, string $username){
         $user_data = json_decode($data, true);
 
         if (isset($user_data[$username]) && ($user_data[$username]['ticket'] == $ticket_id)){
-                return true;
+                return 1;
         }
 
-        return false;
+        return 0;
 }
 
 
