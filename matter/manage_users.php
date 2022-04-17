@@ -97,7 +97,7 @@
 
                                     for ($i = 0; $i < count($courses); $i++) {
                                         $role = $courses[$i]['role'];
-                                        if ($role == 'TA' && !$isTA) {
+                                        if ($role == 'ta' && !$isTA) {
                                             array_push($TAs, $key);
                                             echo "<div class='user-role'>TA</div>";
                                             $isTA = true;
