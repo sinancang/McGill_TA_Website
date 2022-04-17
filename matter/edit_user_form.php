@@ -52,19 +52,19 @@
 
                     echo
                     "<div class='edit-user-course-container'>
-                        <div class='edit-user-course-num'>
-                        <div class='edit-user-course-name'>
-                        <div class='edit-user-course-name'>
+                        <div class='edit-user-course-num'>{$courses[$i]['course code']}</div>
+                        <div class='edit-user-course-name'>{$courses[$i]['course name']}</div>
+                        <div class='edit-user-course-term'>{$courses[$i]['course term']}</div>
                     
 
                         <select name='edit-type' id='edit-user-type' class='edit-user-course-role'>";
                 
-                            if ($type == 'admin') {
+                            if ($courses[$i]['role'] == 'admin') {
                                 echo
                                 "<option selected='selected' value='admin'>Admin</option>
                                 <option value='prof'>Professor</option>";
                             }
-                            else if ($type == 'prof') {
+                            else if ($courses[$i]['role'] == 'prof') {
                                 echo 
                                 "<option value='admin'>Admin</option>
                                 <option selected='selected' value='prof'>Professor</option>";
