@@ -56,28 +56,7 @@
                         $isAdmin = false;
                         $isSysOps = false;
 
-                        if ($value['type'] == 'sysop') {
-                            $isSysOps = true;
-                            array_push($sysOps, $key);
-                        }
 
-                        if ($value['type'] == 'admin') {
-                            $isAdmin = true;
-                            array_push($admins, $key);
-                        }
-
-                        if ($value['type'] == 'prof') {
-                            $isProf = true;
-                            array_push($profs, $key);
-                        }
-                        if ($value['type'] == 'ta') {
-                            $isTA = true;
-                            array_push($TAs, $key);
-                        }
-                        if ($value['type'] == 'student') {
-                            $isStudent = true;
-                            array_push($students, $key);
-                        }
                                                     
                         echo 
                         "<div class='entry-container'>
@@ -85,36 +64,54 @@
                                 <div class='user-name'>{$key}</div>
                                 <div class='user-roles-container'>";
 
+                                    if ($value['type'] == 'ta') {
+                                        $isTA = true;
+                                        array_push($TAs, $key);
+                                        echo "<div class='user-role'>TA</div>";
+                                    }
+
+                                    if ($value['type'] == 'sysop') {
+                                        $isSysOps = true;
+                                        array_push($sysOps, $key);
+                                        echo "<div class='user-role'>Sys-Op</div>";
+                                    }
+            
+                                    if ($value['type'] == 'admin') {
+                                        $isAdmin = true;
+                                        array_push($admins, $key);
+                                        echo "<div class='user-role'>Admin</div>";
+                                    }
+            
+                                    if ($value['type'] == 'prof') {
+                                        $isProf = true;
+                                        array_push($profs, $key);
+                                        echo "<div class='user-role'>Prof</div>";
+                                    }
+            
+                                    if ($value['type'] == 'student') {
+                                        $isStudent = true;
+                                        array_push($students, $key);
+                                        echo "<div class='user-role'>Student</div>";
+                                    }
+
                                     for ($i = 0; $i < count($courses); $i++) {
                                         $role = $courses[$i]['role'];
-                                        if ($isTA) {
-                                            echo "<div class='user-role'>TA</div>";
-                                        }
-                                        else if ($role == 'TA' && !$isTA) {
+                                        if ($role == 'TA' && !$isTA) {
                                             array_push($TAs, $key);
                                             echo "<div class='user-role'>TA</div>";
                                             $isTA = true;
                                         }
-                                        if ($isProf) {
-                                            echo "<div class='user-role'>Prof</div>";
-                                        }
-                                        else if ($role == 'prof' && !$isProf) {
+                                        if ($role == 'prof' && !$isProf) {
                                             array_push($profs, $key);
                                             echo "<div class='user-role'>Prof</div>";
                                             $isProf = true;
                                         }
-                                        if ($isAdmin) {
-                                            echo "<div class='user-role'>Admin</div>";
-                                        }
-                                        else if ($role == 'admin' && !$isAdmin) {
+                                        if ($role == 'admin' && !$isAdmin) {
                                             array_push($admins, $key);
                                             echo "<div class='user-role'>Admin</div>";
                                             $isAdmin = true;
                                         }
-                                        if ($isStudent) {
-                                            echo "<div class='user-role'>Student</div>";
-                                        }
-                                        else if ($role == 'student' && !$isStudent) {
+                                        if ($role == 'student' && !$isStudent) {
                                             array_push($students, $key);
                                             echo "<div class='user-role'>Student</div>";
                                             $isStudent = true;
