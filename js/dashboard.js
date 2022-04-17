@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             getSecondaryMenuItems('manage');
         }
         else if ($(this).attr('id') == 'rate') {
-            getSecondaryMenuItems('rate');
+            getSecondaryMenuItems('get-rate-ta-classes'); // this will make ajax call
         }
         else if ($(this).attr('id') == 'sys-ops') {
             fillSecondaryMenu('sys-ops');
@@ -91,18 +91,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
 */
 function getSecondaryMenuItems(menuName) {
     
-        let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?role=${menuName}`;
-        syncRequest.open("GET", url, true);
-    
-        syncRequest.addEventListener("load", function(){
-            
-            if (this.status == 200) fillSecondaryMenu();
-            else console.log('invalid user role');
-    
-        }, false);
-    
-        syncRequest.send();   
+    let user = document.getElementById('username').innerText;
+    let syncRequest = new XMLHttpRequest();
+    var url = `../routes/dashboard.php?user=${user}&action=${menuName}`;
+    syncRequest.open("GET", url, true);  
+    syncRequest.addEventListener("load", function(){           
+        if (this.status == 200) {
+            document.getElementById('second-nav-bar-options-container').innerHTML = this.responseText;
+            set_up_rate_ta_view();
+        }
+        else alert('Server error. Please try again later');
+
+    }, false);
+
+    syncRequest.send(); 
 }
 
 
@@ -181,21 +183,6 @@ function fillSecondaryMenu(menuName) {
     }
     // ta rating secondary menu
     else if (menuName == 'rate') {
-
-        let user = document.getElementById('username').innerText;
-        let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=get-rate-ta-classes`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                document.getElementById('second-nav-bar-options-container').innerHTML = this.responseText;
-                set_up_rate_ta_view();
-            }
-            else alert('Server error. Please try again later');
-    
-        }, false);
-    
-        syncRequest.send();
 
 
         /*
