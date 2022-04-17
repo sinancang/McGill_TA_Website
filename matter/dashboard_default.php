@@ -136,7 +136,7 @@
                 
                         if ($user_data[$_GET['user']]['type'] == 'sysop') {
                             echo
-                            '<div class="form-wrapper add-new-user-form">
+                            '<div class="form-wrapper modal add-new-user-form">
                                 <div class="form-input-container">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" id="new-user-name" required>
@@ -162,7 +162,7 @@
 
                             // edit user code. originally hidden
                             echo
-                            "<div class='form-wrapper edit-user-info-form'>
+                            "<div class='form-wrapper modal edit-user-info-form'>
 
 
                                 <div class='form-input-container'>

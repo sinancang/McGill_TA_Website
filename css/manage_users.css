@@ -184,11 +184,11 @@
 
 
 /* edit user info */
-.edit-user-info-form {
+.form-wrapper.modal {
     display: none;
     width: 50%;
 }
 
-.edit-user-info-form.open {
+.form-wrapper.modal.open {
     display: flex;
 }
