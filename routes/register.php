@@ -4,8 +4,10 @@
         include "../utils/db_operations.php";
 	include "../utils/encrypt.php";
 
-	// TO DO: check valid e-mai
+	
 	/*
+	 * check if e-mail exists, doesn't work currently...
+	 *
 	include "../utils/verify_email.php";
 	$mail = new VerifyEmail();
 	$mail->setStreamTimeoutWait(20);

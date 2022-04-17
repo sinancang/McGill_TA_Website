@@ -47,9 +47,10 @@
         	      syncRequest.open("POST", url, true);
 
         	      syncRequest.addEventListener("load", function() {
-			      console.log(this.responseText);
 			      if (this.status == 200){
+				      sessionStorage.setItem("ticket", this.responseText); 
 				      displayWarning("Login success!", true);
+				      // redirect to dashboard
 			      } else {
 				      displayWarning("Login failed. Please check your username and/or password and try again.", false);
 			      }
