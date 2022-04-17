@@ -15,6 +15,17 @@
 	if (isset($user_data[$username])) {
 		if (isset($user_data[$username]["registered"]) && $user_data[$username]["registered"] == true) {
 			if ($user_data[$username]["password"] == $encrypted_password) {
+				
+				// if deactivated is not set or if it is set and is false
+				if (!isset($user_data[$username]['deactivated']) 
+					|| (isset($user_data[$username]['deactivated'])
+					&& $user_data[$username]['deactivated'] === FALSE)){
+					http_response_code(200);
+                                	$ticket_id = uniqid(TRUE);
+                                	register_ticket($ticket_id, $user_data[$username]['type']);
+                                	echo $ticket_id;
+                                	exit();
+				}
 				http_response_code(200);
 				$ticket_id = uniqid(TRUE);
 				register_ticket($ticket_id, $user_data[$username]['type']);
