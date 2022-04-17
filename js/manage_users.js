@@ -167,7 +167,7 @@ function set_edit_user_events(user_to_edit) {
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
                 console.log(this);
-                if (this.responseText == "Server error. Could not update user.") {
+                if (this.responseText == "  \nServer error. Could not update user.") {
                     alert(this.responseText);
                 }
                 else {
