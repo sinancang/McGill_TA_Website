@@ -1,5 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    
+   #button {
+    background-color: #d75050;
+    border: 2px solid #d75050;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #d77171;
+}
+.drop {
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+select {
+  appearance: none;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+
+
+</style>
 
     <head>
         <title>McGill TA Management</title>
@@ -7,21 +44,24 @@
         <link rel="stylesheet" href="../css/register.css">
     </head>
     <body>
-        <form method="get" name="form" action="../utils/rateTASubmission.php">
-        <p>Select a term:</p>
-        <select id = "term" name ="term" onchange="termSelected(this.value)"> 
+        <p style="font-size: 30px; padding-left: 15%;">Rate A TA:</p>
+        <div class="form-container">
+        <div class="sign-up-form" style="width: 70%;;">
+        <form method="post" name="form" action="../utils/rateTASubmission.php" style="padding-left: 5%;">
+        <p style="font-size: 15px;">Select a term:</p>
+        <select id = "term" name ="term" onchange="termSelected(this.value)"class="drop"> 
             <option> -- </option>
             <option> FALL 2020 </option>
             <option> WINTER 2021 </option>
             <option> FALL 2021 </option>
             <option> WINTER 2022 </option>
         </select>
-        <p>Select a TA from the options:</p>
-        <select id = "TA_dropdown" name="TA_dropdown">
+        <p style="font-size: 15px;">Select a TA from the options:</p>
+        <select class="drop" id = "TA_dropdown" name="TA_dropdown">
         <option value="">--</option>
         </select>
-        <p>Give a score for TA (1: lowest, 5: highest)</p>
-        <select id = "score">
+        <p style="font-size: 15px;">Give a score for TA (1: lowest, 5: highest)</p>
+        <select  class="drop" id = "score" name="score">
             <option> -- </option>
             <option> 1 </option>
             <option> 2 </option>
@@ -30,12 +70,14 @@
             <option> 5 </option>
         </select>
 
-        <p>Leave a review:</p>
-        <textarea id = "review" cols="75" name="review" rows="5"></textarea><br>
-        <input type="submit" value = "submit your review" onclick="sendRateTARequest()">Submit your review</button>
+        <p style="font-size: 15px;">Leave a review:</p>
+        <textarea id = "review" cols="50" name="review" rows="5"></textarea><br>
+        <input id="button" style="background-color: #d77171;" type="submit" value = "submit your review" onclick="sendCourseRequest()"></button>  
         </form>
+    </div>
+    </div>
        <!-- <script src="../js/rateTA.js">  </script> -->
-
+        
     </body>
 
 <script>
@@ -50,4 +92,11 @@
             }          
         }
     } 
+
+    function sendCourseRequest(){
+        var course_selected = document.getElementById('selected-course'); 
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "../utils/generateTA.php?selected-course="+ course_selected, true); //is this name true and can multiple variable be sent?
+        xhttp.send();
+    }
 </script>
