@@ -11,22 +11,15 @@ echo "<option>-- Select a TA --</option>";
 echo "hiiiii";
 
 foreach($arr as $key=>$value){
-	//looping through each user (key has the username in it!)
-	$i=0;
-	foreach($value as $key2=>$value2){
-		if($key2=="courses"){ //has course array
-			//if in the given term, TA exists:
-			if($value2[$i]["role"] == "ta"){
-                if(strcmp($val, $value2[$i]["term"]) == 0){
-                    echo "<option> $key </option>";
-                   
-                }
-				$i = $i + 1;
-				
-			}
-			
-
-		}
+	//looping through each user
+	for ($i=0; $i < count($value['courses']); $i++){
+        //if in the given term, TA exists:
+        if($value2[$i]["role"] == "ta"){
+            if(strcmp($val, $value2[$i]["term"]) == 0){
+                echo "<option> $key </option>";
+                
+            }           
+        }
 	}
 }		
 ?>
