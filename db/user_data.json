@@ -81,7 +81,7 @@
     "a": {
         "registered": true,
         "password": "a",
-        "type": "ta",
+        "type": "sysop",
         "courses": [{
             "course name": "Comp 521",
             "role": "TA",
