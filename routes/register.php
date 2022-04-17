@@ -1,6 +1,5 @@
 <?php
-
-        //--- Routing for register requests ---//
+	//--- Routing for register requests ---//
 
         include "../utils/db_operations.php";
 	include "../utils/encrypt.php";
@@ -10,25 +9,24 @@
 	// encrypt password
 	$encrypted_password = encrypt_password($_POST['password']);
 
-	$error_code;
-
+	$error_code = -3;
+	
 	// attempt to register user
 	if ($_POST['type'] == 'student'){
-		$error_code = register_new_student($_POST['username'], $_POST['email'], $encrypted_password);
-		
+		if(register_new_student($_POST['username'], $_POST['email'], $encrypted_password) == 1){
+			// success
+			http_response_code(200);
+		} else {
+			// username or email already exists
+			http_response_code(409);
+		}
 	} else {
-		$error_code = register_new_user($_POST['username'], $_POST['email'], $encrypted_password, $_POST['type']);
-	}
-	if ($error_code == 1){
-		// success
-		http_response_code(200);
-
-	else if ($error_code == 0) {
-		// conflict: e-mail or username already exists
-		http_response_code(409);
-	} else {
-		// TA/Prof/Admin hasn't been pre-added
-		// resource not found
-		http_response_code(404);
+		if (register_new_user($_POST['username'], $_POST['email'], $encrypted_password, $_POST['type']) == 1){
+			// success
+			http_response_code(200);
+		} else {
+			// TA/Prof/Admin hasn't been pre-added, resource not found
+			http_response_code(404);
+		}
 	}
 ?>

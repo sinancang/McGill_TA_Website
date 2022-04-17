@@ -1,8 +1,3 @@
-// TO DO: add a register procedure method which:
-// checks validity of mail
-// checks if passwords match
-// checks if password is valid
-// etc...
 function registerProcedure(){
         var username = document.getElementById('username').value;
 	var email = document.getElementById('email').value;
@@ -10,10 +5,20 @@ function registerProcedure(){
         var pass2 = document.getElementById('pass2').value;
 	var type = document.getElementById('type').value;
 
+	if (username == "" || email == "" || pass1 == "" || pass2 == "" || type == ""){
+		displayWarning("Please fill out all of the fields!", false);
+		return;
+	}
+
         if (pass1 !== pass2){
-                window.alert("Passwords do not match! Try again.");
-                return;
+		displayWarning("Passwords do not match!", false);
+		return;
         }
+
+	if (pass1.length < 8 || pass1.length > 20){
+		displayWarning("Password must be between 8 and 20 characters!");
+		return;
+	}
 	
 	syncRequest = new XMLHttpRequest();
 	var url = "../routes/register.php";
@@ -21,11 +26,18 @@ function registerProcedure(){
 
 	syncRequest.addEventListener("load", function() {
 		if (this.status == 200){
-			console.log('Register success.');
+			displayWarning("Register success.", true);
+			
+			// TO DO: redirect user & log them in
+
 		} else if (this.status == 409) {
-			console.log('Username or e-mail already in use!');
+			displayWarning("E-mail or username already in use! Try another.", false);
+		
+		} else if (this.status == 404) {
+			displayWarning("TA/Prof/Admin has not been pre-added. Please contact sysops.", false);
+
 		} else {
-			console.log('TA/Prof/Admin has not been pre-added. Contact sysops.');
+			console.log("Unexpected error!");
 		}
 	}, false);
 	var fd = new FormData;
@@ -36,3 +48,16 @@ function registerProcedure(){
 	syncRequest.send(fd);
 }
 
+function displayWarning(warning, isGreen){
+	const node = document.createElement("p");
+        const textnode = document.createTextNode(warning);
+        node.appendChild(textnode);
+        document.getElementById("warning").textContent = '';
+	document.getElementById("warning").appendChild(node);
+        
+	if (isGreen) {
+		document.getElementById("warning").style.color = "green";
+	} else {
+		document.getElementById("warning").style.color = "#ca1818";
+	}
+}
