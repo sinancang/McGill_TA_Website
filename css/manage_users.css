@@ -182,9 +182,11 @@
 
 /* edit user info */
 .form-wrapper.modal {
+    height: 80%;
     width: 50%;
     margin: auto;
     margin-top: 50px;
+    overflow: scroll;
 }
 
 .form-wrapper.modal.open {

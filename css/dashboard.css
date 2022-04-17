@@ -339,6 +339,7 @@ body {
 
 
 .content-veil {
+    overflow: scroll;
     display: none;
     position: fixed;
     width: 83%;
@@ -346,7 +347,7 @@ body {
     z-index: 999;
     justify-content: space-around;
     backdrop-filter: blur(3px);
-    height: 90%;
+    height: 85%;
 }
 
 
