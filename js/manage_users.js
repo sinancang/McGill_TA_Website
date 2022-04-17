@@ -30,14 +30,14 @@ function set_up_manage_users_view() {
     });
 
     // add new user btn event listener
-    $('.content-veil').on('click', '.add-new-user-btn', function() {
+    $('.add-new-user-btn').on('click', function() {
         $('.content-veil').css({'display':'flex'});
         $('.form-wrapper.add-new-user-form').css({'display': 'block'});
     });
 
 
     // event listener for close veil btn
-    $('#close-veil-btn').on('click', function() {
+    $('.content-veil').on('click', '#close-veil-btn', function() {
         $('.content-veil').css({'display':'none'});
         $('.form-wrapper.modal').css({'display':'none'});
     });
