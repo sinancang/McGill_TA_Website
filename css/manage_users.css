@@ -181,7 +181,7 @@
 
 /* edit user info */
 .form-wrapper.modal {
-    height: 80%;
+    max-height: 80%;
     width: 50%;
     margin: auto;
     overflow: scroll;
