@@ -32,12 +32,30 @@
                 if ($type == 'admin') {
                     echo
                     "<option selected='selected' value='admin'>Admin</option>
-                    <option value='prof'>Professor</option>";
+                    <option value='prof'>Professor</option>
+                    <option value='ta'>TA</option>
+                    <option value='student'>Student</option>";
                 }
                 else if ($type == 'prof') {
                     echo 
                     "<option value='admin'>Admin</option>
-                    <option selected='selected' value='prof'>Professor</option>";
+                    <option selected='selected' value='prof'>Professor</option>
+                    <option value='ta'>TA</option>
+                    <option value='student'>Student</option>";
+                }
+                else if ($type == 'ta') {
+                    echo 
+                    "<option value='admin'>Admin</option>
+                    <option value='prof'>Professor</option>
+                    <option selected='selected' value='ta'>TA</option>
+                    <option value='student'>Student</option>";
+                }
+                else if ($type == 'student') {
+                    echo 
+                    "<option value='admin'>Admin</option>
+                    <option value='prof'>Professor</option>
+                    <option value='ta'>TA</option>
+                    <option selected='selected' value='student'>Student</option>";
                 }
             
             ?>
