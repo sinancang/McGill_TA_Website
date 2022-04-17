@@ -171,7 +171,10 @@ function set_edit_user_events(user_to_edit) {
                     alert(this.responseText);
                 }
                 else {
+                    $('.content-veil').css({'display':'none'});
+                    $('.form-wrapper.edit-user-info-form').css({'display':'none'});
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_up_manage_users_view();
                 }
             }
             else alert('Server Error. Please try again later.');
