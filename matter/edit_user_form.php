@@ -92,7 +92,7 @@
                                 <option value='ta'>TA</option>
                                 <option value='student'>Student</option>";
                             }
-                            if ($courses[$i]['role'] == 'TA') {
+                            if ($courses[$i]['role'] == 'ta') {
                                 echo
                                 "<option value='admin'>Admin</option>
                                 <option value='prof'>Professor</option>
