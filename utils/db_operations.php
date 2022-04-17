@@ -22,7 +22,7 @@
             if ($all_courses[$i] == $course_code) $found = true;
         }
         if (!$found) {
-            $all_courses[] = $course_code;
+            array_push($all_courses, $course_code);
         }
 
         if (isset($user_data[$prof])) {
