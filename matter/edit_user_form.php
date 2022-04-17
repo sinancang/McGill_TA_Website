@@ -1,3 +1,4 @@
+<div id="close-veil-btn">❌</div>
 
 <?php 
     $filename = "../db/user_data.json";

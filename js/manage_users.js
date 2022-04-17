@@ -20,7 +20,7 @@ function set_up_manage_users_view() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                $('.content-veil').append(this.responseText);
+                $('.content-veil').innerHTML = this.responseText;
             }
             else alert('Server Error. Please try again later.');
     
@@ -30,7 +30,7 @@ function set_up_manage_users_view() {
     });
 
     // add new user btn event listener
-    $('.add-new-user-btn').on('click', function() {
+    $('.content-veil').on('click', '.add-new-user-btn', function() {
         $('.content-veil').css({'display':'flex'});
         $('.form-wrapper.add-new-user-form').css({'display': 'block'});
     });
