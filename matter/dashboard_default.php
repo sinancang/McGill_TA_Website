@@ -134,7 +134,7 @@
                         $data = file_get_contents($filename);
                         $user_data = json_decode($data, true);
                 
-                        if ($user_data[$_GET['user']]['type'] == 'admin') {
+                        if ($user_data[$_GET['user']]['type'] == 'sysop') {
                             echo
                             '<div class="form-wrapper add-new-user-form">
                                 <div class="form-input-container">
