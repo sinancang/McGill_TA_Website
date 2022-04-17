@@ -1,10 +1,10 @@
 
- <div class="form-container ajax-content-container" style="margin-top: 50px;">
+ <div class="form-container ajax-content-container">
     <div class='form-wrapper modal edit-user-info-form'>
         <div class="sign-up-form" style="width: 70%;">
             <form method="post" name="form" action="../utils/rateTASubmission.php" style="padding-left: 5%;">
                 <p style="font-size: 15px;">Select a term:</p>
-                <select id = "term" name ="term" onchange="termSelected(this.value)"class="drop"> 
+                <select id = "term" name ="term" onchange="termSelected(this.value)"class="drop form-select"> 
                     <option> -- Select a term --</option>
                     <option> FALL 2020 </option>
                     <option> WINTER 2021 </option>
@@ -12,7 +12,7 @@
                     <option> WINTER 2022 </option>
                 </select>
                 <p style="font-size: 15px;">Select a TA from the options:</p>
-                <select class="drop" id = "TA_dropdown" name="TA_dropdown">
+                <select class="drop form-select" id = "TA_dropdown" name="TA_dropdown">
                     <option value="">-- Select a TA --</option>
                 </select>
                 <p style="font-size: 15px;">Give a score for TA (1: lowest, 5: highest)</p>
