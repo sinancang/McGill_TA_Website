@@ -14,7 +14,7 @@ foreach($arr as $key=>$value){
 	foreach($value as $key2=>$value2){
 		if($key2=="courses"){ //has course array
 			//if in the given term, TA exists:
-			if($value2[$i]["role"] == "TA"){
+			if($value2[$i]["role"] == "ta"){
                 if(strcmp($val, $value2[$i]["term"]) == 0){
                     echo "<option> $key </option>";
                    
