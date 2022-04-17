@@ -156,7 +156,7 @@
                                     </select>
                                 </div>
 
-                                <button class="submit-btn" id="submit-add-new-user-btn" type="button" onclick="submitAddManuallyForm()">Add</button>
+                                <button class="submit-btn" id="submit-add-new-user-btn" type="button">Add</button>
                                 <div class="new-user-server-response"></div>
                             </div>';
                         }

@@ -29,8 +29,6 @@ function set_up_manage_users_view() {
         let new_user_email = document.getElementById('new-user-email').value;
         let new_user_role = document.getElementById('new-user-type').value;
 
-        let selectedOption = $('#user-type-select').val();
-
         
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=create-new-user&name=${new_user_name}&email=${new_user_email}&type=${new_user_role}`;
