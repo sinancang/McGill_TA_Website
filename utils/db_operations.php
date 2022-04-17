@@ -89,9 +89,9 @@
 	$user_data = json_decode($data, true);
 
 	// check if email is already registered
+	
 	for ($i = 0; $i < $user_data.count(); $i++){
-		if ($user_data[$i]['email'] == $email){
-			
+		if ($user_data[$i]['email'] == $email){			
 			// email already registered
 			return 0;
 		}
@@ -104,6 +104,7 @@
 
 	// else, register user
 	} else {
+
 		// add user to user_data.json
 		$user_data[$username]['email'] = $email;
 		$user_data[$username]['registered'] = true;

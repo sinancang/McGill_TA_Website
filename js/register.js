@@ -10,15 +10,30 @@ function registerProcedure(){
 		return;
 	}
 
+	// check valid e-mail
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(!email.match(mailformat)){
+		displayWarning("Please enter a valid e-mail", false);
+		return;
+	}
+
         if (pass1 !== pass2){
 		displayWarning("Passwords do not match!", false);
 		return;
         }
 
 	if (pass1.length < 8 || pass1.length > 20){
-		displayWarning("Password must be between 8 and 20 characters!");
+		displayWarning("Password must be between 8 and 20 characters!", false);
 		return;
 	}
+
+	
+	var passwordformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+	if (!pass1.match(passwordformat)) {
+		displayWarning("Please make sure your password contains at least one number and one special character.", false);
+		return;
+	}
+
 	
 	syncRequest = new XMLHttpRequest();
 	var url = "../routes/register.php";

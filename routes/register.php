@@ -3,13 +3,25 @@
 
         include "../utils/db_operations.php";
 	include "../utils/encrypt.php";
-	
-	// TO DO: check valid e-mail
+
+	// TO DO: check valid e-mai
+	/*
+	include "../utils/verify_email.php";
+	$mail = new VerifyEmail();
+	$mail->setStreamTimeoutWait(20);
+	$mail->Debug= TRUE;
+	$mail->Debugoutput= 'html';
+	$mail->setEmailFrom('sinan.gulan@mail.mcgill.ca');
+	$email = $_GET['email'];
+	if ($mail->check($email)){
+		// email exists
+		echo "email exists";
+	} else {
+		// email is not valid and does not exist
+	}*/
 
 	// encrypt password
 	$encrypted_password = encrypt_password($_POST['password']);
-
-	$error_code = -3;
 	
 	// attempt to register user
 	if ($_POST['type'] == 'student'){
