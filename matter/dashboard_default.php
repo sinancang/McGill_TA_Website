@@ -44,7 +44,7 @@
                     <?php 
                         $user_type = 
 
-                        $filename = "../db/user_by_role.json";
+                        $filename = "../db/user_data.json";
                         $data = file_get_contents($filename);
                         $data = json_decode($data, true);
                         $username = $_GET['user'];
