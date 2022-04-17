@@ -50,7 +50,6 @@
 			      if (this.status == 200){
 				      sessionStorage.setItem("ticket", this.responseText); 
 				      displayWarning("Login success!", true);
-				      // redirect to dashboard
 			      } else {
 				      displayWarning("Login failed. Please check your username and/or password and try again.", false);
 			      }
@@ -59,6 +58,9 @@
 		      fd.append('username', username);
 		      fd.append('password', password);
 		      syncRequest.send(fd);
+		      if (sessionStorage.getItem("ticket") !== null){
+			      window.location.replace(`../routes/dashboard.php?user=${username}&view=default`);
+		      }
 	      }
 
       

@@ -22,15 +22,9 @@ function registerProcedure(){
 		return;
         }
 
-	if (pass1.length < 8 || pass1.length > 20){
-		displayWarning("Password must be between 8 and 20 characters!", false);
-		return;
-	}
-
-	
-	var passwordformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+	var passwordformat = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
 	if (!pass1.match(passwordformat)) {
-		displayWarning("Please make sure your password contains at least one number and one special character.", false);
+		displayWarning("Please make sure your password contains minimum eight characters: at least one letter, one number and one special character.", false);
 		return;
 	}
 
@@ -44,6 +38,7 @@ function registerProcedure(){
 			displayWarning("Register success.", true);
 			
 			// TO DO: redirect user & log them in
+			window.location.replace("../matter/login.html");
 
 		} else if (this.status == 409) {
 			displayWarning("E-mail or username already in use! Try another.", false);
