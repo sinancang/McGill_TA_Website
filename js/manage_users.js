@@ -39,9 +39,9 @@ function set_up_manage_users_view() {
                     $('.new-user-server-response').text(this.responseText);
                 }
                 else {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                     $('.content-veil').css({'display':'none'});
                     $('.form-wrapper.add-new-user-form').css({'display':'none'});
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 }
             }
             else alert('Server Error. Please try again later.');
