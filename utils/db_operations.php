@@ -154,6 +154,7 @@
         if (isset($user_data[$user])) {
             $user_data[$user]["deactivated"] = false;
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            $date = date('F j Y, \a\t g:ia');
             add_record_to_activity_history($_GET['user'], "Reactivated user {$user}", $date);
         }
         else {
@@ -204,6 +205,8 @@
             }
 
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+            $date = date('F j Y, \a\t g:ia');
+            add_record_to_activity_history($_GET['user'], "Updated {$user_to_edit} user info", $date);
             return 1;
         }
         else {
