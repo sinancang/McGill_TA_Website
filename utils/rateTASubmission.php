@@ -3,7 +3,7 @@
 //creates json object from the html form. 
 
 $TAname =  $_POST['TA_dropdown'];
-$course = $_POST['course'];
+$course = $_POST['course_selected']; //the naming true??
 $term = $_POST['term'];
 $score = $_POST['score'];
 $review = $_POST['review'];
@@ -25,7 +25,7 @@ $post_data = array(
 $TAdata[] = $post_data;
 $final_data= json_encode($TAdata);
 
-if(file_put_contents('TA_review.json', $final_data)){
+if(file_put_contents("../db/TA_review.json", $final_data)){
     echo "appended";
 }
 else{
