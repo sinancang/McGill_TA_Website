@@ -59,7 +59,7 @@
 		      fd.append('password', password);
 		      syncRequest.send(fd);
 		      if (sessionStorage.getItem("ticket") !== null){
-			      window.location.replace(`../routes/dashboard.php?user=${username}&view=default`);
+			      window.location.replace(`../routes/dashboard.php?user=${username}&view=default&ticket=${window.sessionStorage.ticket}`);
 		      }
 	      }
 
