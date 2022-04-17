@@ -40,6 +40,7 @@ function set_up_manage_users_view() {
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
                 $('.content-veil')[0].innerHTML = this.responseText;
+                set_add_new_user_events();
             }
             else alert('Server Error. Please try again later.');
     
@@ -52,36 +53,6 @@ function set_up_manage_users_view() {
     // event listener for close veil btn
     $('.content-veil').on('click', '#close-veil-btn', function() {
         $('.content-veil').css({'display':'none'});
-    });
-
-    // add new user btn event listener
-    $('#submit-add-new-user-btn').on('click', function() {
-        let user = document.getElementById('username').innerText;
-        let new_user_name = document.getElementById('new-user-name').value;
-        let new_user_email = document.getElementById('new-user-email').value;
-        let new_user_role = document.getElementById('new-user-type').value;
-
-        
-        let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=create-new-user&name=${new_user_name}&email=${new_user_email}&type=${new_user_role}`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                if (this.responseText == "  \nAccount already exists.") {
-                    $('.new-user-server-response').text(this.responseText);
-                }
-                else {
-                    $('.content-veil').css({'display':'none'});
-                    $('.form-wrapper.add-new-user-form').css({'display':'none'});
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_manage_users_view(); // have to reset events cos ajax content was reloaded
-                }
-            }
-            else alert('Server Error. Please try again later.');
-    
-        }, false);
-    
-        syncRequest.send();
     });
 
 
@@ -162,6 +133,39 @@ function set_up_manage_users_view() {
             else alert('Server Error. Please try again later.');
 
         }, false);
+        syncRequest.send();
+    });
+}
+
+
+function set_add_new_user_events() {
+     // add new user btn event listener
+     $('#submit-add-new-user-btn').on('click', function() {
+        let user = document.getElementById('username').innerText;
+        let new_user_name = document.getElementById('new-user-name').value;
+        let new_user_email = document.getElementById('new-user-email').value;
+        let new_user_role = document.getElementById('new-user-type').value;
+
+        
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=create-new-user&name=${new_user_name}&email=${new_user_email}&type=${new_user_role}`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                if (this.responseText == "  \nAccount already exists.") {
+                    $('.new-user-server-response').text(this.responseText);
+                }
+                else {
+                    $('.content-veil').css({'display':'none'});
+                    $('.form-wrapper.add-new-user-form').css({'display':'none'});
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_up_manage_users_view(); // have to reset events cos ajax content was reloaded
+                }
+            }
+            else alert('Server Error. Please try again later.');
+    
+        }, false);
+    
         syncRequest.send();
     });
 }
