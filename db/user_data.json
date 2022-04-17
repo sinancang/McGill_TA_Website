@@ -22,6 +22,24 @@
                 "course name": "Software Design",
                 "role": "prof",
                 "term": "FALL 2021"
+            },
+            {
+                "course num": "Comp 521",
+                "course name": "Gaming",
+                "role": "prof",
+                "term": "WINTER 2022"
+            },
+            {
+                "course num": "Comp 302",
+                "course name": "OCaml",
+                "role": "admin",
+                "term": "FALL 2017"
+            },
+            {
+                "course num": "Comp 310",
+                "course name": "Operating Systems",
+                "role": "prof",
+                "term": "FALL 2022"
             }
         ]
      },
