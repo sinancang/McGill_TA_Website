@@ -186,7 +186,7 @@
 /* edit user info */
 .edit-user-info-form {
     display: none;
-    width: 100%;
+    width: 50%;
 }
 
 .edit-user-info-form.open {
