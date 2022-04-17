@@ -187,6 +187,8 @@
 .form-wrapper.modal {
     display: none;
     width: 50%;
+    margin: auto;
+    margin-top: 50px;
 }
 
 .form-wrapper.modal.open {
