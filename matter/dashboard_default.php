@@ -54,18 +54,10 @@
                         $isProf = false;
                         $isTA = false;
 
-                        for ($i=0; $i<count($data["sys-ops"]); $i++) {
-                            if ($data["sys-ops"][$i] == $username) $isSysOps = true;
-                        }
-                        for ($i=0; $i<count($data["admin"]); $i++) {
-                            if ($data["admin"][$i] == $username) $isAdmin = true;
-                        }
-                        for ($i=0; $i<count($data["prof"]); $i++) {
-                            if ($data["prof"][$i] == $username) $isProf = true;
-                        }
-                        for ($i=0; $i<count($data["ta"]); $i++) {
-                            if ($data["ta"][$i] == $username) $isTA = true;
-                        }
+                        if ($data[$username]['type'] == 'sysop') $isSysOps = true;
+                        if ($data[$username]['type'] == 'admin') $isAdmin = true;
+                        if ($data[$username]['type'] == 'prof') $isProf = true;
+                        if ($data[$username]['type'] == 'ta') $isTA = true;
 
                         if ($isSysOps || $isAdmin) {
                             echo 
