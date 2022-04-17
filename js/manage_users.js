@@ -13,9 +13,10 @@ function set_up_manage_users_view() {
         $('.form-wrapper.edit-user-info-form').css({'display': 'block'});
 
         let user_to_edit = $(this).attr('target');
+        let user = document.getElementById('username').innerText;
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=edit-user&target=${user_to_edit}&`;
+        var url = `../routes/dashboard.php?user=${user}&action=edit-user&target=${user_to_edit}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
