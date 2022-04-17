@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>McGill TA Management</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../css/TAManagement.css">
+    </head>
+<body>
+<!--how to decide which user is-->
+<p style="font-size: 30px; padding-left: 15%;">Set Office Hours</p>
+        <div class="form-container">
+        <div class="sign-up-form" style="width: 70%;">
+<form method="get" name="form" action="../routes/set_office_hours.php"> <!--remove demo!!!-->
+<p>Choose a Day:</p>
+<select name = "day"class="drop" > 
+    <option> -- </option>
+    <option> Monday </option>
+    <option> Tuesday </option>
+    <option> Wednesday </option>
+    <option> Thursday </option>
+    <option> Friday </option>
+    <option> Saturday </option>
+    <option> Sunday </option>
+</select>
+<br></br>
+<label for="appt">Choose a time for your Office hours:</label>
+<br></br>
+<p >start: </p>
+<input class="drop" type="time" name="start" min="09:00" max="18:00" required><br>
+<p>end: </p>
+<input class="drop" type="time" name="end" min="09:00" max="18:00" required>
+
+<p>Choose a Location:</p>
+<label for="location">Location: </label> <br>
+<input class="drop" type="text" name="location" placeholder="Enter Location" required><br></br>
+
+
+<p>Add duties: </p>
+<textarea name = "duties" class="text-area" name="duties" rows="5"></textarea><br>
+<input id="button" style="background-color: #d77171;" type="submit" value = "Set Office Hours"></button>
+</form>
+</div>
+</div>
+
+</body>
+
+
+</html>
+
+<script>
+
+    //not sure if it works for sending username and course!!!
+    function sendusername_course(){
+        var name = document.getElementById('username'); 
+        var course_selected = document.getElementById('selected-course'); 
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
+        xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+        xhttp.send();
+        
+    }
+</script>

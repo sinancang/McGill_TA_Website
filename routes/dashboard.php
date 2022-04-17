@@ -46,6 +46,9 @@
     else if ($_GET['view'] == 'default') {       
         include("../matter/dashboard_default.php");    
     }
+    else if ($_GET['view'] == 'rate-ta') {
+        include("../matter/rateTA.html");
+    }
     else if ($_GET['action'] == 'delete-user') {
         deactivate_user($_GET['target']);
         include("../matter/manage_users.php");
