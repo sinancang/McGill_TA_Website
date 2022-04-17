@@ -23,6 +23,7 @@
         }
         if (!$found) {
             array_push($all_courses, $course_code);
+            file_put_contents($coursesFile, json_encode($user_data, JSON_PRETTY_PRINT));
         }
 
         if (isset($user_data[$prof])) {
@@ -49,7 +50,7 @@
         }
         else {
             $courses_array = array('course num'=>$course_code, 'course name'=>$course_name, 'term'=>$term, 'role'=>'prof');
-            $courses_array = json_decode($courses_array, true);
+            //$courses_array = json_decode($courses_array, true);
             $user_data[$prof]['registered'] = false;
             $user_data[$prof]['courses'][] = $courses_array;
             //array('registered'=>false, 'courses' => $courses_array);
