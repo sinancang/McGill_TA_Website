@@ -57,7 +57,7 @@
                 $course_num = $data[1];
                 $course_name = $data[2];
                 $prof_name = $data[3];
-                add_verified_prof($prof_name, $course_num, $course_name, $term);
+                add_prof_course_record($prof_name, $course_num, $course_name, $term);
             }
             fclose($handle);
         }
