@@ -12,7 +12,7 @@ $username=$_GET['username'];
 $coure=$_GET['course_selected'];
 echo $username;
 
-$userData = $username . "," .  $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". $_GET['duties'] . ","  .  "\n";
+$userData = $username . "," .  $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . ","  .  "\n";
 
 if(fwrite($file, $userData)){
 	echo "success";
