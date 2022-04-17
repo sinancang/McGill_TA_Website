@@ -23,7 +23,7 @@
         }
         if (!$found) {
             array_push($all_courses, $course_code);
-            file_put_contents($coursesFile, json_encode($user_data, JSON_PRETTY_PRINT));
+            file_put_contents($coursesFile, json_encode($all_courses, JSON_PRETTY_PRINT));
         }
 
         if (isset($user_data[$prof])) {
