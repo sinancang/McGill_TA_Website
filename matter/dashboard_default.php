@@ -159,36 +159,6 @@
                                 <button class="submit-btn" id="submit-add-new-user-btn" type="button">Add</button>
                                 <div class="new-user-server-response"></div>
                             </div>';
-
-                            // edit user code. originally hidden
-                            echo
-                            "<div class='form-wrapper modal edit-user-info-form'>
-
-
-                                <div class='form-input-container'>
-                                    <label for='name'>Name</label>
-                                    <input type='text' name='name' id='edit-user-name' required>
-                                </div>
-                        
-                                <div class='form-input-container'>
-                                    <label for='email'>Email</label>
-                                    <input type='text' name='email' id='edit-user-email' required>
-                                </div>
-                        
-                                <div class='form-input-container'>
-                                    <label for='edit-type'>User Type</label>
-                                    <select name='edit-type' id='edit-user-type' class='form-select-input'>
-                                        <option value='admin'>Admin</option>
-                                        <option value='prof'>Professor</option>
-                                    </select>
-                                </div>
-
-
-                                <div class='user-courses-list-container'></div>
-
-                                <button class='submit-btn' id='submit-user-changes' type='button'>Submit Changes</button>
-                
-                            </div>";
                         }
                     ?>
 

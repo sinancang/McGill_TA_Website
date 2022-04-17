@@ -11,6 +11,29 @@ function set_up_manage_users_view() {
     $('.edit-user').on('click', function() {
         $('.content-veil').css({'display':'flex'});
         $('.form-wrapper.edit-user-info-form').css({'display': 'block'});
+
+        let user_to_edit = $(this).attr('target');
+
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=edit-user&target=${user_to_edit}&`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                if (this.responseText == "  \nAccount already exists.") {
+                    $('.new-user-server-response').text(this.responseText);
+                }
+                else {
+                    $('.content-veil').css({'display':'none'});
+                    $('.form-wrapper.add-new-user-form').css({'display':'none'});
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_up_manage_users_view(); // have to reset events cos ajax content was reloaded
+                }
+            }
+            else alert('Server Error. Please try again later.');
+    
+        }, false);
+    
+        syncRequest.send();
     });
 
     // add new user btn event listener
@@ -46,7 +69,7 @@ function set_up_manage_users_view() {
                     $('.content-veil').css({'display':'none'});
                     $('.form-wrapper.add-new-user-form').css({'display':'none'});
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_manage_users_view();
+                    set_up_manage_users_view(); // have to reset events cos ajax content was reloaded
                 }
             }
             else alert('Server Error. Please try again later.');

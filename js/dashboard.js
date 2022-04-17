@@ -6,8 +6,6 @@
 */
 window.addEventListener('DOMContentLoaded', (event) => {
 
-
-
     // set import profs and courses btn event listener
     $('.user-type-based-btn.sys-ops-btn').on('click', function() {
         $(this).text('Importing...');

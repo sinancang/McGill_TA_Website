@@ -36,8 +36,7 @@
             $_GET['course-code'], 
             $_GET['course-name'],
             $_GET['term']
-        );
-        
+        );    
     }      
     // main dashboard
     else if ($_GET['view'] == 'main') {         
@@ -66,6 +65,9 @@
         else {
             echo "Account already exists.";
         }
+    }
+    else if ($_GET['action'] == 'edit-user') {
+        include("../matter/edit_user_form.php");
     }
     else {
         echo "Page Not Found";
