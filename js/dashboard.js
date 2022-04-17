@@ -98,7 +98,7 @@ function getSecondaryMenuItems(menuName) {
     syncRequest.addEventListener("load", function(){           
         if (this.status == 200) {
             document.getElementById('second-nav-bar-options-container').innerHTML = this.responseText;
-            set_up_rate_ta_view();
+            fillSecondaryMenu('rate');
         }
         else alert('Server error. Please try again later');
 
@@ -183,25 +183,25 @@ function fillSecondaryMenu(menuName) {
     }
     // ta rating secondary menu
     else if (menuName == 'rate') {
+   
+        $('.nav-bar-btn').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let course = $(this).text();
 
-
-        /*
-        let user = document.getElementById('username').innerText;
-        let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                set_up_rate_ta_view();
-            }
-            else alert('Server error. Please try again later');
-    
-        }, false);
-    
-        syncRequest.send();
-        */
-
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=rate-ta&class=${course}`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status == 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_up_rate_ta_view();
+                }
+                else alert('Server error. Please try again later');
+        
+            }, false);
+        
+            syncRequest.send();
+        });
     }
 }
 
