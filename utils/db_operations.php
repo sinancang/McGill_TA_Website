@@ -170,7 +170,7 @@
 
         if (isset($user_data[$name])) {
             echo 'Account already exists.';
-            return 0;
+            return;
         }
         else {
             $user_data[$name]['registered'] = false;
