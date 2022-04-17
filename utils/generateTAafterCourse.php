@@ -15,7 +15,8 @@ foreach($arr as $key=>$value){
         foreach($value as $key2=>$value2){
             if($key2=="TA"){ //has TA array
                 $val = $value2[$i]["name"];
-                echo " $val ";
+                $val2 = $value2[$i]["term"];
+                echo " $val for term $val2 ";
                 $i = $i + 1;
     
             }
