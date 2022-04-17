@@ -177,7 +177,7 @@
                         
                                 <div class='form-input-container'>
                                     <label for='edit-type'>User Type</label>
-                                    <select name='edit-type' id='edit-user-type'>
+                                    <select name='edit-type' id='edit-user-type' class='form-select-input'>
                                         <option value='admin'>Admin</option>
                                         <option value='prof'>Professor</option>
                                     </select>
