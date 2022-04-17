@@ -1,33 +1,28 @@
 <?php
 
-    
+/* Checks if the user is logged in
+ *
+ * receives ticket id & permission
+ * checks if ticket is in tickets.csv
+ * if it is, checks if the ticket has the permission
+ * if so, http 200
+ * otherwise, http 404
+ *
+ */
+function check_logged_in(string $ticket_id, string $permission){
+	$file = fopen("../db/tickets.csv", "r") or die ("Unable to open file!");
 
-    // this is a temporary function that doesnt actually check if user is logged in!!!!
-    // all it does for now is check if the user exists
-    // return 1 if successful
-    // 0 otherwise
-    function check_logged_in(string $username) {
+	$row = 1;
+	
+	while (($data = fgetcsv($file, 1000, ",")) !== FALSE){
+		if ($data[0] == $ticket_id && $data[1] == $permission){
+			return TRUE;
+		}
+	}	
+	
+	
+	return false;
+}
 
-        $filename = "../db/user_data.json";
-        $data = file_get_contents($filename);
-        //echo $data;
-        $users = json_decode($data, true);
-        
-        
-        if (isset($users[$username])) {
-            return 1;
-            /*
-            $user_data = json_decode($users[$username], true);
-            if (isset($user_data["registered"]) && $user_data["registered"] == true) {
-                //if ($user_data["password"] == $_POST['pass']) {
-                    return 1;
-                //}
-            }
-            */
-        };
-
-
-        return 0;
-    }
 
 ?>

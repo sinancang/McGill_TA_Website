@@ -115,26 +115,61 @@
 
 
     // New user registration
-    function register_new_user(string $email, string $password) {
+    function register_new_user(string $username, string $email, string $password, string $role) {
 
         $filename = "../db/user_data.json";
         $data = file_get_contents($filename);
         $user_data = json_decode($data, true);
 
-        if (isset($user_data[$email])) {
+        if (isset($user_data[$username]) && !$user_data[$username]['registered']) {
+            $user_data[$username]['password'] = $password;
+	    $user_data[$username]['registered'] = true;
+	    file_put_contents($filename, json_encode($user_data));
+	    
+	    // succesfully registered
+	    return 1;
 
-            $user_data[$email]['password'] = $password;
-            $user_data[$email]['registered'] = true;
-            file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
+	} else {
+	    // TA/Prof/Admin hasn't been pre-added 
+            return -1;
         }
-        else {
-            //echo "Failed to register!";
-            return 0;
-        }
+    }
 
-        //echo "Successfully added new record!";
-        return 1;
+    function register_new_student(string $username, string $email, string $password) {
+    	$filename = "../db/user_data.json";
+	$data = file_get_contents($filename);
+	$user_data = json_decode($data, true);
 
+	// check if email is already registered
+	
+	for ($i = 0; $i < $user_data.count(); $i++){
+		if ($user_data[$i]['email'] == $email){			
+			// email already registered
+			return 0;
+		}
+	}
+
+	// if username already in use, don't add
+	if (isset($user_data[$username])) {
+		// username already registered
+		return 0;
+
+	// else, register user
+	} else {
+
+		// add user to user_data.json
+		$user_data[$username]['email'] = $email;
+		$user_data[$username]['registered'] = true;
+		$user_data[$username]['password'] = $password;
+		$user_data[$username]['type'] = "student";
+		$user_data[$username]['courses'] = [];
+		file_put_contents($filename, json_encode($user_data));
+		
+		// successfully registered user
+		return 1;
+	}
+
+	// TO DO: send confirmation e-mail
     }
 
 
