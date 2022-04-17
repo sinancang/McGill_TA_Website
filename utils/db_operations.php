@@ -53,6 +53,7 @@
             //$courses_array = json_decode($courses_array, true);
             $user_data[$prof]['registered'] = false;
             $user_data[$prof]['courses'][] = $courses_array;
+            $user_data[$prof]['type'] = 'prof';
             //array('registered'=>false, 'courses' => $courses_array);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
