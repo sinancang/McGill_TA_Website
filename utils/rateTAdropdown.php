@@ -14,8 +14,8 @@ foreach($arr as $key=>$value){
 	//looping through each user
 	for ($i=0; $i < count($value['courses']); $i++){
         //if in the given term, TA exists:
-        if($value2[$i]["role"] == "ta"){
-            if(strcmp($val, $value2[$i]["term"]) == 0){
+        if($value['courses'][$i]["role"] == "ta"){
+            if($value['courses'][$i]["term"] == $val){
                 echo "<option> $key </option>";
                 
             }           
