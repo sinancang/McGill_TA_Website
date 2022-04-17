@@ -184,11 +184,11 @@
 
 
 /* edit user info */
-.edit-user-info-container {
+.edit-user-info-form {
     display: none;
     width: 100%;
 }
 
-.edit-user-info-container.open {
+.edit-user-info-form.open {
     display: flex;
 }
