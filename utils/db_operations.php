@@ -181,8 +181,29 @@
             add_record_to_activity_history($_GET['user'], "Added new user {$name} as {$type}", $date);
             return 1;
         }
+    }
 
+    function set_user_data(string $user_to_edit, string $name, string $email, string $type, array $course_data) {
+        $filename = "../db/user_data.json";
+        $data = file_get_contents($filename);
+        $user_data = json_decode($data, true);
 
+        if (isset($user_data[$user_to_edit])) {
+            $user_data[$user_to_edit]['email'] = $email;
+            $user_data[$user_to_edit]['type'] = $type;
+            for ($i=0; $i<count($course_data); $i++) {
+                for ($j=0; $j<count($user_data[$user_to_edit]['courses']); $j++) {
+                    if ($user_data[$user_to_edit]['courses'][$j] == $course_data[$i][0]) {
+                        $user_data[$user_to_edit]['courses'][$j]['type'] = $course_data[$i][1];
+                        break;
+                    }
+                }
+            }
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
 
 ?>  

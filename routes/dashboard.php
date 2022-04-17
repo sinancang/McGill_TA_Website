@@ -72,6 +72,18 @@
     else if ($_GET['action'] == 'edit-user-form') {
         include("../matter/edit_user_form.php");
     }
+    else if ($_GET['action'] == 'edit-user') {
+        $course_data = explode(',', $_GET['course-data']);
+        for ($i=0; $i<count($course_data); $i++) {
+            $course_data[$i] = explode('-', $course_data[$i]);
+        }
+        if (set_user_data($_GET['user-to-edit'], $_GET['name'], $_GET['email'], $_GET['type'], $course_data) == 1) {
+            include('../matter/manage_users.php');
+        }
+        else {
+            echo "Server error. Could not update user.";
+        }
+    }
     else {
         echo "Page Not Found";
     }

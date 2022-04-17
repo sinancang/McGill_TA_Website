@@ -20,6 +20,7 @@ function set_up_manage_users_view() {
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
                 $('.content-veil')[0].innerHTML = this.responseText;
+                set_edit_user_events(user_to_edit);
             }
             else alert('Server Error. Please try again later.');
     
@@ -136,6 +137,58 @@ function set_up_manage_users_view() {
         syncRequest.send();
     });
 }
+
+
+
+function set_edit_user_events(user_to_edit) {
+    // add new user btn event listener
+    $('#submit-user-changes').on('click', function() {
+        let user = document.getElementById('username').innerText;
+        let edit_user_name = document.getElementById('edit-user-name').value;
+        let edit_user_email = document.getElementById('edit-user-email').value;
+        let edit_user_role = document.getElementById('edit-user-type').value;
+
+        let course_data_string = "";
+        for (let i=0; i<$('.edit-user-course-container').length; i++) {
+            let course_code = $($('.edit-user-course-container')[i]).find('.edit-user-course-num')[0].innerText;
+            let course_role = $($('.edit-user-course-container')[i]).find('#edit-user-type')[0].value;
+            if (i == $('.edit-user-course-container').length - 1) {
+                course_data_string += `${course_code}-${course_role}`;
+            }
+            else {
+                course_data_string += `${course_code}-${course_role},`;
+            }
+        }
+        
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php
+                    ?user=${user}
+                    &action=edit-user
+                    $user-to-edit=${user_to_edit};
+                    &name=${edit_user_name}
+                    &email=${edit_user_email}
+                    &type=${edit_user_role}
+                    &course-data=${course_data_string}`;
+
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                console.log(this);
+                if (this.responseText == "Server error. Could not update user.") {
+                    alert(this.responseText);
+                }
+                else {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                }
+            }
+            else alert('Server Error. Please try again later.');
+    
+        }, false);
+    
+        syncRequest.send();
+    });
+}
+
 
 
 function set_add_new_user_events() {
