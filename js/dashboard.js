@@ -33,30 +33,33 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $(this).css({'background-color': ''})
 
         if ($(this).attr('id') == 'admin') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
+            $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
+            $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('manage');
         }
         else if ($(this).attr('id') == 'rate') {
-            $('.nav-bar-btn').on('click', function() {
-                let user = document.getElementById('username').innerText;
-                let course = $(this).text();
-    
-                let syncRequest = new XMLHttpRequest();
-                var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
-                syncRequest.open("GET", url, true);  
-                syncRequest.addEventListener("load", function(){           
-                    if (this.status == 200) {
-                        $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                        set_up_rate_ta_view();
-                    }
-                    else alert('Server error. Please try again later');
-            
-                }, false);
-            
-                syncRequest.send();
-            });
+
+            let user = document.getElementById('username').innerText;
+            let course = $(this).text();
+
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status == 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                }
+                else alert('Server error. Please try again later');
+        
+            }, false);
+        
+            syncRequest.send();
+
         }
         else if ($(this).attr('id') == 'sys-ops') {
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
