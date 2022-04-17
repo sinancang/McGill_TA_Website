@@ -7,7 +7,11 @@
 */
 function set_up_manage_users_view() {
 
-
+    // edit user btns event listener
+    $('.edit-user').on('click', function() {
+        $('.content-veil').css({'display':'flex'});
+        $('.form-wrapper.edit-user-info-form').css({'display': 'block'});
+    });
 
     // add new user btn event listener
     $('.add-new-user-btn').on('click', function() {
