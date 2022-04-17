@@ -22,7 +22,8 @@
             if ($all_courses[$i] == $course_code) $found = true;
         }
         if (!$found) {
-            array_push($all_courses, $course_code);
+            $new_entry = array('course code'=>$course_code, 'course name'=>$course_name);
+            array_push($all_courses, $new_entry);
             file_put_contents($coursesFile, json_encode($all_courses, JSON_PRETTY_PRINT));
         }
 
