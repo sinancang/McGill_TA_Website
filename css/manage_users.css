@@ -181,3 +181,15 @@
 .edit-user:hover {
     color: black;
 }
+
+
+/* edit user info */
+.edit-user-info-container {
+    display: flex;
+    width: 100%;
+    max-height: 0px;
+}
+
+.edit-user-info-container.open {
+    max-height: 1000px;
+}
