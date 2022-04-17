@@ -16,13 +16,13 @@
             $i = 0;
             while (isset($user_data[$prof]['courses'][$i])) {
                 
-                if ($user_data[$prof]['courses'][$i]['course code'] == $course_code) {
+                if ($user_data[$prof]['courses'][$i]['course num'] == $course_code) {
                     echo "Cannot add record. Record already Exists.";
                     return;
                 }
                 $i++;
             }
-            $new_entry = array('course code'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
+            $new_entry = array('course num'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
             $user_data[$prof]['courses'][] = $new_entry;
 
             if ($user_data[$prof]['type'] == 'ta' 
@@ -34,10 +34,10 @@
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
         else {
-            $courses_array = "[{$course_code}]";
+            $courses_array = array('course num'=>$course_code, 'course name'=>$course_name, 'term'=>$term, 'role'=>'prof');
             $courses_array = json_decode($courses_array, true);
             $user_data[$prof]['registered'] = false;
-            $user_data[$prof]['courses'] = $courses_array;
+            $user_data[$prof]['courses'][] = $courses_array;
             //array('registered'=>false, 'courses' => $courses_array);
             file_put_contents($filename, json_encode($user_data, JSON_PRETTY_PRINT));
         }
