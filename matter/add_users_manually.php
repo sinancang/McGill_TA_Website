@@ -1,4 +1,4 @@
-<div class="form-container ajax-content-container">
+<div class="form-container ajax-content-container" style="margin-top: 50px;">
 
     <div class="form-wrapper">
 
