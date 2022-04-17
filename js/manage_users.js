@@ -161,14 +161,7 @@ function set_edit_user_events(user_to_edit) {
         }
         
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php
-                    ?user=${user}
-                    &action=edit-user
-                    $user-to-edit=${user_to_edit};
-                    &name=${edit_user_name}
-                    &email=${edit_user_email}
-                    &type=${edit_user_role}
-                    &course-data=${course_data_string}`;
+        var url = `../routes/dashboard.php?user=${user}&action=edit-user$user-to-edit=${user_to_edit}&name=${edit_user_name}&email=${edit_user_email}&type=${edit_user_role}&course-data=${course_data_string}`;
 
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
