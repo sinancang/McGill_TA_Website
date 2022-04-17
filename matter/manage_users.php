@@ -62,6 +62,7 @@
                         "<div class='entry-container'>
                             <div class='user-account-entry'>
                                 <div class='user-name'>{$key}</div>
+                                <div class='user-email'>{$value['email']}</div>
                                 <div class='user-roles-container'>";
 
                                     if ($value['type'] == 'ta') {
@@ -149,6 +150,7 @@
                     for ($i = 0; $i < count($TAs); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$TAs[$i]}</div>";
+                        echo "<div class='user-email'>{$user_data[$TAs[$i]]['email']}</div>";
 
                         if ($user_data[$TAs[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
@@ -173,6 +175,7 @@
                     for ($i = 0; $i < count($profs); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$profs[$i]}</div>";
+                        echo "<div class='user-email'>{$user_data[$profs[$i]]['email']}</div>";
                         if ($user_data[$profs[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$profs[$i]}'>Deactivate</div>";
@@ -193,6 +196,7 @@
                     for ($i = 0; $i < count($admins); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$admins[$i]}</div>";
+                        echo "<div class='user-email'>{$user_data[$admins[$i]]['email']}</div>";
                         if ($user_data[$admins[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$admins[$i]}'>Deactivate</div>";
@@ -212,6 +216,7 @@
                     for ($i = 0; $i < count($students); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$students[$i]}</div>";
+                        echo "<div class='user-email'>{$user_data[$students[$i]]['email']}</div>";
                         if ($user_data[$students[$i]]['type'] != 'sysop') {
                             echo "<div class='user-account-actions-container'>";
                             echo "<div class='remove-user' target='{$students[$i]}'>Deactivate</div>";
@@ -235,6 +240,7 @@
                     for ($i = 0; $i < count($sysOps); $i++) {
                         echo "<div class='entry-container'>";
                         echo "<div class='user-account-entry'>{$sysOps[$i]}</div>";
+                        echo "<div class='user-email'>{$sysOps[$TAs[$i]]['email']}</div>";
                         echo "</div>";
                     }  
 
