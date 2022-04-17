@@ -23,7 +23,7 @@ function set_up_manage_users_view() {
     // event listener for close veil btn
     $('#close-veil-btn').on('click', function() {
         $('.content-veil').css({'display':'none'});
-        $('.form-wrapper.add-new-user-form').css({'display':'none'});
+        $('.form-wrapper.modal').css({'display':'none'});
     });
 
     // add new user btn event listener
