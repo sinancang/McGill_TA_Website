@@ -20,7 +20,7 @@ function set_up_manage_users_view() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                $('.content-veil').innerHTML = this.responseText;
+                $('.content-veil')[0].innerHTML = this.responseText;
             }
             else alert('Server Error. Please try again later.');
     
