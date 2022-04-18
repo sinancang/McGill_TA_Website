@@ -1,0 +1,11 @@
+
+.nav-btns-container-ta-management {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.manage-ta-nav-btn {
+    
+}

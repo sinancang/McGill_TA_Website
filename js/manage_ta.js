@@ -91,16 +91,6 @@ function set_all_ta_report_event_liteners() {
 }
 
 
-function tableFromJson() {
-    fetch("../db/TA_review.json")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            document.querySelector("#json").innerText = JSON.parse(this.responseText);
-            //data["TA1"].name;
-        })
-}
-
 
 
 function displayScore() {
