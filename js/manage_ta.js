@@ -123,7 +123,6 @@ function set_all_ta_report_event_liteners() {
         $(this).css({'color': '#d65050'});
         $.ajax({
             url: `../routes/dashboard.php?user=${user}&action=get-oh-responsibilities&ticket=${window.sessionStorage.ticket}`,
-            url: "../db/office_hours.csv",
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
