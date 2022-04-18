@@ -32,7 +32,7 @@ function sendRateTArequest(){
 //function to generate dropdown menu for TA names from the selected term.
 function termSelected(data){
         let ajaxreq = new XMLHttpRequest(); // New request object
-        ajaxreq.open('GET', `../utils/rateTAdropdown.php?selectvalue=${data}`, true); //change this to that of TA_performance_log
+        ajaxreq.open('GET', `../utils/rateTAdropdown.php?selectvalue=${data}&ticket=${window.sessionStorage.ticket}`, true); //change this to that of TA_performance_log
         ajaxreq.send();
         ajaxreq.onreadystatechange = function(){
                 if(ajaxreq.readyState == 4 && ajaxreq.status == 200){

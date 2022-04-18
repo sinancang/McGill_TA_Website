@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $(this).text('Importing...');
         let user = document.getElementById('username').innerText;
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=prof-courses-import`;
+        var url = `../routes/dashboard.php?user=${user}&action=prof-courses-import&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     $('#main-dashboard').on('click', function() {
         let user = document.getElementById('username').innerText;
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&view=main`;
+        var url = `../routes/dashboard.php?user=${user}&view=main&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) if (this.status === 200) {
@@ -100,7 +100,7 @@ function getSecondaryMenuItems(menuName) {
     
     let user = document.getElementById('username').innerText;
     let syncRequest = new XMLHttpRequest();
-    var url = `../routes/dashboard.php?user=${user}&action=${menuName}`;
+    var url = `../routes/dashboard.php?user=${user}&action=${menuName}&ticket=${window.sessionStorage.ticket}`;
     syncRequest.open("GET", url, true);  
     syncRequest.addEventListener("load", function(){           
         if (this.status == 200) {
@@ -151,7 +151,7 @@ function fillSecondaryMenu(menuName) {
         $('#manage-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=manage-users`;
+            var url = `../routes/dashboard.php?user=${user}&view=manage-users&ticket=${window.sessionStorage.ticket}`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
@@ -169,7 +169,7 @@ function fillSecondaryMenu(menuName) {
         $('#add-manually-users').on('click', function() {
             let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=add-manually-users`;
+            var url = `../routes/dashboard.php?user=${user}&view=add-manually-users&ticket=${window.sessionStorage.ticket}`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
@@ -195,7 +195,7 @@ function fillSecondaryMenu(menuName) {
             let course = $(this).text();
     
             let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=rate-ta`;
+            var url = `../routes/dashboard.php?user=${user}&view=rate-ta&ticket=${window.sessionStorage.ticket}`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
@@ -231,7 +231,7 @@ function submitAddManuallyForm() {
     let prof = document.getElementById("new-prof").value;
     
 
-    var url = `../routes/dashboard.php?action=manual-upload&user=${user}&new-prof=${prof}&course-code=${courseCode}&course-name=${courseName}&term=${term}`;
+    var url = `../routes/dashboard.php?action=manual-upload&user=${user}&new-prof=${prof}&course-code=${courseCode}&course-name=${courseName}&term=${term}&ticket=${window.sessionStorage.ticket}`;
     syncRequest.open("POST", url, true);
     syncRequest.setRequestHeader("Content-Type", "multipart/form-data");
     

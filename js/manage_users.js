@@ -15,7 +15,7 @@ function set_up_manage_users_view() {
         let user = document.getElementById('username').innerText;
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=edit-user-form&target=${user_to_edit}`;
+        var url = `../routes/dashboard.php?user=${user}&action=edit-user-form&target=${user_to_edit}&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
@@ -36,7 +36,7 @@ function set_up_manage_users_view() {
         let user = document.getElementById('username').innerText;
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=add-new-user-form`;
+        var url = `../routes/dashboard.php?user=${user}&action=add-new-user-form&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
@@ -99,7 +99,7 @@ function set_up_manage_users_view() {
 
         
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}`;
+        var url = `../routes/dashboard.php?user=${user}&action=delete-user&target=${user_to_delete}&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
@@ -122,7 +122,7 @@ function set_up_manage_users_view() {
         let user_to_reactivate = $(this).attr('target');
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=reactivate-user&target=${user_to_reactivate}`;
+        var url = `../routes/dashboard.php?user=${user}&action=reactivate-user&target=${user_to_reactivate}&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){     
             
@@ -161,7 +161,7 @@ function set_edit_user_events(user_to_edit) {
         }
         
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=edit-user&user-to-edit=${user_to_edit}&name=${edit_user_name}&email=${edit_user_email}&type=${edit_user_role}&course-data=${course_data_string}`;
+        var url = `../routes/dashboard.php?user=${user}&action=edit-user&user-to-edit=${user_to_edit}&name=${edit_user_name}&email=${edit_user_email}&type=${edit_user_role}&course-data=${course_data_string}&ticket=${window.sessionStorage.ticket}`;
 
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
@@ -197,7 +197,7 @@ function set_add_new_user_events() {
 
         
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=create-new-user&name=${new_user_name}&email=${new_user_email}&type=${new_user_role}`;
+        var url = `../routes/dashboard.php?user=${user}&action=create-new-user&name=${new_user_name}&email=${new_user_email}&type=${new_user_role}&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
