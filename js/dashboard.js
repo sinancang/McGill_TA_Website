@@ -189,8 +189,9 @@ function fillSecondaryMenu(menuName) {
     else if (menuName == 'ta-management') {
 
         $('#all-ta-report').on('click', function() {
+            let user = document.getElementById('username').innerText;
             let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
+            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&ticket=${window.sessionStorage.ticket}`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
