@@ -365,6 +365,17 @@ body {
 
 
 
+/* ta mamagement */
+
+.display-option-ta-management {
+    display: none;
+}
+
+.display-option-ta-management.open {
+    display: flex;
+}
+
+
 
 
 
