@@ -50,7 +50,8 @@
 			      console.log(this.responseText);
 			      if (this.status == 200){
 				      sessionStorage.setItem("ticket", this.responseText); 
-				      
+				      window.location.replace(`../routes/dashboard.php?user=${username}&view=default&ticket=${window.sessionStorage.ticket}`);
+
 				      displayWarning("Login success!", true);
 
 			      } else {
@@ -62,9 +63,6 @@
 		      fd.append('password', password);
 		      syncRequest.send(fd);
 
-		      if (window.sessionStorage.getItem != null){
-		      	window.location.replace(`../routes/dashboard.php?user=${username}&view=default&ticket=${window.sessionStorage.ticket}`);
-		      }
 	      }
 
       
