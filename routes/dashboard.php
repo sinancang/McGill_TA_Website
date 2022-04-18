@@ -5,6 +5,7 @@
     // import utility files
     require '../utils/check_logged_in.php'; // includes function to ensure user is logged in
     require '../utils/db_operations.php'; // includes functions for db manipulation
+    require '../utils/generateTA.php';
 
 
     // maybe need to do something about this:
@@ -90,6 +91,9 @@
         else {
             echo "Server error. Could not update user.";
         }
+    }
+    else if ($_GET['action'] == 'add-ta-review') {
+        add_ta_review();
     }
     else {
         echo "Page Not Found";

@@ -2,9 +2,14 @@
  <div class="form-container ajax-content-container">
     <div class='form-wrapper modal edit-user-info-form'>
         <div class="sign-up-form">
+            <?php 
+                echo 
+                "<div style='font-size: 15px;'>{$_GET['course-code']}</div>
+                <div style='font-size: 15px;'>{$_GET['course-term']}</div>";
+            ?>
             <form method="post" name="form" action="../utils/rateTASubmission.php" style="padding-left: 5%;">
                 <!-- 
-                <p style="font-size: 15px;">Select a term:</p>
+                <div style="font-size: 15px;">Select a term:</div>
                 <select id = "term" name ="term" onchange="termSelected(this.value)"class="drop form-select"> 
                     <option> -- Select a term --</option>
                     <option> FALL 2020 </option>
