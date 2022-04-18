@@ -11,7 +11,12 @@ function TASelected() {
 
 function set_all_ta_report_event_liteners() {
 
+    // performance log reviews event listener
     $('#load_data').click(function() {
+        // update color of curr selected btn
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
+
         $.ajax({
             url: "../db/TA_performance_logs.csv",
             dataType: "text",
@@ -37,9 +42,13 @@ function set_all_ta_report_event_liteners() {
         });
     });
 
-    $('#load_data3').click(function() {
+    // Student reviews event listener
+    $('#load_data2').click(function() {
+        // update color of curr selected btn
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});        
         $.ajax({
-            url: "../db/office_hours.csv",
+            url: "../db/TA_review.csv",
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
@@ -62,11 +71,13 @@ function set_all_ta_report_event_liteners() {
         });
     });
 
-
-
-    $('#load_data2').click(function() {
+    // OH and responsibilities event listener
+    $('#load_data3').click(function() {
+        // update color of curr selected btn
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
         $.ajax({
-            url: "../db/TA_review.csv",
+            url: "../db/office_hours.csv",
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
