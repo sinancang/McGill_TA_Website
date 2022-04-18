@@ -169,9 +169,16 @@
         <script src="../js/rateTA.js"></script>
 	<script src="../js/dashboard.js"></script>
 	<script>
-		function sign_out(){
-			window.sessionStorage.removeItem("ticket");
-			window.location.replace("../matter/login.html");
+		    function sign_out(){
+			    syncRequest = new XMLHttpRequest();
+			    var url = "../utils/remove_ticket.php";
+			    syncRequest.open("POST", url, true);
+			    var fd = new FormData;
+			    fd.append('username', document.getElementById('username'));
+			    syncRequest.send(fd);
+			    
+			    window.sessionStorage.removeItem("ticket");
+			    window.location.replace("../matter/login.html");
 		}
 	</script>
 
