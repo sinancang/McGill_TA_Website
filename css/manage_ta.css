@@ -1,8 +1,6 @@
 
 .nav-btns-container-ta-management {
     display: flex;
-    position: fixed;
-    overflow: hidden;
     background-color: white;
     flex-direction: row;
     justify-content: space-around;
