@@ -216,6 +216,7 @@ function fillSecondaryMenu(menuName) {
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_up_event_listeners_not_all_ta_report();
                 }
                 else alert('Server error. Please try again later');
         
@@ -240,7 +241,6 @@ function fillSecondaryMenu(menuName) {
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_event_listeners_not_all_ta_report();
                 }
                 else alert('Server error. Please try again later');
         
