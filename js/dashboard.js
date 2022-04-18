@@ -256,7 +256,7 @@ function submitAddManuallyForm() {
 }
 
 function signOut() {
-    window.location.href = "https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/home.html";
+	window.location.href = "https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/home.html";
 }
 
 

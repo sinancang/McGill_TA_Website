@@ -6,5 +6,6 @@ function register_ticket(string $ticket, string $username){
 
 	// username will always be present as this is called after login
 	$user_data[$username]['ticket'] = $ticket;
+	file_put_contents($filename, json_encode($user_data));
 }
 ?>
