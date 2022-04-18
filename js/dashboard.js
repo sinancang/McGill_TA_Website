@@ -188,22 +188,6 @@ function fillSecondaryMenu(menuName) {
     // ta management secondary menu
     else if (menuName == 'ta-management') {
 
-        $('#all-ta-report').on('click', function() {
-            let user = document.getElementById('username').innerText;
-            let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&ticket=${window.sessionStorage.ticket}`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status == 200) {
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                }
-                else alert('Server error. Please try again later');
-        
-            }, false);
-        
-            syncRequest.send();
-        })
-
         $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
             let user = document.getElementById('username').innerText;
             let course_code = $(this).find('#course-code').text();
@@ -217,6 +201,22 @@ function fillSecondaryMenu(menuName) {
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                     set_up_event_listeners_not_all_ta_report();
+                }
+                else alert('Server error. Please try again later');
+        
+            }, false);
+        
+            syncRequest.send();
+        })
+
+        $('#all-ta-report').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&ticket=${window.sessionStorage.ticket}`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status == 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 }
                 else alert('Server error. Please try again later');
         
