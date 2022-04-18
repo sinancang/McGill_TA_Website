@@ -369,10 +369,14 @@ body {
 
 .display-option-ta-management {
     display: none;
+    width: 100%;
 }
 
 .display-option-ta-management.open {
     display: flex;
+}
+.form-container {
+    width: 100%;
 }
 
 
