@@ -1,3 +1,6 @@
+const user = document.getElementById('username');
+
+
 function TASelected() {
     var ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateAllTA.php', true);
