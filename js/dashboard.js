@@ -217,6 +217,7 @@ function fillSecondaryMenu(menuName) {
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                    set_all_ta_report_event_liteners();
                 }
                 else alert('Server error. Please try again later');
         
