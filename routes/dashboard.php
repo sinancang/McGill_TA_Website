@@ -5,7 +5,7 @@
     // import utility files
     require '../utils/check_logged_in.php'; // includes function to ensure user is logged in
     require '../utils/db_operations.php'; // includes functions for db manipulation
-    require '../utils/generateTA.php';
+    require '../utils/rateTASubmission.php';
 
 
     // maybe need to do something about this:
@@ -47,7 +47,7 @@
     }
     // default view. used for loading dashboard first time
     else if ($_GET['view'] == 'default') {       
-        include("../matter/dashboard_default.php");    
+        include("../matter/dashboard_default.php");  
     }
     else if ($_GET['view'] == 'rate-ta') {
         include("../matter/rateTA.php");
