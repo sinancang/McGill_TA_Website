@@ -254,15 +254,15 @@ function fillSecondaryMenu(menuName) {
 
 function set_up_event_listeners_not_all_ta_report() {
     $('#ta-display-select').on('change', function() {
-        if ($(this)[0].value == 'office-hours') {
+        if ($('#ta-display-select')[0].value == 'office-hours') {
             $('.display-option-ta-management').css({'display':'none'});
             $('.display-option-ta-management.office-hours').css({'display':'flex'});
         }
-        if ($(this)[0].value == 'performance-log') {
+        if ($('#ta-display-select')[0].value == 'performance-log') {
             $('.display-option-ta-management').css({'display':'none'});
             $('.display-option-ta-management.performance-log').css({'display':'flex'});
         }
-        if ($(this)[0].value == 'ta-wishlist') {
+        if ($('#ta-display-select')[0].value == 'ta-wishlist') {
             $('.display-option-ta-management').css({'display':'none'});
             $('.display-option-ta-management.ta-wishlist').css({'display':'flex'});
         }
