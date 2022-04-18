@@ -10,9 +10,9 @@
 
 
     echo
-    "<div class='nav-bar-btn-container second-nav-bar'>
+    "<div  id='all-ta-report' class='nav-bar-btn-container second-nav-bar'>
         <div class='nav-bar-btn-wrapper  second-nav-bar'>
-                <div id='all-ta-report' class='nav-bar-btn'>All TA Report</div>
+                <div class='nav-bar-btn'>All TA Report</div>
             </div>
         </div>
     </div>";

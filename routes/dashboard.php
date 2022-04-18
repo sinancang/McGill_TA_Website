@@ -58,6 +58,12 @@
     else if ($_GET['action'] == 'ta-management') {
         include("../matter/ta_management_secondary_menu.php");
     }
+    else if ($_GET['view'] == 'office-hours') {
+        include('../matter/office_hours.html');
+    }
+    else if ($_GET['view'] == 'all-ta-report') {
+        include('../matter/all_ta_report.html');
+    }
     else if ($_GET['action'] == 'delete-user') {
         deactivate_user($_GET['target']);
         include("../matter/manage_users.php");

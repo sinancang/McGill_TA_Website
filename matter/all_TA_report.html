@@ -1,13 +1,8 @@
+
+ <div class="form-container ajax-content-container">
+    <div class='form-wrapper modal edit-user-info-form'>
 <!--TA REVIEW BY STUDENT DONT WORK DUE JSON OUTPUT !-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+
     <p id="info"></p>
 
     <div class="container">
@@ -34,10 +29,6 @@
         </div>
        </div>
        <script type="text/javascript" src="./db/TA_review.json"></script>
-
-</body>
-
-</html>
 
 <script>
 
@@ -183,22 +174,5 @@ function TASelected(){
 
 
     </script>
-<!--
-<script>
-   
-    function generateTAinfo(){
-        //assuming the course and username is known:
-        username = document.getElementById('username');
-        course_selected = document.getElementById('selected-course');
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "../utils/generateTA.php?course="+ course_selected, true);
-        xhttp.onreadystatechange = function(){
-            if(xhttp.readyState==4 && xhttp.status==200){
-                document.getElementById("info").innerHTML = xhttp.responseText;
-                //just display all the contents of the csv files!
-            }          
-        }
-    }
-
-</script>
--->
+    </div>
+ </div>

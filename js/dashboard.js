@@ -105,7 +105,7 @@ function getSecondaryMenuItems(menuName) {
     syncRequest.addEventListener("load", function(){           
         if (this.status == 200) {
             document.getElementById('second-nav-bar-options-container').innerHTML = this.responseText;
-            fillSecondaryMenu('rate');
+            fillSecondaryMenu(menuName);
         }
         else alert('Server error. Please try again later');
 
@@ -186,12 +186,47 @@ function fillSecondaryMenu(menuName) {
     else if (menuName == 'admin') {
     }
     // ta management secondary menu
-    else if (menuName == 'manage') {
+    else if (menuName == 'ta-management') {
+
+        $('#all-ta-report').on('click', function() {
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status == 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                }
+                else alert('Server error. Please try again later');
+        
+            }, false);
+        
+            syncRequest.send();
+        })
+
+        $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
+            let user = document.getElementById('username').innerText;
+            let course_code = $(this).find('#course-code').text();
+            let course_name = $(this).find('#course-name').text();
+            let course_term = $(this).find('#course-term').text();
+    
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=office-hours&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
+            syncRequest.open("GET", url, true);  
+            syncRequest.addEventListener("load", function(){           
+                if (this.status == 200) {
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                }
+                else alert('Server error. Please try again later');
+        
+            }, false);
+        
+            syncRequest.send();
+        })
 
 
     }
     // ta rating secondary menu
-    else if (menuName == 'rate') {
+    else if (menuName == 'get-rate-ta-classes') {
         $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
             let user = document.getElementById('username').innerText;
             let course_code = $(this).find('#course-code').text();
