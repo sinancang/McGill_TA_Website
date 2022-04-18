@@ -23,8 +23,10 @@ function load_first_view_manage_ta() {
              var table_data = '<table class="manage-ta-table">';
              for (var count = 0; count < employee_data.length; count++) {
                  var cell_data = employee_data[count].split(",");
+
                  if (count == 0) table_data += '<tr "manage-ta table-row header">';
                  else table_data += '<tr "manage-ta table-row">';
+                 
                  for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                      if (count === 0) {
                          table_data += '<th>' + cell_data[cell_count] + '</th>';
