@@ -9,16 +9,21 @@ ajaxreq.open('GET', '../utils/rateTAdropdown.php?selectvalue='+data, true); //ch
 ajaxreq.send();
 ajaxreq.onreadystatechange = function(){
         if(ajaxreq.readyState==4 && ajaxreq.status==200){
-        document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
+                document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
         }          
 }
 } 
 
 function sendCourseRequest(){
-var course_selected = document.getElementById('selected-course'); 
-var xhttp = new XMLHttpRequest();
-xhttp.open("POST", "../utils/generateTA.php?selected-course="+ course_selected, true); //is this name true and can multiple variable be sent?
-xhttp.send();
+        var course_selected = document.getElementById('selected-course'); 
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", `../utils/generateTA.php?selected-course=${course_selected}`, true); //is this name true and can multiple variable be sent?
+        xhttp.onreadystatechange = function(){
+                if(xhttp.readyState==4 && xhttp.status==200){
+                        let response_div = `<div>${this.responseText}</div>`;
+                        $('.sign-up-form').append(response_div);
+                } 
+        xhttp.send();
 }
 
 
