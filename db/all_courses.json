@@ -1,3 +1,17 @@
 [
-    
+    {
+        "course code": "JWST361",
+        "course name": "Yiddish",
+        "term": "WINTER2022"
+    },
+    {
+        "course code": "COMP202",
+        "course name": "Java",
+        "term": "FALL2020"
+    },
+    {
+        "course code": "COMP521",
+        "course name": "Gaming",
+        "term": "FALL2019"
+    }
 ]
