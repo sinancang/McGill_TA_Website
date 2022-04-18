@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../css/forms.css">
         <link rel="stylesheet" href="../css/dashboard.css">
         <link rel="stylesheet" href="../css/manage_users.css">
+        <link rel="stylesheet" href="../css/manage_ta.css">
     </head>
 
     <body>
