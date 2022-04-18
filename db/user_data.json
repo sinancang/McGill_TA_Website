@@ -1,1 +1,57 @@
-{"sinancangu":{"email":"sinan.gulan@mail.mcgill.ca","registered":true,"password":"67b2aba6f980c2907758d2dac03089390df10fcf4f3a96a85b3eeabe","type":"student","courses":[],"ticket":"1625cb0e75b392"}}
+{
+    "sinancangu": {
+        "email": "sinan.gulan@mail.mcgill.ca",
+        "registered": true,
+        "password": "67b2aba6f980c2907758d2dac03089390df10fcf4f3a96a85b3eeabe",
+        "type": "student",
+        "courses": [],
+        "ticket": "1625cb0e75b392"
+    },
+    "DavePeters": {
+        "email": "david.peterman@mail.mcgill.ca",
+        "registered": true,
+        "password": "1fe4532c3ada8708341379cca3a7744a232b8571445d2efecf8d68d0",
+        "type": "sysop",
+        "courses": [],
+        "ticket": "1625d8e1801fae"
+    },
+    "Yuri Vedenyapin": {
+        "registered": false,
+        "courses": [
+            {
+                "course num": "JWST361",
+                "course name": "Yiddish",
+                "term": "WINTER2022",
+                "role": "ta"
+            }
+        ],
+        "type": "prof",
+        "email": ""
+    },
+    "Julia Alberini": {
+        "registered": false,
+        "courses": [
+            {
+                "course num": "COMP202",
+                "course name": "Java",
+                "term": "FALL2020",
+                "role": "ta"
+            }
+        ],
+        "type": "prof",
+        "email": ""
+    },
+    "David Peterman": {
+        "registered": false,
+        "courses": [
+            {
+                "course num": "COMP521",
+                "course name": "Gaming",
+                "term": "FALL2019",
+                "role": "admin"
+            }
+        ],
+        "type": "admin",
+        "email": ""
+    }
+}
