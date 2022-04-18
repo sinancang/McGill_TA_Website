@@ -13,7 +13,7 @@ function set_all_ta_report_event_liteners() {
 
     $('#load_data').click(function() {
         $.ajax({
-            url: "../db/TA_review.csv",
+            url: "../db/TA_performance_logs.csv",
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
