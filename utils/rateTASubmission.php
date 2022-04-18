@@ -22,7 +22,7 @@ function add_ta_review() {
 
 
 
-
+    /*
     $filename = "../db/TA_review.json";
 
     $data = file_get_contents($filename);
@@ -45,8 +45,10 @@ function add_ta_review() {
     else{
         echo "err";
     }
+    */
 
     fclose($file);
+    
 }
 
 ?>
