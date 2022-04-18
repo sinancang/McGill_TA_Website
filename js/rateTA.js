@@ -11,7 +11,7 @@ function sendCourseRequest(){
         let target_ta = document.getElementById('TA_dropdown').value;
 
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", `../routes/dashboard.php?action=add-ta-review&ta-name=${target_ta}&rating=${rating}rating&review=${review}&course-term=${course_term}&course-code=${course_code}&user=${user}&ticket=${window.sessionStorage.ticket}`, true); //is this name true and can multiple variable be sent?
+        let url = `../routes/dashboard.php?action=add-ta-review&ta-name=${target_ta}&rating=${rating}rating&review=${review}&course-term=${course_term}&course-code=${course_code}&user=${user}&ticket=${window.sessionStorage.ticket}`;
         xhttp.open("GET", url, true);  
         xhttp.addEventListener("load", function(){           
         if (this.status == 200) {
