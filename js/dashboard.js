@@ -188,7 +188,7 @@ function fillSecondaryMenu(menuName) {
     // ta management secondary menu
     else if (menuName == 'ta-management') {
 
-        $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
+        $('.nav-bar-btn-container.second-nav-bar.course').on('click', function() {
             let user = document.getElementById('username').innerText;
             let course_code = $(this).find('#course-code').text();
             let course_name = $(this).find('#course-name').text();

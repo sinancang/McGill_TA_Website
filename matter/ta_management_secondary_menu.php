@@ -24,7 +24,7 @@
     if ($user_data[$_GET['user']]['type'] == 'sysop') {
         for ($i=0; $i<count($all_courses); $i++) {
             echo
-            "<div class='nav-bar-btn-container second-nav-bar'>
+            "<div class='nav-bar-btn-container second-nav-bar course'>
                 <div class='nav-bar-btn-wrapper  second-nav-bar'>
                         <div id='course-code' class='nav-bar-btn'>{$all_courses[$i]['course code']}</div>
                         <div id='course-name' class='nav-bar-btn sub-title'>{$all_courses[$i]['course name']}</div>
@@ -39,7 +39,7 @@
             if ($user_data[$_GET['user']]['courses'][$i]['role'] == 'prof' 
                 || $user_data[$_GET['user']]['courses'][$i]['role'] == 'prof') {
                 echo
-                "<div class='nav-bar-btn-container second-nav-bar'>
+                "<div class='nav-bar-btn-container second-nav-bar course'>
                     <div class='nav-bar-btn-wrapper  second-nav-bar'>
                             <div id='course-code' class='nav-bar-btn'>{$user_data[$_GET['user']]['courses'][$i]['course num']}</div>
                             <div id='course-name' class='nav-bar-btn sub-title'>{$user_data[$_GET['user']]['courses'][$i]['course name']}</div>
