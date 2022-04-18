@@ -169,7 +169,7 @@
         <script src="../js/rateTA.js"></script>
 	    <script src="../js/dashboard.js"></script>
         <script src="../js/all_TA_report.js"></script>
-        <script type="text/javascript" src="./db/TA_review.json"></script>
+        <!-- <script type="text/javascript" src="./db/TA_review.json"></script> -->
 	<script>
 		    function sign_out(){
 			    syncRequest = new XMLHttpRequest();
