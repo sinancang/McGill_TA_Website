@@ -24,9 +24,9 @@ function load_first_view_manage_ta() {
              for (var count = 0; count < employee_data.length; count++) {
                  var cell_data = employee_data[count].split(",");
 
-                 if (count == 0) table_data += '<tr "manage-ta table-row header">';
-                 else table_data += '<tr "manage-ta table-row">';
-                 
+                 if (count == 0) table_data += '<tr class="manage-ta table-row header">';
+                 else table_data += '<tr class="manage-ta table-row">';
+
                  for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                      if (count === 0) {
                          table_data += '<th>' + cell_data[cell_count] + '</th>';
@@ -61,8 +61,8 @@ function set_all_ta_report_event_liteners() {
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
 
-                    if (count == 0) table_data += '<tr "manage-ta table-row header">';
-                    else table_data += '<tr "manage-ta table-row">';
+                    if (count == 0) table_data += '<tr class="manage-ta table-row header">';
+                    else table_data += '<tr class="manage-ta table-row">';
 
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
@@ -93,8 +93,8 @@ function set_all_ta_report_event_liteners() {
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
 
-                    if (count == 0) table_data += '<tr "manage-ta table-row header">';
-                    else table_data += '<tr "manage-ta table-row">';
+                    if (count == 0) table_data += '<tr class="manage-ta table-row header">';
+                    else table_data += '<tr class="manage-ta table-row">';
 
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
@@ -124,7 +124,10 @@ function set_all_ta_report_event_liteners() {
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
-                    table_data += '<tr class="manage-ta table-row">';
+
+                    if (count == 0) table_data += '<tr class="manage-ta table-row header">';
+                    else table_data += '<tr class="manage-ta table-row">';
+
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
