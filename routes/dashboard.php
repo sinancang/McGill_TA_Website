@@ -104,6 +104,15 @@
     else if ($_GET['action'] == 'add-ta-review') {
         add_ta_review();
     }
+    else if ($_GET['action'] == 'get-performance-logs') {
+        include('../db/TA_performance_logs.csv');
+    }
+    else if ($_GET['action'] == 'get-student-reviews') {
+        include('../db/TA_review.csv');
+    }
+    else if ($_GET['action'] == 'get-oh-responsibilities') {
+        include('../db/office_hours.csv');
+    }
     else {
         echo "Page Not Found";
     }

@@ -16,7 +16,7 @@ function load_first_view_manage_ta() {
      $('#load_data').css({'color': '#d65050'});
 
      $.ajax({
-         url: "../db/TA_performance_logs.csv",
+         url: `../routes/dashboard.php?user=${user}&action=get-performance-logs&ticket=${window.sessionStorage.ticket}`,
          dataType: "text",
          success: function(data) {
              var employee_data = data.split(/\r?\n|\r/);
@@ -53,7 +53,7 @@ function set_all_ta_report_event_liteners() {
         $(this).css({'color': '#d65050'});
 
         $.ajax({
-            url: "../db/TA_performance_logs.csv",
+            url: `../routes/dashboard.php?user=${user}&action=get-performance-logs&ticket=${window.sessionStorage.ticket}`,
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
@@ -85,7 +85,7 @@ function set_all_ta_report_event_liteners() {
         $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
         $(this).css({'color': '#d65050'});        
         $.ajax({
-            url: "../db/TA_review.csv",
+            url: `../routes/dashboard.php?user=${user}&action=get-student-reviews&ticket=${window.sessionStorage.ticket}`,
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
@@ -117,6 +117,7 @@ function set_all_ta_report_event_liteners() {
         $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
         $(this).css({'color': '#d65050'});
         $.ajax({
+            url: `../routes/dashboard.php?user=${user}&action=get-oh-responsibilities&ticket=${window.sessionStorage.ticket}`,
             url: "../db/office_hours.csv",
             dataType: "text",
             success: function(data) {
