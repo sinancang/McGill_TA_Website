@@ -2,6 +2,7 @@ McGill TA Website for COMP 307 Final Project
 
 A website for McGill students to rate and review TA's and for TA's and Profs to view TA analytics, relevant course information and post their schedule (office hours, etcetera).
 
+link: https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/matter/home.html
 
 /-------------------------------------------------------------------------------------------------/
 
