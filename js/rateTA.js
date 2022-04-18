@@ -3,7 +3,7 @@
 
 
 function sendCourseRequest(){
-        let user = document.getElementById('username');
+        let user = document.getElementById('username').innerText;
         let course_code = document.getElementById('form-course-code').innerText;
         let course_term = document.getElementById('form-course-term').innerText;
         let review = document.getElementById('review').value;
