@@ -1,12 +1,26 @@
 <?php
 
-//creates json object from the html form. 
 
-$TAname =  $_POST['TA_dropdown'];
+$file = fopen("../db/TA_review.csv", "a+") or die("unable to open file!");
+
+$username=$_GET['username']; //not sure if working!
 $course = $_POST['course_selected']; //the naming true??
 $term = $_POST['term'];
+$TAname =  $_POST['TA_dropdown'];
 $score = $_POST['score'];
 $review = $_POST['review'];
+
+$userData = $username . "," . $course . "," .  $term . "," . $TAname . "," . $score . "," . "{$review}" . ","  .  "\n";
+
+
+if(fwrite($file, $userData)){
+	echo "success";
+}
+else{
+    echo "error";
+}
+
+
 
 
 $filename = "../db/TA_review.json";
@@ -31,5 +45,7 @@ if(file_put_contents("../db/TA_review.json", $final_data)){
 else{
     echo "err";
 }
+
+fclose($file);
 
 ?>
