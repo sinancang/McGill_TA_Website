@@ -23,6 +23,7 @@ function sendCourseRequest(){
                         let response_div = `<div>${this.responseText}</div>`;
                         $('.sign-up-form').append(response_div);
                 } 
+        }
         xhttp.send();
 }
 
@@ -44,10 +45,8 @@ function sendRateTArequest(){
     syncRequest.open("POST", url, true);
 
     syncRequest.addEventListener("load", function(){
-        if (this.responseText == 'success')
-                alert ('rating has been submitted');
-        else
-                alert ('failed to submit rating');
+        if (this.responseText == 'success') alert ('rating has been submitted');
+        else alert('failed to submit rating');
         }, false);
 
         let fd = new FormData;
@@ -58,13 +57,3 @@ function sendRateTArequest(){
         syncRequest.send (fd);
 
 }
-
-
-
-function sendCourseRequest(){
-        let course_selected = document.getElementById('selected-course'); 
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", `../utils/generateTA.php?selected-course=${course_selected}`, true); //is this name true and can multiple letiable be sent?
-        xhttp.send();
-}
-
