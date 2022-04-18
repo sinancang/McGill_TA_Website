@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         else if ($(this).attr('id') == 'manage') {
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
-            getSecondaryMenuItems('manage');
+            getSecondaryMenuItems('ta-management');
         }
         else if ($(this).attr('id') == 'rate') {
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
@@ -187,6 +187,8 @@ function fillSecondaryMenu(menuName) {
     }
     // ta management secondary menu
     else if (menuName == 'manage') {
+
+
     }
     // ta rating secondary menu
     else if (menuName == 'rate') {

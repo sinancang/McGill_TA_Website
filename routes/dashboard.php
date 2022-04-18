@@ -55,6 +55,9 @@
     else if ($_GET['action'] == 'get-rate-ta-classes') {
         include("../matter/rate_ta_secondary_menu.php");
     }
+    else if ($_GET['action'] == 'ta-management') {
+        include("../matter/ta_management_secondary_menu.php");
+    }
     else if ($_GET['action'] == 'delete-user') {
         deactivate_user($_GET['target']);
         include("../matter/manage_users.php");
