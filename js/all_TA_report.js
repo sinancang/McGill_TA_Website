@@ -47,7 +47,6 @@ function set_all_ta_report_event_liteners() {
                 var table_data = '<table class="table table-bordered table-striped">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
-                    console.log(cell_data);
                     table_data += '<tr>';
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
