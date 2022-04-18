@@ -25,8 +25,6 @@
                         $data = file_get_contents($filename);
                         $arr = json_decode($data, true);
 
-                        echo "<option>-- Select a TA --</option>";
-
                         foreach($arr as $key=>$value){
                             //looping through each user
                             for ($i=0; $i < count($value['courses']); $i++){
