@@ -13,7 +13,7 @@ function TASelected() {
 function load_first_view_manage_ta() {
      // update color of curr selected btn
      $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-     $(this).css({'color': '#d65050'});
+     $('#load_data').css({'color': '#d65050'});
 
      $.ajax({
          url: "../db/TA_performance_logs.csv",
@@ -93,7 +93,7 @@ function set_all_ta_report_event_liteners() {
 
                     if (count == 0) table_data += '<tr "manage-ta table-row header">';
                     else table_data += '<tr "manage-ta table-row">';
-                    
+
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
