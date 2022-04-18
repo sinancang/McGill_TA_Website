@@ -1,6 +1,3 @@
-
-
-
 function TASelected() {
     var ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateAllTA.php', true);
@@ -14,47 +11,40 @@ function TASelected() {
 
 // load first view in all TAs report page
 function load_first_view_manage_ta() {
-    const user = document.getElementById('username');
      // update color of curr selected btn
      $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
      $('#load_data').css({'color': '#d65050'});
 
-    let syncRequest = new XMLHttpRequest();
-    let url = `../routes/dashboard.php?user=${user}&action=get-performance-logs&ticket=${window.sessionStorage.ticket}`;
-    syncRequest.open("GET", url, true);  
-    syncRequest.addEventListener("load", function(){           
-        if (this.status == 200) {
-            var employee_data = this.responseText.split(/\r?\n|\r/);
-            var table_data = '<table class="manage-ta-table">';
-            for (var count = 0; count < employee_data.length; count++) {
-                var cell_data = employee_data[count].split(",");
+     $.ajax({
+         url: "../db/TA_performance_logs.csv",
+         dataType: "text",
+         success: function(data) {
+             var employee_data = data.split(/\r?\n|\r/);
+             var table_data = '<table class="manage-ta-table">';
+             for (var count = 0; count < employee_data.length; count++) {
+                 var cell_data = employee_data[count].split(",");
 
-                if (count == 0) table_data += '<tr class="manage-ta table-row header">';
-                else table_data += '<tr class="manage-ta table-row">';
+                 if (count == 0) table_data += '<tr class="manage-ta table-row header">';
+                 else table_data += '<tr class="manage-ta table-row">';
 
-                for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
-                    if (count === 0) {
-                        table_data += '<th>' + cell_data[cell_count] + '</th>';
-                    } else {
-                        table_data += '<td>' + cell_data[cell_count] + '</td>';
-                    }
-                }
-                table_data += '</tr>';
-            }
-            table_data += '</table>';
-            $('#manage-ta-view-container').html(table_data);
-        }
-        else alert('Server error. Please try again later');
-
-    }, false);
-        
-    syncRequest.send();
+                 for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                     if (count === 0) {
+                         table_data += '<th>' + cell_data[cell_count] + '</th>';
+                     } else {
+                         table_data += '<td>' + cell_data[cell_count] + '</td>';
+                     }
+                 }
+                 table_data += '</tr>';
+             }
+             table_data += '</table>';
+             $('#manage-ta-view-container').html(table_data);
+         }
+     });
 }
 
 
 // set event listeners to display every view in all TA's report
 function set_all_ta_report_event_liteners() {
-    const user = document.getElementById('username');
 
     // performance log reviews event listener
     $('#load_data').click(function() {
@@ -62,13 +52,11 @@ function set_all_ta_report_event_liteners() {
         $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
         $(this).css({'color': '#d65050'});
 
-
-        let syncRequest = new XMLHttpRequest();
-        let url = `../routes/dashboard.php?user=${user}&action=get-performance-logs&ticket=${window.sessionStorage.ticket}`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                var employee_data = this.responseText.split(/\r?\n|\r/);
+        $.ajax({
+            url: "../db/TA_performance_logs.csv",
+            dataType: "text",
+            success: function(data) {
+                var employee_data = data.split(/\r?\n|\r/);
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
@@ -95,14 +83,12 @@ function set_all_ta_report_event_liteners() {
     $('#load_data2').click(function() {
         // update color of curr selected btn
         $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});    
-           
-        let syncRequest = new XMLHttpRequest();
-        let url = `../routes/dashboard.php?user=${user}&action=get-student-reviews&ticket=${window.sessionStorage.ticket}`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                var employee_data = this.responseText.split(/\r?\n|\r/);
+        $(this).css({'color': '#d65050'});        
+        $.ajax({
+            url: "../db/TA_review.csv",
+            dataType: "text",
+            success: function(data) {
+                var employee_data = data.split(/\r?\n|\r/);
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
@@ -122,9 +108,7 @@ function set_all_ta_report_event_liteners() {
                 table_data += '</table>';
                 $('#manage-ta-view-container').html(table_data);
             }
-        }, false);
-        
-        syncRequest.send();
+        });
     });
 
     // OH and responsibilities event listener
@@ -132,13 +116,11 @@ function set_all_ta_report_event_liteners() {
         // update color of curr selected btn
         $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
         $(this).css({'color': '#d65050'});
-
-        let syncRequest = new XMLHttpRequest();
-        let url = `../routes/dashboard.php?user=${user}&action=get-oh-responsibilities&ticket=${window.sessionStorage.ticket}`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                var employee_data = this.responseText.split(/\r?\n|\r/);
+        $.ajax({
+            url: "../db/office_hours.csv",
+            dataType: "text",
+            success: function(data) {
+                var employee_data = data.split(/\r?\n|\r/);
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
@@ -158,9 +140,7 @@ function set_all_ta_report_event_liteners() {
                 table_data += '</table>';
                 $('#manage-ta-view-container').html(table_data);
             }
-        }, false);
-        
-        syncRequest.send();
+        });
     });
 }
 
