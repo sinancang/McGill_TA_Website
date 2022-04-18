@@ -9,6 +9,39 @@ function TASelected() {
     }
 }
 
+// load first view in all TAs report page
+function load_first_view_manage_ta() {
+     // update color of curr selected btn
+     $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+     $(this).css({'color': '#d65050'});
+
+     $.ajax({
+         url: "../db/TA_performance_logs.csv",
+         dataType: "text",
+         success: function(data) {
+             var employee_data = data.split(/\r?\n|\r/);
+             var table_data = '<table class="manage-ta-table">';
+             for (var count = 0; count < employee_data.length; count++) {
+                 var cell_data = employee_data[count].split(",");
+                 if (count == 0) table_data += '<tr "manage-ta table-row header">';
+                 else table_data += '<tr "manage-ta table-row">';
+                 for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                     if (count === 0) {
+                         table_data += '<th>' + cell_data[cell_count] + '</th>';
+                     } else {
+                         table_data += '<td>' + cell_data[cell_count] + '</td>';
+                     }
+                 }
+                 table_data += '</tr>';
+             }
+             table_data += '</table>';
+             $('#manage-ta-view-container').html(table_data);
+         }
+     });
+}
+
+
+// set event listeners to display every view in all TA's report
 function set_all_ta_report_event_liteners() {
 
     // performance log reviews event listener
@@ -25,8 +58,10 @@ function set_all_ta_report_event_liteners() {
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
-                    console.log(cell_data);
-                    table_data += '<tr>';
+
+                    if (count == 0) table_data += '<tr "manage-ta table-row header">';
+                    else table_data += '<tr "manage-ta table-row">';
+
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
@@ -55,7 +90,10 @@ function set_all_ta_report_event_liteners() {
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
-                    table_data += '<tr>';
+
+                    if (count == 0) table_data += '<tr "manage-ta table-row header">';
+                    else table_data += '<tr "manage-ta table-row">';
+                    
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
@@ -84,7 +122,7 @@ function set_all_ta_report_event_liteners() {
                 var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
-                    table_data += '<tr>';
+                    table_data += '<tr class="manage-ta table-row">';
                     for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';

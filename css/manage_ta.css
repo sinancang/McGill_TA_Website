@@ -29,3 +29,11 @@
 .manage-ta-table {
     width: 100%;
 }
+
+.manage-ta.table-row {
+    margin-top: 10px;
+}
+
+.manage-ta.table-row.header {
+    background-color: #b3b3b3;
+}

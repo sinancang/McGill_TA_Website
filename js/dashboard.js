@@ -218,6 +218,7 @@ function fillSecondaryMenu(menuName) {
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                     set_all_ta_report_event_liteners();
+                    load_first_view_manage_ta();
                 }
                 else alert('Server error. Please try again later');
         
