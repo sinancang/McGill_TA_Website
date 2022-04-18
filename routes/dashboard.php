@@ -62,7 +62,7 @@
         include('../matter/office_hours.html');
     }
     else if ($_GET['view'] == 'all-ta-report') {
-        include('../matter/all_ta_report.html');
+        include('../matter/all_TA_report.html');
     }
     else if ($_GET['action'] == 'delete-user') {
         deactivate_user($_GET['target']);
