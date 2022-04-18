@@ -7,7 +7,7 @@
                 "<div id='form-course-code' style='font-size: 15px;'>{$_GET['course-code']}</div>
                 <div id='form-course-term' style='font-size: 15px;'>{$_GET['course-term']}</div>";
             ?>
-            <form method="post" name="form" action="../utils/rateTASubmission.php" style="padding-left: 5%;">
+            <form method="post" name="form" style="padding-left: 5%;">
                 <!-- 
                 <div style="font-size: 15px;">Select a term:</div>
                 <select id = "term" name ="term" onchange="termSelected(this.value)"class="drop form-select"> 
