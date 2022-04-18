@@ -7,20 +7,16 @@
         <button type="button" name="load_data3" id="load_data3" class="manage-ta-nav-btn">TA Office Hours and Responsibilities</button>
     </div>
 
-    <div class='form-wrapper modal edit-user-info-form'>
-
-
-        <div class="container">
+    <div class='all-ta-report-container'>
+  
+        <div class="table-responsive">
+        
+        
+            <select class="btn btn-info" id = "TA" name ="TA" onclick="TASelected()" onchange="displayScore()"> 
+                <option> Select a TA to see their average scores: </option>
+            </select> 
             
-            <div class="table-responsive">
-            
-            
-                <select class="btn btn-info" id = "TA" name ="TA" onclick="TASelected()" onchange="displayScore()"> 
-                    <option> Select a TA to see their average scores: </option>
-                </select> 
-                
-                <div id="employee_table" class="result"> </div>
-            </div>
+            <div id="employee_table" class="result"> </div>
         </div>
        
     </div>
