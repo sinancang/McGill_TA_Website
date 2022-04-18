@@ -19,7 +19,7 @@
 
         $found = false;
         for ($i=0; $i<count($all_courses); $i++) {
-            if ($all_courses[$i] == $course_code) $found = true;
+            if ($all_courses[$i]['course code'] == $course_code) $found = true;
         }
         if (!$found) {
             $new_entry = array('course code'=>$course_code, 'course name'=>$course_name, 'term'=>$term);
