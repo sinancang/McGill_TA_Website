@@ -11,11 +11,11 @@ function sendCourseRequest(){
         let target_ta = document.getElementById('TA_dropdown').value;
 
         var xhttp = new XMLHttpRequest();
-        let url = `../routes/dashboard.php?action=add-ta-review&ta-name=${target_ta}&rating=${rating}rating&review=${review}&course-term=${course_term}&course-code=${course_code}&user=${user}&ticket=${window.sessionStorage.ticket}`;
+        let url = `../routes/dashboard.php?action=add-ta-review&ta-name=${target_ta}&rating=${rating}&review=${review}&course-term=${course_term}&course-code=${course_code}&user=${user}&ticket=${window.sessionStorage.ticket}`;
         xhttp.open("GET", url, true);  
         xhttp.addEventListener("load", function(){           
         if (this.status == 200) {
-                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                $('.sign-up-form').append(this.responseText);
         }
         else alert('Server error. Please try again later');
 

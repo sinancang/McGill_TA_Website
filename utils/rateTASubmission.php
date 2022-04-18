@@ -10,7 +10,7 @@ function add_ta_review() {
     $score = $_GET['rating'];
     $review = $_GET['review'];
 
-    $userData = $username . "," . $course . "," .  $term . "," . $TAname . "," . $score . "," . "{$review}" . ","  .  "\n";
+    $userData = $username . "," . $course . "," .  $term . "," . $TAname . "," . $score . "," . "{$review}" .  "\n";
 
 
     if(fwrite($file, $userData)){
