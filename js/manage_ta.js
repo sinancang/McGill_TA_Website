@@ -1,4 +1,4 @@
-const user = document.getElementById('username');
+
 
 
 function TASelected() {
@@ -14,6 +14,7 @@ function TASelected() {
 
 // load first view in all TAs report page
 function load_first_view_manage_ta() {
+    const user = document.getElementById('username');
      // update color of curr selected btn
      $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
      $('#load_data').css({'color': '#d65050'});
@@ -48,6 +49,7 @@ function load_first_view_manage_ta() {
 
 // set event listeners to display every view in all TA's report
 function set_all_ta_report_event_liteners() {
+    const user = document.getElementById('username');
 
     // performance log reviews event listener
     $('#load_data').click(function() {
