@@ -192,10 +192,12 @@ function fillSecondaryMenu(menuName) {
     else if (menuName == 'rate') {
         $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
             let user = document.getElementById('username').innerText;
-            let course = $(this).text();
+            let course_code = $(this).find('#course-code').text();
+            let course_name = $(this).find('#course-name').text();
+            let course_term = $(this).find('#course-term').text();
     
             let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=rate-ta&ticket=${window.sessionStorage.ticket}`;
+            var url = `../routes/dashboard.php?user=${user}&view=rate-ta&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
