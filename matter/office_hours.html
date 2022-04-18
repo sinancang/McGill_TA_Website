@@ -10,7 +10,7 @@
             <option value="ta-wishlist">TA Wishlist</option>
         </select>
 
-        <div class="display-option-ta-management">
+        <div class="display-option-ta-management office-hours">
             <!--how to decide which user is-->
             <p style="font-size: 30px; padding-left: 15%;">Set Office Hours</p>
             <div class="form-container">
@@ -49,6 +49,62 @@
 
 
 
+         <div class="display-option-ta-management performance-log">
+<!--Course is already selected at the begginning, how to reach that variable from the dashboard database? -->
+<p style="font-size: 30px; padding-left: 15%;">TA Performance Log</p>
+<div class="form-container">
+<div class="sign-up-form" style="width: 70%;">
+<form method="get" name="form" action="../utils/generateTA.php">
+
+<select id = "term" class="drop" name ="term" onchange="termSelected(this.value)"> 
+    <option> Select a term </option>
+    <option> FALL 2020 </option>
+    <option> WINTER 2021 </option>
+    <option> FALL 2021 </option>
+    <option> WINTER 2022 </option>
+</select> <br></br>
+<!--prof select a ta from a dropdown so generate dynamic dropdown-->
+<select id = "TA_dropdown" class="drop" name="TA_dropdown">
+<option>Select a TA</option>
+</select>
+<p>Leave a note about the TA:</p>
+<textarea id = "review" class="text-area" name="review" rows="5"></textarea><br>
+<input id="button" type="submit" value = "submit your review" onclick="sendusername_course()"></button>
+</form>
+</div>
+</div>
+</div>
+
+
+<script>
+//HOW TO GET COURSE NUM? IS MISSIN! //course-name get value by id in javascript and send it to php!
+//function to generate dropdown menu for TA names from the selected term.
+function termSelected(data){
+var ajaxreq = new XMLHttpRequest(); // New request object
+ajaxreq.open('GET', '../utils/generateTA.php?term='+data, true);
+ajaxreq.send();
+ajaxreq.onreadystatechange = function(){
+    if(ajaxreq.readyState==4 && ajaxreq.status==200){
+        document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
+    }          
+}
+}
+
+//not sure if it works for sending username and course!!!
+function sendusername_course(){
+var name = document.getElementById('username'); 
+var course_selected = document.getElementById('selected-course'); 
+var xhttp = new XMLHttpRequest();
+xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
+xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+xhttp.send();
+
+}
+
+</script>
+
+
+
         <script>
 
             //not sure if it works for sending username and course!!!
@@ -63,4 +119,56 @@
             }
         </script>
     </div>
+
+    
+
+
+
+    <div class="display-option-ta-management ta-wishlist">
+    <p style="font-size: 30px; padding-left: 15%;">Choose a TA for the upcoming semester:</p>
+        <div class="form-container">
+        <div class="sign-up-form" style="width: 70%;">
+    <form method="get" name="form" action="../utils/TA_wish_list.php">    
+        <p>Choose a TA: </p>
+                <select class="drop" id = "TA" name ="TA" onclick="TASelected(this.value)"> 
+                    <option> Select a TA </option>
+                </select> <br></br> 
+        <p>For which semester? </p>
+        <select class="drop" id = "term" name ="term" onclick="termSelected(this.value)"> 
+            <option> Choose a term </option>
+            <option> SUMMER 2022 </option>
+            <option> FALL 2022 </option>
+            <option> SPRING 2023</option>
+        </select> <br></br> 
+        <input id="button" style="background-color: #d77171;" type="submit" value = "Submit"></button>
+    </form>
+</div>
+</div>
+
+<script>
+    function TASelected(data){
+        var ajaxreq = new XMLHttpRequest(); // New request object
+        ajaxreq.open('GET', '../utils/generateAllTA.php', true);
+        ajaxreq.send();
+        ajaxreq.onreadystatechange = function(){
+            if(ajaxreq.readyState==4 && ajaxreq.status==200){
+                document.getElementById("TA").innerHTML = ajaxreq.responseText;
+            }          
+        }
+    }
+
+    //not sure if it works for sending username and course!!!
+    function sendusername_course(){
+        var username = document.getElementById('username');
+        var course_selected =  document.getElementById('course-selected');
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "../utils/TA_wish_list.php?username="+ username, true);
+        xhttp.open("GET", "../utils/TA_wish_list.php?course_selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+        xhttp.send();
+        
+    }
+    
+</script>
+</div>
+
 </div>
