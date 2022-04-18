@@ -20,3 +20,12 @@
 .manage-ta-nav-btn.open {
     color: #d65050;
 }
+
+#manage-ta-view-container {
+    margin-top: 50px;
+    width: 80%;
+}
+
+.manage-ta-table {
+    width: 100%;
+}

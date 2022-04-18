@@ -22,7 +22,7 @@ function set_all_ta_report_event_liteners() {
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
-                var table_data = '<table class="table table-bordered table-striped">';
+                var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
                     console.log(cell_data);
@@ -52,7 +52,7 @@ function set_all_ta_report_event_liteners() {
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
-                var table_data = '<table class="table table-bordered table-striped">';
+                var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
                     table_data += '<tr>';
@@ -81,7 +81,7 @@ function set_all_ta_report_event_liteners() {
             dataType: "text",
             success: function(data) {
                 var employee_data = data.split(/\r?\n|\r/);
-                var table_data = '<table class="table table-bordered table-striped">';
+                var table_data = '<table class="manage-ta-table">';
                 for (var count = 0; count < employee_data.length; count++) {
                     var cell_data = employee_data[count].split(",");
                     table_data += '<tr>';
