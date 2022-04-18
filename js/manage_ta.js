@@ -37,7 +37,7 @@ function set_all_ta_report_event_liteners() {
                     table_data += '</tr>';
                 }
                 table_data += '</table>';
-                $('#employee_table').html(table_data);
+                $('#manage-ta-view-container').html(table_data);
             }
         });
     });
@@ -66,7 +66,7 @@ function set_all_ta_report_event_liteners() {
                     table_data += '</tr>';
                 }
                 table_data += '</table>';
-                $('#employee_table').html(table_data);
+                $('#manage-ta-view-container').html(table_data);
             }
         });
     });
@@ -95,7 +95,7 @@ function set_all_ta_report_event_liteners() {
                     table_data += '</tr>';
                 }
                 table_data += '</table>';
-                $('#employee_table').html(table_data);
+                $('#manage-ta-view-container').html(table_data);
             }
         });
     });
@@ -113,7 +113,7 @@ function displayScore() {
     ajaxreq.onreadystatechange = function() {
         if (ajaxreq.readyState == 4 && ajaxreq.status == 200) {
             var info = "The score of the selected TA for this course: ";
-            document.getElementById("employee_table").innerHTML = info + ajaxreq.responseText;
+            document.getElementById("manage-ta-view-container").innerHTML = info + ajaxreq.responseText;
         }
     }
 
