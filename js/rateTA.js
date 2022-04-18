@@ -15,7 +15,7 @@ function sendCourseRequest(){
         xhttp.open("GET", url, true);  
         xhttp.addEventListener("load", function(){           
         if (this.status == 200) {
-                $('.sign-up-form').append(this.responseText);
+                alert(this.responseText);
         }
         else alert('Server error. Please try again later');
 
