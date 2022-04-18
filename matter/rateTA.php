@@ -4,8 +4,8 @@
         <div class="sign-up-form">
             <?php 
                 echo 
-                "<div style='font-size: 15px;'>{$_GET['course-code']}</div>
-                <div style='font-size: 15px;'>{$_GET['course-term']}</div>";
+                "<div id='form-course-code' style='font-size: 15px;'>{$_GET['course-code']}</div>
+                <div id='form-course-term' style='font-size: 15px;'>{$_GET['course-term']}</div>";
             ?>
             <form method="post" name="form" action="../utils/rateTASubmission.php" style="padding-left: 5%;">
                 <!-- 

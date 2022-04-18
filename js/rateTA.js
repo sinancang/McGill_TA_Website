@@ -3,12 +3,15 @@
 
 
 function sendCourseRequest(){
-        let course_selected = document.getElementById('selected-course'); 
         let user = document.getElementById('username');
-
-
+        let course_code = document.getElementById('form-course-code').innerText;
+        let course_term = document.getElementById('form-course-term').innerText;
+        let review = document.getElementById('review').value;
+        let rating = document.getElementById('score').value;
+        let target_ta = document.getElementById('TA_dropdown').value;
+        
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", `../routes/dashboard.php?action=add-ta-review&user=${user}&ticket=${window.sessionStorage.ticket}&selected-course=${course_selected}`, true); //is this name true and can multiple variable be sent?
+        xhttp.open("GET", `../routes/dashboard.php?action=add-ta-review&ta-name=${target_ta}&rating=${rating}rating&review=${review}&course-term=${course_term}&course-code=${course_code}&user=${user}&ticket=${window.sessionStorage.ticket}`, true); //is this name true and can multiple variable be sent?
         xhttp.onreadystatechange = function(){
                 if(xhttp.readyState==4 && xhttp.status==200){
                         let response_div = `<div>${this.responseText}</div>`;
