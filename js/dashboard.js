@@ -255,18 +255,24 @@ function fillSecondaryMenu(menuName) {
 
 function set_up_event_listeners_manage_ta_option() {
     $('#office-hours').on('click', function() {
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.office-hours').addClass('open');
     });
 
     $('#performance-log').on('click', function() {
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.performance-log').addClass('open');
     });
 
     $('#wishlist').on('click', function() {
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
         $('.display-option-ta-management').removeClass('open');
-        $('.display-option-ta-management.ta-wishlis').addClass('open');
+        $('.display-option-ta-management.ta-wishlist').addClass('open');
     });
 }
 
