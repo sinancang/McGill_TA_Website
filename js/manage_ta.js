@@ -179,12 +179,12 @@ function set_up_event_listeners_ta_course_options() {
     $('#submit-oh-hours-btn').on('click', function() {
         let user = document.getElementById('username').innerText;
         let course_code = document.getElementById('selected-course-code').value;
-        let course_term = document.getElementById('#selected-course-term').value;
-        let day = document.getElementById('#oh-day-select').value;
-        let start_time = document.getElementById('#oh-start-time').value;
-        let end_time = document.getElementById('#oh-end-time').value;
-        let location = document.getElementById('#oh-location').value;
-        let duties = document.getElementById('#oh-duties').value;
+        let course_term = document.getElementById('selected-course-term').value;
+        let day = document.getElementById('oh-day-select').value;
+        let start_time = document.getElementById('oh-start-time').value;
+        let end_time = document.getElementById('oh-end-time').value;
+        let location = document.getElementById('oh-location').value;
+        let duties = document.getElementById('oh-duties').value;
 
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=submit-oh-hours&duties=${duties}&location=${location}&end=${end_time}&start=${start_time}&day=${day}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
