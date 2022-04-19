@@ -131,7 +131,7 @@ textarea {
 
 .nav-bar-btn-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow-wrap: normal;
     overflow: hidden;
     flex-direction: column;
@@ -141,6 +141,7 @@ textarea {
     width: 100%;
     height: 50px;
     margin-top: 20px;
+    align-content: space-around;
 }
 
 
@@ -152,8 +153,10 @@ textarea {
 
 .nav-bar-btn-wrapper {
     display: flex;
+    width: 80%;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    width: 100%;
+    /* padding-right: 30px; */
 }
 
 .nav-bar-btn-wrapper.second-nav-bar {
@@ -165,8 +168,10 @@ textarea {
 }
 
 .nav-bar-btn {
-    overflow-wrap: normal;
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    white-space: pre-wrap;
+    width: 80%;
+    /* margin-right: 20px;*/
 }
 
 .nav-bar-btn.sub-title {
