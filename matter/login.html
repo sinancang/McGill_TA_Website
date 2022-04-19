@@ -54,6 +54,9 @@
 
 				      displayWarning("Login success!", true);
 
+			      } else if (this.status == 403){
+					displayWarning("Your account has been deactivated. Please contact sysops to reactivate it", false);
+
 			      } else {
 				      displayWarning("Login failed. Please check your username and/or password and try again.", false);
 			      }
