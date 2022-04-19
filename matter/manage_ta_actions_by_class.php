@@ -42,7 +42,7 @@
                      <option> Saturday </option>
                      <option> Sunday </option>
                   </select>
-                  
+
                   <br></br>
 
                   <label for="appt">Choose a time for your Office hours:</label>
@@ -62,6 +62,7 @@
          </div>
       </div>
 
+
       <!-- PERFORMANCE LOG -->
       <div class="display-option-ta-management performance-log">
          <!--Course is already selected at the begginning, how to reach that variable from the dashboard database? -->
@@ -72,6 +73,26 @@
                   <!--prof select a ta from a dropdown so generate dynamic dropdown-->
                   <select id = "TA_dropdown" class="drop" name="TA_dropdown">
                      <option>Select a TA</option>
+
+                     <?php 
+
+                        $filename = "../db/user_data.json";
+                        $data = file_get_contents($filename);
+                        $user_data = json_decode($data, true);
+
+                        foreach($user_data as $name => $data) {
+                           for ($i=0; $i<count($data['courses']); $i++) {
+                              if ($data['courses'][$i]['course num'] == $_GET['course-code']
+                                 || $data['courses'][$i]['term'] == $_GET['course-term']) {
+                                    echo "<option value='{$name}'>{$name}</option>";
+                                 }
+                           }
+                        }
+
+
+
+                     ?>
+
                   </select>
                   <p>Leave a note about the TA:</p>
                   <textarea id = "review" class="text-area" name="review" rows="5"></textarea>
