@@ -120,7 +120,6 @@ textarea {
     overflow: scroll;  
     transition: 0.3s ease-out;
     white-space: nowrap;
-    padding-bottom: 50px;
 }
 
 .dashboard-content-side-nav-bar.open {
