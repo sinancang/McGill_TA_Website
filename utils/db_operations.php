@@ -284,19 +284,23 @@
 
     // Sets office hours for user (user is determined by $_GET)
     function set_office_hours() {
+        echo "here 1";
         $file = fopen("../db/office_hours.csv", "a+") or die("unable to open file!");
+        echo "here 2";
 
         //$username=$_GET['user'];
         //$coure=$_GET['course_selected'];
     
         $userData = $_GET['user'] . "," . $_GET['course-code'] . "," . $_GET['course-term'] . "," . $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
     
+        echo "here 3";
         if (fwrite($file, $userData)){
             echo "success";
         }
         else {
             echo "error";
         }
+        echo "here 4";
         fclose($file);
     }
 
