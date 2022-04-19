@@ -24,7 +24,10 @@ function load_first_view_manage_ta() {
              for (let count = 0; count < employee_data.length; count++) {
                  let cell_data = employee_data[count].split(",");
 
-                 if (count == 0) table_data += '<tr class="manage-ta table-row header">';
+                 if (count == 0) {
+                     table_data += '<thead>';
+                     table_data += '<tr class="manage-ta table-row header">';
+                 }
                  else table_data += '<tr class="manage-ta table-row">';
 
                  for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
@@ -35,7 +38,12 @@ function load_first_view_manage_ta() {
                      }
                  }
                  table_data += '</tr>';
+                 if (count == 0) {
+                    table_data += '</thead>';
+                    table_data += '<tbody>';
+                 }
              }
+            table_data += '</tbody>';
              table_data += '</table>';
              $('#manage-ta-view-container').html(table_data);
          }
