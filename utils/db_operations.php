@@ -162,7 +162,7 @@
             $user_data[$username]['registered'] = true;
             $user_data[$username]['password'] = $password;
             $user_data[$username]['type'] = "student";
-            $user_data[$username]['courses'] = [];
+            $user_data[$username]['courses'] = ["COMP307", "COMP202","PSYC215","MATH140"];
             file_put_contents($filename, json_encode($user_data));
             
             // successfully registered user
