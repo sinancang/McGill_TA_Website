@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
             setTimeout(function() {
-                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+                //$('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
             }, 500);
 
             fillSecondaryMenu('sys-ops');
