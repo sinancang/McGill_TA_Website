@@ -36,7 +36,7 @@
                 <div class="dashboard-content-side-nav-bar first-nav-bar open">
                     <div id="main-dashboard" class="nav-bar-btn-container">
                         <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Main Dashboard</div>
+                            <div class="nav-bar-btn primary">Main Dashboard</div>
                         </div>
                     </div>
 
