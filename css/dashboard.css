@@ -192,8 +192,7 @@ textarea {
 
 
 #back-arrow {
-    transform: scale(2) rotate(180deg);
-    margin-left: 40px;
+    transform: rotate(180deg);
 }
 
 .nav-bar-btn-subtitle {
