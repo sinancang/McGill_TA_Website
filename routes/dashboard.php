@@ -119,6 +119,7 @@
     }
     else if ($_GET['action'] == 'submit-oh-hours') {
         set_office_hours();
+        header("Location: https://www.cs.mcgill.ca/~dpeter19/McGill_TA_Website/routes/user{$_GET['user']}&view=default&ticket={$_GET['ticket']}");
     }
     else {
         echo "Page Not Found";
