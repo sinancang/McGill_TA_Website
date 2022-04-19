@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../css/dashboard.css">
         <link rel="stylesheet" href="../css/manage_users.css">
         <link rel="stylesheet" href="../css/manage_ta.css">
-        <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     </head>
 
     <body>
