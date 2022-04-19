@@ -54,7 +54,7 @@
                   <p>Add duties: </p>
                   <textarea id="oh-duties" name = "duties" class="text-area" name="duties" rows="5"></textarea>
                   <br>
-                  <button id="submit-oh-hours-btn" type="submit">Set Office Hours</button>
+                  <button id="submit-oh-hours-btn">Set Office Hours</button>
                </form>
             </div>
          </div>
