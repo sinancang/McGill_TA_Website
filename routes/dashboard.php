@@ -114,9 +114,7 @@
         include('../db/office_hours.csv');
     }
     else if ($_GET['action'] == 'submit-oh-hours') {
-        echo "we did ittt";
         set_office_hours();
-        echo "we did ittt";
     }
     else {
         echo "Page Not Found";
