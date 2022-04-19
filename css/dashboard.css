@@ -117,7 +117,7 @@ textarea {
     color: rgb(103, 103, 103);
     border-right: 1px solid rgb(240, 240, 240);
     font-size: 20px;
-    overflow: visible;  
+    overflow: scroll;  
     transition: 0.3s ease-out;
     white-space: nowrap;
 }
