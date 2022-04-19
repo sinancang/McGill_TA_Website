@@ -193,7 +193,7 @@ function set_up_event_listeners_ta_course_options() {
             if (this.status == 200) {
                 //$('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                 //set_up_event_listeners_ta_course_options();
-                alert('success');
+                alert(this.responseText);
             }
             else alert('Server error. Please try again later');
     
@@ -222,6 +222,30 @@ function displayScore() {
 }
 
 
+//not sure if it works for sending username and course!!!
+function sendusername_course(){
+    let name = document.getElementById('username'); 
+    let course_selected = document.getElementById('selected-course'); 
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
+    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
+    xhttp.send();
+
+    let select = document.getElementById('TA');
+    let value = select.options[select.selectedIndex].text;
+    let ajaxreq = new XMLHttpRequest(); // New request object
+    ajaxreq.open('POST', '../utils/average_score.php?TA=' + value, true);
+    ajaxreq.send();
+    ajaxreq.onreadystatechange = function() {
+        if (ajaxreq.readyState == 4 && ajaxreq.status == 200) {
+            let info = "The score of the selected TA for this course: ";
+            document.getElementById("manage-ta-view-container").innerHTML = info + ajaxreq.responseText;
+        }
+    }
+    
+}
+
+
 
 
 
@@ -241,16 +265,6 @@ function termSelected(data){
     }
 }
     
-//not sure if it works for sending username and course!!!
-function sendusername_course(){
-    let name = document.getElementById('username'); 
-    let course_selected = document.getElementById('selected-course'); 
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
-    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
-    xhttp.send();
-    
-}
     
 //not sure if it works for sending username and course!!!
 function sendusername_course(){
