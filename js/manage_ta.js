@@ -178,8 +178,8 @@ function set_up_event_listeners_ta_course_options() {
 
     $('#submit-oh-hours-btn').on('click', function() {
         let user = document.getElementById('username').innerText;
-        let course_code = document.getElementById('selected-course-code').value;
-        let course_term = document.getElementById('selected-course-term').value;
+        let course_code = document.getElementById('selected-course-code').innerText;
+        let course_term = document.getElementById('selected-course-term').innerText;
         let day = document.getElementById('oh-day-select').value;
         let start_time = document.getElementById('oh-start-time').value;
         let end_time = document.getElementById('oh-end-time').value;
