@@ -139,7 +139,7 @@ textarea {
     align-items: flex-start;
     cursor: pointer;
     width: 100%;
-    height: 50px;
+    height: auto;
     margin-top: 20px;
     align-content: space-around;
 }
