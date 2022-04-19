@@ -115,6 +115,7 @@
     }
     else if ($_GET['action'] == 'submit-oh-hours') {
         set_office_hours();
+        echo "we did ittt";
     }
     else {
         echo "Page Not Found";
