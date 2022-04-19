@@ -20,7 +20,7 @@ function load_first_view_manage_ta() {
          dataType: "text",
          success: function(data) {
              let employee_data = data.split(/\r?\n|\r/);
-             let table_data = '<table class="manage-ta-table sortable">';
+             let table_data = '<table id="performance-table" class="manage-ta-table sortable">';
              for (let count = 0; count < employee_data.length; count++) {
                  let cell_data = employee_data[count].split(",");
 
