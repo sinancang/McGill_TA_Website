@@ -20,7 +20,7 @@
 
       <?php 
          echo "<div id='selected-course-code'>{$_GET['course-code']}</div>";
-         echo "<div id='selected-course-code'>{$_GET['course-term']}</div>";
+         echo "<div id='selected-course-term'>{$_GET['course-term']}</div>";
       ?>
 
 
