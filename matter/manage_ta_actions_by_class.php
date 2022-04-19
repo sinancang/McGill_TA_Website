@@ -18,6 +18,12 @@
    <div class='form-wrapper modal edit-user-info-form'>
 
 
+      <?php 
+         echo "<div id='selected-course-code'>{$_GET['course-code']}</div>";
+         echo "<div id='selected-course-code'>{$_GET['course-term']}</div>";
+      ?>
+
+
       <!-- OFFICE HOURS  -->
       <div class="display-option-ta-management office-hours open">
          <!--how to decide which user is-->
@@ -48,7 +54,7 @@
                   <p>Add duties: </p>
                   <textarea name = "duties" class="text-area" name="duties" rows="5"></textarea>
                   <br>
-                  <button id="button" type="submit">Set Office Hours</button>
+                  <button id="submit-oh-hours-btn" type="submit">Set Office Hours</button>
                </form>
             </div>
          </div>
