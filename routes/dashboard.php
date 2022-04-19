@@ -103,7 +103,11 @@
     }
     else if ($_GET['action'] == 'add-ta-review') {
         add_ta_review();
+    }    
+    else if ($_GET['view'] == 'add-course'){
+        include('../matter/add_course.php');
     }
+
     else if ($_GET['action'] == 'get-performance-logs') {
         include('../db/TA_performance_logs.csv');
     }
