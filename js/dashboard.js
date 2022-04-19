@@ -37,18 +37,33 @@ window.addEventListener('DOMContentLoaded', (event) => {
             $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+            
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
             $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+
             getSecondaryMenuItems('ta-management');
         }
         else if ($(this).attr('id') == 'rate') {
             $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+
             getSecondaryMenuItems('get-rate-ta-classes');
         }
         else if ($(this).attr('id') == 'sys-ops') {
@@ -58,7 +73,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
             setTimeout(function() {
-                $('.dashboard-content-side-nav-bar.second-nav-bar').css({'white-space':'break-spaces'});
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
             }, 300);
 
             fillSecondaryMenu('sys-ops');
@@ -105,7 +120,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
 
         setTimeout(function() {
-            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'break-spaces'});
+            $('.nav-bar-btn.primary').css({'white-space':'break-spaces'});
         }, 300);
     })
 
