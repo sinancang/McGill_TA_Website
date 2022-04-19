@@ -111,19 +111,11 @@
             <div class="sign-up-form" style="width: 70%;">
                <form method="get" name="form" action="../utils/TA_wish_list.php">
                   <p>Choose a TA: </p>
-                  <select class="drop" id = "TA" name ="TA" onclick="TASelected(this.value)">
+                  <select class="drop" id = "TA" name ="TA">
                      <option> Select a TA </option>
                   </select>
                   <br></br> 
-                  <p>For which semester? </p>
-                  <select class="drop" id = "term" name ="term" onclick="termSelected(this.value)">
-                     <option> Choose a term </option>
-                     <option> SUMMER 2022 </option>
-                     <option> FALL 2022 </option>
-                     <option> SPRING 2023</option>
-                  </select>
-                  <br></br> 
-                  <button id="button" style="background-color: #d77171;" type="submit">Button</button>
+                  <button id="button" style="background-color: #d77171;" type="submit">Submit Selection</button>
                </form>
             </div>
          </div>
