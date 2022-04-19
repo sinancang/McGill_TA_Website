@@ -12,13 +12,7 @@
 
         <div class="form-container">
         <div class="sign-up-form" style="width: 70%;">
-            <form method="get" name="form" action="../utils/generateTAafterCourse.php">   
-                <h3 align="left">Choose a course to generate TAs within selected course</h3>
-            <select class="drop" id = "course" name ="course" onclick="CourseSelected()" onchange="DisplayTA();"> 
-            <option> Select a Course </option>
-            </select> <br></br>    
-            </form>
-        <div id="display_TA">
+        <div id="display_TA" >
         </div>   
              
         <div class="container">
@@ -55,21 +49,35 @@ function CourseSelected(){
 
 }
 
-
-function DisplayTA(){
-    var select = document.getElementById('course');
-    var value = select.options[select.selectedIndex].text;
-    var ajaxreq = new XMLHttpRequest(); // New request object
-    ajaxreq.open('GET', '../utils/generateTAafterCourse.php?course='+value, true); //change this to that of TA_performance_log
-    ajaxreq.send();
+var ajaxreq = new XMLHttpRequest(); // New request object
+    ajaxreq.open('GET', '../utils/generateTAafterCourse.php', true); //change this to that of TA_performance_log
+    ajaxreq.send();   
     ajaxreq.onreadystatechange = function(){
         if(ajaxreq.readyState==4 && ajaxreq.status==200){
-                var info = "The TA's for this course: ";
+                var info = "<b>TA Name</b> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Courses</b><br>";
                 document.getElementById("display_TA").innerHTML = info + ajaxreq.responseText;
-            }          
+            }  
+            
+        }
+
+        /*
+function DisplayTA(){
+    //var select = document.getElementById('course');
+    //var value = select.options[select.selectedIndex].text;
+    var ajaxreq = new XMLHttpRequest(); // New request object
+    ajaxreq.open('GET', '../utils/generateTAafterCourse.php', true); //change this to that of TA_performance_log
+    ajaxreq.send();   
+    ajaxreq.onreadystatechange = function(){
+        if(ajaxreq.readyState==4 && ajaxreq.status==200){
+            alert("hey");
+                var info = "<b>TA Name</b> &nbsp <b>Courses</b>";
+                document.getElementById("display_TA").innerHTML = info + ajaxreq.responseText;
+            }  
+            
         }
 
 }
+*/
 
 
 </script>

@@ -113,6 +113,9 @@
     else if ($_GET['action'] == 'get-oh-responsibilities') {
         include('../db/office_hours.csv');
     }
+    else if ($_GET['action'] == 'submit-oh-hours') {
+        set_office_hours();
+    }
     else {
         echo "Page Not Found";
     }

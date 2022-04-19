@@ -39,7 +39,7 @@
                 $i++;
 
             }
-            
+
             $new_entry = array('course num'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
             $user_data[$prof]['courses'][] = $new_entry;
 
@@ -279,6 +279,25 @@
         else {
             return 0;
         }
+    }
+
+
+    // Sets office hours for user (user is determined by $_GET)
+    function set_office_hours() {
+        $file = fopen("../db/office_hours.csv", "a+") or die("unable to open file!");
+
+        //$username=$_GET['user'];
+        //$coure=$_GET['course_selected'];
+    
+        $userData = $_GET['user'] . "," . $_GET['course-code'] . "," . $_GET['course-term'] . "," . $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
+    
+        if (fwrite($file, $userData)){
+            echo "success";
+        }
+        else {
+            echo "error";
+        }
+        fclose($file);
     }
 
 ?>  

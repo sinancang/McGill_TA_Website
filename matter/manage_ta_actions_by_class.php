@@ -29,18 +29,16 @@
          <!--how to decide which user is-->
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
-               <form method="get" name="form" action="../routes/set_office_hours.php">
+               <form method="get" name="form">
 
                   <p>Choose a Day:</p>
-                  <select name = "day"class="drop" >
+                  <select id="oh-day-select" name = "day"class="drop" >
                      <option> -- </option>
                      <option> Monday </option>
                      <option> Tuesday </option>
                      <option> Wednesday </option>
                      <option> Thursday </option>
                      <option> Friday </option>
-                     <option> Saturday </option>
-                     <option> Sunday </option>
                   </select>
 
                   <br></br>
@@ -48,13 +46,13 @@
                   <label for="appt">Choose a time for your Office hours:</label>
                   <br></br>
                   <p >start: </p>
-                  <input class="drop" type="time" name="start" min="09:00" max="18:00" required><br>
+                  <input id="oh-start-time" class="drop" type="time" name="start" min="09:00" max="18:00" required><br>
                   <p>end: </p>
-                  <input class="drop" type="time" name="end" min="09:00" max="18:00" required>
+                  <input id="oh-end-time" class="drop" type="time" name="end" min="09:00" max="18:00" required>
                   <label for="location">Location: </label> <br>
-                  <input class="drop" type="text" name="location" placeholder="Enter Location" required><br></br>
+                  <input id="oh-location" class="drop" type="text" name="location" placeholder="Enter Location" required><br></br>
                   <p>Add duties: </p>
-                  <textarea name = "duties" class="text-area" name="duties" rows="5"></textarea>
+                  <textarea id="oh-duties" name = "duties" class="text-area" name="duties" rows="5"></textarea>
                   <br>
                   <button id="submit-oh-hours-btn" type="submit">Set Office Hours</button>
                </form>
