@@ -72,5 +72,97 @@
             "action": "Added sinancangu as Professor to COMP 307",
             "date": "April 19 2022, at 1:22pm"
         }
+    ],
+    "sysop": [
+        {
+            "action": "Added Sidney Trudeau as Professor to MATH140",
+            "date": "April 19 2022, at 2:39pm"
+        },
+        {
+            "action": "Updated sinancangu user info",
+            "date": "April 19 2022, at 2:47pm"
+        },
+        {
+            "action": "Added new user Camilla Harris as ta",
+            "date": "April 19 2022, at 2:48pm"
+        },
+        {
+            "action": "Updated Sidney Trudeau user info",
+            "date": "April 19 2022, at 2:48pm"
+        },
+        {
+            "action": "Updated sinancangu user info",
+            "date": "April 19 2022, at 2:49pm"
+        },
+        {
+            "action": "Added Camilla Harris as Professor to MATH140",
+            "date": "April 19 2022, at 2:50pm"
+        },
+        {
+            "action": "Updated Camilla Harris user info",
+            "date": "April 19 2022, at 2:50pm"
+        },
+        {
+            "action": "Added new user Calvin Harris as ta",
+            "date": "April 19 2022, at 3:29pm"
+        },
+        {
+            "action": "Added Calvin Harris as Professor to COMP202",
+            "date": "April 19 2022, at 3:29pm"
+        },
+        {
+            "action": "Deactivated user Camilla Harris",
+            "date": "April 19 2022, at 3:30pm"
+        },
+        {
+            "action": "Deactivated user Calvin Harris",
+            "date": "April 19 2022, at 3:30pm"
+        },
+        {
+            "action": "Reactivated user Camilla Harris",
+            "date": "April 19 2022, at 3:30pm"
+        },
+        {
+            "action": "Deactivated user Camilla Harris",
+            "date": "April 19 2022, at 3:30pm"
+        },
+        {
+            "action": "Reactivated user Calvin Harris",
+            "date": "April 19 2022, at 3:30pm"
+        },
+        {
+            "action": "Updated Calvin Harris user info",
+            "date": "April 19 2022, at 3:31pm"
+        },
+        {
+            "action": "Updated Calvin Harris user info",
+            "date": "April 19 2022, at 3:31pm"
+        },
+        {
+            "action": "Added Calvin Harris as Professor to PSYC100",
+            "date": "April 19 2022, at 3:32pm"
+        },
+        {
+            "action": "Updated Calvin Harris user info",
+            "date": "April 19 2022, at 3:33pm"
+        },
+        {
+            "action": "Added Ada Yetis as Professor to COMP307",
+            "date": "April 19 2022, at 3:33pm"
+        },
+        {
+            "action": "Updated Ada Yetis user info",
+            "date": "April 19 2022, at 3:34pm"
+        }
+    ],
+    "goodstudent": [
+        {
+            "action": "Wrote a review for TA Julia Alberini",
+            "date": "April 19 2022, at 3:11pm"
+        },
+        {
+            "action": "Wrote a review for TA Julia Alberini",
+            "date": "April 19 2022, at 3:12pm"
+        }
     ]
 }

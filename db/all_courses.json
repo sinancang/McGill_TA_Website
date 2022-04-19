@@ -18,5 +18,35 @@
         "course code": "COMP 307",
         "course name": "Web Development",
         "term": "WINTER2022"
+    },
+    {
+        "course code": "PSYC 100",
+        "course name": "Intro to Psychology",
+        "term": "WINTER2022"
+    },
+    {
+        "course code": "PSYC 215",
+        "course name": "Social Psychology",
+        "term": "FALL2020"
+    },
+    {
+        "course code": "MATH 140",
+        "course name": "Calculus I",
+        "term": "WINTER2021"
+    },
+    {
+        "course code": "MATH140",
+        "course name": "Calculus I",
+        "term": "WINTER2021"
+    },
+    {
+        "course code": "PSYC100",
+        "course name": "Intro to Psychology",
+        "term": "WINTER2022"
+    },
+    {
+        "course code": "COMP307",
+        "course name": "Principles of Web Development",
+        "term": "WINTER2022"
     }
 ]
