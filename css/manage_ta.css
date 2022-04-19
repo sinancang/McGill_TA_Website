@@ -39,3 +39,13 @@
 .manage-ta.table-row.header {
     background-color: #ececec;
 }
+
+
+
+/* by-class view */
+.display-option-ta-management {
+    display: none;
+}
+.display-option-ta-management.open {
+    display: flex;
+}

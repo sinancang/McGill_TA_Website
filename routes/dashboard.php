@@ -58,8 +58,8 @@
     else if ($_GET['action'] == 'ta-management') {
         include("../matter/ta_management_secondary_menu.php");
     }
-    else if ($_GET['view'] == 'office-hours') {
-        include('../matter/office_hours.html');
+    else if ($_GET['view'] == 'manage-ta-actions') {
+        include('../matter/manage_ta_actions_by_class.html');
     }
     else if ($_GET['view'] == 'all-ta-report') {
         include('../matter/all_TA_report.html');

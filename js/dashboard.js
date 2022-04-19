@@ -28,8 +28,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // set event listeners for primary nav bar options
     $('.nav-bar-btn-container.first-nav-bar').on('click', function() {
 
-
-
         $(this).css({'background-color': ''})
 
         if ($(this).attr('id') == 'admin') {
@@ -195,12 +193,12 @@ function fillSecondaryMenu(menuName) {
             let course_term = $(this).find('#course-term').text();
     
             let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=office-hours&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
+            var url = `../routes/dashboard.php?user=${user}&view=manage-ta-actions&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
             syncRequest.open("GET", url, true);  
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_event_listeners_not_all_ta_report();
+                    set_up_event_listeners_manage_ta_option();
                 }
                 else alert('Server error. Please try again later');
         
@@ -255,21 +253,21 @@ function fillSecondaryMenu(menuName) {
 }
 
 
-function set_up_event_listeners_not_all_ta_report() {
-    $('#ta-display-select').on('change', function() {
-        if ($('#ta-display-select')[0].value == 'office-hours') {
-            $('.display-option-ta-management').css({'display':'none'});
-            $('.display-option-ta-management.office-hours').css({'display':'flex'});
-        }
-        if ($('#ta-display-select')[0].value == 'performance-log') {
-            $('.display-option-ta-management').css({'display':'none'});
-            $('.display-option-ta-management.performance-log').css({'display':'flex'});
-        }
-        if ($('#ta-display-select')[0].value == 'ta-wishlist') {
-            $('.display-option-ta-management').css({'display':'none'});
-            $('.display-option-ta-management.ta-wishlist').css({'display':'flex'});
-        }
-    })
+function set_up_event_listeners_manage_ta_option() {
+    $('#office-hours').on('click', function() {
+        $('.display-option-ta-management').removeClass('open');
+        $('.display-option-ta-management.office-hours').addClass('open');
+    });
+
+    $('#performance-log').on('click', function() {
+        $('.display-option-ta-management').removeClass('open');
+        $('.display-option-ta-management.performance-log').addClass('open');
+    });
+
+    $('#wishlist').on('click', function() {
+        $('.display-option-ta-management').removeClass('open');
+        $('.display-option-ta-management.ta-wishlis').addClass('open');
+    });
 }
 
 
