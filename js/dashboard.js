@@ -34,23 +34,33 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $(this).css({'background-color': ''})
 
         if ($(this).attr('id') == 'admin') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('ta-management');
         }
         else if ($(this).attr('id') == 'rate') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('get-rate-ta-classes');
         }
         else if ($(this).attr('id') == 'sys-ops') {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+
+            setTimeout(function() {
+                $('.dashboard-content-side-nav-bar.second-nav-bar').css({'white-space':'break-spaces'});
+            }, 300);
+
             fillSecondaryMenu('sys-ops');
         }
 	else if ($(this).attr('id') == 'add-course') {
@@ -91,7 +101,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // takes user back to primary menu
     $('.nav-bar-btn-container.back-btn').on('click', function() {
         $('.dashboard-content-side-nav-bar.first-nav-bar').addClass('open');
+        $('.dashboard-content-side-nav-bar.second-nav-bar').css({'white-space':'nowrap'});
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
+
+        setTimeout(function() {
+            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'break-spaces'});
+        }, 300);
     })
 
 
