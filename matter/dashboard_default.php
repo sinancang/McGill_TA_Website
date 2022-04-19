@@ -98,6 +98,12 @@
                                 </div>
                             </div>';
                         }
+                        echo 
+                        '<div id="add-course" class="nav-bar-btn-container first-nav-bar">
+                            <div class="nav-bar-btn-wrapper">
+                                <div class="nav-bar-btn">Add Course</div>
+                            </div>
+                        </div>';
                     ?>
 
                 </div>
