@@ -15,7 +15,7 @@
       <button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">Wishlist</button>
   </div>
 
-   <div class='form-wrapper modal edit-user-info-form'>
+   <div class='form-wrapper modal edit-user-info-form' style="width: 80%;">
 
 
       <?php 
