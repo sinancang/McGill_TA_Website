@@ -14,9 +14,9 @@ function add_ta_review() {
 
 
     if(fwrite($file, $userData)){
-        echo "success";
         $date = date('F j Y, \a\t g:ia');
         add_record_to_activity_history($_GET['user'], "Wrote a review for TA {$TAname}", $date);
+        echo "success";
     }
     else{
         echo "error";
