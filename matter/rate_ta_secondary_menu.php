@@ -15,24 +15,24 @@
             echo
             "<div class='nav-bar-btn-container second-nav-bar'>
                 <div class='nav-bar-btn-wrapper  second-nav-bar'>
-                        <div id='course-code' class='nav-bar-btn'>{$all_courses[$i]['course code']}</div>
-                        <div id='course-name' class='nav-bar-btn sub-title'>{$all_courses[$i]['course name']}</div>
-                        <div id='course-term' class='nav-bar-btn sub-title'>{$all_courses[$i]['term']}</div>
+                        <div id='course-code' class='nav-bar-btn' secondary>{$all_courses[$i]['course code']}</div>
+                        <div id='course-name' class='nav-bar-btn secondary sub-title'>{$all_courses[$i]['course name']}</div>
+                        <div id='course-term' class='nav-bar-btn secondary sub-title'>{$all_courses[$i]['term']}</div>
                     </div>
                 </div>
             </div>";
         }
     }
-    
+
     else {
         for ($i=0; $i<count($user_data[$_GET['user']]['courses']); $i++) {
             if ($user_data[$_GET['user']]['courses'][$i]['role'] != 'ta') {
                 echo
                 "<div class='nav-bar-btn-container second-nav-bar'>
                     <div class='nav-bar-btn-wrapper  second-nav-bar'>
-                            <div id='course-code' class='nav-bar-btn'>{$user_data[$_GET['user']]['courses'][$i]['course num']}</div>
-                            <div id='course-name' class='nav-bar-btn sub-title'>{$user_data[$_GET['user']]['courses'][$i]['course name']}</div>
-                            <div id='course-term' class='nav-bar-btn sub-title'>{$user_data[$_GET['user']]['courses'][$i]['term']}</div>
+                            <div id='course-code' class='nav-bar-btn secondary'>{$user_data[$_GET['user']]['courses'][$i]['course num']}</div>
+                            <div id='course-name' class='nav-bar-btn secondary sub-title'>{$user_data[$_GET['user']]['courses'][$i]['course name']}</div>
+                            <div id='course-term' class='nav-bar-btn secondary sub-title'>{$user_data[$_GET['user']]['courses'][$i]['term']}</div>
                         </div>
                     </div>
                 </div>";

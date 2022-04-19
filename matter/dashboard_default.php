@@ -65,7 +65,7 @@
                             echo 
                             '<div id="admin" class="nav-bar-btn-container first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Admin Options</div>
+                                    <div class="nav-bar-btn primary">Admin Options</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -75,7 +75,7 @@
                             echo
                             '<div id="manage" class="nav-bar-btn-container  first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Manage TAs</div>
+                                    <div class="nav-bar-btn primary">Manage TAs</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -84,7 +84,7 @@
                         echo
                         '<div id="rate" class="nav-bar-btn-container  first-nav-bar">
                             <div class="nav-bar-btn-wrapper">
-                                <div class="nav-bar-btn">Rate a TA</div>
+                                <div class="nav-bar-btn primary">Rate a TA</div>
                                 <img class="right-arrow-svg" src="../images/right-arrow.svg">
                             </div>
                         </div>';
@@ -93,7 +93,7 @@
                             echo
                             '<div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Manage Users</div>
+                                    <div class="nav-bar-btn primary">Manage Users</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -101,7 +101,7 @@
                         echo 
                         '<div id="add-course" class="nav-bar-btn-container first-nav-bar">
                             <div class="nav-bar-btn-wrapper">
-                                <div class="nav-bar-btn">Add Course</div>
+                                <div class="nav-bar-btn primary">Add Course</div>
                             </div>
                         </div>';
                     ?>
@@ -113,7 +113,7 @@
                         <div class="nav-bar-btn-container back-btn">
                             <div class="nav-bar-btn-wrapper back-btn">
                                 <img id="back-arrow" src="../images/right-arrow.svg">
-                                <div class="nav-bar-btn back">Back</div>
+                                <div class="nav-bar-btn back secondary">Back</div>
                             </div>
                         </div>
 

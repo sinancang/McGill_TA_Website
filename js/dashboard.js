@@ -34,25 +34,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $(this).css({'background-color': ''})
 
         if ($(this).attr('id') == 'admin') {
-            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
-            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('ta-management');
         }
         else if ($(this).attr('id') == 'rate') {
-            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             getSecondaryMenuItems('get-rate-ta-classes');
         }
         else if ($(this).attr('id') == 'sys-ops') {
-            $('.dashboard-content-side-nav-bar.first-nav-bar').css({'white-space':'nowrap'});
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
 
@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // takes user back to primary menu
     $('.nav-bar-btn-container.back-btn').on('click', function() {
         $('.dashboard-content-side-nav-bar.first-nav-bar').addClass('open');
-        $('.dashboard-content-side-nav-bar.second-nav-bar').css({'white-space':'nowrap'});
+        $('.nav-bar-btn.secondary').css({'white-space':'nowrap'});
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
 
         setTimeout(function() {
@@ -159,12 +159,12 @@ function fillSecondaryMenu(menuName) {
         `
         <div id="manage-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Manage Users</div>
+                <div class="nav-bar-btn secondary">Manage Users</div>
             </div>
         </div>
         <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Upload Course Record</div>
+                <div class="nav-bar-btn secondary">Upload Course Record</div>
             </div>
         </div>
         `;
