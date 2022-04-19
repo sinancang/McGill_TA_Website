@@ -1,25 +1,20 @@
 <?php
 
+    $file = fopen("../db/office_hours.csv", "a+") or die("unable to open file!");
 
-//what to do with the additional duties?
 
+    $username=$_GET['username'];
+    $coure=$_GET['course_selected'];
+    echo $username;
 
-$file = fopen("../db/office_hours.csv", "a+") or die("unable to open file!");
+    $userData = $username . "," .  $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
 
-//$username="SomeUser1";
-
-$username=$_GET['username'];
-$coure=$_GET['course_selected'];
-echo $username;
-
-$userData = $username . "," .  $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . ","  .  "\n";
-
-if(fwrite($file, $userData)){
-	echo "success";
-}
-else{
-    echo "error";
-}
-fclose($file);
+    if (fwrite($file, $userData)){
+        echo "success";
+    }
+    else {
+        echo "error";
+    }
+    fclose($file);
 
 ?>

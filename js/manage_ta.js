@@ -1,5 +1,5 @@
 function TASelected() {
-    var ajaxreq = new XMLHttpRequest(); // New request object
+    let ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateAllTA.php', true);
     ajaxreq.send();
     ajaxreq.onreadystatechange = function() {
@@ -19,15 +19,15 @@ function load_first_view_manage_ta() {
          url: "../db/TA_performance_logs.csv",
          dataType: "text",
          success: function(data) {
-             var employee_data = data.split(/\r?\n|\r/);
-             var table_data = '<table class="manage-ta-table">';
-             for (var count = 0; count < employee_data.length; count++) {
-                 var cell_data = employee_data[count].split(",");
+             let employee_data = data.split(/\r?\n|\r/);
+             let table_data = '<table class="manage-ta-table sortable">';
+             for (let count = 0; count < employee_data.length; count++) {
+                 let cell_data = employee_data[count].split(",");
 
                  if (count == 0) table_data += '<tr class="manage-ta table-row header">';
                  else table_data += '<tr class="manage-ta table-row">';
 
-                 for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                 for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
                      if (count === 0) {
                          table_data += '<th>' + cell_data[cell_count] + '</th>';
                      } else {
@@ -56,15 +56,15 @@ function set_all_ta_report_event_liteners() {
             url: "../db/TA_performance_logs.csv",
             dataType: "text",
             success: function(data) {
-                var employee_data = data.split(/\r?\n|\r/);
-                var table_data = '<table class="manage-ta-table">';
-                for (var count = 0; count < employee_data.length; count++) {
-                    var cell_data = employee_data[count].split(",");
+                let employee_data = data.split(/\r?\n|\r/);
+                let table_data = '<table class="manage-ta-table sortable">';
+                for (let count = 0; count < employee_data.length; count++) {
+                    let cell_data = employee_data[count].split(",");
 
                     if (count == 0) table_data += '<tr class="manage-ta table-row header">';
                     else table_data += '<tr class="manage-ta table-row">';
 
-                    for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                    for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
                         } else {
@@ -88,15 +88,15 @@ function set_all_ta_report_event_liteners() {
             url: "../db/TA_review.csv",
             dataType: "text",
             success: function(data) {
-                var employee_data = data.split(/\r?\n|\r/);
-                var table_data = '<table class="manage-ta-table">';
-                for (var count = 0; count < employee_data.length; count++) {
-                    var cell_data = employee_data[count].split(",");
+                let employee_data = data.split(/\r?\n|\r/);
+                let table_data = '<table class="manage-ta-table sortable">';
+                for (let count = 0; count < employee_data.length; count++) {
+                    let cell_data = employee_data[count].split(",");
 
                     if (count == 0) table_data += '<tr class="manage-ta table-row header">';
                     else table_data += '<tr class="manage-ta table-row">';
 
-                    for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                    for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
                         } else {
@@ -120,15 +120,16 @@ function set_all_ta_report_event_liteners() {
             url: "../db/office_hours.csv",
             dataType: "text",
             success: function(data) {
-                var employee_data = data.split(/\r?\n|\r/);
-                var table_data = '<table class="manage-ta-table">';
-                for (var count = 0; count < employee_data.length; count++) {
-                    var cell_data = employee_data[count].split(",");
+                let employee_data = data.split(/\r?\n|\r/);
+                let table_data = '<table class="manage-ta-table sortable">';
+
+                for (let count = 0; count < employee_data.length; count++) {
+                    let cell_data = employee_data[count].split(",");
 
                     if (count == 0) table_data += '<tr class="manage-ta table-row header">';
                     else table_data += '<tr class="manage-ta table-row">';
 
-                    for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                    for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
                         if (count === 0) {
                             table_data += '<th>' + cell_data[cell_count] + '</th>';
                         } else {
@@ -148,14 +149,14 @@ function set_all_ta_report_event_liteners() {
 
 
 function displayScore() {
-    var select = document.getElementById('TA');
-    var value = select.options[select.selectedIndex].text;
-    var ajaxreq = new XMLHttpRequest(); // New request object
+    let select = document.getElementById('TA');
+    let value = select.options[select.selectedIndex].text;
+    let ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('POST', '../utils/average_score.php?TA=' + value, true);
     ajaxreq.send();
     ajaxreq.onreadystatechange = function() {
         if (ajaxreq.readyState == 4 && ajaxreq.status == 200) {
-            var info = "The score of the selected TA for this course: ";
+            let info = "The score of the selected TA for this course: ";
             document.getElementById("manage-ta-view-container").innerHTML = info + ajaxreq.responseText;
         }
     }
@@ -171,7 +172,7 @@ function displayScore() {
 //HOW TO GET COURSE NUM? IS MISSIN! //course-name get value by id in javascript and send it to php!
 //function to generate dropdown menu for TA names from the selected term.
 function termSelected(data){
-    var ajaxreq = new XMLHttpRequest(); // New request object
+    let ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateTA.php?term='+data, true);
     ajaxreq.send();
     ajaxreq.onreadystatechange = function(){
@@ -183,22 +184,22 @@ function termSelected(data){
     
 //not sure if it works for sending username and course!!!
 function sendusername_course(){
-    var name = document.getElementById('username'); 
-    var course_selected = document.getElementById('selected-course'); 
-    var xhttp = new XMLHttpRequest();
+    let name = document.getElementById('username'); 
+    let course_selected = document.getElementById('selected-course'); 
+    let xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
-    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
     xhttp.send();
     
 }
     
 //not sure if it works for sending username and course!!!
 function sendusername_course(){
-    var name = document.getElementById('username'); 
-    var course_selected = document.getElementById('selected-course'); 
-    var xhttp = new XMLHttpRequest();
+    let name = document.getElementById('username'); 
+    let course_selected = document.getElementById('selected-course'); 
+    let xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
-    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
     xhttp.send();
         
 }
@@ -208,7 +209,7 @@ function sendusername_course(){
 
 /* WISHLIST */
 function TASelected(data){
-    var ajaxreq = new XMLHttpRequest(); // New request object
+    let ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateAllTA.php', true);
     ajaxreq.send();
     ajaxreq.onreadystatechange = function(){
@@ -220,11 +221,11 @@ function TASelected(data){
 
 //not sure if it works for sending username and course!!!
 function sendusername_course(){
-    var username = document.getElementById('username');
-    var course_selected =  document.getElementById('course-selected');
-    var xhttp = new XMLHttpRequest();
+    let username = document.getElementById('username');
+    let course_selected =  document.getElementById('course-selected');
+    let xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../utils/TA_wish_list.php?username="+ username, true);
-    xhttp.open("GET", "../utils/TA_wish_list.php?course_selected="+ course_selected, true); //is this name true and can multiple variable be sent?
+    xhttp.open("GET", "../utils/TA_wish_list.php?course_selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
     xhttp.send();
     
 }
