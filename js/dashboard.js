@@ -219,6 +219,7 @@ function fillSecondaryMenu(menuName) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                     set_all_ta_report_event_liteners();
                     load_first_view_manage_ta();
+                    $('.manage-ta-table.sortable').DataTable();
                 }
                 else alert('Server error. Please try again later');
         

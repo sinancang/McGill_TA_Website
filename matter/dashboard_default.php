@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../css/dashboard.css">
         <link rel="stylesheet" href="../css/manage_users.css">
         <link rel="stylesheet" href="../css/manage_ta.css">
+        <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
     </head>
 
     <body>
@@ -43,7 +44,7 @@
 
 
                     <?php 
-                        $user_type = 
+                        //$user_type = 
 
                         $filename = "../db/user_data.json";
                         $data = file_get_contents($filename);
@@ -166,7 +167,7 @@
         <div id="selected-course"></div>
 
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5eab681659f730bdd5daac20" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
         <script src="../js/manage_users.js"></script>
         <script src="../js/rateTA.js"></script>
         <script src="../js/manage_ta.js"></script>
