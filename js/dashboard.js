@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if (this.status == 200) {
                 setTimeout(function() {
                     $('.user-type-based-btn.sys-ops-btn').text('Import Professors and Courses');
-                }, 2000);
+                }, 500);
                 
                 //console.log(this.responseText);
             }
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             setTimeout(function() {
                 $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
-            }, 2000);
+            }, 500);
 
             getSecondaryMenuItems('admin');
         }
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             setTimeout(function() {
                 $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
-            }, 2000);
+            }, 500);
 
             getSecondaryMenuItems('ta-management');
         }
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             setTimeout(function() {
                 $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
-            }, 2000);
+            }, 500);
 
             getSecondaryMenuItems('get-rate-ta-classes');
         }
@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             setTimeout(function() {
                 $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
-            }, 2000);
+            }, 500);
 
             fillSecondaryMenu('sys-ops');
         }
@@ -121,7 +121,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         setTimeout(function() {
             $('.nav-bar-btn.primary').css({'white-space':'break-spaces'});
-        }, 2000);
+        }, 500);
     })
 
 
