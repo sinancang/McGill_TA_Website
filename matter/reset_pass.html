@@ -18,19 +18,59 @@
         <input type="password" placeholder="Enter Password"id="pass1" name="pass" required><br></br>
 
 	<label for="password" style="font-size: 15px;"><b>New Password</b></label> <br>
-        <input type="password" placeholder="Enter Password"id="pass1" name="pass" required><br></br>
+        <input type="password" placeholder="Enter Password"id="pass2" name="pass" required><br></br>
 
         <label for="repeat_password" style="font-size: 15px;"><b>Repeat New Password</b></label> <br>
         <input type="password" placeholder="Repeat Password"id="pass3" name="pass" required><br>
 
         <div id="warning" style="  color: #ca1818; font-size: 15px;"> </div><br>
-        <button type="submit" class="register" onclick="change_password()">Sign Up</button>
+        <button type="submit" class="register" onclick="change_password()">Reset Password</button>
 
       </div>
     </div>
 
+    <script src "../js/register.js"></script>
     <script> 
+	function change_password(){
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		username = urlParams.get('user');
+		old_pass = document.getElementById('pass1').value;
+		new_pass1 = document.getElementById('pass2').value;
+		new_pass2 = document.getElementById('pass3').value;
 
+		// check empty
+		
+		if (new_pass1 !== new_pass2){
+			displayWarning("Passwords do not match!", false);
+			return;
+		}
+
+		var passwordformat = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+		if (!new_pass1.match(passwordformat)) {
+			displayWarning("Please make sure your new password contains minimum eight characters: at least one letter, one number and one special character.", false);
+                	return;
+        	}
+
+		syncRequest = new XMLHttpRequest();
+		var url = "../utils/reset_password.php";
+		syncRequest.open("POST", url, true);
+
+		syncRequest.addEventListener("load", function(){
+			if (this.status == 200) {
+				displayWarning("Password reset success! Redirecting to login...", true);
+				setTimeout(() => { window.location.replace("../matter/login.html"); }, 2000);
+			} else {
+				displayWarning("Password reset failed! Please make sure you entered your current password correctly.", false);
+			}
+		}, false);
+
+		var fd = new FormData;
+		fd.append('password_old', old_pass);
+		fd.append('password_new', new_pass1);
+		fd.append('username', username);
+		syncRequest.send(fd);
+	}
 
     
    </script>
