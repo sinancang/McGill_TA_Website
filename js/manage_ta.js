@@ -191,8 +191,9 @@ function set_up_event_listeners_ta_course_options() {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                set_up_event_listeners_ta_course_options();
+                //$('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                //set_up_event_listeners_ta_course_options();
+                alert('success');
             }
             else alert('Server error. Please try again later');
     
