@@ -14,8 +14,10 @@
     <div class="form-input-container">
         <label for="type">User Type</label>
         <select name="type" id="new-user-type" class="form-select-input">
+            <option value="sysop">Sys-Op</option>
             <option value="admin">Admin</option>
             <option value="prof">Professor</option>
+            <option value="ta">TA</option>
         </select>
     </div>
 

@@ -39,6 +39,7 @@
                 $i++;
 
             }
+            
             $new_entry = array('course num'=>$course_code, 'course name' => $course_name, 'term'=>$term, 'role'=>'prof');
             $user_data[$prof]['courses'][] = $new_entry;
 
