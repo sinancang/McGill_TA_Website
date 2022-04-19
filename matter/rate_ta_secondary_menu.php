@@ -23,6 +23,7 @@
             </div>";
         }
     }
+    
     else {
         for ($i=0; $i<count($user_data[$_GET['user']]['courses']); $i++) {
             if ($user_data[$_GET['user']]['courses'][$i]['role'] != 'ta') {

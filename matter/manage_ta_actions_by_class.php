@@ -29,18 +29,16 @@
          <!--how to decide which user is-->
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
-               <form method="get" name="form" action="../routes/set_office_hours.php">
+               <form method="get" name="form">
 
                   <p>Choose a Day:</p>
-                  <select name = "day"class="drop" >
+                  <select id="oh-day-select" name = "day"class="drop" >
                      <option> -- </option>
                      <option> Monday </option>
                      <option> Tuesday </option>
                      <option> Wednesday </option>
                      <option> Thursday </option>
                      <option> Friday </option>
-                     <option> Saturday </option>
-                     <option> Sunday </option>
                   </select>
 
                   <br></br>

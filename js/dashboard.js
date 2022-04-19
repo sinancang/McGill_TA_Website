@@ -15,7 +15,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                $('.user-type-based-btn.sys-ops-btn').text('Import Professors and Courses');
+                setTimeout(function() {
+                    $('.user-type-based-btn.sys-ops-btn').text('Import Professors and Courses');
+                }, 300);
+                
                 //console.log(this.responseText);
             }
             else alert('Server Error.');
@@ -198,7 +201,7 @@ function fillSecondaryMenu(menuName) {
             syncRequest.addEventListener("load", function(){           
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_up_event_listeners_manage_ta_option();
+                    set_up_event_listeners_ta_course_options();
                 }
                 else alert('Server error. Please try again later');
         
@@ -216,7 +219,7 @@ function fillSecondaryMenu(menuName) {
                 if (this.status == 200) {
                     $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
                     set_all_ta_report_event_liteners();
-                    load_first_view_manage_ta();
+                    load_first_view_all_ta_report();
                     $('#performance-table').DataTable();
                 }
                 else alert('Server error. Please try again later');
@@ -250,30 +253,6 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         })
     }
-}
-
-
-function set_up_event_listeners_manage_ta_option() {
-    $('#office-hours').on('click', function() {
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
-        $('.display-option-ta-management').removeClass('open');
-        $('.display-option-ta-management.office-hours').addClass('open');
-    });
-
-    $('#performance-log').on('click', function() {
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
-        $('.display-option-ta-management').removeClass('open');
-        $('.display-option-ta-management.performance-log').addClass('open');
-    });
-
-    $('#wishlist').on('click', function() {
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
-        $('.display-option-ta-management').removeClass('open');
-        $('.display-option-ta-management.ta-wishlist').addClass('open');
-    });
 }
 
 

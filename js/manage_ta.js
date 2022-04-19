@@ -10,7 +10,7 @@ function TASelected() {
 }
 
 // load first view in all TAs report page
-function load_first_view_manage_ta() {
+function load_first_view_all_ta_report() {
      // update color of curr selected btn
      $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
      $('#load_data').css({'color': '#d65050'});
@@ -154,6 +154,50 @@ function set_all_ta_report_event_liteners() {
 }
 
 
+function set_up_event_listeners_ta_course_options() {
+    $('#office-hours').on('click', function() {
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
+        $('.display-option-ta-management').removeClass('open');
+        $('.display-option-ta-management.office-hours').addClass('open');
+    });
+
+    $('#performance-log').on('click', function() {
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
+        $('.display-option-ta-management').removeClass('open');
+        $('.display-option-ta-management.performance-log').addClass('open');
+    });
+
+    $('#wishlist').on('click', function() {
+        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
+        $(this).css({'color': '#d65050'});
+        $('.display-option-ta-management').removeClass('open');
+        $('.display-option-ta-management.ta-wishlist').addClass('open');
+    });
+
+    $('#submit-oh-hours-btn').on('click', function() {
+        let user = document.getElementById('username').innerText;
+        let course_code = $('#selected-course-code').text();
+        let course_term = $('#selected-course-term').text();
+
+        let syncRequest = new XMLHttpRequest();
+        var url = `../routes/dashboard.php?user=${user}&action=submit-oh-hours&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
+        syncRequest.open("GET", url, true);  
+        syncRequest.addEventListener("load", function(){           
+            if (this.status == 200) {
+                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                set_up_event_listeners_ta_course_options();
+            }
+            else alert('Server error. Please try again later');
+    
+        }, false);
+    
+        syncRequest.send();
+    });
+}
+
+
 
 
 function displayScore() {
@@ -179,6 +223,7 @@ function displayScore() {
 /* OFFICE HOURS */
 //HOW TO GET COURSE NUM? IS MISSIN! //course-name get value by id in javascript and send it to php!
 //function to generate dropdown menu for TA names from the selected term.
+/*
 function termSelected(data){
     let ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateTA.php?term='+data, true);
@@ -215,7 +260,8 @@ function sendusername_course(){
 
 
 
-/* WISHLIST */
+
+// WISHLIST 
 function TASelected(data){
     let ajaxreq = new XMLHttpRequest(); // New request object
     ajaxreq.open('GET', '../utils/generateAllTA.php', true);
@@ -237,3 +283,4 @@ function sendusername_course(){
     xhttp.send();
     
 }
+*/
