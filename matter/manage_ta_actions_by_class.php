@@ -83,7 +83,8 @@
                         foreach($user_data as $name => $data) {
                            for ($i=0; $i<count($data['courses']); $i++) {
                               if ($data['courses'][$i]['course num'] == $_GET['course-code']
-                                 || $data['courses'][$i]['term'] == $_GET['course-term']) {
+                                 && $data['courses'][$i]['term'] == $_GET['course-term']
+                                 && $data['courses'][$i]['role'] == 'ta') {
                                     echo "<option value='{$name}'>{$name}</option>";
                                  }
                            }
