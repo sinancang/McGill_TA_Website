@@ -162,8 +162,21 @@
             $user_data[$username]['email'] = $email;
             $user_data[$username]['registered'] = true;
             $user_data[$username]['password'] = $password;
-            $user_data[$username]['type'] = "student";
-            $user_data[$username]['courses'] = ["COMP307", "COMP202","PSYC215","MATH140"];
+	    $user_data[$username]['type'] = "student";
+
+	    // default courses
+	    $course_array = array('course num'=>"COMP307", 'course name'=>"Principles of Web Development",
+		    "term"=>"WINTER2022", "role"=>"student");
+	    $user_data[$username]['courses'][0] = $course_array;
+
+	    $course_array1 = array('course num'=>"PSYC100", 'course name'=>"Intro to Psychology",
+                    "term"=>"WINTER2022", "role"=>"student");
+	    $user_data[$username]['courses'][1] = $course_array1;
+
+	    $course_array2 = array('course num'=>"MATH140", 'course name'=>"Calculus I",
+                    "term"=>"WINTER2021", "role"=>"student");
+            $user_data[$username]['courses'][2] = $course_array2;
+
             file_put_contents($filename, json_encode($user_data));
             
             // successfully registered user
