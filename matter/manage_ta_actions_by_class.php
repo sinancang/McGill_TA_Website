@@ -30,7 +30,7 @@
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
                <form method="get" name="form" action="../routes/set_office_hours.php">
-                  <!--remove demo!!!-->
+
                   <p>Choose a Day:</p>
                   <select name = "day"class="drop" >
                      <option> -- </option>
@@ -42,7 +42,9 @@
                      <option> Saturday </option>
                      <option> Sunday </option>
                   </select>
+                  
                   <br></br>
+
                   <label for="appt">Choose a time for your Office hours:</label>
                   <br></br>
                   <p >start: </p>
@@ -66,14 +68,7 @@
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
                <form method="get" name="form" action="../utils/generateTA.php">
-                  <select id = "term" class="drop" name ="term" onchange="termSelected(this.value)">
-                     <option> Select a term </option>
-                     <option> FALL 2020 </option>
-                     <option> WINTER 2021 </option>
-                     <option> FALL 2021 </option>
-                     <option> WINTER 2022 </option>
-                  </select>
-                  <br></br>
+
                   <!--prof select a ta from a dropdown so generate dynamic dropdown-->
                   <select id = "TA_dropdown" class="drop" name="TA_dropdown">
                      <option>Select a TA</option>
@@ -86,6 +81,8 @@
             </div>
          </div>
       </div>
+
+
       <!-- WISHLIST -->
       <div class="display-option-ta-management ta-wishlist">
          <div class="form-container">
