@@ -90,8 +90,6 @@
                            }
                         }
 
-
-
                      ?>
 
                   </select>
@@ -113,6 +111,23 @@
                   <p>Choose a TA: </p>
                   <select class="drop" id = "TA" name ="TA">
                      <option> Select a TA </option>
+                     <?php 
+
+                        $filename = "../db/user_data.json";
+                        $data = file_get_contents($filename);
+                        $user_data = json_decode($data, true);
+
+                        foreach($user_data as $name => $data) {
+                           for ($i=0; $i<count($data['courses']); $i++) {
+                              if ($data['courses'][$i]['course num'] == $_GET['course-code']
+                                 && $data['courses'][$i]['term'] == $_GET['course-term']
+                                 && $data['courses'][$i]['role'] == 'ta') {
+                                    echo "<option value='{$name}'>{$name}</option>";
+                                 }
+                           }
+                        }
+
+                     ?>
                   </select>
                   <br></br> 
                   <button id="button" style="background-color: #d77171;" type="submit">Submit Selection</button>
