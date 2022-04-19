@@ -180,9 +180,14 @@ function set_up_event_listeners_ta_course_options() {
         let user = document.getElementById('username').innerText;
         let course_code = $('#selected-course-code').text();
         let course_term = $('#selected-course-term').text();
+        let day = $('#oh-day-select').text();
+        let start_time = $('#oh-day-select').text();
+        let end_time = $('#oh-day-select').text();
+        let location = $('#oh-day-select').text();
+        let duties = $('#oh-day-select').text();
 
         let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&action=submit-oh-hours&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
+        var url = `../routes/dashboard.php?user=${user}&action=submit-oh-hours&duties=${duties}&location=${location}&end=${end_time}&start=${start_time}&day=${day}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
