@@ -50,5 +50,27 @@
             "action": "Added TA Bubbly Joe to class COMP521",
             "date": "September 4th at 11:37am"
         }
+    ],
+    "DavePeters": [
+        {
+            "action": "Updated Yuri Vedenyapin user info",
+            "date": "April 18 2022, at 4:35pm"
+        },
+        {
+            "action": "Updated David Peterman user info",
+            "date": "April 18 2022, at 4:43pm"
+        },
+        {
+            "action": "Added Julia Alberini as Professor to COMP 307",
+            "date": "April 19 2022, at 12:05am"
+        },
+        {
+            "action": "Updated Julia Alberini user info",
+            "date": "April 19 2022, at 12:05am"
+        },
+        {
+            "action": "Added sinancangu as Professor to COMP 307",
+            "date": "April 19 2022, at 1:22pm"
+        }
     ]
 }

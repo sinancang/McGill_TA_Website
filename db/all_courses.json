@@ -13,5 +13,10 @@
         "course code": "COMP521",
         "course name": "Gaming",
         "term": "FALL2019"
+    },
+    {
+        "course code": "COMP 307",
+        "course name": "Web Development",
+        "term": "WINTER2022"
     }
 ]
