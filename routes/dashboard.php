@@ -59,7 +59,7 @@
         include("../matter/ta_management_secondary_menu.php");
     }
     else if ($_GET['view'] == 'manage-ta-actions') {
-        include('../matter/manage_ta_actions_by_class.html');
+        include('../matter/manage_ta_actions_by_class.php');
     }
     else if ($_GET['view'] == 'all-ta-report') {
         include('../matter/all_TA_report.html');
