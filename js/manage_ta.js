@@ -188,7 +188,7 @@ function set_up_event_listeners_ta_course_options() {
 
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=submit-oh-hours&duties=${duties}&location=${location}&end=${end_time}&start=${start_time}&day=${day}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
-        syncRequest.open("GET", url, true);  
+        syncRequest.open("POST", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
                 console.log(this.responseText);
