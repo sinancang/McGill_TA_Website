@@ -19,7 +19,7 @@
             <img id="settings-btn" class="dashboard-header-icon" id="settings-btn" src="../images/person.svg">
             
             <nav class="settings-menu-container">
-              <div class="settings-btn">Reset Password</div>
+              <div onclick="reset_password()" class="settings-btn">Reset Password</div>
               <div class="separating-line"></div>
               <div onclick="sign_out()" class="settings-btn">Sign Out</div>
             </nav>
@@ -190,7 +190,11 @@
 			    
 			    window.sessionStorage.removeItem("ticket");
 			    window.location.replace("../matter/login.html");
-		}
+		    }
+
+		    function reset_password(){
+		    	window.location.replace(`../matter/reset_pass.html?user=${document.getElementById('username')}`);
+		    }
 	</script>
 
     </body>

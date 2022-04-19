@@ -53,6 +53,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
             fillSecondaryMenu('sys-ops');
         }
+	else if ($(this).attr('id') == 'add-course') {
+	   let user = document.getElementById('username').innerText;
+	   let syncRequest = new XMLHttpRequest();
+	   var url = `../routes/dashboard.php?user=${user}&view=add-course&ticket=${window.sessionStorage.ticket}`;
+	   syncRequest.open("GET", url, true);
+	   syncRequest.addEventListener("load", function(){
+	   	if (this.status == 200){
+		    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+		} 
+		else alert('Invalid user role.');
+	   }, false);
+	   syncRequest.send();
+	}
     });
 
 
@@ -62,7 +75,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var url = `../routes/dashboard.php?user=${user}&view=main&ticket=${window.sessionStorage.ticket}`;
         syncRequest.open("GET", url, true);  
         syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) if (this.status === 200) {
+            if (this.status === 200) {
                 $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
             }
             else alert('Invalid user role.');
