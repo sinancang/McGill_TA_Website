@@ -173,6 +173,28 @@ function set_all_ta_report_event_liteners() {
 
 
 function set_up_event_listeners_ta_course_options() {
+
+    $(`<select id="all-tas-report-view-select" name = "day"class="drop">
+    <option value='performance-log'> Performance Log </option>
+    <option value='student-reviews'> Student Reviews </option>
+    <option value='office-hours'> Office Hours </option>
+    </select>`).insertAfter('#selected-course-term');
+
+    $('#all-tas-report-view-select').css({'display':'none'});
+
+    $('#all-tas-report-view-select').on('change', function() {
+        $('.all-tas-report').removeClass('open');
+        if (document.getElementById('all-tas-report-view-select').value == 'performance-log') {
+            $('.all-tas-report.performance-log-all-tas').addClass('open');
+        }
+        if (document.getElementById('all-tas-report-view-select').value == 'student-reviews') {
+            $('.all-tas-report.student-reviews-all-tas').addClass('open');
+        }
+        if (document.getElementById('all-tas-report-view-select').value == 'office-hours') {
+            $('.all-tas-report.office-hours-all-tas').addClass('open');
+        }
+    })
+
     $('#office-hours').on('click', function() {
         $('.manage-ta-nav-btn ').css({
             'color': '#b3b3b3'
@@ -182,6 +204,8 @@ function set_up_event_listeners_ta_course_options() {
         });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.office-hours').addClass('open');
+
+        $('#all-tas-report-view-select').css({'display':'none'});
     });
 
     $('#performance-log').on('click', function() {
@@ -193,6 +217,7 @@ function set_up_event_listeners_ta_course_options() {
         });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.performance-log').addClass('open');
+        $('#all-tas-report-view-select').css({'display':'none'});
     });
 
     $('#wishlist').on('click', function() {
@@ -204,6 +229,7 @@ function set_up_event_listeners_ta_course_options() {
         });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.ta-wishlist').addClass('open');
+        $('#all-tas-report-view-select').css({'display':'none'});
     });
 
     $('#all-tas-report').on('click', function() {
@@ -215,18 +241,10 @@ function set_up_event_listeners_ta_course_options() {
         });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.all-tas-report').addClass('open');
+        $('#all-tas-report-view-select').css({'display':'block'});
 
-        $(`<select id="all-tas-report-view-select" name = "day"class="drop">
-                <option value='performance-log'> Performance Log </option>
-                <option value='student-reviews'> Student Reviews </option>
-                <option value='office-hours'> Office Hours </option>
-            </select>`).insertAfter('#selected-course-term');
 
         document.getElementById('all-tas-report-view-select').value = 'performance-log';
-
-        $('#all-tas-report-view-select').on('change', function() {
-            
-        })
 
     })
 
