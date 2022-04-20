@@ -51,6 +51,11 @@
 .display-option-ta-management.open {
     display: flex;
 }
+.display-option-ta-management.all-tas-report {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
 
 .performance-log-all-tas {
     margin-top: 30px;

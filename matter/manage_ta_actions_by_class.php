@@ -183,9 +183,7 @@
             ?>
          </div>
 
-      </div>
 
-      <div class="display-option-ta-management all-tas-report">
 
          <div class="student-reviews-all-tas">
             <?php
@@ -233,9 +231,9 @@
 
             ?>
          </div>
-      </div>
+      
 
-      <div class="display-option-ta-management all-tas-report">
+      
 
          <div class="office-hours-all-tas">
             <?php
@@ -290,7 +288,7 @@
 
             ?>
          </div>
-      </div>
+      
    </div>
 </div>
 </div>
