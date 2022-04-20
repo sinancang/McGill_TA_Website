@@ -13,6 +13,7 @@
       <button type="button" name="load_data" id="office-hours" class="manage-ta-nav-btn open">Add Office Hours</button>
       <button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>
       <button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>
+      <button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>
   </div>
 
    <div class='form-wrapper modal edit-user-info-form' style="width: 80%;">
