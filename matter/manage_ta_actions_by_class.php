@@ -23,7 +23,7 @@
                if ($data['courses'][$i]['course num'] == $_GET['course-code']
                   && $data['courses'][$i]['term'] == $_GET['course-term']) {
 
-                  }
+                  
                      if ($data['courses'][$i]['role'] == 'prof' 
                         || $data['courses'][$i]['role'] == 'admin'
                         || $data['type'] == 'sysop' ) {
@@ -34,7 +34,7 @@
                         }
 
                      break;
-                  }
+               }
             }
          }
       
