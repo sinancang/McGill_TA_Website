@@ -147,7 +147,7 @@
          <div class="performance-log-all-tas">
             <?php
 
-               if (($handle = fopen("../incoming/performance_logs.csv", "r")) !== FALSE) {
+               if (($handle = fopen("../db/TA_performance_logs.csv", "r")) !== FALSE) {
                   $i = 0;
                   echo '<table id="performance-table" class="manage-ta-table sortable">';
                   while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
