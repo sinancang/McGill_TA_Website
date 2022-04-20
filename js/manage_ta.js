@@ -217,23 +217,14 @@ function set_up_event_listeners_ta_course_options() {
         $('.display-option-ta-management.all-tas-report').addClass('open');
 
         /*
-        let user = document.getElementById('username').innerText;
-        let syncRequest = new XMLHttpRequest();
-        var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&ticket=${window.sessionStorage.ticket}`;
-        syncRequest.open("GET", url, true);  
-        syncRequest.addEventListener("load", function(){           
-            if (this.status == 200) {
-                $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                //set_all_ta_report_event_liteners();
-                //load_first_view_all_ta_report();
-                $('#performance-table').DataTable();
-            }
-            else alert('Server error. Please try again later');
-    
-        }, false);
-    
-        syncRequest.send();
-        */
+                 <select id="oh-day-select" name = "day"class="drop" >
+            <option> -- </option>
+            <option> Performance Log </option>
+            <option> Student Reviews </option>
+            <option> Office Hours </option>
+         </select>
+         */
+
     })
 
     $('#submit-oh-hours-btn').on('click', function() {

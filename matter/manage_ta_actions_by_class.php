@@ -138,12 +138,7 @@
 
       <!-- All TAs Report -->
       <div class="display-option-ta-management all-tas-report">
-         <select id="oh-day-select" name = "day"class="drop" >
-            <option> -- </option>
-            <option> Performance Log </option>
-            <option> Student Reviews </option>
-            <option> Office Hours </option>
-         </select>
+
          <div class="performance-log-all-tas">
             <?php
 
