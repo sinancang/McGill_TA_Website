@@ -226,7 +226,7 @@ function submit_performance_log(){
     let user = document.getElementById('username').innerText;
     let course_code = document.getElementById('selected-course-code').innerText;
     let course_term = document.getElementById('selected-course-term').innerText;
-    let target_ta = document.getElementById('TA_dropdown');
+    let target_ta = document.getElementById('TA_dropdown').value;
 
     let syncRequest = new XMLHttpRequest();
     var url = `../utils/submit_performance_log.php?user=${user}&target-ta=${target_ta}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`
