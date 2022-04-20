@@ -234,6 +234,61 @@
             ?>
          </div>
       </div>
+
+      <div class="display-option-ta-management all-tas-report">
+
+         <div class="office-hours-all-tas">
+            <?php
+
+               if (($handle = fopen("../db/office_hours.csv", "r")) !== FALSE) {
+                  //Name, Course, Term, Day, Start Time, End Time, Location, Duties
+                  $i = 0;
+                  echo '<table id="performance-table" class="manage-ta-table sortable">';
+                  while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                     $name = $data[0];
+                     $course = $data[1];
+                     $term = $data[2];
+                     $day = $data[3];
+                     $start = $data[4];
+                     $end = $data[5];
+                     $location = $data[6];
+                     $duties = $data[7];
+
+                     if ($i == 0) {
+                        echo '<tr class="manage-ta table-row header">';
+                        echo "<th>$name</th>";
+                        echo "<th>$day</th>";
+                        echo "<th>$start</th>";
+                        echo "<th>$end</th>";
+                        echo "<th>$location</th>";
+                        echo "<th>$duties</th>";
+                        echo "</th>";
+                     }
+                     else {
+                        if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
+                           echo '<tr class="manage-ta table-row">';
+                           echo "<td>$prof</td>";
+                           echo "<td>$ta</td>";
+                           echo "<th>$score</th>";
+                           echo "<td>$review</td>";
+                           echo "</td>";
+                        }
+                     }
+
+                     $i++;
+                  }
+                  echo '</table>';
+
+                  fclose($handle);
+               }
+               else {
+                  echo "Unable to show performance log at this time";
+                  return;
+               }
+
+            ?>
+         </div>
+      </div>
    </div>
 </div>
 </div>
