@@ -29,7 +29,7 @@
          <!--how to decide which user is-->
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
-               <form method="get" name="form">
+            
 
                   <p>Choose a Day:</p>
                   <select id="oh-day-select" name = "day"class="drop" >
@@ -55,7 +55,7 @@
                   <textarea id="oh-duties" name = "duties" class="text-area" name="duties" rows="5"></textarea>
                   <br>
                   <button id="submit-oh-hours-btn">Set Office Hours</button>
-               </form>
+               
             </div>
          </div>
       </div>
@@ -66,7 +66,7 @@
          <!--Course is already selected at the begginning, how to reach that variable from the dashboard database? -->
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
-               <form method="get" name="form">
+               
 
                   <!--prof select a ta from a dropdown so generate dynamic dropdown-->
                   <select id = "TA_dropdown" class="drop" name="TA_dropdown">
@@ -95,7 +95,7 @@
                   <textarea id = "review" class="text-area" name="review" rows="5"></textarea>
                   <br>
                   <button id="button" onclick="submit_performance_log()">Submit Review</button>
-               </form>
+               
             </div>
          </div>
       </div>
