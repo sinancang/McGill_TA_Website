@@ -8,16 +8,21 @@
     $data2 = file_get_contents($filename2);
     $all_courses = json_decode($data2, true);
 
+    if ($user_data[$_GET['user']]['type'] == 'prof'
+        || $user_data[$_GET['user']]['type'] == 'admin'
+        || $user_data[$_GET['user']]['type'] == 'sysop') {
 
-    echo
-    "<div  id='all-ta-report' class='nav-bar-btn-container second-nav-bar'>
-        <div class='nav-bar-btn-wrapper  second-nav-bar'>
-                <div class='nav-bar-btn'>All TA Report</div>
-            </div>
-        </div>
-    </div>";
+            echo
+            "<div  id='all-ta-report' class='nav-bar-btn-container second-nav-bar'>
+                <div class='nav-bar-btn-wrapper  second-nav-bar'>
+                        <div class='nav-bar-btn'>All TA Report</div>
+                    </div>
+                </div>
+            </div>";
+        
+            echo "<div class='separating-line'></div>";
+        }
 
-    echo "<div class='separating-line'></div>";
 
 
     
@@ -37,7 +42,7 @@
     else {
         for ($i=0; $i<count($user_data[$_GET['user']]['courses']); $i++) {
             if ($user_data[$_GET['user']]['courses'][$i]['role'] == 'prof' 
-                || $user_data[$_GET['user']]['courses'][$i]['role'] == 'prof') {
+                || $user_data[$_GET['user']]['courses'][$i]['role'] == 'ta') {
                 echo
                 "<div class='nav-bar-btn-container second-nav-bar course'>
                     <div class='nav-bar-btn-wrapper  second-nav-bar'>

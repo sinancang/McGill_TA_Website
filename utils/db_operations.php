@@ -124,14 +124,14 @@
 
         if (isset($user_data[$username]) && !$user_data[$username]['registered']) {
             $user_data[$username]['password'] = $password;
-	    $user_data[$username]['registered'] = true;
-	    file_put_contents($filename, json_encode($user_data));
+	        $user_data[$username]['registered'] = true;
+	        file_put_contents($filename, json_encode($user_data));
 	    
-	    // succesfully registered
-	    return 1;
+	        // succesfully registered
+	        return 1;
 
-	} else {
-	    // TA/Prof/Admin hasn't been pre-added 
+        } else {
+            // TA/Prof/Admin hasn't been pre-added 
             return -1;
         }
     }
