@@ -138,6 +138,59 @@
 
       <!-- All TAs Report -->
       <div class="display-option-ta-management all-tas-report">
+         <select id="oh-day-select" name = "day"class="drop" >
+            <option> -- </option>
+            <option> Performance Log </option>
+            <option> Student Reviews </option>
+            <option> Office Hours </option>
+         </select>
+         <div class="performance-log-all-tas">
+            <?php
+
+               if (($handle = fopen("../incoming/performance_logs.csv", "r")) !== FALSE) {
+                  $i = 0;
+                  echo '<table id="performance-table" class="manage-ta-table sortable">';
+                  while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                     $prof = $data[0];
+                     $ta = $data[1];
+                     $course = $data[2];
+                     $term = $data[3];
+                     $review = $data[4];
+
+                     if ($i == 0) {
+                        echo '<tr class="manage-ta table-row header">';
+                        echo "<th>$prof</th>";
+                        echo "<th>$ta</th>";
+                        echo "<th>$course</th>";
+                        echo "<th>$term</th>";
+                        echo "<th>$review</th>";
+                        echo "</th>";
+                     }
+                     else {
+                        if ($course == $_GET['course-code'] || $term == $_GET['course-term']) {
+                           echo '<tr class="manage-ta table-row">';
+                           echo "<td>$prof</td>";
+                           echo "<td>$ta</td>";
+                           echo "<td>$course</td>";
+                           echo "<td>$term</td>";
+                           echo "<td>$review</td>";
+                           echo "</td>";
+                        }
+                     }
+
+                     $i++;
+                  }
+                  echo '</table>';
+
+                  fclose($handle);
+               }
+               else {
+                  echo "Unable to show performance log at this time";
+                  return;
+               }
+
+            ?>
+         </div>
 
       </div>
    </div>
