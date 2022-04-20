@@ -221,7 +221,7 @@ function set_up_event_listeners_ta_course_options() {
                 <option> Performance Log </option>
                 <option> Student Reviews </option>
                 <option> Office Hours </option>
-            </select>`).insertBefore('.all-tas-report');
+            </select>`).insertAfter('#selected-course-term');
 
         /*
         <select id="oh-day-select" name = "day"class="drop" >
