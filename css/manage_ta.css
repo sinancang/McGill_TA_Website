@@ -65,6 +65,7 @@
 
 .all-tas-report {
     display: none;
+    width: 100%;
 }
 
 .all-tas-report.open {
