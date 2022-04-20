@@ -191,7 +191,7 @@ function set_up_event_listeners_ta_course_options() {
         syncRequest.open("POST", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                console.log(this.responseText);
+                alert(this.responseText);
                 //alert(this.responseText);
             }
             else alert('Server error. Please try again later');
@@ -227,14 +227,15 @@ function submit_performance_log(){
     let course_code = document.getElementById('selected-course-code').innerText;
     let course_term = document.getElementById('selected-course-term').innerText;
     let target_ta = document.getElementById('TA_dropdown').value;
+    let review = document.getElementById('review').value;
 
     let syncRequest = new XMLHttpRequest();
-    var url = `../utils/submit_performance_log.php?user=${user}&target-ta=${target_ta}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`
+    var url = `../utils/submit_performance_log.php?user=${user}&review=${review}&target-ta=${target_ta}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`
     syncRequest.open("GET", url, true);
  
     syncRequest.addEventListener("load", function(){           
         if (this.status == 200) {
-            console.log(this.responseText);
+            alert(this.responseText);
             
         }
         else alert('Server error. Please try again later');
