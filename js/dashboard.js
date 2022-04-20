@@ -43,10 +43,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }, 300);
 
             getSecondaryMenuItems('admin');
-            $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
-                $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
-                $(this).css({'color': '#7474ff'});
-            });
         }
         else if ($(this).attr('id') == 'manage') {
             $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
@@ -58,10 +54,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }, 300);
 
             getSecondaryMenuItems('ta-management');
-            $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
-                $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
-                $(this).css({'color': '#7474ff'});
-            });
         }
         else if ($(this).attr('id') == 'rate') {
             $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
@@ -73,10 +65,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }, 300);
 
             getSecondaryMenuItems('get-rate-ta-classes');
-            $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
-                $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
-                $(this).css({'color': '#7474ff'});
-            });
         }
         else if ($(this).attr('id') == 'sys-ops') {
             $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
@@ -89,10 +77,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }, 300);
 
             fillSecondaryMenu('sys-ops');
-            $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
-                $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
-                $(this).css({'color': '#7474ff'});
-            });
         }
         else if ($(this).attr('id') == 'add-course') {
             let user = document.getElementById('username').innerText;
@@ -107,6 +91,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }, false);
             syncRequest.send();
         }
+
     });
 
 
@@ -306,6 +291,11 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         })
     }
+
+    $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
+        $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
+        $(this).css({'color': '#7474ff'});
+    });
 }
 
 
