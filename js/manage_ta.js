@@ -11,43 +11,49 @@ function TASelected() {
 
 // load first view in all TAs report page
 function load_first_view_all_ta_report() {
-     // update color of curr selected btn
-     $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-     $('#load_data').css({'color': '#d65050'});
+    // update color of curr selected btn
+    $('.manage-ta-nav-btn ').css({
+        'color': '#b3b3b3'
+    });
+    $('#load_data').css({
+        'color': '#d65050'
+    });
 
-     $.ajax({
-         url: "../db/TA_performance_logs.csv",
-         dataType: "text",
-         success: function(data) {
-             let employee_data = data.split(/\r?\n|\r/);
-             let table_data = '<table id="performance-table" class="manage-ta-table sortable">';
-             for (let count = 0; count < employee_data.length; count++) {
-                 let cell_data = employee_data[count].split(",");
+    $.ajax({
+        url: "../db/TA_performance_logs.csv",
+        dataType: "text",
+        success: function(data) {
+            let employee_data = data.split(/\r?\n|\r/);
+            let table_data = '<table id="performance-table" class="manage-ta-table sortable">';
+            for (let count = 0; count < employee_data.length; count++) {
+                let cell_data = employee_data[count].split(",");
 
-                 if (count == 0) {
-                     table_data += '<thead>';
-                     table_data += '<tr class="manage-ta table-row header">';
-                 }
-                 else table_data += '<tr class="manage-ta table-row">';
+                if (count == 0) {
+                    table_data += '<thead>';
+                    table_data += '<tr class="manage-ta table-row header">';
+                } else table_data += '<tr class="manage-ta table-row">';
 
-                 for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
-                     if (count === 0) {
-                         table_data += '<th>' + cell_data[cell_count] + '</th>';
-                     } else {
-                         table_data += '<td>' + cell_data[cell_count] + '</td>';
-                     }
-                 }
-                 table_data += '</tr>';
-                 if (count == 0) {
+                for (let cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                    if (count === 0) {
+                        table_data += '<th>' + cell_data[cell_count] + '</th>';
+                    } else {
+                        if (document.getElementById('user-type').innerText == 'sysop' ||
+                            cell_data[0] == document.getElementById('username').innerText) {
+                            table_data += '<td>' + cell_data[cell_count] + '</td>';
+                        }
+                    }
+                }
+                table_data += '</tr>';
+                if (count == 0) {
                     table_data += '</thead>';
                     table_data += '<tbody>';
-                 }
-             }
+                }
+            }
             table_data += '</tbody>';
-             table_data += '</table>';
-             $('#manage-ta-view-container').html(table_data);
-         }
-     });
+            table_data += '</table>';
+            $('#manage-ta-view-container').html(table_data);
+        }
+    });
 }
 
 
@@ -57,8 +63,12 @@ function set_all_ta_report_event_liteners() {
     // performance log reviews event listener
     $('#load_data').click(function() {
         // update color of curr selected btn
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
+        $('.manage-ta-nav-btn ').css({
+            'color': '#b3b3b3'
+        });
+        $(this).css({
+            'color': '#d65050'
+        });
 
         $.ajax({
             url: "../db/TA_performance_logs.csv",
@@ -90,8 +100,12 @@ function set_all_ta_report_event_liteners() {
     // Student reviews event listener
     $('#load_data2').click(function() {
         // update color of curr selected btn
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});        
+        $('.manage-ta-nav-btn ').css({
+            'color': '#b3b3b3'
+        });
+        $(this).css({
+            'color': '#d65050'
+        });
         $.ajax({
             url: "../db/TA_review.csv",
             dataType: "text",
@@ -122,8 +136,12 @@ function set_all_ta_report_event_liteners() {
     // OH and responsibilities event listener
     $('#load_data3').click(function() {
         // update color of curr selected btn
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
+        $('.manage-ta-nav-btn ').css({
+            'color': '#b3b3b3'
+        });
+        $(this).css({
+            'color': '#d65050'
+        });
         $.ajax({
             url: "../db/office_hours.csv",
             dataType: "text",
@@ -156,22 +174,34 @@ function set_all_ta_report_event_liteners() {
 
 function set_up_event_listeners_ta_course_options() {
     $('#office-hours').on('click', function() {
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
+        $('.manage-ta-nav-btn ').css({
+            'color': '#b3b3b3'
+        });
+        $(this).css({
+            'color': '#d65050'
+        });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.office-hours').addClass('open');
     });
 
     $('#performance-log').on('click', function() {
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
+        $('.manage-ta-nav-btn ').css({
+            'color': '#b3b3b3'
+        });
+        $(this).css({
+            'color': '#d65050'
+        });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.performance-log').addClass('open');
     });
 
     $('#wishlist').on('click', function() {
-        $('.manage-ta-nav-btn ').css({'color': '#b3b3b3'});
-        $(this).css({'color': '#d65050'});
+        $('.manage-ta-nav-btn ').css({
+            'color': '#b3b3b3'
+        });
+        $(this).css({
+            'color': '#d65050'
+        });
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.ta-wishlist').addClass('open');
     });
@@ -188,8 +218,8 @@ function set_up_event_listeners_ta_course_options() {
 
         let syncRequest = new XMLHttpRequest();
         var url = `../routes/dashboard.php?user=${user}&action=submit-oh-hours&duties=${duties}&location=${location}&end=${end_time}&start=${start_time}&day=${day}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`;
-        syncRequest.open("POST", url, true);  
-        syncRequest.addEventListener("load", function(){           
+        syncRequest.open("POST", url, true);
+        syncRequest.addEventListener("load", function() {
             if (this.status == 200) {
                 //alert(this.responseText);
                 document.getElementById('oh-day-select').value = "";
@@ -197,11 +227,10 @@ function set_up_event_listeners_ta_course_options() {
                 document.getElementById('oh-end-time').value = "";
                 document.getElementById('oh-location').value = "";
                 document.getElementById('oh-duties').value = "";
-            }
-            else alert('Server error. Please try again later');
-    
+            } else alert('Server error. Please try again later');
+
         }, false);
-    
+
         syncRequest.send();
     });
 }
@@ -226,7 +255,7 @@ function displayScore() {
 
 
 //not sure if it works for sending username and course!!!
-function submit_performance_log(){
+function submit_performance_log() {
     let user = document.getElementById('username').innerText;
     let course_code = document.getElementById('selected-course-code').innerText;
     let course_term = document.getElementById('selected-course-term').innerText;
@@ -236,23 +265,20 @@ function submit_performance_log(){
     let syncRequest = new XMLHttpRequest();
     var url = `../utils/submit_performance_log.php?user=${user}&review=${review}&target-ta=${target_ta}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`
     syncRequest.open("GET", url, true);
- 
-    syncRequest.addEventListener("load", function(){           
+
+    syncRequest.addEventListener("load", function() {
         if (this.status == 200) {
             //alert(this.responseText);
             document.getElementById('TA_dropdown').value = "";
             document.getElementById('review').value = "";
-            
-        }
-        else alert('Server error. Please try again later');
+
+        } else alert('Server error. Please try again later');
 
     }, false);
 
     syncRequest.send();
-    
+
 }
-
-
 
 
 
