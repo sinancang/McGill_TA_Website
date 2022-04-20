@@ -94,7 +94,7 @@
                   <p>Leave a note about the TA:</p>
                   <textarea id = "review" class="text-area" name="review" rows="5"></textarea>
                   <br>
-                  <button id="button" onclick="sendusername_course()">Submit Review</button>
+                  <button id="button" onclick="submit_performance_log()">Submit Review</button>
                </form>
             </div>
          </div>
