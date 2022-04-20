@@ -167,7 +167,7 @@
                         echo "</th>";
                      }
                      else {
-                        if ($course == $_GET['course-code'] || $term == $_GET['course-term']) {
+                        if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
                            echo '<tr class="manage-ta table-row">';
                            echo "<td>$prof</td>";
                            echo "<td>$ta</td>";
