@@ -134,6 +134,12 @@
             </div>
          </div>
       </div>
+
+
+      <!-- All TAs Report -->
+      <div class="display-option-ta-management all-tas-report>
+
+      </div>
    </div>
 </div>
 </div>
