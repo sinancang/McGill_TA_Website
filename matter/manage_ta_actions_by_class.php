@@ -156,8 +156,6 @@
                         echo '<tr class="manage-ta table-row header">';
                         echo "<th>$prof</th>";
                         echo "<th>$ta</th>";
-                        echo "<th>$course</th>";
-                        echo "<th>$term</th>";
                         echo "<th>$review</th>";
                         echo "</th>";
                      }
@@ -166,8 +164,6 @@
                            echo '<tr class="manage-ta table-row">';
                            echo "<td>$prof</td>";
                            echo "<td>$ta</td>";
-                           echo "<td>$course</td>";
-                           echo "<td>$term</td>";
                            echo "<td>$review</td>";
                            echo "</td>";
                         }
@@ -187,6 +183,56 @@
             ?>
          </div>
 
+      </div>
+
+      <div class="display-option-ta-management all-tas-report">
+
+         <div class="student-reviews-all-tas">
+            <?php
+
+               if (($handle = fopen("../db/TA_review.csv", "r")) !== FALSE) {
+                  $i = 0;
+                  echo '<table id="performance-table" class="manage-ta-table sortable">';
+                  while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                     $user = $data[0];
+                     $ta = $data[3];
+                     $course = $data[1];
+                     $term = $data[2];
+                     $review = $data[5];
+                     $score = $data[4];
+
+                     if ($i == 0) {
+                        echo '<tr class="manage-ta table-row header">';
+                        echo "<th>$user</th>";
+                        echo "<th>$ta</th>";
+                        echo "<th>$score</th>";
+                        echo "<th>$review</th>";
+                        echo "</th>";
+                     }
+                     else {
+                        if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
+                           echo '<tr class="manage-ta table-row">';
+                           echo "<td>$prof</td>";
+                           echo "<td>$ta</td>";
+                           echo "<th>$score</th>";
+                           echo "<td>$review</td>";
+                           echo "</td>";
+                        }
+                     }
+
+                     $i++;
+                  }
+                  echo '</table>';
+
+                  fclose($handle);
+               }
+               else {
+                  echo "Unable to show performance log at this time";
+                  return;
+               }
+
+            ?>
+         </div>
       </div>
    </div>
 </div>
