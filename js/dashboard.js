@@ -248,25 +248,6 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         })
 
-        $('#all-ta-report').on('click', function() {
-            let user = document.getElementById('username').innerText;
-            let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&ticket=${window.sessionStorage.ticket}`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status == 200) {
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_all_ta_report_event_liteners();
-                    load_first_view_all_ta_report();
-                    $('#performance-table').DataTable();
-                }
-                else alert('Server error. Please try again later');
-        
-            }, false);
-        
-            syncRequest.send();
-        })
-
 
     }
     // ta rating secondary menu
