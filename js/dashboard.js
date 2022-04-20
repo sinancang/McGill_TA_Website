@@ -34,38 +34,64 @@ window.addEventListener('DOMContentLoaded', (event) => {
         $(this).css({'background-color': ''})
 
         if ($(this).attr('id') == 'admin') {
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+
             getSecondaryMenuItems('admin');
         }
         else if ($(this).attr('id') == 'manage') {
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+
             getSecondaryMenuItems('ta-management');
         }
         else if ($(this).attr('id') == 'rate') {
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+
             getSecondaryMenuItems('get-rate-ta-classes');
         }
         else if ($(this).attr('id') == 'sys-ops') {
+            $('.nav-bar-btn.primary').css({'white-space':'nowrap'});
             $('.dashboard-content-side-nav-bar.first-nav-bar').removeClass('open');
             $('.dashboard-content-side-nav-bar.second-nav-bar').addClass('open');
+
+
+            setTimeout(function() {
+                $('.nav-bar-btn.secondary').css({'white-space':'break-spaces'});
+            }, 300);
+
             fillSecondaryMenu('sys-ops');
         }
-	else if ($(this).attr('id') == 'add-course') {
-	   let user = document.getElementById('username').innerText;
-	   let syncRequest = new XMLHttpRequest();
-	   var url = `../routes/dashboard.php?user=${user}&view=add-course&ticket=${window.sessionStorage.ticket}`;
-	   syncRequest.open("GET", url, true);
-	   syncRequest.addEventListener("load", function(){
-	   	if (this.status == 200){
-		    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-		} 
-		else alert('Invalid user role.');
-	   }, false);
-	   syncRequest.send();
-	}
+        else if ($(this).attr('id') == 'add-course') {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=add-course&ticket=${window.sessionStorage.ticket}`;
+            syncRequest.open("GET", url, true);
+            syncRequest.addEventListener("load", function(){
+                if (this.status == 200){
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                } 
+                else alert('Invalid user role.');
+            }, false);
+            syncRequest.send();
+        }
+
     });
 
 
@@ -91,7 +117,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // takes user back to primary menu
     $('.nav-bar-btn-container.back-btn').on('click', function() {
         $('.dashboard-content-side-nav-bar.first-nav-bar').addClass('open');
+        $('.nav-bar-btn.secondary').css({'white-space':'nowrap'});
         $('.dashboard-content-side-nav-bar.second-nav-bar').removeClass('open');
+
+        setTimeout(function() {
+            $('.nav-bar-btn.primary').css({'white-space':'break-spaces'});
+        }, 300);
     })
 
 
@@ -144,22 +175,16 @@ function fillSecondaryMenu(menuName) {
         `
         <div id="manage-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Manage Users</div>
+                <div class="nav-bar-btn secondary">Manage Users</div>
             </div>
         </div>
         <div id="add-manually-users" class="nav-bar-btn-container second-nav-bar">
             <div class="nav-bar-btn-wrapper  second-nav-bar">
-                <div class="nav-bar-btn">Upload Course Record</div>
+                <div class="nav-bar-btn secondary">Upload Course Record</div>
             </div>
         </div>
         `;
 
-        // add event listeners that are specific to sys-ops menu
-
-        $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
-            $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
-            $(this).css({'color': '#7474ff'});
-        });
 
         // load user management view
         $('#manage-users').on('click', function() {
@@ -223,25 +248,6 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         })
 
-        $('#all-ta-report').on('click', function() {
-            let user = document.getElementById('username').innerText;
-            let syncRequest = new XMLHttpRequest();
-            var url = `../routes/dashboard.php?user=${user}&view=all-ta-report&ticket=${window.sessionStorage.ticket}`;
-            syncRequest.open("GET", url, true);  
-            syncRequest.addEventListener("load", function(){           
-                if (this.status == 200) {
-                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-                    set_all_ta_report_event_liteners();
-                    load_first_view_all_ta_report();
-                    $('#performance-table').DataTable();
-                }
-                else alert('Server error. Please try again later');
-        
-            }, false);
-        
-            syncRequest.send();
-        })
-
 
     }
     // ta rating secondary menu
@@ -266,6 +272,11 @@ function fillSecondaryMenu(menuName) {
             syncRequest.send();
         })
     }
+
+    $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
+        $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
+        $(this).css({'color': '#7474ff'});
+    });
 }
 
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>McGill TA Management</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../css/TAManagement.css">
+    </head>
+
+<body>
+    <p style="font-size: 30px; padding-left: 15%;">Remove TA from a Course: </p>
+    <div class="form-container">
+    <div class="sign-up-form" style="width: 70%;">
+<form method="get" name="form" action="../utils/removeTA.php">    
+    <p>For which class? </p>
+            <select class="drop" id = "course" name ="course" onclick="CourseSelected()"> 
+                <option> Select a course </option>
+            </select> <br></br> 
+            <p>Select a term </p> 
+            <select class="drop" id = "term" name ="term" onclick="termSelected(this.value)"> 
+                <option> Choose a term </option> 
+                <option> FALL 2020 </option> 
+                <option> WINTER 2021 </option>
+                <option> SUMMER 2021 </option>
+                <option> FALL 2021 </option>
+                <option> WINTER 2022 </option>
+                <option> SUMMER 2022 </option>
+                <option> FALL 2022 </option>
+                <option> SPRING 2023</option>
+                <option> SUMMER 2023</option>
+            </select> <br></br> 
+            <p>Choose a TA: </p>
+            <select class="drop" id = "TA" name ="TA" onclick="TASelected()"> 
+                <option> Select a TA</option>
+            </select> <br></br> 
+    
+    <input id="button" style="background-color: #d77171;" type="submit" value = "Remove the TA" onclick="Message()"></button>
+</form>
+
+
+</body>
+
+<script>
+function TASelected(){
+        var ajaxreq = new XMLHttpRequest(); // New request object
+        ajaxreq.open('GET', '../utils/generateAllusers.php', true);
+        ajaxreq.send();
+        ajaxreq.onreadystatechange = function(){
+            if(ajaxreq.readyState==4 && ajaxreq.status==200){
+                document.getElementById("TA").innerHTML = ajaxreq.responseText;
+            }          
+        }
+    }
+    function CourseSelected(){
+    var ajaxreq = new XMLHttpRequest(); // New request object
+    ajaxreq.open('GET', '../utils/generateCourse.php', true); 
+    ajaxreq.send();
+    ajaxreq.onreadystatechange = function(){
+        if(ajaxreq.readyState==4 && ajaxreq.status==200){
+                document.getElementById("course").innerHTML =  ajaxreq.responseText ;
+            }          
+        }
+
+}
+
+function Message(){
+    alert("TA has been removed successfully");
+}
+
+</script>

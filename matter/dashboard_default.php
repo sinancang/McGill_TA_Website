@@ -36,7 +36,7 @@
                 <div class="dashboard-content-side-nav-bar first-nav-bar open">
                     <div id="main-dashboard" class="nav-bar-btn-container">
                         <div class="nav-bar-btn-wrapper">
-                            <div class="nav-bar-btn">Main Dashboard</div>
+                            <div class="nav-bar-btn primary">Main Dashboard</div>
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                             echo 
                             '<div id="admin" class="nav-bar-btn-container first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Admin Options</div>
+                                    <div class="nav-bar-btn primary">Admin Options</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -75,7 +75,7 @@
                             echo
                             '<div id="manage" class="nav-bar-btn-container  first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Manage TAs</div>
+                                    <div class="nav-bar-btn primary">TA/Prof Settings</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -84,7 +84,7 @@
                         echo
                         '<div id="rate" class="nav-bar-btn-container  first-nav-bar">
                             <div class="nav-bar-btn-wrapper">
-                                <div class="nav-bar-btn">Rate a TA</div>
+                                <div class="nav-bar-btn primary">Rate a TA</div>
                                 <img class="right-arrow-svg" src="../images/right-arrow.svg">
                             </div>
                         </div>';
@@ -93,7 +93,7 @@
                             echo
                             '<div id="sys-ops" class="nav-bar-btn-container  first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn">Manage Users</div>
+                                    <div class="nav-bar-btn primary">Manage Users</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
@@ -101,7 +101,7 @@
                         echo 
                         '<div id="add-course" class="nav-bar-btn-container first-nav-bar">
                             <div class="nav-bar-btn-wrapper">
-                                <div class="nav-bar-btn">Add Course</div>
+                                <div class="nav-bar-btn primary">Add Course</div>
                             </div>
                         </div>';
                     ?>
@@ -113,7 +113,7 @@
                         <div class="nav-bar-btn-container back-btn">
                             <div class="nav-bar-btn-wrapper back-btn">
                                 <img id="back-arrow" src="../images/right-arrow.svg">
-                                <div class="nav-bar-btn back">Back</div>
+                                <div class="nav-bar-btn back secondary">Back</div>
                             </div>
                         </div>
 
@@ -170,6 +170,7 @@
 
 
         <div id="username"><?php echo $_GET['user']?></div>
+        <div id="user-type"><?php echo $data[$username]['type']?></div>
         <div id="selected-course"></div>
 
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5eab681659f730bdd5daac20" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

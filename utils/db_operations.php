@@ -124,14 +124,14 @@
 
         if (isset($user_data[$username]) && !$user_data[$username]['registered']) {
             $user_data[$username]['password'] = $password;
-	    $user_data[$username]['registered'] = true;
-	    file_put_contents($filename, json_encode($user_data));
+	        $user_data[$username]['registered'] = true;
+	        file_put_contents($filename, json_encode($user_data));
 	    
-	    // succesfully registered
-	    return 1;
+	        // succesfully registered
+	        return 1;
 
-	} else {
-	    // TA/Prof/Admin hasn't been pre-added 
+        } else {
+            // TA/Prof/Admin hasn't been pre-added 
             return -1;
         }
     }
@@ -291,7 +291,7 @@
         //$username=$_GET['user'];
         //$coure=$_GET['course_selected'];
     
-        $userData = $_GET['user'] . "," . $_GET['day'] . "," . $_GET['course-term'] . "," . $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
+        $userData = $_GET['user'] . "," . $_GET['course-code']. "," . $_GET['course-term'] . "," . $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
     
         echo "here 3";
         if (fwrite($file, $userData)){
