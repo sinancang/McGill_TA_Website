@@ -15,8 +15,8 @@
       <?php 
 
          $filename = "../db/user_data.json";
-         $data = file_get_contents($filename);
-         $user_data = json_decode($data, true);
+         $file_data = file_get_contents($filename);
+         $user_data = json_decode($file_data, true);
 
          foreach($user_data as $name => $data) {
             for ($i=0; $i<count($data['courses']); $i++) {
@@ -101,6 +101,10 @@
 
                      <?php 
 
+                        $filename = "../db/user_data.json";
+                        $file_data = file_get_contents($filename);
+                        $user_data = json_decode($file_data, true);
+
 
                         foreach($user_data as $name => $data) {
                            for ($i=0; $i<count($data['courses']); $i++) {
@@ -135,9 +139,9 @@
                      <option> Select a TA </option>
                      <?php 
 
-                        $filename = "../db/user_data.json";
-                        $data = file_get_contents($filename);
-                        $user_data = json_decode($data, true);
+                     $filename = "../db/user_data.json";
+                     $file_data = file_get_contents($filename);
+                     $user_data = json_decode($file_data, true);
 
                         foreach($user_data as $name => $data) {
                            for ($i=0; $i<count($data['courses']); $i++) {
