@@ -25,6 +25,7 @@
                echo '<button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>';
                echo '<button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>';
                echo '<button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>';
+               break;
             }
             else {
                for ($i=0; $i<count($data['courses']); $i++) {
