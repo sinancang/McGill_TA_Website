@@ -139,7 +139,7 @@
       <!-- All TAs Report -->
       <div class="display-option-ta-management all-tas-report">
 
-         <div class="performance-log-all-tas">
+         <div class="all-tas-report performance-log-all-tas">
             <?php
 
                if (($handle = fopen("../db/TA_performance_logs.csv", "r")) !== FALSE) {
@@ -185,7 +185,7 @@
 
 
 
-         <div class="student-reviews-all-tas">
+         <div class="all-tas-report student-reviews-all-tas">
             <?php
 
                if (($handle = fopen("../db/TA_review.csv", "r")) !== FALSE) {
@@ -235,7 +235,7 @@
 
       
 
-         <div class="office-hours-all-tas">
+         <div class="all-tas-report office-hours-all-tas">
             <?php
 
                if (($handle = fopen("../db/office_hours.csv", "r")) !== FALSE) {
