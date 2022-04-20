@@ -66,7 +66,7 @@
          <!--Course is already selected at the begginning, how to reach that variable from the dashboard database? -->
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
-               <form method="get" name="form" action="../utils/generateTA.php">
+               <form method="get" name="form">
 
                   <!--prof select a ta from a dropdown so generate dynamic dropdown-->
                   <select id = "TA_dropdown" class="drop" name="TA_dropdown">
