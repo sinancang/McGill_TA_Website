@@ -216,21 +216,17 @@ function set_up_event_listeners_ta_course_options() {
         $('.display-option-ta-management').removeClass('open');
         $('.display-option-ta-management.all-tas-report').addClass('open');
 
-        $(`<select id="oh-day-select" name = "day"class="drop">
-                <option> -- </option>
-                <option> Performance Log </option>
-                <option> Student Reviews </option>
-                <option> Office Hours </option>
+        $(`<select id="all-tas-report-view-select" name = "day"class="drop">
+                <option value='performance-log'> Performance Log </option>
+                <option value='student-reviews'> Student Reviews </option>
+                <option value='office-hours'> Office Hours </option>
             </select>`).insertAfter('#selected-course-term');
 
-        /*
-        <select id="oh-day-select" name = "day"class="drop" >
-            <option> -- </option>
-            <option> Performance Log </option>
-            <option> Student Reviews </option>
-            <option> Office Hours </option>
-         </select>
-         */
+        document.getElementById('all-tas-report-view-select').value = 'performance-log';
+
+        $('#all-tas-report-view-select').on('change', function() {
+            
+        })
 
     })
 
