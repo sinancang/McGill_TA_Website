@@ -184,7 +184,7 @@ function set_up_event_listeners_ta_course_options() {
 
     $('#all-tas-report-view-select').on('change', function() {
         $('.all-tas-report.performance-log-all-tas').removeClass('open');
-        $('.all-tas-report.student-reviews-all-tas open').removeClass('open');
+        $('.all-tas-report.student-reviews-all-tas').removeClass('open');
         $('.all-tas-report.office-hours-all-tas').removeClass('open');
         if (document.getElementById('all-tas-report-view-select').value == 'performance-log') {
             $('.all-tas-report.performance-log-all-tas').addClass('open');
