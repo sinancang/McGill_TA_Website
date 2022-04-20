@@ -7,21 +7,19 @@
     $data2 = file_get_contents($filename2);
     $all_courses = json_decode($data2, true);
 
-    echo "<div></div>";
-    echo "<div>Choose a course below to sign-up as student to be able to leave a TA review.</div><br></br>";   
-
+    echo "<br></br>";
+    echo "<div class='add-course-description'>Click a course below to sign-up as student to be able to leave a TA review.</div>"; 
+    echo "<table>";
 	    for ($i=0; $i<count($all_courses); $i++) {
 	    // TO DO: only display this year's courses
 
 	    echo
-            "<div class='nav-bar-btn-container second-nav-bar'>
-                <div class='nav-bar-btn-wrapper  second-nav-bar'>
-                        <div id='course-code' class='nav-bar-btn'>{$all_courses[$i]['course code']}</div>
-                        <div id='course-name' class='nav-bar-btn sub-title'>{$all_courses[$i]['course name']}</div>
-                        <div id='course-term' class='nav-bar-btn sub-title'>{$all_courses[$i]['term']}</div>
-                    </div>
-                </div>
-            </div>";
-        }
+            "<tr>
+                        <td><button class='add-course-button'>{$all_courses[$i]['course code']}
+                        {$all_courses[$i]['course name']}
+                        {$all_courses[$i]['term']}</button></td>
+            </tr>";
+	    }
+    echo "</table>";
 
 ?>
