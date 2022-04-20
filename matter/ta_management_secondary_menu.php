@@ -8,6 +8,7 @@
     $data2 = file_get_contents($filename2);
     $all_courses = json_decode($data2, true);
 
+    /*
     if ($user_data[$_GET['user']]['type'] == 'prof'
         || $user_data[$_GET['user']]['type'] == 'admin'
         || $user_data[$_GET['user']]['type'] == 'sysop') {
@@ -21,7 +22,8 @@
             </div>";
         
             echo "<div class='separating-line'></div>";
-        }
+    }
+    */
 
 
 
