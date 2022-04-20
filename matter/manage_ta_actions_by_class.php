@@ -10,10 +10,31 @@
 
 
    <div class="nav-btns-container-ta-management">
+      
       <button type="button" name="load_data" id="office-hours" class="manage-ta-nav-btn open">Add Office Hours</button>
-      <button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>
-      <button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>
-      <button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>
+      <?php 
+
+         $filename = "../db/user_data.json";
+         $data = file_get_contents($filename);
+         $user_data = json_decode($data, true);
+
+         foreach($user_data as $name => $data) {
+            for ($i=0; $i<count($data['courses']); $i++) {
+               if ($data['courses'][$i]['course num'] == $_GET['course-code']
+                  && $data['courses'][$i]['term'] == $_GET['course-term']
+                  && $data['courses'][$i]['role'] == 'prof') {
+
+                     echo '<button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>';
+                     echo '<button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>';
+                     echo '<button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>';
+
+                     break;
+                  }
+            }
+         }
+      
+      ?>
+
   </div>
 
    <div class='form-wrapper modal edit-user-info-form' style="width: 80%;">
@@ -75,9 +96,6 @@
 
                      <?php 
 
-                        $filename = "../db/user_data.json";
-                        $data = file_get_contents($filename);
-                        $user_data = json_decode($data, true);
 
                         foreach($user_data as $name => $data) {
                            for ($i=0; $i<count($data['courses']); $i++) {
