@@ -291,7 +291,7 @@
         //$username=$_GET['user'];
         //$coure=$_GET['course_selected'];
     
-        $userData = $_GET['user'] . "," . $_GET['day'] . "," . $_GET['course-term'] . "," . $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
+        $userData = $_GET['user'] . "," . $_GET['course-code']. "," . $_GET['course-term'] . "," . $_GET['day'] . "," . $_GET['start'] . ", " . $_GET['end'] . "," .  $_GET['location'] . ",". "{$_GET['duties']}" . "\n";
     
         echo "here 3";
         if (fwrite($file, $userData)){
