@@ -210,11 +210,11 @@
                      else {
                         if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
                            echo '<tr class="manage-ta table-row">';
-                           echo "<th>$user</th>";
-                           echo "<th>$ta</th>";
-                           echo "<th>$score</th>";
-                           echo "<th>$review</th>";
-                           echo "</td>";
+                           echo "<td>$user</td>";
+                           echo "<td>$ta</td>";
+                           echo "<td>$score</td>";
+                           echo "<td>$review</td>";
+                           echo "</tr>";
                         }
                      }
 
@@ -265,13 +265,13 @@
                      else {
                         if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
                            echo '<tr class="manage-ta table-row">';
-                           echo "<th>$name</th>";
-                           echo "<th>$day</th>";
-                           echo "<th>$start</th>";
-                           echo "<th>$end</th>";
-                           echo "<th>$location</th>";
-                           echo "<th>$duties</th>";
-                           echo "</td>";
+                           echo "<td>$name</td>";
+                           echo "<td>$day</td>";
+                           echo "<td>$start</td>";
+                           echo "<td>$end</td>";
+                           echo "<td>$location</td>";
+                           echo "<td>$duties</td>";
+                           echo "</tr>";
                         }
                      }
 
