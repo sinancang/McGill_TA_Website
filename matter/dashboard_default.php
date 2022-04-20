@@ -75,7 +75,7 @@
                             echo
                             '<div id="manage" class="nav-bar-btn-container  first-nav-bar">
                                 <div class="nav-bar-btn-wrapper">
-                                    <div class="nav-bar-btn primary">Manage TAs</div>
+                                    <div class="nav-bar-btn primary">TA/Prof Settings</div>
                                     <img class="right-arrow-svg" src="../images/right-arrow.svg">
                                 </div>
                             </div>';
