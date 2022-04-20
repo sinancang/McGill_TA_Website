@@ -191,8 +191,12 @@ function set_up_event_listeners_ta_course_options() {
         syncRequest.open("POST", url, true);  
         syncRequest.addEventListener("load", function(){           
             if (this.status == 200) {
-                alert(this.responseText);
                 //alert(this.responseText);
+                document.getElementById('oh-day-select').value = "";
+                document.getElementById('oh-start-time').value = "";
+                document.getElementById('oh-end-time').value = "";
+                document.getElementById('oh-location').value = "";
+                document.getElementById('oh-duties').value = "";
             }
             else alert('Server error. Please try again later');
     
@@ -235,7 +239,9 @@ function submit_performance_log(){
  
     syncRequest.addEventListener("load", function(){           
         if (this.status == 200) {
-            alert(this.responseText);
+            //alert(this.responseText);
+            document.getElementById('TA_dropdown').value = "";
+            document.getElementById('review').value = "";
             
         }
         else alert('Server error. Please try again later');
