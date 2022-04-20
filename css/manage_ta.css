@@ -51,7 +51,8 @@
 .display-option-ta-management.open {
     display: flex;
 }
-.display-option-ta-management.all-tas-report {
+
+.display-option-ta-management.all-tas-report.open {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
