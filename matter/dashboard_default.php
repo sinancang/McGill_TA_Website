@@ -3,7 +3,9 @@
 
     <head>
         <title>McGill TA Management</title>
-        <meta charset="utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="no-cache" />
+
         <link rel="stylesheet" href="../css/forms.css">
         <link rel="stylesheet" href="../css/dashboard.css">
         <link rel="stylesheet" href="../css/manage_users.css">
@@ -211,7 +213,7 @@
 
 			syncRequest.addEventListener("load", function() {
 				if (this.status == 200){
-					window.alert("Course successfully added!");
+					window.alert("Course successfully added! You can now go ahead and rate a TA.");
 					window.location.replace(`../routes/dashboard.php?user=${username}&view=default&ticket=${window.sessionStorage.ticket}`);
 				} else {
 					window.alert("We've encountered an error while processing your request... Please contact sysops");
