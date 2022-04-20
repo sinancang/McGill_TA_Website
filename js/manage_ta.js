@@ -222,25 +222,26 @@ function displayScore() {
 
 
 //not sure if it works for sending username and course!!!
-function sendusername_course(){
-    let name = document.getElementById('username'); 
-    let course_selected = document.getElementById('selected-course'); 
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
-    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
-    xhttp.send();
+function submit_performance_log(){
+    let user = document.getElementById('username').innerText;
+    let course_code = document.getElementById('selected-course-code').innerText;
+    let course_term = document.getElementById('selected-course-term').innerText;
+    let target_ta = document.getElementById('TA_dropdown');
 
-    let select = document.getElementById('TA');
-    let value = select.options[select.selectedIndex].text;
-    let ajaxreq = new XMLHttpRequest(); // New request object
-    ajaxreq.open('POST', '../utils/average_score.php?TA=' + value, true);
-    ajaxreq.send();
-    ajaxreq.onreadystatechange = function() {
-        if (ajaxreq.readyState == 4 && ajaxreq.status == 200) {
-            let info = "The score of the selected TA for this course: ";
-            document.getElementById("manage-ta-view-container").innerHTML = info + ajaxreq.responseText;
+    let syncRequest = new XMLHttpRequest();
+    var url = `../utils/submit_performance_log.php?user=${user}&target-ta=${target_ta}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`
+    syncRequest.open("GET", url, true);
+ 
+    syncRequest.addEventListener("load", function(){           
+        if (this.status == 200) {
+            console.log(this.responseText);
+            
         }
-    }
+        else alert('Server error. Please try again later');
+
+    }, false);
+
+    syncRequest.send();
     
 }
 
