@@ -1,12 +1,4 @@
 <div class="form-container ajax-content-container">
-   <!--
-   <select name="display-select" class="drop" id="ta-display-select">
-      <option>-- Select an Option --</option>
-      <option value="office-hours">Office Hours</option>
-      <option value="performance-log">Performance Log</option>
-      <option value="ta-wishlist">TA Wishlist</option>
-   </select>
-   -->
 
 
    <div class="nav-btns-container-ta-management">
