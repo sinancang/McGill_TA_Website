@@ -78,19 +78,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             fillSecondaryMenu('sys-ops');
         }
-	else if ($(this).attr('id') == 'add-course') {
-	   let user = document.getElementById('username').innerText;
-	   let syncRequest = new XMLHttpRequest();
-	   var url = `../routes/dashboard.php?user=${user}&view=add-course&ticket=${window.sessionStorage.ticket}`;
-	   syncRequest.open("GET", url, true);
-	   syncRequest.addEventListener("load", function(){
-	   	if (this.status == 200){
-		    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
-		} 
-		else alert('Invalid user role.');
-	   }, false);
-	   syncRequest.send();
-	}
+        else if ($(this).attr('id') == 'add-course') {
+            let user = document.getElementById('username').innerText;
+            let syncRequest = new XMLHttpRequest();
+            var url = `../routes/dashboard.php?user=${user}&view=add-course&ticket=${window.sessionStorage.ticket}`;
+            syncRequest.open("GET", url, true);
+            syncRequest.addEventListener("load", function(){
+                if (this.status == 200){
+                    $('.dashboard-dynamic-content-main')[0].innerHTML = this.responseText;
+                } 
+                else alert('Invalid user role.');
+            }, false);
+            syncRequest.send();
+        }
+
+        $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
+            $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
+            $(this).css({'color': '#7474ff'});
+        });
     });
 
 
@@ -184,12 +189,6 @@ function fillSecondaryMenu(menuName) {
         </div>
         `;
 
-        // add event listeners that are specific to sys-ops menu
-
-        $('.nav-bar-btn-container.second-nav-bar').on('click', function() {
-            $('.nav-bar-btn-container.second-nav-bar').css({'color': 'rgb(103, 103, 103)'});
-            $(this).css({'color': '#7474ff'});
-        });
 
         // load user management view
         $('#manage-users').on('click', function() {
