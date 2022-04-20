@@ -326,6 +326,30 @@ function submit_performance_log() {
 }
 
 
+function submit_wishlist() {
+    let user = document.getElementById('username').innerText;
+    let course_code = document.getElementById('selected-course-code').innerText;
+    let course_term = document.getElementById('selected-course-term').innerText;
+    let target_ta = document.getElementById('selected-ta').value;
+
+
+    let syncRequest = new XMLHttpRequest();
+    var url = `../utils/TA_wish_list.php?user=${user}&target-ta=${target_ta}&course-code=${course_code}&course-term=${course_term}&ticket=${window.sessionStorage.ticket}`
+    syncRequest.open("GET", url, true);
+
+    syncRequest.addEventListener("load", function() {
+        if (this.status == 200) {
+            //alert(this.responseText);
+            document.getElementById('selected-ta').value = "";
+
+        } else alert('Server error. Please try again later');
+
+    }, false);
+
+    syncRequest.send();
+}
+
+
 
 
 /* OFFICE HOURS */

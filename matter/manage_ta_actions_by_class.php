@@ -140,9 +140,9 @@
       <div class="display-option-ta-management ta-wishlist">
          <div class="form-container">
             <div class="sign-up-form" style="width: 70%;">
-               <form method="get" name="form" action="../utils/TA_wish_list.php">
+               
                   <p>Choose a TA: </p>
-                  <select class="drop" id = "TA" name ="TA">
+                  <select class="drop" id = "selected-ta" name ="TA">
                      <option> Select a TA </option>
                      <?php 
 
@@ -163,8 +163,8 @@
                      ?>
                   </select>
                   <br></br> 
-                  <button id="button" style="background-color: #d77171;" type="submit">Submit Selection</button>
-               </form>
+                  <button id="button" style="background-color: #d77171;" onclick="submit_wishlist()">Submit Selection</button>
+               
             </div>
          </div>
       </div>
