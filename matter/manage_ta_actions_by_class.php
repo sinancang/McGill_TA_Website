@@ -10,10 +10,43 @@
 
 
    <div class="nav-btns-container-ta-management">
+      
       <button type="button" name="load_data" id="office-hours" class="manage-ta-nav-btn open">Add Office Hours</button>
-      <button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>
-      <button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>
-      <button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>
+      <?php 
+
+         $filename = "../db/user_data.json";
+         $file_data = file_get_contents($filename);
+         $user_data = json_decode($file_data, true);
+
+         
+
+         foreach($user_data as $name => $data) {
+            if ($data['type'] == 'sysop' ) {
+               echo '<button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>';
+               echo '<button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>';
+               echo '<button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>';
+               break;
+            }
+            else {
+               for ($i=0; $i<count($data['courses']); $i++) {
+                  if ($data['courses'][$i]['course num'] == $_GET['course-code']
+                     && $data['courses'][$i]['term'] == $_GET['course-term']) {
+   
+                     
+                        if ($data['courses'][$i]['role'] == 'prof' 
+                           || $data['courses'][$i]['role'] == 'admin') {
+   
+                              echo '<button type="button" name="load_data2" id="performance-log" class="manage-ta-nav-btn">Leave TA Performance Review</button>';
+                              echo '<button type="button" name="load_data3" id="wishlist" class="manage-ta-nav-btn">TA Wishlist</button>';
+                              echo '<button type="button" name="load_data3" id="all-tas-report" class="manage-ta-nav-btn">All TAs Report</button>';
+                           }
+                  }
+               }
+            }
+         }
+      
+      ?>
+
   </div>
 
    <div class='form-wrapper modal edit-user-info-form' style="width: 80%;">
@@ -76,8 +109,9 @@
                      <?php 
 
                         $filename = "../db/user_data.json";
-                        $data = file_get_contents($filename);
-                        $user_data = json_decode($data, true);
+                        $file_data = file_get_contents($filename);
+                        $user_data = json_decode($file_data, true);
+
 
                         foreach($user_data as $name => $data) {
                            for ($i=0; $i<count($data['courses']); $i++) {
@@ -112,9 +146,9 @@
                      <option> Select a TA </option>
                      <?php 
 
-                        $filename = "../db/user_data.json";
-                        $data = file_get_contents($filename);
-                        $user_data = json_decode($data, true);
+                     $filename = "../db/user_data.json";
+                     $file_data = file_get_contents($filename);
+                     $user_data = json_decode($file_data, true);
 
                         foreach($user_data as $name => $data) {
                            for ($i=0; $i<count($data['courses']); $i++) {
@@ -210,11 +244,11 @@
                      else {
                         if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
                            echo '<tr class="manage-ta table-row">';
-                           echo "<th>$user</th>";
-                           echo "<th>$ta</th>";
-                           echo "<th>$score</th>";
-                           echo "<th>$review</th>";
-                           echo "</td>";
+                           echo "<td>$user</td>";
+                           echo "<td>$ta</td>";
+                           echo "<td>$score</td>";
+                           echo "<td>$review</td>";
+                           echo "</tr>";
                         }
                      }
 
@@ -265,13 +299,13 @@
                      else {
                         if ($course == $_GET['course-code'] && $term == $_GET['course-term']) {
                            echo '<tr class="manage-ta table-row">';
-                           echo "<th>$name</th>";
-                           echo "<th>$day</th>";
-                           echo "<th>$start</th>";
-                           echo "<th>$end</th>";
-                           echo "<th>$location</th>";
-                           echo "<th>$duties</th>";
-                           echo "</td>";
+                           echo "<td>$name</td>";
+                           echo "<td>$day</td>";
+                           echo "<td>$start</td>";
+                           echo "<td>$end</td>";
+                           echo "<td>$location</td>";
+                           echo "<td>$duties</td>";
+                           echo "</tr>";
                         }
                      }
 
