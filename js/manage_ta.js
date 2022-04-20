@@ -198,6 +198,7 @@ function set_up_event_listeners_ta_course_options() {
     });
 
     $('#office-hours').on('click', function() {
+
         $('.manage-ta-nav-btn ').css({
             'color': '#b3b3b3'
         });
@@ -235,6 +236,11 @@ function set_up_event_listeners_ta_course_options() {
     });
 
     $('#all-tas-report').on('click', function() {
+
+        $('.all-tas-report.performance-log-all-tas').removeClass('open');
+        $('.all-tas-report.student-reviews-all-tas').removeClass('open');
+        $('.all-tas-report.office-hours-all-tas').removeClass('open');
+        
         $('.manage-ta-nav-btn ').css({
             'color': '#b3b3b3'
         });
@@ -348,61 +354,3 @@ function submit_wishlist() {
 
     syncRequest.send();
 }
-
-
-
-
-/* OFFICE HOURS */
-//HOW TO GET COURSE NUM? IS MISSIN! //course-name get value by id in javascript and send it to php!
-//function to generate dropdown menu for TA names from the selected term.
-/*
-function termSelected(data){
-    let ajaxreq = new XMLHttpRequest(); // New request object
-    ajaxreq.open('GET', '../utils/generateTA.php?term='+data, true);
-    ajaxreq.send();
-    ajaxreq.onreadystatechange = function(){
-        if(ajaxreq.readyState==4 && ajaxreq.status==200){
-                document.getElementById("TA_dropdown").innerHTML = ajaxreq.responseText;
-        }          
-    }
-}
-    
-    
-//not sure if it works for sending username and course!!!
-function sendusername_course(){
-    let name = document.getElementById('username'); 
-    let course_selected = document.getElementById('selected-course'); 
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "../utils/generateTA.php?username="+ username, true);
-    xhttp.open("GET", "../utils/generateTA.php?course-selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
-    xhttp.send();
-        
-}
-
-
-
-
-
-// WISHLIST 
-function TASelected(data){
-    let ajaxreq = new XMLHttpRequest(); // New request object
-    ajaxreq.open('GET', '../utils/generateAllTA.php', true);
-    ajaxreq.send();
-    ajaxreq.onreadystatechange = function(){
-        if(ajaxreq.readyState==4 && ajaxreq.status==200){
-            document.getElementById("TA").innerHTML = ajaxreq.responseText;
-        }          
-    }
-}
-
-//not sure if it works for sending username and course!!!
-function sendusername_course(){
-    let username = document.getElementById('username');
-    let course_selected =  document.getElementById('course-selected');
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "../utils/TA_wish_list.php?username="+ username, true);
-    xhttp.open("GET", "../utils/TA_wish_list.php?course_selected="+ course_selected, true); //is this name true and can multiple letiable be sent?
-    xhttp.send();
-    
-}
-*/
