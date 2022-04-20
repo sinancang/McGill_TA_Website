@@ -15,9 +15,10 @@
 
 	    echo
             "<tr>
-                        <td><button class='add-course-button'>{$all_courses[$i]['course code']}
-                        {$all_courses[$i]['course name']}
-                        {$all_courses[$i]['term']}</button></td>
+			<td><button class='add-course-button' onclick='add_course()'>
+			<div id='course-code'>{$all_courses[$i]['course code']}</div>
+                        <div id='course-name'>{$all_courses[$i]['course name']}</div>
+                        <div id='course-term'>{$all_courses[$i]['term']}</div></button></td>
             </tr>";
 	    }
     echo "</table>";

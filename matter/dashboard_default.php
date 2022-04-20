@@ -186,7 +186,7 @@
 			    var url = "../utils/remove_ticket.php";
 			    syncRequest.open("POST", url, true);
 			    var fd = new FormData;
-			    fd.append('username', document.getElementById('username'));
+			    fd.append('username', document.getElementById('username').innerText);
 			    syncRequest.send(fd);
 			    
 			    window.sessionStorage.removeItem("ticket");
@@ -194,7 +194,37 @@
 		    }
 
 		    function reset_password(){
-		    	window.location.replace(`../matter/reset_pass.html?user=${document.getElementById('username')}`);
+		    	window.location.replace(`../matter/reset_pass.html?user=${document.getElementById('username').innerText}`);
+		    }
+
+		    function add_course(){
+		    	// username
+			syncRequest = new XMLHttpRequest();
+			
+			var url = "../utils/add_course.php";
+			syncRequest.open("POST", url, true);
+			
+			var course_code = document.getElementById('course-code').innerText;
+                        var course_name = document.getElementById('course-name').innerText;
+                        var course_term = document.getElementById('course-term').innerText;
+                        var username = document.getElementById('username').innerText;
+
+			syncRequest.addEventListener("load", function() {
+				if (this.status == 200){
+					window.alert("Course successfully added!");
+					window.location.replace(`../routes/dashboard.php?user=${username}&view=default&ticket=${window.sessionStorage.ticket}`);
+				} else {
+					window.alert("We've encountered an error while processing your request... Please contact sysops");
+				}
+			}, false);
+			
+			var fd = new FormData;
+			fd.append('username', username);
+			fd.append('course_term', course_term);
+			fd.append('course_name', course_name);
+			fd.append('course_code', course_code);
+			syncRequest.send(fd);
+
 		    }
 	</script>
 

@@ -10,9 +10,7 @@ function registerProcedure(){
 		return;
 	}
 
-	// check valid e-mail
-	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(!email.match(mailformat)){
+	if (!check_valid_mail){
 		displayWarning("Please enter a valid e-mail", false);
 		return;
 	}
@@ -71,4 +69,12 @@ function displayWarning(warning, isGreen){
 		document.getElementById("warning").style.color = "#ca1818";
 	}
 }
+function check_valid_mail(email){
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!email.match(mailformat)){
+                return false;
+        } else {
+		return true;
+	}
 
+}
